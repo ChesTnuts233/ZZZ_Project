@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6882376876629227627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: -2_3
+  m_EditorClassIdentifier: 
+  LevelID: -2_3
+  LevelName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6293\u53D6"
+  guid: b0281e139bff0954ebb637a47a6f607a
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6293\u53D6.unity"
+    SceneName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6293\u53D6"
+    SceneBuildIndix: -1
+  LevelGridProperties: {fileID: 11400000, guid: d19daefa4eedd7d43aa496e032945df6,
+    type: 2}
+--- !u!114 &-6659498747125075203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: 1_1
+  m_EditorClassIdentifier: 
+  LevelID: 1_1
+  LevelName: "1-1\u5730\u5E95\u5723\u6240"
+  guid: e098819a739750a48b448d0a92fbfca1
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/1-1\u5730\u5E95\u5723\u6240.unity"
+    SceneName: "1-1\u5730\u5E95\u5723\u6240"
+    SceneBuildIndix: -1
+  LevelGridProperties: {fileID: 11400000, guid: 85fbee42c5a0948458fad5d6a92b3531,
+    type: 2}
+--- !u!114 &-3264338665940370059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelID: 1_2
+  LevelName: "1-2\u5730\u5E95\u5723\u6240"
+  guid: bf16449a020609b45bd6d0e9c30d149a
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/1-2\u5730\u5E95\u5723\u6240.unity"
+    SceneName: "1-2\u5730\u5E95\u5723\u6240"
+    SceneBuildIndix: 0
+  LevelGridProperties: {fileID: 11400000, guid: fbe4935d3589c2f4f9edee523c115b9b,
+    type: 2}
+--- !u!114 &-2278476712234294798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: Test_1
+  m_EditorClassIdentifier: 
+  LevelID: Test_1
+  LevelName: "\u5FC3\u4E2D\u6D4B\u8BD5\u8BAD\u7EC3\u573A"
+  guid: 6cee5f03a18ebdc448d23a7c0f751942
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u5FC3\u4E2D\u6D4B\u8BD5\u8BAD\u7EC3\u573A.unity"
+    SceneName: "\u5FC3\u4E2D\u6D4B\u8BD5\u8BAD\u7EC3\u573A"
+    SceneBuildIndix: 3
+  LevelGridProperties: {fileID: 11400000, guid: 4c50e4fe97091f24d854615c2f27b5c9,
+    type: 2}
+--- !u!114 &-1615555420094462914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: -2_5
+  m_EditorClassIdentifier: 
+  LevelID: -2_5
+  LevelName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6293\u654C"
+  guid: e5a74d4673198034eb007e8faa9becfd
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6293\u654C.unity"
+    SceneName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6293\u654C"
+    SceneBuildIndix: -1
+  LevelGridProperties: {fileID: 11400000, guid: 91e00950470ec844baaefa6dff8d6209,
+    type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e723ce6eb9ea4ba1bed0e6252dfbad1c, type: 3}
+  m_Name: LevelDatas
+  m_EditorClassIdentifier: 
+  datas:
+  - {fileID: 2047984070572403312}
+  - {fileID: 6226444317108117893}
+  - {fileID: -2278476712234294798}
+  - {fileID: -6659498747125075203}
+  - {fileID: -3264338665940370059}
+  - {fileID: 7561528486885782458}
+  - {fileID: 6238826721605602390}
+  - {fileID: -6882376876629227627}
+  - {fileID: 1830385594241241825}
+  - {fileID: -1615555420094462914}
+  LevelIDs:
+  - -1_0
+  - 0_0
+  - Test_1
+  - 1_1
+  - 1_2
+  - -2_1
+  - -2_2
+  - -2_3
+  - -2_4
+  - -2_5
+  - 5_5
+  - 3_3
+  - 3_4
+  GridPropertyList: {fileID: 11400000, guid: 8e7bfe0c66717f4438e9e6487577a867, type: 2}
+  CurLevelID: 0_0
+--- !u!114 &1830385594241241825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: -2_4
+  m_EditorClassIdentifier: 
+  LevelID: -2_4
+  LevelName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u5145\u80FD"
+  guid: a2e7d046a325ccb49b7a0773f4f54e17
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u5145\u80FD.unity"
+    SceneName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u5145\u80FD"
+    SceneBuildIndix: -1
+  LevelGridProperties: {fileID: 11400000, guid: c98717262ea0f4b46b1b136d6064ad7b,
+    type: 2}
+--- !u!114 &2047984070572403312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: 0_0
+  m_EditorClassIdentifier: 
+  LevelID: 0_0
+  LevelName: "\u5927\u672C\u8425"
+  guid: 8d4379fabfc596a489004f46b0e20d05
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u5927\u672C\u8425.unity"
+    SceneName: "\u5927\u672C\u8425"
+    SceneBuildIndix: 2
+  LevelGridProperties: {fileID: 11400000, guid: 67b7bf4d686da64419ebe9b2b533adf0,
+    type: 2}
+--- !u!114 &6226444317108117893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: -1_0
+  m_EditorClassIdentifier: 
+  LevelID: -1_0
+  LevelName: "\u7EFC\u5408\u6D4B\u8BD5\u573A\u666F"
+  guid: 1f3355e2e4ff59b4586e90faea3b7247
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u7EFC\u5408\u6D4B\u8BD5\u573A\u666F.unity"
+    SceneName: "\u7EFC\u5408\u6D4B\u8BD5\u573A\u666F"
+    SceneBuildIndix: 1
+  LevelGridProperties: {fileID: 11400000, guid: 005012fca0cd46d4781669d8ac26c7bb,
+    type: 2}
+--- !u!114 &6238826721605602390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: -2_2
+  m_EditorClassIdentifier: 
+  LevelID: -2_2
+  LevelName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6295\u63B7"
+  guid: b47ec22f207eebe499730d6d3f4145b1
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6295\u63B7.unity"
+    SceneName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u6295\u63B7"
+    SceneBuildIndix: -1
+  LevelGridProperties: {fileID: 11400000, guid: c6c1fa8ecd93a4043a706233e3d65c6a,
+    type: 2}
+--- !u!114 &7561528486885782458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d744b6e7b7154d96b46b6596109afaa7, type: 3}
+  m_Name: -2_1
+  m_EditorClassIdentifier: 
+  LevelID: -2_1
+  LevelName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u72C2\u6012"
+  guid: ba59f3856c04216449501348bcb10034
+  sceneDatas:
+  - ScenePath: "Assets/4.Scenes/Level/\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u72C2\u6012.unity"
+    SceneName: "\u5FC3\u4E2D\u8BAD\u7EC3\u573A-\u72C2\u6012"
+    SceneBuildIndix: -1
+  LevelGridProperties: {fileID: 11400000, guid: 8cc33a2700371c64e8c102cabea32a2a,
+    type: 2}

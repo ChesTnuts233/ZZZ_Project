@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1726182683, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
+  m_Name: AOTGenerationConfig
+  m_EditorClassIdentifier: 
+  automateBeforeBuilds: 1
+  deleteDllAfterBuilds: 1
+  AutomateForAllAOTPlatforms: 1
+  automateForPlatforms: 0900000014000000
+  lastScan: 638475902165101027
+  supportSerializedTypes:
+  - TypeName: System.Action, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Boolean, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: SubSystem.BUFF.Buff, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: SubSystem.BUFF.Buff+BuffData, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: SubSystem.BUFF.BUFF_Operator, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: SubSystem.BuffValueName, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.DeviceKeysType, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[SubSystem.BuffValueName, Assembly-CSharp],[SubSystem.BUFF.Buff+BuffData,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[KooFrame.LanguageType, Assembly-CSharp],[System.Int32,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[KooFrame.LanguageType, Assembly-CSharp],[KooFrame.LocalizationDataBase,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[KooFrame.PlayerActionType,
+      Assembly-CSharp],[KooFrame.KeyTipData, Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[KooFrame.PlayerControllerDeviceType,
+      Assembly-CSharp],[System.Collections.Generic.Dictionary`2[[KooFrame.PlayerActionType,
+      Assembly-CSharp],[KooFrame.KeyTipData, Assembly-CSharp]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SubSystem.BUFF.Buff,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.Dictionary`2[[KooFrame.LanguageType,
+      Assembly-CSharp],[KooFrame.LocalizationDataBase, Assembly-CSharp]], mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[KooFrame.UIWindowData,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[SubSystem.BuffValueName,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[KooFrame.LanguageType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[KooFrame.PlayerActionType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[KooFrame.PlayerControllerDeviceType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Single, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.IBinarySerializer, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[SubSystem.BuffValueName,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[KooFrame.LanguageType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[KooFrame.PlayerActionType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[KooFrame.PlayerControllerDeviceType,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.String, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Int32, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.KeyTipData, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.LanguageType, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[KooFrame.UILocalizationData, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.LocalizationDataBase, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.LocalizationStringData, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.UI.MaskableGraphic, UnityEngine.UI
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.PlayerActionType, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.PlayerControllerDeviceType, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite[], UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.U2D.SpriteAtlas, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Texture, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.UI_WindowBase, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.UILocalizationData, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: KooFrame.UIWindowData, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1

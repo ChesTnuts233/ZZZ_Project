@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/3.Frame/KooFrame/b1.FrameModule/4.NodeTree/Editor/NodeTreeViewer.uss?fileID=7433441132597879392&amp;guid=59a75d0dab8056e438ff87a1a3a77218&amp;type=3#NodeTreeViewer" />
+    <ui:VisualElement style="flex-direction: row; flex-grow: 1;">
+        <ui:VisualElement name="LeftDiv" style="flex-grow: 0.3;">
+            <ui:Label text="属性Inspector" display-tooltip-when-elided="true" name="Inspector" style="font-size: 15px; -unity-font-style: bold;" />
+            <KooFrame.NodeInspectorViewer style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RightDiv" style="flex-grow: 1;">
+            <ui:Label text="节点树面板  当前正在编辑：请选中节点树SO" display-tooltip-when-elided="true" name="CurEditorNodeTree" style="-unity-font-style: bold; font-size: 15px;" />
+            <KooFrame.NodeTreeViewer focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

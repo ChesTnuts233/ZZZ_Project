@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <GameEditor.LevelDataView name="LevelDataView" style="flex-grow: 1; flex-direction: row; align-items: center;">
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="Name" style="justify-content: center; flex-grow: 1; flex-shrink: 1; -unity-font: url(&apos;project://database/Assets/0.GameArts/1.Fonts/LegacyFront/fusion-pixel-12px-proportional.ttf?fileID=12800000&amp;guid=c30369e56c972cf4da975d32bd07d514&amp;type=3#fusion-pixel-12px-proportional&apos;); -unity-font-definition: none; font-size: 13px; -unity-font-style: bold; color: rgb(241, 241, 241);" />
+        <ui:Button text="切换关卡" display-tooltip-when-elided="true" name="ChangeToLevelBtn" style="display: flex;" />
+    </GameEditor.LevelDataView>
+</ui:UXML>

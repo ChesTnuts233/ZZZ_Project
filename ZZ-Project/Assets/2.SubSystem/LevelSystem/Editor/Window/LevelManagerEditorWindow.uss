@@ -1,0 +1,4 @@
+Button {
+    -unity-font: url('project://database/Assets/0.GameArts/1.Fonts/LegacyFront/fusion-pixel-12px-proportional.ttf?fileID=12800000&guid=c30369e56c972cf4da975d32bd07d514&type=3#fusion-pixel-12px-proportional');
+    -unity-font-definition: none;
+}

@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/2.SubSystem/8.LevelManager/Editor/LevelManagerEditorWindow.uss?fileID=7433441132597879392&amp;guid=79f287ade35ca354aabc01c7706f4522&amp;type=3#LevelManagerEditorWindow" />
+    <ui:VisualElement name="BackGround" style="flex-direction: row; flex-grow: 1;">
+        <ui:VisualElement name="LeftDiv" style="flex-grow: 0.15; border-left-color: rgb(132, 132, 132); border-right-color: rgb(132, 132, 132); border-top-color: rgb(132, 132, 132); border-bottom-color: rgb(132, 132, 132); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; background-color: rgb(77, 77, 77);">
+            <ui:Button text="游戏开始场景" display-tooltip-when-elided="true" name="StartSceneBtn" style="-unity-font-style: bold; font-size: 13px; border-left-color: rgb(179, 255, 180); border-right-color: rgb(179, 255, 180); border-top-color: rgb(179, 255, 180); border-bottom-color: rgb(179, 255, 180);" />
+            <ui:Button text="UI调试场景" display-tooltip-when-elided="true" name="UITestBtn" style="-unity-font-style: bold; font-size: 13px; border-left-color: rgb(179, 255, 249); border-right-color: rgb(179, 255, 249); border-top-color: rgb(179, 255, 249); border-bottom-color: rgb(179, 255, 249);" />
+            <ui:Button text="添加关卡数据" display-tooltip-when-elided="true" name="AddLevelDataBtn" enable-rich-text="true" />
+            <ui:Button text="删除关卡数据" display-tooltip-when-elided="true" name="DeleteLevelDataBtn" enable-rich-text="true" />
+            <ui:ListView focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:Button text="▶" display-tooltip-when-elided="true" name="FoldBtn" style="flex-grow: 0; max-width: 15px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0;" />
+        <ui:VisualElement name="RightDiv" style="flex-grow: 1; background-color: rgb(60, 60, 60); visibility: visible; display: flex; opacity: 1; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
+            <ui:VisualElement style="flex-grow: 0.01; flex-direction: row; position: relative; flex-wrap: nowrap; align-items: center;">
+                <ui:Label text="当前所在关卡:" display-tooltip-when-elided="true" name="CurLevelName" />
+            </ui:VisualElement>
+            <GameEditor.LevelInspectorViewer style="flex-grow: 1; justify-content: flex-start;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
