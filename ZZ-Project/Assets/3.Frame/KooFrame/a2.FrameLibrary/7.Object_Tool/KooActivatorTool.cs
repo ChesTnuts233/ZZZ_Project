@@ -19,8 +19,8 @@ namespace KooFrame
 
         public static T CreateInstance<T>(Type type, params object[] args)
         {
-            T instance = (T)Activator.CreateInstance(type ?? throw new InvalidCastException(), args);
-            return instance;
-        }
+			T instance = (T)Activator.CreateInstance(type ?? throw new InvalidCastException(), args);
+			return instance;
+		}
     }
 }

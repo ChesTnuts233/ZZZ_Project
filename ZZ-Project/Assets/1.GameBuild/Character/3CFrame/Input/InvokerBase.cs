@@ -9,9 +9,30 @@ using System.Collections.Generic;
 
 namespace GameBuild
 {
-    public class InvokerBase
-    {
-        protected List<int> commandList;
-        //protected Requests
-    }
+	public abstract class InvokerBase
+	{
+		protected List<int> commandList;
+		protected RequestReceiverBase receiver;
+
+		public InvokerBase(RequestReceiverBase receiver)
+		{
+			this.receiver = receiver;
+			this.commandList = new List<int>();
+		}
+
+		public abstract void Call(int requestID);
+
+		public void Update()
+		{
+			OnUpdate();
+		}
+
+		public void FixedUpdate()
+		{
+			OnFixedUpdate();
+		}
+
+		protected virtual void OnUpdate() { }
+		protected virtual void OnFixedUpdate() { }
+	}
 }

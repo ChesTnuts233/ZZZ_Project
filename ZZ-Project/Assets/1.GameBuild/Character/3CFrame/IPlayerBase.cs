@@ -9,17 +9,17 @@ using KooFrame;
 
 namespace GameBuild
 {
-    public interface IPlayerBase : IArchitecture
-    {
-        public MovementBase movement { get; }
+	public interface IPlayerBase : IArchitecture
+	{
+		public MovementBase Movement { get; }
 
-        //public AttackActionBase attackAction { get; }
-        //public DeadActionBase deadAction { get; }
-        //public ShootActionBase shootAction { get; }
+		//public AttackActionBase attackAction { get; }
+		//public DeadActionBase deadAction { get; }
+		//public ShootActionBase shootAction { get; }
 
-        public RequestHandleBase requestHandle { get; }
-        public RequestReceiverBase receiver { get; }
-        public InvokerBase invoker { get; }
-        public PlayerInputBase input { get; }
-    }
+		public RequestHandleBase RequestHandle { get; }
+		public RequestReceiverBase Receiver { get; }
+		public InvokerBase Invoker { get; }
+		public PlayerInputBase Input { get; }
+	}
 }

@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace GameBuild
 {
-    public class TankInputData : InputData
+    public class KanojoInputData : InputData
     {
         /// <summary>
         /// 移动输入
