@@ -17,7 +17,6 @@ namespace GameBuild
 		protected override void Awake()
 		{
 			base.Awake();
-
 		}
 
 

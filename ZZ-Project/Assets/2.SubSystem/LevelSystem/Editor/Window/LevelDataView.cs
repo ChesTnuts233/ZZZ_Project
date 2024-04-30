@@ -14,7 +14,6 @@ namespace GameEditor
     {
         public LevelData LevelData;
 
-
         public Button ChangeLevelBtn;
 
         public new class UxmlFactory : UxmlFactory<LevelDataView, VisualElement.UxmlTraits> { }

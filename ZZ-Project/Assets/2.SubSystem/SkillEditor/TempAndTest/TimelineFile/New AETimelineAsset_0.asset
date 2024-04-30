@@ -44,12 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6163eb00cd2144c29cca170a518c1b91, type: 3}
   m_Name: New AETimelineAsset_0
   m_EditorClassIdentifier: 
+  Name: 
   Tracks:
   - rid: 5306260229866127362
+  - rid: 1837028438324281344
   Duration: 1208
   references:
     version: 2
     RefIds:
+    - rid: 1837028438324281344
+      type: {class: SpecialTrack, ns: SkillEditor.AE_SkillEditor_Plus, asm: Assembly-CSharp}
+      data:
+        Clips: []
     - rid: 5306260229866127362
       type: {class: AEAnimationTrack, ns: AE_SkillEditor_Plus.RunTime.BuiltTracks, asm: Assembly-CSharp}
       data:

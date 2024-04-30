@@ -1,17 +1,13 @@
-﻿using System;
 using AE_SkillEditor_Plus.Editor.Window;
 using AE_SkillEditor_Plus.AEUIEvent;
 using AE_SkillEditor_Plus.Editor.UI.Controller;
-using AE_SkillEditor_Plus.UI.Data;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace AE_SkillEditor_Plus.UI
 {
-    //clip
-    public static class TrackClipStyle
+	//clip
+	public static class TrackClipStyle
     {
         private const float tailWdithPersent = 0.1f;
 

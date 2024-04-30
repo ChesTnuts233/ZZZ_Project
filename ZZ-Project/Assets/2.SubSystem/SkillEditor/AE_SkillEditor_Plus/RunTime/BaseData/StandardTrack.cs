@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +13,6 @@ namespace AE_SkillEditor_Plus.RunTime
         public StandardTrack()
         {
             Clips = new List<StandardClip>();
-        }
+        } 
     }
 }
