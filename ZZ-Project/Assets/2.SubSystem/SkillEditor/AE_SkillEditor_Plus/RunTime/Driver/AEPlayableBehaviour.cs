@@ -1,9 +1,11 @@
-﻿using AE_SkillEditor_Plus.RunTime;
 using UnityEngine;
 
 namespace AE_SkillEditor_Plus.RunTime.Driver
 {
-    public class AEPlayableBehaviour
+    /// <summary>
+    /// 播放行为
+    /// </summary>
+	public class AEPlayableBehaviour
     {
         public AEPlayableStateEnum State { get; protected set; }
 
@@ -17,6 +19,7 @@ namespace AE_SkillEditor_Plus.RunTime.Driver
             // Debug.LogWarning("OnEnter");
         }
 
+        //更新帧的行为状态
         public virtual void Tick(int currentFrameID, int fps, GameObject context)
         {
             // if (State != AEPlayableStateEnum.Running) return;

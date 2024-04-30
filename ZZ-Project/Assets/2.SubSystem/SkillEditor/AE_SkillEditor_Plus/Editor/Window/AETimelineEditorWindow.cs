@@ -50,7 +50,7 @@ namespace AE_SkillEditor_Plus.Editor.Window
             }
         } 
 
-        private int HeadWidth = 260; //轨道头部宽度
+        private int HeadWidth = 280; //轨道头部宽度
 
         private int IntervalHeight = 10; //轨道间隔
         private int ControllerHeight = 38; //控件高度
@@ -95,7 +95,7 @@ namespace AE_SkillEditor_Plus.Editor.Window
                 }
             }
         } //是否在播放
-
+        
         public int FPS = 60; //帧率
         private float OneFrameTimer; //一帧时长的计时器
 

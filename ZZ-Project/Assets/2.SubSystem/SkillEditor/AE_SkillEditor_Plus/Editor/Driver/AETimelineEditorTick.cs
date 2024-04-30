@@ -8,7 +8,14 @@ namespace AE_SkillEditor_Plus.Editor.Driver
 {
 	internal static class AETimelineEditorTick
 	{
+		/// <summary>
+		/// 这里每个时间轴上的多个行为
+		/// </summary>
 		private static List<List<AEPlayableBehaviour>> Behaviors;
+
+		/// <summary>
+		/// 当前正在播放的资产
+		/// </summary>
 		private static AETimelineAsset m_asset;
 
 		public static void PlayAsset(AETimelineAsset asset)
