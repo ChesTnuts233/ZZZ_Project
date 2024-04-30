@@ -3,12 +3,12 @@
     "maps": [
         {
             "name": "GamePlay",
-            "id": "4fd292f2-db05-4c98-a787-c0cc5313dc03",
+            "id": "38f69678-79a5-414f-825c-c7f80d834951",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "2b11487b-8e73-4840-8ff0-fdca38bc36b9",
+                    "id": "7c4c3906-775e-4a00-8f2d-0def8b9bece3",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -17,7 +17,7 @@
                 {
                     "name": "Rotate",
                     "type": "Value",
-                    "id": "435d0ed6-a1f9-49da-88f8-fa5d225d317b",
+                    "id": "65f54c87-f201-46be-8464-8cd3946935d4",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -27,7 +27,7 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "dd642f6c-672a-4cb6-8ed8-6ab05bd52612",
+                    "id": "748e58b2-fea0-4468-a3a6-aa525bb6c3f7",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -38,55 +38,55 @@
                 },
                 {
                     "name": "up",
-                    "id": "7eee0e37-b847-4dc9-895a-de5e14919575",
+                    "id": "20f76fbe-0dbd-452a-9737-07b77bbb1641",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyBoardAndMouse",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "ac2f4c31-c9d2-40fc-967f-ae69d84e69f8",
+                    "id": "befffea6-d5dc-46c9-bab8-3cf5f7d8673d",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyBoardAndMouse",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "ae05317b-b511-42e1-93e3-0b4cd758415c",
+                    "id": "cbb019bc-c77c-4826-a683-b40b19fe07a5",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyBoardAndMouse",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "9417e77c-a628-48d2-a874-68fee1e57c2b",
+                    "id": "5dfce3b9-64e5-43ad-b0b9-fe0b1fcef6a9",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyBoardAndMouse",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "2c40dc60-ea27-40c4-ad7a-29430fb7d00b",
+                    "id": "b29bb194-7bfc-4dd9-ab62-38f0a0b27837",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyBoardAndMouse",
+                    "groups": "",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -94,22 +94,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "KeyBoardAndMouse",
-            "bindingGroup": "KeyBoardAndMouse",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Mouse>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }
