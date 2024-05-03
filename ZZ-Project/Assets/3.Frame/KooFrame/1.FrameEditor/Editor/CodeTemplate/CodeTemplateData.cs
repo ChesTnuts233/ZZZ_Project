@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 [Serializable]
 public class CodeTemplateData
@@ -17,7 +18,11 @@ public class CodeTemplateData
 	/// <summary>
 	/// 模板内容
 	/// </summary>
+	[TextArea]
 	public string CodeContent;
+
+
+
 
 
 

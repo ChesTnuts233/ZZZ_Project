@@ -7,12 +7,10 @@ using System.Linq;
 using GameEditor;
 using GameEditor.Data;
 using KooFrame;
-using SubSystem;
 using SubSystem.Map;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -335,7 +333,7 @@ public class LevelManagerEditorWindow : EditorWindow
         _levelListView.bindItem = bindItem;
         _levelListView.itemsSource = values;
         _levelListView.selectionType = SelectionType.Single;
-        _levelListView.onSelectionChange += OnDataSelectionChanged;
+        _levelListView.selectionChanged += OnDataSelectionChanged;
     }
 
 

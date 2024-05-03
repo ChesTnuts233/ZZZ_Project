@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5962319399378679267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca16b65469e642428c03d0c98604f3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: AEAnimationClip
+  StartID: 38
+  Duration: 100
+  AnimationClip: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,14 +33,15 @@ MonoBehaviour:
   - rid: 1837028438324281345
   - rid: 1837028438324281346
   - rid: 1837028438324281347
-  Duration: 0
+  Duration: 138
   references:
     version: 2
     RefIds:
     - rid: 1837028438324281345
       type: {class: AEAnimationTrack, ns: AE_SkillEditor_Plus.RunTime.BuiltTracks, asm: Assembly-CSharp}
       data:
-        Clips: []
+        Clips:
+        - {fileID: -5962319399378679267}
     - rid: 1837028438324281346
       type: {class: AEEffectTrack, ns: AE_SkillEditor_Plus.RunTime.BuiltTracks.Effect, asm: Assembly-CSharp}
       data:

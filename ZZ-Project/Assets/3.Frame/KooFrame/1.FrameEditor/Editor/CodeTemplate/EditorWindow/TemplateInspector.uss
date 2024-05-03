@@ -1,0 +1,4 @@
+#TemplateContent > #unity-text-input {
+    flex-grow: 1;
+    -unity-text-align: upper-left;
+}

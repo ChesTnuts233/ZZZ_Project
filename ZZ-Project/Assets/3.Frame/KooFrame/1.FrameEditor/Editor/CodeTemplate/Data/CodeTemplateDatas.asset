@@ -14,8 +14,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CodeTemplates:
   - Name: A
-    CodeContent: 
+    ID: 
+    CodeContent: aaaaa
   - Name: B
-    CodeContent: 
+    ID: 
+    CodeContent: bbbbbb
   - Name: C
+    ID: 
+    CodeContent: cccccc
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
+    CodeContent: 
+  - Name: 
+    ID: 
     CodeContent: 

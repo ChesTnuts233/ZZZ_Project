@@ -23,13 +23,11 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ff562468ca455944fac1e8d27b1a2a2d
-    m_Address: Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplateDatas.asset
+    m_Address: CodeTemplateDatas
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: df37f99d0404e274e97fd3c65ff32c20, type: 2}
   m_SchemaSet:
-    m_Schemas:
-    - {fileID: 11400000, guid: 08f6fd17bfb17bc4385dfed9393d733c, type: 2}
-    - {fileID: 11400000, guid: 3e1bb2f509d8b574e8bc1a39a22d6a8b, type: 2}
+    m_Schemas: []
