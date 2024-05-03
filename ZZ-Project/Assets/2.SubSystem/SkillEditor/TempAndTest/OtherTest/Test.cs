@@ -6,7 +6,7 @@ namespace  AE_SkillEditor_Plus.TempAndTest
 {
     public class Test
     {
-        [MenuItem("Test/写入子类 测试SO中父子类")]
+        [CodeTemplateMenuItem("Test/写入子类 测试SO中父子类")]
         public static void TestFunWrite()
         {
             var test = ScriptableObject.CreateInstance<TestOS>();
@@ -25,7 +25,7 @@ namespace  AE_SkillEditor_Plus.TempAndTest
             Debug.Log("TestOS created at " + path);
         }
 
-        [MenuItem("Test/读取 测试SO中父子类")]
+        [CodeTemplateMenuItem("Test/读取 测试SO中父子类")]
         public static void TestFunRead()
         {
             string path = "Assets/Temp/TestOS.asset"; // 指定保存路径

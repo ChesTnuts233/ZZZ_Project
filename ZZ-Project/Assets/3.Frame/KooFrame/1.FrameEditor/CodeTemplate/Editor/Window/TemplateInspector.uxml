@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Editor/Window/TemplateInspector.uss?fileID=7433441132597879392&amp;guid=398fa71abaa7208478edd51ab2aa1d97&amp;type=3#TemplateInspector" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1; background-color: rgba(43, 43, 43, 0); color: rgb(255, 255, 255);">
+        <ui:TextField picking-mode="Ignore" label="模板名称" name="TemplateName" />
+        <uie:ObjectField label="模板文本文件" allow-scene-objects="false" type="UnityEngine.TextAsset, UnityEngine.CoreModule" name="TextAssetField" />
+        <ui:ScrollView horizontal-scroller-visibility="Auto" style="flex-grow: 0.5;">
+            <ui:TextField picking-mode="Ignore" usage-hints="None" focusable="true" keyboard-type="Default" auto-correction="false" multiline="true" hide-mobile-input="false" name="CodeContent" />
+        </ui:ScrollView>
+        <ui:Button text="生成代码模板" display-tooltip-when-elided="true" name="CreateCodeTemplate" />
+    </ui:VisualElement>
+</ui:UXML>

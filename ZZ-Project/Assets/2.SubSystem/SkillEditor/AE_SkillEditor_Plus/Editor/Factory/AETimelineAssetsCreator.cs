@@ -15,7 +15,7 @@ namespace AE_SkillEditor_Plus.Factory
         public const string SUFFIX = "asset";
         // public const string SUFFIX = "aetimeline";
 
-        [MenuItem("Assets/Create/AETimeline编辑器/AETimelineAsset")]
+        [CodeTemplateMenuItem("Assets/Create/AETimeline编辑器/AETimelineAsset")]
         private static void CreatoFile()
         {
             AETimelineAssetsCreatorEndAction creatorEndAction =

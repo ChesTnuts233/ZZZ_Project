@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ffdb285be6b654bb60517ed70cc843, type: 3}
+  m_Name: CodeTemplateDatas
+  m_EditorClassIdentifier: 
+  CodeTemplates:
+  - Name:
+      _value: AEAudioClip
+    ID: 
+    CodeContent: "using UnityEngine;\r\n\r\nnamespace AE_SkillEditor_Plus.RunTime.BuiltTracks.Audio\r\n{\r\n   
+      public class AEAudioClip : StandardClip\r\n    {\r\n        public AudioClip
+      AudioClip;\r\n        public Vector3 Position;\r\n        public float Volume;\r\n   
+      }\r\n}"
+    CodeTemplateFile: {fileID: 11500000, guid: 7252bb5ce3b241e490494977bfe86cf8, type: 3}
+  - Name:
+      _value: AEAudioTrack
+    ID: 
+    CodeContent: "using System;\r\nusing AE_SkillEditor_Plus.RunTime.Attribute;\r\nusing
+      AE_SkillEditor_Plus.RunTime.Driver;\r\nusing AE_SkillEditor_Plus.RunTime.Interface;\r\n\r\nnamespace
+      AE_SkillEditor_Plus.RunTime.BuiltTracks.Audio\r\n{\r\n    [AETrackName(Name
+      = \"\u97F3\u9891\")]\r\n    [AETrackColor(253f/255, 194f/255, 4f/255)]\r\n   
+      [AEBindClip(ClipType = typeof(AEAudioClip))]\r\n    [Serializable]\r\n    public
+      class AEAudioTrack : StandardTrack,IEditorBehaviour\r\n    {\r\n        public
+      AEPlayableBehaviour CreateEditorBehaviour(StandardClip clip)\r\n        {\r\n           
+      return new AEAudioBehaviour(clip);\r\n        }\r\n    }\r\n}"
+    CodeTemplateFile: {fileID: 11500000, guid: bfaaeb3c0d22452ebad832366887f2ef, type: 3}
+  - Name:
+      _value: CodeTemplateInspector
+    ID: 
+    CodeContent: "using UnityEditor.UIElements;\r\nusing UnityEngine;\r\nusing UnityEngine.UIElements;\r\n\r\npublic
+      class CodeTemplateInspector : VisualElement\r\n{\r\n\tpublic new class UxmlFactory
+      : UxmlFactory<CodeTemplateInspector, VisualElement.UxmlTraits>\r\n\t{\r\n\t}\r\n\r\n\tprivate
+      CodeTemplateManagerWindow managerWindow;\r\n\r\n\tpublic CodeTemplateDatas
+      datas;\r\n\r\n\tpublic CodeTemplateData CurShowCodeTemplate;\r\n\r\n\r\n\t#region
+      \u9875\u9762\u5143\u7D20\r\n\r\n\t[SerializeField]\r\n\tprivate VisualTreeAsset
+      container_assets;\r\n\r\n\tprivate TextField codeContent;\r\n\r\n\tprivate
+      TextField nameInputField;\r\n\r\n\tprivate ObjectField textAssetField;\r\n\r\n\n\t#endregion\n\r\n\r\n\r\n\tpublic
+      void OnBindToManagerWindow(CodeTemplateManagerWindow managerWindow)\r\n\t{\r\n\t\tthis.managerWindow
+      = managerWindow;\r\n\r\n\t\tcontainer_assets = managerWindow.InspectorVisualTreeAsset;\r\n\r\n\t\tcontainer_assets.CloneTree(this);\r\n\r\n\t\tthis.style.flexGrow
+      = 1;\r\n\r\n\t\tBindTemplateName(); //\u7ED1\u5B9A\u540D\u79F0\u76F8\u5173\r\n\r\n\t\tBindTextAssetField();
+      //\u7ED1\u5B9ATextAssetFiled\r\n\r\n\t\tBindCodeContent(); //\u7ED1\u5B9AIMGUI\r\n\r\n\t\t//\u9996\u6B21\u5237\u65B0\u68C0\u89C6\u7A97\u53E3\r\n\t\tif
+      (datas != null && datas.CodeTemplates.Count > 0)\r\n\t\t{\r\n\t\t\tUpdateInspector(datas.CodeTemplates[0]);\r\n\t\t}\r\n\t}\r\n\r\n\tpublic
+      void OnClose()\r\n\t{\r\n\t}\r\n\r\n\r\n\r\n\tprivate void BindTemplateName()\r\n\t{\r\n\t\tnameInputField
+      = this.Q<TextField>(\"TemplateName\");\r\n\r\n\t\tnameInputField.RegisterValueChangedCallback((value)
+      =>\r\n\t\t{\r\n\t\t\tCurShowCodeTemplate.Name.SetValueWithoutAction(value.newValue);\r\n\t\t});\r\n\r\n\t}\r\n\r\n\r\n\r\n\tprivate
+      void BindCodeContent()\r\n\t{\r\n\r\n\t\tcodeContent = this.Q<TextField>(\"CodeContent\");\r\n\r\n\t\tcodeContent.RegisterValueChangedCallback((value)
+      =>\r\n\t\t{\r\n\t\t\tCurShowCodeTemplate.CodeContent = value.newValue;\r\n\t\t});\r\n\r\n\t\tdatas
+      = managerWindow.Datas;\r\n\t}\r\n\r\n\r\n\tprivate void BindTextAssetField()\r\n\t{\r\n\t\ttextAssetField
+      = this.Q<ObjectField>(\"TextAssetField\");\r\n\t\ttextAssetField.RegisterValueChangedCallback((value)
+      =>\r\n\t\t{\r\n\t\t\tCurShowCodeTemplate.CodeTemplateFile = value.newValue
+      as TextAsset;\r\n\t\t\tCurShowCodeTemplate.UpdateCodeContent();\r\n\t\t\tcodeContent.SetValueWithoutNotify(CurShowCodeTemplate.CodeContent);\r\n\t\t\tnameInputField.SetValueWithoutNotify(CurShowCodeTemplate.Name);\r\n\t\t});\r\n\t}\r\n\r\n\r\n\t///
+      <summary>\r\n\t/// \u66F4\u65B0\u68C0\u89C6\u9762\u677F\r\n\t/// </summary>\r\n\tpublic
+      void UpdateInspector(CodeTemplateData templateData)\r\n\t{\r\n\t\tCurShowCodeTemplate
+      = templateData;\r\n\r\n\r\n\r\n\r\n\t\tnameInputField.SetValueWithoutNotify(templateData.Name.Value);\r\n\t\ttextAssetField.SetValueWithoutNotify(templateData.CodeTemplateFile);\r\n\t\tcodeContent.SetValueWithoutNotify(templateData.CodeContent);\r\n\t}\r\n\r\n\r\n\r\n}\r\n"
+    CodeTemplateFile: {fileID: 11500000, guid: ea61cdb8466d3414e9c687a664e489ad, type: 3}
+  - Name:
+      _value: DefaultTemplate
+    ID: 
+    CodeContent: 
+    CodeTemplateFile: {fileID: 0}

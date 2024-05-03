@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Editor/Window/CodeTemplateManagerWindow.uss?fileID=7433441132597879392&amp;guid=5b2bc6c6e90e4b64b9090d06404ab89b&amp;type=3#CodeTemplateManagerWindow" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1; flex-direction: column; background-color: rgb(60, 60, 60); justify-content: flex-start; align-items: stretch; align-self: auto; flex-wrap: nowrap;">
+        <ui:VisualElement name="UpDiv" style="border-left-color: rgb(118, 118, 118); border-right-color: rgb(118, 118, 118); border-top-color: rgb(118, 118, 118); border-bottom-color: rgb(118, 118, 118); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; flex-direction: row;">
+            <ui:Button text="Settings" display-tooltip-when-elided="true" />
+        </ui:VisualElement>
+        <ui:VisualElement name="DownDiv" style="flex-grow: 1; flex-direction: row; flex-shrink: 1; position: relative;">
+            <ui:VisualElement name="LeftDiv" style="flex-grow: 0.3; background-color: rgba(166, 140, 140, 0.23); border-left-color: rgba(200, 199, 199, 0.72); border-right-color: rgba(200, 199, 199, 0.72); border-top-color: rgba(200, 199, 199, 0.72); border-bottom-color: rgba(200, 199, 199, 0.72); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;">
+                <ui:Label tabindex="-1" text="代码模板" display-tooltip-when-elided="true" />
+                <ui:ListView name="CodeDataList" style="flex-grow: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="RightDiv" style="flex-grow: 0.7;">
+                <CodeTemplateInspector name="CodeTemplateInspector" style="display: flex; flex-grow: 1;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

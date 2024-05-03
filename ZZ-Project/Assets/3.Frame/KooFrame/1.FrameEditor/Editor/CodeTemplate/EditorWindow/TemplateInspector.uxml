@@ -1,7 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/3.Frame/KooFrame/1.FrameEditor/Editor/CodeTemplate/EditorWindow/TemplateInspector.uss?fileID=7433441132597879392&amp;guid=398fa71abaa7208478edd51ab2aa1d97&amp;type=3#TemplateInspector" />
-    <ui:VisualElement name="BackGround" style="flex-grow: 1; background-color: rgba(125, 125, 125, 0.84);">
-        <ui:TextField picking-mode="Ignore" label="模板名称" name="TemplateName" />
-        <ui:IMGUIContainer name="Inspector" style="flex-grow: 0.5;" />
-    </ui:VisualElement>
-</ui:UXML>
