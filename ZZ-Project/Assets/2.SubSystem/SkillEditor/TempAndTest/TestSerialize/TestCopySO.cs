@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class TestCopySO : MonoBehaviour
 {
-    [CodeTemplateMenuItem("Test/测试拷贝SO")]
+    [MenuItem("Test/测试拷贝SO")]
     public static void TestFUn()
     {
         //复制资源

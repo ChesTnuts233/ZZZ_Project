@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Editor/Window/USS/CodeTemplateCreateWindow.uss?fileID=7433441132597879392&amp;guid=6f5ab839d3cf51d4db915075d0e5dadd&amp;type=3#CodeTemplateCreateWindow" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1;">
+        <ui:TextField picking-mode="Ignore" label="模板名称" name="NameInput" />
+        <ui:Button text="创建模板" display-tooltip-when-elided="true" name="CreateBtn" />
+    </ui:VisualElement>
+</ui:UXML>

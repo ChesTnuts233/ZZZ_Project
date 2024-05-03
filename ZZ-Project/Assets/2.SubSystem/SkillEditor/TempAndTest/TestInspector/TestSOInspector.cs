@@ -25,7 +25,7 @@ namespace TempAndTest.TestInspector
             }
         }
 
-        [CodeTemplateMenuItem("Test/测试面板")]
+        [MenuItem("Test/测试面板")]
         public static void TestFun()
         {
             Selection.activeObject = Instance;

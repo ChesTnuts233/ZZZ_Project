@@ -103,7 +103,8 @@ public class CodeTemplateManagerWindow : EditorWindow
 		menu.AddItem(new GUIContent("添加脚本模板"), false, () =>
 		{
 			//打开创建模板窗口
-			factory.CreateData();
+			CodeTemplateCreateWindow.ShowWindow();
+
 			listView.Rebuild();
 		});
 

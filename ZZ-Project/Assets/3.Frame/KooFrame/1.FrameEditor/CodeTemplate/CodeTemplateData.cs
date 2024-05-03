@@ -25,6 +25,11 @@ public class CodeTemplateData
 	[SerializeField]
 	public TextAsset CodeTemplateFile;
 
+	public CodeTemplateData(string name)
+	{
+		Name = new() { ValueWithoutAction = name };
+	}
+
 
 	/// <summary>
 	/// 根据TextAsset编辑

@@ -2,6 +2,7 @@
 
 
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEditor;
@@ -15,6 +16,8 @@ namespace KooFrame.BaseSystem
 	/// </summary>
 	public static class ScriptsTemplatesCreater
 	{
+		private static MethodInfo createScriptAssetWithContentInfo;
+
 		public static void CreateMyScript(string scriptName, string resourceFile)
 		{
 			string locationPath = GetSelectedPathOrFallback();
@@ -22,6 +25,23 @@ namespace KooFrame.BaseSystem
 				ScriptableObject.CreateInstance<MyDoCreateScriptAsset_Mono>(),
 				locationPath + "/" + scriptName, null,
 				resourceFile);
+		}
+
+
+		public static void CreateScriptByContent(string scriptName, string content)
+		{
+			string locationPath = GetSelectedPathOrFallback();
+
+			//Unity不给 只能反射。。。。
+			//ProjectWindowUtil
+
+			createScriptAssetWithContentInfo = typeof(ProjectWindowUtil).GetMethod("CreateScriptAssetWithContent");
+
+			//createScriptAssetWithContentInfo.Invoke(null, new object[] { scriptName, });
+
+			//ProjectWindowUtil.CreateScriptAssetWithContent()
+
+			//return 
 		}
 
 
@@ -73,8 +93,6 @@ namespace KooFrame.BaseSystem
 				AssetDatabase.ImportAsset(pathName);
 				return AssetDatabase.LoadAssetAtPath(pathName, typeof(UnityEngine.Object));
 			}
-
-			//internal static 
 		}
 	}
 }

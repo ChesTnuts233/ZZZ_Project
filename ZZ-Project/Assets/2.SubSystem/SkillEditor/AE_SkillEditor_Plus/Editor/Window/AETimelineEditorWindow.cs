@@ -25,7 +25,7 @@ namespace AE_SkillEditor_Plus.Editor.Window
 		public static string Title = "AETimeline编辑器";
 
 		//打开窗口
-		[CodeTemplateMenuItem("Tools/AETimeline编辑器")]
+		[MenuItem("Tools/AETimeline编辑器")]
 		public static void OpenWindiw()
 		{
 			var window = CreateWindow<AETimelineEditorWindow>(Title);
