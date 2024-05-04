@@ -1,5 +1,7 @@
 using KooFrame;
+using System;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,7 +11,7 @@ public class CodeTemplateCreateWindow : EditorWindow
 	private VisualTreeAsset m_VisualTreeAsset = default;
 
 
-	private string curCreateTemplateName;
+	private CodeTemplateData curCreateTemplateData;
 
 	private CodeTemplateFactory factory;
 
@@ -18,6 +20,8 @@ public class CodeTemplateCreateWindow : EditorWindow
 	#region 页面元素
 
 	private TextField nameField;
+
+	private ObjectField codeTemplateFile;
 
 	private Button createBtn;
 
@@ -44,12 +48,34 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 		BindNameField(root);
 
+		BindTextAssetField(root);
+
 		BindCreateBtn(root);
 
 		nameField.Focus();
+
+		curCreateTemplateData = new();
 	}
 
 
+	private void BindTextAssetField(VisualElement root)
+	{
+		codeTemplateFile = root.Q<ObjectField>("CodeTemplateFile");
+
+		codeTemplateFile.RegisterValueChangedCallback((value) =>
+		{
+			curCreateTemplateData.CodeTemplateFile = value.newValue as TextAsset;
+
+			nameField.text.IsNullOrWhitespace().Log();
+
+			if (nameField.text.IsNullOrWhitespace())
+			{
+				nameField.SetValueWithoutNotify(value.newValue.name);
+			}
+
+			curCreateTemplateData.UpdateCodeContent();
+		});
+	}
 
 
 	private void BindNameField(VisualElement root)
@@ -58,7 +84,7 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 		nameField.RegisterValueChangedCallback((value) =>
 		{
-			curCreateTemplateName = value.newValue;
+			curCreateTemplateData.Name.ValueWithoutAction = value.newValue;
 		});
 	}
 
@@ -66,31 +92,43 @@ public class CodeTemplateCreateWindow : EditorWindow
 	{
 		createBtn = root.Q<Button>("CreateBtn");
 
-
 		createBtn.clicked += CreateCodeTempData;
 	}
 
 	private void CreateCodeTempData()
 	{
 		bool isHasSameData = false;
+		bool isHasLegalChar = false;
 		//先看Datas里是否有重名的  重名的不能添加
 		foreach (var data in datas.CodeTemplates)
 		{
-			if (data.Name == curCreateTemplateName)
+			if (data.Name.Value == curCreateTemplateData.Name.Value)
 			{
 				isHasSameData = true;
 			}
 		}
+		if (KooTool.IsContainsIllegalCharacters(curCreateTemplateData.Name.Value))
+		{
+			isHasLegalChar = true;
+		}
+
 		if (isHasSameData)
 		{
 			EditorUtility.DisplayDialog("警告", "已经有相同名称的成员", "确定");
 			return;
 		}
+		if (isHasLegalChar)
+		{
+			EditorUtility.DisplayDialog("警告", "名称中含有非法字符", "确定");
+			return;
+		}
+
+		//检查名称中是否有非法符号
 
 
 
 		//创建模板数据
-		factory.CreateData(curCreateTemplateName);
+		factory.AddData(curCreateTemplateData);
 
 
 		////创建模板文件
@@ -109,7 +147,6 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	}
 
-	
 
 
 }

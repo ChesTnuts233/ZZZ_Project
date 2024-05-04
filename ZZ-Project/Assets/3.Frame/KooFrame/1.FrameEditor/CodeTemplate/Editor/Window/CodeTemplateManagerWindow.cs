@@ -67,19 +67,12 @@ public class CodeTemplateManagerWindow : EditorWindow
 	{
 		VisualElement root = rootVisualElement;
 		m_VisualTreeAsset.CloneTree(root);
-		listView = root.Q<ListView>("CodeDataList");
 
-		CreateCodeDatasListView();
+		BindDiv(root);
 
+		BindInspector(root);
 
-		inspector = root.Q<CodeTemplateInspector>("CodeTemplateInspector");
-		inspector.OnBindToManagerWindow(this);
-
-
-		rightDiv = root.Q<VisualElement>("RightDiv");
-
-		leftDiv = root.Q<VisualElement>("LeftDiv");
-
+		CreateCodeDatasListView(root);
 	}
 
 	private void OnGUI()
@@ -95,11 +88,28 @@ public class CodeTemplateManagerWindow : EditorWindow
 		}
 	}
 
+
+
+
 	private void OnDestroy()
 	{
-		inspector.OnClose();
+		inspector?.OnClose();
 	}
 
+	private void BindDiv(VisualElement root)
+	{
+		upDiv = root.Q<VisualElement>("UpDiv");
+		downDiv = root.Q<VisualElement>("DownDiv");
+		rightDiv = root.Q<VisualElement>("RightDiv");
+		leftDiv = root.Q<VisualElement>("LeftDiv");
+	}
+
+
+	private void BindInspector(VisualElement root)
+	{
+		inspector = root.Q<CodeTemplateInspector>("CodeTemplateInspector");
+		inspector.OnBindToManagerWindow(this);
+	}
 
 	private void CreateTemplateListMenu(GenericMenu menu)
 	{
@@ -126,8 +136,9 @@ public class CodeTemplateManagerWindow : EditorWindow
 	/// <summary>
 	/// 获取所有的模板数据
 	/// </summary>
-	private void CreateCodeDatasListView()
+	private void CreateCodeDatasListView(VisualElement root)
 	{
+		listView = root.Q<ListView>("CodeDataList");
 		if (Datas == null)
 		{
 			Datas = AssetDatabase.LoadAssetAtPath<CodeTemplateDatas>(CodeDatasPath);
@@ -168,8 +179,33 @@ public class CodeTemplateManagerWindow : EditorWindow
 		//当创建数据的时候 刷新ListView
 		factory.OnCreateData += () =>
 		{
-			listView.Rebuild();
+			UpdateListView();
 		};
+
+		factory.OnDeleteData += () =>
+		{
+			UpdateListView();
+		};
+
+		UpdateListView();
+	}
+
+
+	private void UpdateListView()
+	{
+		if (listView != null)
+		{
+			listView.Rebuild();
+			//列表空了
+			if (listView.itemsSource.Count == 0)
+			{
+				rightDiv.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+			}
+			else
+			{
+				rightDiv.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+			}
+		}
 	}
 
 	private void OnCodeDataSelectChange(IEnumerable<object> enumerable)

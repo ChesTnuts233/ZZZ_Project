@@ -9,7 +9,7 @@
                 <ui:Label tabindex="-1" text="代码模板" display-tooltip-when-elided="true" />
                 <ui:ListView name="CodeDataList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1;" />
             </ui:VisualElement>
-            <ui:VisualElement name="RightDiv" style="flex-grow: 0.7;">
+            <ui:VisualElement name="RightDiv" style="flex-grow: 0.7; display: none;">
                 <CodeTemplateInspector name="CodeTemplateInspector" style="display: flex; flex-grow: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>

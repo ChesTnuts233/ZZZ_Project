@@ -32,22 +32,22 @@ namespace KooFrame.BaseSystem
 		{
 			string locationPath = GetSelectedPathOrFallback();
 
-			//反射得到内容创建
-			createScriptAssetWithContentInfo = typeof(ProjectWindowUtil).GetMethod("CreateScriptAssetWithContent", BindingFlags.NonPublic | BindingFlags.Static);
+			////反射得到内容创建
+			//createScriptAssetWithContentInfo = typeof(ProjectWindowUtil).GetMethod("CreateScriptAssetWithContent", BindingFlags.NonPublic | BindingFlags.Static);
 
 			string targetFilePath = locationPath + "/" + scriptName + ".cs";
 
-			content.Log();
+			//content.Log();
 
-			targetFilePath.Log();
+			//targetFilePath.Log();
 
-			createScriptAssetWithContentInfo.Invoke(null, new object[] { targetFilePath, content });
+			//createScriptAssetWithContentInfo.Invoke(null, new object[] { targetFilePath, content });
 
 
-			//ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,
-			//	ScriptableObject.CreateInstance<MyDoCreateScriptAsset_Mono>(),
-			//	locationPath + "/" + scriptName, null,
-			//	targetFilePath);
+			ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,
+				ScriptableObject.CreateInstance<MyDoCreateScriptAssetInString_Mono>(),
+				targetFilePath, null,
+				content);
 
 			//return 
 		}
@@ -102,38 +102,38 @@ namespace KooFrame.BaseSystem
 			}
 		}
 
-		//internal class MyDoCreateScriptAssetInString_Mono : EndNameEditAction
-		//{
-		//	public override void Action(int instanceId, string pathName, string resourceFile)
-		//	{
-		//		Object o = CreateScriptAssetFromTemplate(pathName, resourceFile);
-		//		ProjectWindowUtil.ShowCreatedAsset(o);
-		//	}
+		internal class MyDoCreateScriptAssetInString_Mono : EndNameEditAction
+		{
+			public override void Action(int instanceId, string pathName, string resourceFile)
+			{
+				Object o = CreateScriptAssetInContent(pathName, resourceFile);
+				ProjectWindowUtil.ShowCreatedAsset(o);
+			}
 
-		//	internal static UnityEngine.Object CreateScriptAssetFromTemplate(string pathName, string resourceFile)
-		//	{
-		//		string fullPath = Path.GetFullPath(pathName);
-		//		StreamReader streamReader = new StreamReader(resourceFile);
-		//		string text = streamReader.ReadToEnd();
-		//		streamReader.Close();
+			internal static UnityEngine.Object CreateScriptAssetInContent(string pathName, string content)
+			{
+				string fullPath = Path.GetFullPath(pathName);
+				//StreamReader streamReader = new StreamReader(resourceFile);
+				//streamReader.Close();
+				string text = content;
 
-		//		string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(pathName);
-		//		Debug.Log(fileNameWithoutExtension);
-		//		//替换文件名
+				string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(pathName);
+				Debug.Log(fileNameWithoutExtension);
+				//替换文件名
 
-		//		text = Regex.Replace(text, "#SCRIPTNAME#", fileNameWithoutExtension);
-		//		bool encoderShouldEmitUTF8Identifier = true;
-		//		bool throwOnInvalidBytes = false;
-		//		UTF8Encoding encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier, throwOnInvalidBytes);
-		//		bool append = false;
+				text = Regex.Replace(text, "#SCRIPTNAME#", fileNameWithoutExtension);
+				bool encoderShouldEmitUTF8Identifier = true;
+				bool throwOnInvalidBytes = false;
+				UTF8Encoding encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier, throwOnInvalidBytes);
+				bool append = false;
 
-		//		StreamWriter streamWriter = new StreamWriter(fullPath, append, encoding);
-		//		streamWriter.Write(text);
-		//		streamWriter.Close();
-		//		AssetDatabase.ImportAsset(pathName);
-		//		return AssetDatabase.LoadAssetAtPath(pathName, typeof(UnityEngine.Object));
-		//	}
-		//}
+				StreamWriter streamWriter = new StreamWriter(fullPath, append, encoding);
+				streamWriter.Write(text);
+				streamWriter.Close();
+				AssetDatabase.ImportAsset(pathName);
+				return AssetDatabase.LoadAssetAtPath(pathName, typeof(UnityEngine.Object));
+			}
+		}
 	}
 }
 #endif

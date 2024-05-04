@@ -21,6 +21,14 @@ public class CodeTemplateFactory
 
 	}
 
+
+	public void AddData(CodeTemplateData data)
+	{
+		codeTemplateDatas.CodeTemplates.Add(data);
+
+		UpdateAndSave();
+	}
+
 	/// <summary>
 	/// 创建脚本模板
 	/// </summary>
@@ -32,11 +40,7 @@ public class CodeTemplateFactory
 
 		OnCreateData?.Invoke();
 
-		//更新MenuItem
-		UpdateTemplateMenuItem();
-
-		EditorUtility.SetDirty(codeTemplateDatas);
-		AssetDatabase.SaveAssets();
+		UpdateAndSave();
 		return createDate;
 	}
 
@@ -49,6 +53,12 @@ public class CodeTemplateFactory
 
 		OnDeleteData?.Invoke();
 
+		UpdateAndSave();
+	}
+
+
+	private void UpdateAndSave()
+	{
 		//更新MenuItem
 		UpdateTemplateMenuItem();
 

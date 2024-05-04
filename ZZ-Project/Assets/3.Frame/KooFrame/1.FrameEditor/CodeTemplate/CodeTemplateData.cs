@@ -42,11 +42,16 @@ public class CodeTemplateData
 			CodeContent = CodeTemplateFile.text;
 		}
 
-		Name.Value = CodeTemplateFile.name;
-
+		if (Name.Value.IsNullOrWhitespace())
+		{
+			Name.Value = CodeTemplateFile.name;
+		}
 	}
 
 
+	public CodeTemplateData()
+	{
 
+	}
 
 }
