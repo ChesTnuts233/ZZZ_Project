@@ -1,3 +1,4 @@
+using KooFrame;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -44,6 +45,8 @@ public class CodeTemplateCreateWindow : EditorWindow
 		BindNameField(root);
 
 		BindCreateBtn(root);
+
+		nameField.Focus();
 	}
 
 
@@ -69,11 +72,32 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	private void CreateCodeTempData()
 	{
-		//创建模板数据
-		factory.CreateData("curCreateTemplateName");
-		//创建模板文件
-		CreateTXTTemplateFile();
+		bool isHasSameData = false;
+		//先看Datas里是否有重名的  重名的不能添加
+		foreach (var data in datas.CodeTemplates)
+		{
+			if (data.Name == curCreateTemplateName)
+			{
+				isHasSameData = true;
+			}
+		}
+		if (isHasSameData)
+		{
+			EditorUtility.DisplayDialog("警告", "已经有相同名称的成员", "确定");
+			return;
+		}
 
+
+
+		//创建模板数据
+		factory.CreateData(curCreateTemplateName);
+
+
+		////创建模板文件
+		//CreateTXTTemplateFile();
+		//UpdateTemplateMenuItem();
+
+		Close();
 	}
 
 
@@ -85,19 +109,7 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	}
 
-	private void UpdateTemplateMenuItem()
-	{
-		//遍历所有的codeTemplateDatas，根据名称生成对应的MenuItem
-		string updateContent = "";
-		foreach (CodeTemplateData data in datas.CodeTemplates)
-		{
-			updateContent += "\t\t[MenuItem(\"Assets/KooFrame-脚本/" + data.Name + "\", false, 0)]\r\n\t\tpublic static void Create" + data.Name + "Scripts()\r\n\t\t{\r\n\t\t\tScriptsTemplatesCreater.CreateMyScript(\"DefaultMonoScripts.cs\",\r\n\t\t\t\tTemplatesPath + \"/04-KooFrame__MonoBehaviour 完整架构模板.cs.txt\");\r\n\t\t}";
-
-		}
-
-		////生成右键菜单选项
-		//KooTool.CodeGenerator_ByTag<CodeTemplateMenuItem>();
-	}
+	
 
 
 }

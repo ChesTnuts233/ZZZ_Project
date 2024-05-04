@@ -14,13 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CodeTemplates:
   - Name:
-      _value: AEAudioClip
+      _value: CodeTemplateFactory
     ID: 
-    CodeContent: "using UnityEngine;\r\n\r\nnamespace AE_SkillEditor_Plus.RunTime.BuiltTracks.Audio\r\n{\r\n   
-      public class AEAudioClip : StandardClip\r\n    {\r\n        public AudioClip
-      AudioClip;\r\n        public Vector3 Position;\r\n        public float Volume;\r\n   
-      }\r\n}"
-    CodeTemplateFile: {fileID: 11500000, guid: 7252bb5ce3b241e490494977bfe86cf8, type: 3}
+    CodeContent: "using System;\r\nusing UnityEditor;\r\n/// <summary>\r\n/// \u4EE3\u7801\u6A21\u677F\u5DE5\u5382\r\n///
+      </summary>\r\npublic class CodeTemplateFactory\r\n{\r\n\tprivate CodeTemplateDatas
+      codeTemplateDatas;\r\n\r\n\tpublic CodeTemplateDatas Datas => codeTemplateDatas;\r\n\r\n\r\n\tpublic
+      Action OnCreateData;\r\n\r\n\tpublic CodeTemplateFactory()\r\n\t{\r\n\t\tcodeTemplateDatas
+      = AssetDatabase.LoadAssetAtPath<CodeTemplateDatas>(\"Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeTemplateDatas.asset\");\r\n\r\n\t}\r\n\r\n\t///
+      <summary>\r\n\t/// \u521B\u5EFA\u811A\u672C\u6A21\u677F\r\n\t/// </summary>\r\n\t///
+      <returns>\u6A21\u677F\u6570\u636E</returns>\r\n\tpublic CodeTemplateData CreateData(string
+      name = \"DefaultTemplate\")\r\n\t{\r\n\t\tCodeTemplateData createDate = new
+      CodeTemplateData(name);\r\n\t\tcodeTemplateDatas.CodeTemplates.Add(createDate);\r\n\r\n\t\tOnCreateData?.Invoke();\r\n\r\n\t\tEditorUtility.SetDirty(codeTemplateDatas);\r\n\t\tAssetDatabase.SaveAssets();\r\n\t\treturn
+      createDate;\r\n\t}\r\n\r\n\r\n\r\n\r\n\tpublic void DeleteData(CodeTemplateData
+      data)\r\n\t{\r\n\t\tcodeTemplateDatas.CodeTemplates.Remove(data);\r\n\r\n\t\tEditorUtility.SetDirty(codeTemplateDatas);\r\n\t\tAssetDatabase.SaveAssets();\r\n\t}\r\n\r\n}\r\n"
+    CodeTemplateFile: {fileID: 11500000, guid: 74a3036ff8283a246a0144b35b1e95e1, type: 3}
   - Name:
       _value: AEAudioTrack
     ID: 
@@ -63,7 +70,7 @@ MonoBehaviour:
       = templateData;\r\n\r\n\r\n\r\n\r\n\t\tnameInputField.SetValueWithoutNotify(templateData.Name.Value);\r\n\t\ttextAssetField.SetValueWithoutNotify(templateData.CodeTemplateFile);\r\n\t\tcodeContent.SetValueWithoutNotify(templateData.CodeContent);\r\n\t}\r\n\r\n\r\n\r\n}\r\n"
     CodeTemplateFile: {fileID: 11500000, guid: ea61cdb8466d3414e9c687a664e489ad, type: 3}
   - Name:
-      _value: DefaultTemplate
+      _value: Test
     ID: 
     CodeContent: 
     CodeTemplateFile: {fileID: 0}

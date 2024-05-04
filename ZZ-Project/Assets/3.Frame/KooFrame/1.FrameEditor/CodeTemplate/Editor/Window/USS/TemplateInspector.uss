@@ -1,4 +1,4 @@
-#TemplateContent > #unity-text-input {
-    flex-grow: 1;
-    -unity-text-align: upper-left;
+#CodeContent > #unity-text-input {
+    font-size: 14px;
+    -unity-font-definition: url('project://database/Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Editor/Window/Editor%20Default%20Resources/HarmonyOS_Sans_SC_Medium%20SDF.asset?fileID=11400000&guid=3b3c70f809bb1dd44984b8af4370c6a6&type=2#HarmonyOS_Sans_SC_Medium SDF');
 }

@@ -10,4 +10,18 @@ public class CodeTemplateDatas : ConfigBase_SO
 	/// </summary>
 	public List<CodeTemplateData> CodeTemplates = new();
 
+
+
+	public string GetCodeContentByDataName(string name)
+	{
+		string content = "";
+
+		CodeTemplateData sameNameData = CodeTemplates.Find(data => data.Name.Value == name);
+
+		//取第一个
+		content = sameNameData.CodeContent;
+
+		return content;
+	}
+
 }

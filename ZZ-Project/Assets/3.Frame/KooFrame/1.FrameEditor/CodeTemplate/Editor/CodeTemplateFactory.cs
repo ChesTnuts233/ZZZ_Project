@@ -1,3 +1,5 @@
+using KooFrame;
+using System;
 using UnityEditor;
 /// <summary>
 /// 代码模板工厂
@@ -7,6 +9,11 @@ public class CodeTemplateFactory
 	private CodeTemplateDatas codeTemplateDatas;
 
 	public CodeTemplateDatas Datas => codeTemplateDatas;
+
+
+	public Action OnCreateData;
+	public Action OnDeleteData;
+
 
 	public CodeTemplateFactory()
 	{
@@ -23,22 +30,45 @@ public class CodeTemplateFactory
 		CodeTemplateData createDate = new CodeTemplateData(name);
 		codeTemplateDatas.CodeTemplates.Add(createDate);
 
+		OnCreateData?.Invoke();
 
+		//更新MenuItem
+		UpdateTemplateMenuItem();
 
 		EditorUtility.SetDirty(codeTemplateDatas);
 		AssetDatabase.SaveAssets();
 		return createDate;
 	}
 
-	
+
 
 
 	public void DeleteData(CodeTemplateData data)
 	{
 		codeTemplateDatas.CodeTemplates.Remove(data);
 
+		OnDeleteData?.Invoke();
+
+		//更新MenuItem
+		UpdateTemplateMenuItem();
+
 		EditorUtility.SetDirty(codeTemplateDatas);
 		AssetDatabase.SaveAssets();
+	}
+
+
+	private void UpdateTemplateMenuItem()
+	{
+		//遍历所有的codeTemplateDatas，根据名称生成对应的MenuItem
+		string updateContent = "";
+		foreach (CodeTemplateData data in Datas.CodeTemplates)
+		{
+			updateContent += "\t[MenuItem(\"Assets/KooFrame-脚本/" + data.Name + "\", false, 0)]\r\n\tpublic static void Create" + data.Name + "Scripts()\r\n\t{\r\n\t\tScriptsTemplatesCreater.CreateScriptByContent(\"" + data.Name + "\",\r\n\t\t\tDatas.GetCodeContentByDataName(\"" + data.Name + "\"));\r\n\t}\n";
+
+		}
+
+		//生成右键菜单选项
+		KooTool.CodeGenerator_ByTag(updateContent, "Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Editor/CodeTemplateMenuItem.cs");
 	}
 
 }

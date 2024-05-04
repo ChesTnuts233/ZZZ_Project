@@ -38,6 +38,7 @@ public class CodeTemplateData
 	{
 		if (CodeTemplateFile != null)
 		{
+
 			CodeContent = CodeTemplateFile.text;
 		}
 

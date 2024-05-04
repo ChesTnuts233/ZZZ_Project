@@ -46,6 +46,9 @@ public class CodeTemplateManagerWindow : EditorWindow
 	private List<CodeTemplateData> selectedListItems = new();
 
 
+	public static string CodeDatasPath = "Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeTemplateDatas.asset";
+
+
 
 
 	[MenuItem("KooFrame/代码模板管理")]
@@ -127,7 +130,7 @@ public class CodeTemplateManagerWindow : EditorWindow
 	{
 		if (Datas == null)
 		{
-			Datas = AssetDatabase.LoadAssetAtPath<CodeTemplateDatas>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeTemplateDatas.asset");
+			Datas = AssetDatabase.LoadAssetAtPath<CodeTemplateDatas>(CodeDatasPath);
 		}
 
 
@@ -162,6 +165,11 @@ public class CodeTemplateManagerWindow : EditorWindow
 
 		listView.selectionChanged += OnCodeDataSelectChange;
 
+		//当创建数据的时候 刷新ListView
+		factory.OnCreateData += () =>
+		{
+			listView.Rebuild();
+		};
 	}
 
 	private void OnCodeDataSelectChange(IEnumerable<object> enumerable)
