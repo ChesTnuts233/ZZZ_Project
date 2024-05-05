@@ -8,13 +8,16 @@ public class CodeTemplateInspector : VisualElement
 {
 	public new class UxmlFactory : UxmlFactory<CodeTemplateInspector, VisualElement.UxmlTraits>
 	{
+
 	}
 
-	private CodeTemplateManagerWindow managerWindow;
+	private CodeManagerWindow managerWindow;
 
-	public CodeTemplateDatas datas;
+	public CodeDatas datas;
 
 	public CodeTemplateData CurShowCodeTemplate;
+
+
 
 
 	#region 页面元素
@@ -42,12 +45,11 @@ public class CodeTemplateInspector : VisualElement
 	#endregion
 
 
-
-	public void OnBindToManagerWindow(CodeTemplateManagerWindow managerWindow)
+	public void BindToManagerWindow(CodeManagerWindow managerWindow)
 	{
 		this.managerWindow = managerWindow;
 
-		container_assets = managerWindow.InspectorVisualTreeAsset;
+		container_assets = managerWindow.TemplateInspectorVisualTreeAsset;
 
 		container_assets.CloneTree(this);
 
@@ -77,8 +79,9 @@ public class CodeTemplateInspector : VisualElement
 		codeView = this.Q<Label>("CodeView");
 		codeViewScroll = this.Q<ScrollView>("CodeView");
 		codeEditorScroll = this.Q<ScrollView>("CodeEditor");
-		codeEditorScroll.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
-		codeViewScroll.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+		codeEditorScroll.style.display = DisplayStyle.None;
+		codeViewScroll.style.display = DisplayStyle.Flex;
+
 
 		BindEditorBtn();
 		BindViewBtn();
@@ -102,8 +105,10 @@ public class CodeTemplateInspector : VisualElement
 
 		editorBtn.clicked += () =>
 		{
-			codeEditorScroll.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
-			codeViewScroll.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+			codeViewScroll.style.display = DisplayStyle.None;
+			codeViewScroll.RemoveFromClassList("show-ani");
+			codeEditorScroll.style.display = DisplayStyle.Flex;
+			codeEditorScroll.AddToClassList("show-ani");
 		};
 	}
 
@@ -113,9 +118,13 @@ public class CodeTemplateInspector : VisualElement
 
 		viewBtn.clicked += () =>
 		{
-			codeEditorScroll.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
-			codeViewScroll.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+			codeEditorScroll.style.display = DisplayStyle.None;
+			codeEditorScroll.RemoveFromClassList("show-ani");
+			codeViewScroll.style.display = DisplayStyle.Flex;
+			codeViewScroll.AddToClassList("show-ani");
 		};
+
+
 	}
 
 	private void UpdateCodeView(string codeContent)
@@ -130,7 +139,7 @@ public class CodeTemplateInspector : VisualElement
 			string color = kvp.Value;
 
 			// 使用正则表达式替换关键词并添加颜色标识
-			coloredCode = Regex.Replace(coloredCode, "\\b" + keyword + "\\b", "<color=" + color + ">" + keyword + "</color>");
+			coloredCode = Regex.Replace(coloredCode, "(^|\\s)(" + keyword + ")(?=$|\\s)", "$1<color=" + color + ">$2</color>");
 		}
 
 		codeView.text = coloredCode;
@@ -145,7 +154,10 @@ public class CodeTemplateInspector : VisualElement
 		codeContent.RegisterValueChangedCallback((value) =>
 		{
 			CurShowCodeTemplate.CodeContent = value.newValue;
+			UpdateCodeView(value.newValue);
 		});
+
+
 
 		datas = managerWindow.Datas;
 	}
@@ -262,6 +274,12 @@ public class CodeTemplateInspector : VisualElement
     {"#pragma warning", "#00a0e8"}, // sky blue
     {"#pragma checksum", "#00a0e8"}, // sky blue
     {"#pragma warning disable", "#00a0e8"}, // sky blue
-    {"#pragma warning restore", "#00a0e8"} // sky blue
+    {"#pragma warning restore", "#00a0e8"}, // sky blue
+	{"#SCRIPTNAME#", "#8258FA"}, // medium purple
+    {"#AUTHORNAME#", "#8258FA"}, // medium purple
+    {"#CREATETIME#", "#8258FA"}, // medium purple
+
 };
 }
+
+

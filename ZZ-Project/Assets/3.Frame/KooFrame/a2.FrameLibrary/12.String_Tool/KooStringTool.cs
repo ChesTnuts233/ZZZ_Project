@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace KooFrame
@@ -203,7 +202,7 @@ namespace KooFrame
 		{
 			foreach (char c in input)
 			{
-				if (!IsLegalCharacter(c))
+				if (IsLegalCharacter(c))
 				{
 					return true; // 包含非法字符
 				}

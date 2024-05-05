@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 
 
+using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -56,7 +57,7 @@ namespace KooFrame.BaseSystem
 		public static string GetSelectedPathOrFallback()
 		{
 			string path = "Assets";
-			foreach (Object obj in Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.Assets))
+			foreach (UnityEngine.Object obj in Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.Assets))
 			{
 				path = AssetDatabase.GetAssetPath(obj);
 				if (!string.IsNullOrEmpty(path) && File.Exists(path))
@@ -73,7 +74,7 @@ namespace KooFrame.BaseSystem
 		{
 			public override void Action(int instanceId, string pathName, string resourceFile)
 			{
-				Object o = CreateScriptAssetFromTemplate(pathName, resourceFile);
+				UnityEngine.Object o = CreateScriptAssetFromTemplate(pathName, resourceFile);
 				ProjectWindowUtil.ShowCreatedAsset(o);
 			}
 
@@ -106,7 +107,7 @@ namespace KooFrame.BaseSystem
 		{
 			public override void Action(int instanceId, string pathName, string resourceFile)
 			{
-				Object o = CreateScriptAssetInContent(pathName, resourceFile);
+				UnityEngine.Object o = CreateScriptAssetInContent(pathName, resourceFile);
 				ProjectWindowUtil.ShowCreatedAsset(o);
 			}
 
@@ -120,8 +121,15 @@ namespace KooFrame.BaseSystem
 				string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(pathName);
 				Debug.Log(fileNameWithoutExtension);
 				//替换文件名
-
 				text = Regex.Replace(text, "#SCRIPTNAME#", fileNameWithoutExtension);
+
+				//替换文件作者
+				text = Regex.Replace(text, "#AUTHORNAME#", Environment.UserName);
+
+				//替换文件创建时间
+				text = Regex.Replace(text, "#CREATETIME#", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss dddd"));
+
+
 				bool encoderShouldEmitUTF8Identifier = true;
 				bool throwOnInvalidBytes = false;
 				UTF8Encoding encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier, throwOnInvalidBytes);

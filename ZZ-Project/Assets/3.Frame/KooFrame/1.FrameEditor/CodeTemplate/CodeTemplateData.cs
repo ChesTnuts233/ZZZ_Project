@@ -25,10 +25,7 @@ public class CodeTemplateData
 	[SerializeField]
 	public TextAsset CodeTemplateFile;
 
-	public CodeTemplateData(string name)
-	{
-		Name = new() { ValueWithoutAction = name };
-	}
+
 
 
 	/// <summary>
@@ -38,7 +35,6 @@ public class CodeTemplateData
 	{
 		if (CodeTemplateFile != null)
 		{
-
 			CodeContent = CodeTemplateFile.text;
 		}
 
@@ -48,9 +44,21 @@ public class CodeTemplateData
 		}
 	}
 
-
 	public CodeTemplateData()
 	{
+
+	}
+	public CodeTemplateData(string name)
+	{
+		Name = new() { ValueWithoutAction = name };
+	}
+
+	public CodeTemplateData(string name, string content, TextAsset sourceFile)
+	{
+		this.Name.ValueWithoutAction = name;
+		this.CodeContent = content;
+		this.CodeTemplateFile = sourceFile;
+
 
 	}
 

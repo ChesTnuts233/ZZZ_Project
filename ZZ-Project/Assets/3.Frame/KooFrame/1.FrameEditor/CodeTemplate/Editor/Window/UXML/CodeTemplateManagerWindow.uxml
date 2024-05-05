@@ -5,12 +5,19 @@
             <ui:Button text="Settings" display-tooltip-when-elided="true" />
         </ui:VisualElement>
         <ui:VisualElement name="DownDiv" style="flex-grow: 1; flex-direction: row; flex-shrink: 1; position: relative;">
-            <ui:VisualElement name="LeftDiv" style="flex-grow: 0.3; background-color: rgba(166, 140, 140, 0.23); border-left-color: rgba(200, 199, 199, 0.72); border-right-color: rgba(200, 199, 199, 0.72); border-top-color: rgba(200, 199, 199, 0.72); border-bottom-color: rgba(200, 199, 199, 0.72); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; max-width: 200px; min-width: 200px;">
-                <ui:Label tabindex="-1" text="代码模板" display-tooltip-when-elided="true" />
-                <ui:ListView name="CodeDataList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1;" />
+            <ui:VisualElement name="LeftDiv" style="flex-grow: 0.3; background-color: rgba(166, 140, 140, 0.23); border-left-color: rgba(200, 199, 199, 0.72); border-right-color: rgba(200, 199, 199, 0.72); border-top-color: rgba(200, 199, 199, 0.72); border-bottom-color: rgba(200, 199, 199, 0.72); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; max-width: 200px; min-width: 200px; visibility: visible; display: flex;">
+                <ui:VisualElement style="flex-grow: 0.02; flex-direction: row; justify-content: space-around; align-self: auto; align-items: stretch;">
+                    <ui:Button text="代码笔记" display-tooltip-when-elided="true" name="CodeDataShowBtn" class="showBtn" />
+                    <ui:Button text="代码模版" display-tooltip-when-elided="true" name="CodeTemplateShowBtn" class="showBtn" />
+                    <ui:Button text="方法模版" display-tooltip-when-elided="true" name="MethodShowBtn" class="showBtn" />
+                </ui:VisualElement>
+                <ui:ListView name="CodeDataList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none;" />
+                <ui:ListView name="CodeTemplateList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none; transition-property: opacity; transition-duration: 1s; transition-timing-function: linear;" />
+                <ui:ListView name="MethodTemplateList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none;" />
             </ui:VisualElement>
-            <ui:VisualElement name="RightDiv" style="flex-grow: 0.7; display: none;">
-                <CodeTemplateInspector name="CodeTemplateInspector" style="display: flex; flex-grow: 1;" />
+            <ui:VisualElement name="RightDiv" style="display: flex; flex-grow: 0.7;">
+                <CodeTemplateInspector name="CodeTemplateInspector" style="display: none; flex-grow: 1;" />
+                <CodeDataInspector name="CodeDataInspector" style="flex-grow: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

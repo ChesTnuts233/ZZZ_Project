@@ -1,14 +1,15 @@
 using KooFrame;
 using System;
 using UnityEditor;
+using UnityEngine;
 /// <summary>
 /// 代码模板工厂
 /// </summary>
 public class CodeTemplateFactory
 {
-	private CodeTemplateDatas codeTemplateDatas;
+	private CodeDatas codeDatas;
 
-	public CodeTemplateDatas Datas => codeTemplateDatas;
+	public CodeDatas Datas => codeDatas;
 
 
 	public Action OnCreateData;
@@ -17,14 +18,13 @@ public class CodeTemplateFactory
 
 	public CodeTemplateFactory()
 	{
-		codeTemplateDatas = AssetDatabase.LoadAssetAtPath<CodeTemplateDatas>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeTemplateDatas.asset");
-
+		codeDatas = AssetDatabase.LoadAssetAtPath<CodeDatas>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeDatas.asset");
 	}
 
 
 	public void AddData(CodeTemplateData data)
 	{
-		codeTemplateDatas.CodeTemplates.Add(data);
+		codeDatas.CodeTemplates.Add(data);
 
 		UpdateAndSave();
 	}
@@ -36,7 +36,24 @@ public class CodeTemplateFactory
 	public CodeTemplateData CreateData(string name = "DefaultTemplate")
 	{
 		CodeTemplateData createDate = new CodeTemplateData(name);
-		codeTemplateDatas.CodeTemplates.Add(createDate);
+		codeDatas.CodeTemplates.Add(createDate);
+
+		OnCreateData?.Invoke();
+
+		UpdateAndSave();
+		return createDate;
+	}
+
+	/// <summary>
+	/// 创建脚本模板
+	/// </summary>
+	/// <param name="content"></param>
+	/// <param name="sourcefile"></param>
+	/// <param name="name"></param>
+	public CodeTemplateData CreateData(string content, TextAsset sourcefile, string name = "DefaultTemplate")
+	{
+		CodeTemplateData createDate = new CodeTemplateData(name, content, sourcefile);
+		codeDatas.CodeTemplates.Add(createDate);
 
 		OnCreateData?.Invoke();
 
@@ -49,7 +66,7 @@ public class CodeTemplateFactory
 
 	public void DeleteData(CodeTemplateData data)
 	{
-		codeTemplateDatas.CodeTemplates.Remove(data);
+		codeDatas.CodeTemplates.Remove(data);
 
 		OnDeleteData?.Invoke();
 
@@ -62,7 +79,7 @@ public class CodeTemplateFactory
 		//更新MenuItem
 		UpdateTemplateMenuItem();
 
-		EditorUtility.SetDirty(codeTemplateDatas);
+		EditorUtility.SetDirty(codeDatas);
 		AssetDatabase.SaveAssets();
 	}
 

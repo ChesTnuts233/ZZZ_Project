@@ -305,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Avatar_Loli_Catalyst_Nahida
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 16c4fd305a5193244aa6b8057881f33a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 16c4fd305a5193244aa6b8057881f33a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1025,8 +1029,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1004c1fc55c82f4fb3f72758ac9ac53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1906957201}
   m_SourcePrefab: {fileID: 100100000, guid: f1004c1fc55c82f4fb3f72758ac9ac53, type: 3}
+--- !u!1 &1906957200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f1004c1fc55c82f4fb3f72758ac9ac53, type: 3}
+  m_PrefabInstance: {fileID: 1906957199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!320 &1906957201
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906957200}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: d9496cc40d048404181139c3eedc9ef3, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

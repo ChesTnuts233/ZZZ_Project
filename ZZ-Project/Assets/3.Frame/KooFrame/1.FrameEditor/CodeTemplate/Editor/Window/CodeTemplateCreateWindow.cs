@@ -1,5 +1,4 @@
 using KooFrame;
-using System;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -10,12 +9,23 @@ public class CodeTemplateCreateWindow : EditorWindow
 	[SerializeField]
 	private VisualTreeAsset m_VisualTreeAsset = default;
 
-
 	private CodeTemplateData curCreateTemplateData;
+
+	public CodeTemplateData CurCreateTemplateData
+	{
+		get => curCreateTemplateData;
+
+		set
+		{
+			curCreateTemplateData = value;
+			nameField?.SetValueWithoutNotify(value.Name);
+			codeTemplateFile?.SetValueWithoutNotify(value.CodeTemplateFile);
+		}
+	}
 
 	private CodeTemplateFactory factory;
 
-	private CodeTemplateDatas datas;
+	private CodeDatas datas;
 
 	#region 页面元素
 
@@ -27,10 +37,11 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	#endregion
 
-	public static void ShowWindow()
+	public static CodeTemplateCreateWindow ShowWindow()
 	{
 		CodeTemplateCreateWindow wnd = GetWindow<CodeTemplateCreateWindow>();
 		wnd.titleContent = new GUIContent("创建脚本模板");
+		return wnd;
 	}
 
 	private void OnEnable()
@@ -40,7 +51,7 @@ public class CodeTemplateCreateWindow : EditorWindow
 	}
 
 
-	public void CreateGUI()
+	private void CreateGUI()
 	{
 		VisualElement root = rootVisualElement;
 
@@ -137,6 +148,9 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 		Close();
 	}
+
+
+
 
 
 	/// <summary>
