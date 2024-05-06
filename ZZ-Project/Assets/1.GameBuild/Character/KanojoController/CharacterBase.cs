@@ -94,6 +94,7 @@ namespace GameBuild
 		private void Frame3CInit()
 		{
 			movement = KooTool.CreateInstance<MovementBase>(movementClass, movementArgs);
+
 			Input = KooTool.CreateInstance<PlayerInputBase>(inputClass, inputArgs);
 		}
 

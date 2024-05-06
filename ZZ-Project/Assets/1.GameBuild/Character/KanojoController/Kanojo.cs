@@ -9,10 +9,18 @@ namespace GameBuild
 		{
 			this.RegisterModel(new KanojoModel());
 		}
-		protected override Type inputClass => typeof(KanojoInput);
+
+
+
+
+
+		protected override Type inputClass => typeof(CharacterInput);
 		protected override object[] inputArgs => new object[] { Invoker };
-		protected override Type movementClass => typeof(KanojoMove);
+		protected override Type movementClass => typeof(CharacterMove);
 		protected override object[] movementArgs => new object[] { this, this.GetComponent<Rigidbody>(), Camera.main.transform, this.transform, this.GetComponent<Animator>(), this };
+
+
+
 
 		protected override void Awake()
 		{

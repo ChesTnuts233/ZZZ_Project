@@ -37,7 +37,7 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Rotate"",
+                    ""name"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""65f54c87-f201-46be-8464-8cd3946935d4"",
                     ""expectedControlType"": ""Vector2"",
@@ -105,23 +105,29 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b29bb194-7bfc-4dd9-ab62-38f0a0b27837"",
-                    ""path"": ""<Mouse>/position"",
+                    ""path"": ""<Pointer>/delta"",
                     ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotate"",
+                    ""processors"": ""InvertVector2(invertX=false),ScaleVector2(x=0.05,y=0.05)"",
+                    ""groups"": ""KeyBoardAndMouse"",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""KeyBoardAndMouse"",
+            ""bindingGroup"": ""KeyBoardAndMouse"",
+            ""devices"": []
+        }
+    ]
 }");
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
-        m_GamePlay_Rotate = m_GamePlay.FindAction("Rotate", throwIfNotFound: true);
+        m_GamePlay_Look = m_GamePlay.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -184,13 +190,13 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_GamePlay;
     private List<IGamePlayActions> m_GamePlayActionsCallbackInterfaces = new List<IGamePlayActions>();
     private readonly InputAction m_GamePlay_Move;
-    private readonly InputAction m_GamePlay_Rotate;
+    private readonly InputAction m_GamePlay_Look;
     public struct GamePlayActions
     {
         private @GameInputAction m_Wrapper;
         public GamePlayActions(@GameInputAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
-        public InputAction @Rotate => m_Wrapper.m_GamePlay_Rotate;
+        public InputAction @Look => m_Wrapper.m_GamePlay_Look;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -203,9 +209,9 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Rotate.started += instance.OnRotate;
-            @Rotate.performed += instance.OnRotate;
-            @Rotate.canceled += instance.OnRotate;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -213,9 +219,9 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Rotate.started -= instance.OnRotate;
-            @Rotate.performed -= instance.OnRotate;
-            @Rotate.canceled -= instance.OnRotate;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -233,9 +239,18 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
         }
     }
     public GamePlayActions @GamePlay => new GamePlayActions(this);
+    private int m_KeyBoardAndMouseSchemeIndex = -1;
+    public InputControlScheme KeyBoardAndMouseScheme
+    {
+        get
+        {
+            if (m_KeyBoardAndMouseSchemeIndex == -1) m_KeyBoardAndMouseSchemeIndex = asset.FindControlSchemeIndex("KeyBoardAndMouse");
+            return asset.controlSchemes[m_KeyBoardAndMouseSchemeIndex];
+        }
+    }
     public interface IGamePlayActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnRotate(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }

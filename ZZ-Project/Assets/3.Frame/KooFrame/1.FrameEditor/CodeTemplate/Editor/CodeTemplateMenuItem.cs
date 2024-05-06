@@ -19,17 +19,11 @@ public static class CodeTemplateMenuItem
 
 
 	#region 代码生成开始标识
-	[MenuItem("Assets/KooFrame-脚本/MonoBehaviour", false, 0)]
-	public static void CreateMonoBehaviourScripts()
+	[MenuItem("Assets/KooFrame-脚本/MonoBahaviour", false, 0)]
+	public static void CreateMonoBahaviourScripts()
 	{
-		ScriptsTemplatesCreater.CreateScriptByContent("MonoBehaviour",
-			Datas.GetCodeContentByDataName("MonoBehaviour"));
-	}
-	[MenuItem("Assets/KooFrame-脚本/DefaultPanel", false, 0)]
-	public static void CreateDefaultPanelScripts()
-	{
-		ScriptsTemplatesCreater.CreateScriptByContent("DefaultPanel",
-			Datas.GetCodeContentByDataName("DefaultPanel"));
+		ScriptsTemplatesCreater.CreateScriptByContent("MonoBahaviour",
+			Datas.GetCodeContentByDataName("MonoBahaviour"));
 	}
 
 #endregion 代码生成结束标识

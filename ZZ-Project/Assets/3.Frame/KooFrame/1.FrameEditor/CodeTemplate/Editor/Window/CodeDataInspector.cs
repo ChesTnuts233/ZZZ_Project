@@ -37,8 +37,6 @@ public class CodeDataInspector : VisualElement
 
 		Viewer = new MG.MDV.MarkdownViewer(managerWindow.DarkSkin, curCodeData.MarkDownPath, curCodeData.codeMD.text);
 
-		
-
 		imGUIcontainer = this.Q<IMGUIContainer>("MarkDownView");
 
 		//添加绘制监听

@@ -33,24 +33,12 @@ namespace KooFrame.BaseSystem
 		{
 			string locationPath = GetSelectedPathOrFallback();
 
-			////反射得到内容创建
-			//createScriptAssetWithContentInfo = typeof(ProjectWindowUtil).GetMethod("CreateScriptAssetWithContent", BindingFlags.NonPublic | BindingFlags.Static);
-
 			string targetFilePath = locationPath + "/" + scriptName + ".cs";
-
-			//content.Log();
-
-			//targetFilePath.Log();
-
-			//createScriptAssetWithContentInfo.Invoke(null, new object[] { targetFilePath, content });
-
 
 			ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,
 				ScriptableObject.CreateInstance<MyDoCreateScriptAssetInString_Mono>(),
 				targetFilePath, null,
 				content);
-
-			//return 
 		}
 
 

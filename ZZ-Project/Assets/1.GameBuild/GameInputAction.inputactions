@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Rotate",
+                    "name": "Look",
                     "type": "Value",
                     "id": "65f54c87-f201-46be-8464-8cd3946935d4",
                     "expectedControlType": "Vector2",
@@ -83,16 +83,22 @@
                 {
                     "name": "",
                     "id": "b29bb194-7bfc-4dd9-ab62-38f0a0b27837",
-                    "path": "<Mouse>/position",
+                    "path": "<Pointer>/delta",
                     "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
+                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0.05,y=0.05)",
+                    "groups": "KeyBoardAndMouse",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "KeyBoardAndMouse",
+            "bindingGroup": "KeyBoardAndMouse",
+            "devices": []
+        }
+    ]
 }

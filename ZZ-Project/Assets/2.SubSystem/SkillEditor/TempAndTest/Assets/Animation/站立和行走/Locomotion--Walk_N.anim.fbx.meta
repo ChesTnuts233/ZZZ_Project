@@ -931,3 +931,10 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196526
+  packageName: Starter Assets - Third Person Character Controller | URP
+  packageVersion: 1.1.5
+  assetPath: "Assets/2.SubSystem/SkillEditor/TempAndTest/Assets/Animation/\u7AD9\u7ACB\u548C\u884C\u8D70/Locomotion--Walk_N.anim.fbx"
+  uploadId: 592926
