@@ -18,6 +18,6 @@
             </ui:ScrollView>
             <ui:Button text="生成代码模板" display-tooltip-when-elided="true" name="CreateCodeTemplate" />
         </ui:VisualElement>
-        <CodeMarkInspector name="CodeMarkInspector" />
+        <CodeMarkInspector name="CodeMarkInspector" style="flex-grow: 1;" />
     </ui:VisualElement>
 </ui:UXML>

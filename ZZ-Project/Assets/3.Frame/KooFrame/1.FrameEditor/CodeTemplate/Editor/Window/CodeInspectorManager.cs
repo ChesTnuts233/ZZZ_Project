@@ -50,7 +50,7 @@ public class CodeInspectorManager : VisualElement
 	/// <summary>
 	/// 代码模板检视
 	/// </summary>
-	private VisualElement codetemplateInspector;
+	private VisualElement codeTemplateInspector;
 
 
 	#endregion
@@ -105,7 +105,7 @@ public class CodeInspectorManager : VisualElement
 	private void BindInspectors()
 	{
 		codeMarkInspector = this.Q<CodeMarkInspector>("CodeMarkInspector");
-		codetemplateInspector = this.Q<VisualElement>("CodeTemplateInspector");
+		codeTemplateInspector = this.Q<VisualElement>("CodeTemplateInspector");
 	}
 
 
@@ -213,22 +213,38 @@ public class CodeInspectorManager : VisualElement
 	/// <summary>
 	/// 更新检视面板
 	/// </summary>
-	public void UpdateInspector(CodeTemplateData data)
+	public void UpdateInspector(CodeData data)
 	{
 		//如果是模板数据
-		if (data is CodeTemplateData)
+		if (data is CodeTemplateData templateData)
 		{
-			codetemplateInspector.style.display = DisplayStyle.Flex;
+			ShowInspector(codeTemplateInspector);
 
-			CurShowCodeTemplate = data;
-			nameInputField.SetValueWithoutNotify(data.Name.Value);
-			textAssetField.SetValueWithoutNotify(data.CodeTemplateFile);
-			codeContent.SetValueWithoutNotify(data.CodeContent);
+			CurShowCodeTemplate = templateData;
+			nameInputField.SetValueWithoutNotify(templateData.Name.Value);
+			textAssetField.SetValueWithoutNotify(templateData.CodeTemplateFile);
+			codeContent.SetValueWithoutNotify(templateData.CodeContent);
 			UpdateCodeView(CurShowCodeTemplate.CodeContent);
+		}
+		else if (data is CodeMarkData markData)
+		{
+			ShowInspector(codeMarkInspector);
+			codeMarkInspector.UpdateInspector(markData);
+			codeMarkInspector.BindToManagerWindow(managerWindow);
 		}
 
 
 	}
+
+
+	private void ShowInspector(VisualElement showElement)
+	{
+		codeTemplateInspector.style.display = DisplayStyle.None;
+		codeMarkInspector.style.display = DisplayStyle.None;
+
+		showElement.style.display = DisplayStyle.Flex;
+	}
+
 
 
 	Dictionary<string, string> keywordColors = new Dictionary<string, string>()

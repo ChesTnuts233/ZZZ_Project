@@ -28,6 +28,13 @@ namespace KooFrame
 			set => _value = value;
 		}
 
+		public void SetValueWithoutAction(T value)
+		{
+			_value = value;
+		}
+
+
+
 		public event Action<T> OnValueChange;
 
 		public static implicit operator T(ModelValue<T> property)
@@ -35,10 +42,7 @@ namespace KooFrame
 			return property.Value;
 		}
 
-		public void SetValueWithoutAction(T value)
-		{
-			_value = value;
-		}
+
 
 		public void CleanActionMethod()
 		{

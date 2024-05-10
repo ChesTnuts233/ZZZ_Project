@@ -9,7 +9,7 @@ public class CodeData
 	/// <summary>
 	/// 数据名称
 	/// </summary>
-	public ModelValue<string> Name = new() { ValueWithoutAction = "DefaultTemplate" };
+	public ModelValue<string> Name = new() { ValueWithoutAction = "DefaultData" };
 
 
 	/// <summary>

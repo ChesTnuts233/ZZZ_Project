@@ -25,7 +25,7 @@ public class CodeManagerWindow : EditorWindow
 	public VisualTreeAsset TemplateListItemVistalTreeAsset = default;
 
 	[SerializeField]
-	public VisualTreeAsset DataListItemVistalTreeAsset = default;
+	public VisualTreeAsset MarkDataListItemVistalTreeAsset = default;
 
 	[SerializeField]
 	public GUISkin DarkSkin;
@@ -37,7 +37,8 @@ public class CodeManagerWindow : EditorWindow
 	[SerializeField]
 	public KooCodeDatas Datas;
 
-	private CodeTemplateFactory factory;
+	private CodeTemplateFactory templateFactory;
+	private CodeMarkFactory markFactory;
 
 	#endregion
 
@@ -69,7 +70,9 @@ public class CodeManagerWindow : EditorWindow
 
 	#region 其他
 
-	private List<CodeTemplateData> selectedListItems = new();
+	private List<CodeTemplateData> selectedTemplateListItems = new();
+
+	private List<CodeMarkData> selectedMarkListItems = new();
 
 	public static string CodeDatasPath = "Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeDatas.asset";
 
@@ -87,7 +90,8 @@ public class CodeManagerWindow : EditorWindow
 
 	private void OnEnable()
 	{
-		factory = new CodeTemplateFactory();
+		templateFactory = new CodeTemplateFactory();
+		markFactory = new CodeMarkFactory();
 
 		if (Datas == null)
 		{
@@ -117,17 +121,6 @@ public class CodeManagerWindow : EditorWindow
 
 	private void OnGUI()
 	{
-
-		//if (Event.current.button == 1 && leftDiv.contentRect.Contains(Event.current.mousePosition))
-		//{
-		//	GenericMenu menu = new GenericMenu();
-		//	// 添加菜单项
-		//	CreateTemplateListMenu(menu);
-		//	// 显示菜单
-		//	menu.ShowAsContext();
-		//}
-
-
 		onGUICallBack?.Invoke();
 	}
 
@@ -244,18 +237,17 @@ public class CodeManagerWindow : EditorWindow
 		menu.AddItem(new GUIContent("添加脚本模板"), false, () =>
 		{
 			//打开创建模板窗口
-			CodeTemplateCreateWindow.ShowWindow();
-
-			//codeTemplateListView.Rebuild();
+			CodeTemplateCreateWindow window = CodeTemplateCreateWindow.ShowWindow();
+			window.BindListView(codeTemplateListView);
 		});
 
 		menu.AddItem(new GUIContent("删除"), false, () =>
 		{
-			foreach (var selectedItem in selectedListItems)
+			foreach (var selectedItem in selectedTemplateListItems)
 			{
-				factory.DeleteData(selectedItem);
+				templateFactory.DeleteData(selectedItem);
 			}
-			selectedListItems.Clear(); // 删除后清空选中项列表
+			selectedTemplateListItems.Clear(); // 删除后清空选中项列表
 			codeTemplateListView.Rebuild();
 		});
 		// 显示菜单
@@ -268,18 +260,18 @@ public class CodeManagerWindow : EditorWindow
 		GenericMenu menu = new GenericMenu();
 		menu.AddItem(new GUIContent("添加代码笔记"), false, () =>
 		{
-			////打开创建模板窗口
-			//CodeTemplateCreateWindow.ShowWindow();
-			//codeTemplateListView.Rebuild();
+			//打开创建模板窗口
+			var window = CodeMarkCreateWindow.ShowWindow();
+			window.BindListView(codeMarkListView);
 		});
 
 		menu.AddItem(new GUIContent("删除"), false, () =>
 		{
-			foreach (var selectedItem in selectedListItems)
+			foreach (var selectedItem in selectedMarkListItems)
 			{
-				factory.DeleteData(selectedItem);
+				markFactory.DeleteData(selectedItem);
 			}
-			selectedListItems.Clear(); // 删除后清空选中项列表
+			selectedTemplateListItems.Clear(); // 删除后清空选中项列表
 			codeTemplateListView.Rebuild();
 		});
 		// 显示菜单
@@ -314,27 +306,60 @@ public class CodeManagerWindow : EditorWindow
 		}
 
 
-		codeTemplateListView.selectionChanged += OnCodeDataSelectChange;
+		codeTemplateListView.selectionChanged += OnCodeTemplateDataSelectChange;
 
 
 		//当创建数据的时候 刷新ListView
-		factory.OnCreateData += () =>
+		templateFactory.OnCreateOrAddData += () =>
 		{
-			UpdateListView();
+			UpdateListView(codeTemplateListView);
 		};
 
-		factory.OnDeleteData += () =>
+		templateFactory.OnDeleteData += () =>
 		{
-			UpdateListView();
+			UpdateListView(codeTemplateListView);
 		};
 
-		UpdateListView();
+		UpdateListView(codeTemplateListView);
 	}
 
 
 	private void CreateCodeDataListView()
 	{
-		CreateListView(codeMarkListView, DataListItemVistalTreeAsset, Datas.Codes);
+		CreateListView(codeMarkListView, MarkDataListItemVistalTreeAsset, Datas.CodeMarks);
+
+		codeMarkListView.bindItem += BindTemplateItem;
+
+		void BindTemplateItem(VisualElement element, int index)
+		{
+			Label nameLabel = element.Q<Label>("Name");
+			if (nameLabel != null)
+			{
+				nameLabel.text = Datas.CodeMarks[index].Name.Value;
+			}
+
+			//当名称变化时 列表名称也变化
+			Datas.CodeMarks[index].Name.OnValueChange += (value) =>
+			{
+				element.Q<Label>("Name").text = value;
+			};
+		}
+
+		codeMarkListView.selectionChanged += OnCodeMarkDataSelectChange;
+
+		//当创建数据的时候 刷新ListView
+		markFactory.OnCreateOrAddData += () =>
+		{
+			UpdateListView(codeMarkListView);
+		};
+
+		markFactory.OnDeleteData += () =>
+		{
+			UpdateListView(codeMarkListView);
+		};
+
+		UpdateListView(codeMarkListView);
+
 	}
 
 
@@ -354,8 +379,8 @@ public class CodeManagerWindow : EditorWindow
 		createdListView.makeItem = makeItem;
 		createdListView.bindItem = bindItem;
 
-		codeTemplateListView.selectionType = SelectionType.Multiple;
-		codeTemplateListView.itemsSource = itemsSource;
+		createdListView.selectionType = SelectionType.Multiple;
+		createdListView.itemsSource = itemsSource;
 	}
 
 
@@ -363,37 +388,46 @@ public class CodeManagerWindow : EditorWindow
 
 	#endregion
 
-	private void UpdateListView()
+	private void UpdateListView(ListView view)
 	{
-		if (codeTemplateListView != null)
+		if (view != null)
 		{
-			codeTemplateListView.Rebuild();
-			//列表空了
-			if (codeTemplateListView.itemsSource.Count == 0)
-			{
-				rightDiv.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
-			}
-			else
-			{
-				rightDiv.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
-			}
+			view.Rebuild();
+			////列表空了
+			//if (codeTemplateListView.itemsSource.Count == 0)
+			//{
+			//	rightDiv.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+			//}
+			//else
+			//{
+			//	rightDiv.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+			//}
 		}
 	}
 
-	private void OnCodeDataSelectChange(IEnumerable<object> enumerable)
+	private void OnCodeTemplateDataSelectChange(IEnumerable<object> enumerable)
 	{
-		selectedListItems = enumerable.OfType<CodeTemplateData>().ToList();
+		selectedTemplateListItems = enumerable.OfType<CodeTemplateData>().ToList();
 
 
 		// 如果有LevelData类型的元素
-		if (selectedListItems.Any())
+		if (selectedTemplateListItems.Any())
 		{
-			inspectorManager.UpdateInspector(selectedListItems[0]);
+			inspectorManager.UpdateInspector(selectedTemplateListItems[0]);
 		}
 	}
 
 
+	private void OnCodeMarkDataSelectChange(IEnumerable<object> enumerable)
+	{
+		selectedMarkListItems = enumerable.OfType<CodeMarkData>().ToList();
 
+		// 如果有LevelData类型的元素
+		if (selectedMarkListItems.Any())
+		{
+			inspectorManager.UpdateInspector(selectedMarkListItems[0]);
+		}
+	}
 
 
 

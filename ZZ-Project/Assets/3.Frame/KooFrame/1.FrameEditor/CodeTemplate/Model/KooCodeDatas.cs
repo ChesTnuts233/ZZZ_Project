@@ -8,7 +8,7 @@ public class KooCodeDatas : ConfigBase_SO
 	/// <summary>
 	/// 脚本笔记数据集合
 	/// </summary>
-	public List<CodeData> Codes = new();
+	public List<CodeMarkData> CodeMarks = new();
 
 	/// <summary>
 	/// 脚本模板数据集合

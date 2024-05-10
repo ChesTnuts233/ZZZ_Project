@@ -1,7 +1,9 @@
 
 using Sirenix.OdinInspector;
+using System;
 using UnityEngine;
 
+[Serializable]
 public class CodeMarkData : CodeData
 {
 	/// <summary>
@@ -12,4 +14,6 @@ public class CodeMarkData : CodeData
 
 	[FilePath]
 	public string MarkDownPath;
+
+
 }

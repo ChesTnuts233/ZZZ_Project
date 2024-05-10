@@ -1,10 +1,9 @@
 using KooFrame;
-using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CodeTemplateCreateWindow : EditorWindow
+public class CodeTemplateCreateWindow : CodeCreateWindowBase
 {
 	[SerializeField]
 	private VisualTreeAsset m_VisualTreeAsset = default;
@@ -25,9 +24,8 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	private CodeTemplateFactory factory;
 
-	private KooCodeDatas datas;
 
-	private ListView templateListView;
+
 
 	#region 页面元素
 
@@ -46,29 +44,24 @@ public class CodeTemplateCreateWindow : EditorWindow
 		return wnd;
 	}
 
-	public void BindListView(ListView listView)
-	{
-		templateListView = listView;
-	}
+
 
 	private void OnEnable()
 	{
 		factory = new();
-		datas = factory.Datas;
+		Datas = factory.Datas;
 	}
 
 
-	private void CreateGUI()
+	protected override void CreateGUI()
 	{
-		VisualElement root = rootVisualElement;
+		base.CreateGUI();
 
-		m_VisualTreeAsset.CloneTree(root);
+		BindNameField(Root);
 
-		BindNameField(root);
+		BindTextAssetField(Root);
 
-		BindTextAssetField(root);
-
-		BindCreateBtn(root);
+		BindCreateBtn(Root);
 
 		nameField.Focus();
 
@@ -115,42 +108,18 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	private void CreateCodeTempData()
 	{
-		bool isHasSameData = false;
-		bool isHasLegalChar = false;
-		//先看Datas里是否有重名的  重名的不能添加
-		foreach (var data in datas.CodeTemplates)
-		{
-			if (data.Name.Value == curCreateTemplateData.Name.Value)
-			{
-				isHasSameData = true;
-			}
-		}
-		if (KooTool.IsContainsIllegalCharacters(curCreateTemplateData.Name.Value))
-		{
-			isHasLegalChar = true;
-		}
-
-		if (isHasSameData)
-		{
-			EditorUtility.DisplayDialog("警告", "已经有相同名称的成员", "确定");
-			return;
-		}
-		if (isHasLegalChar)
-		{
-			EditorUtility.DisplayDialog("警告", "名称中含有非法字符", "确定");
-			return;
-		}
-
 		//检查名称中是否有非法符号
-
-
+		if (!CheckDataNameLedge(curCreateTemplateData))
+		{
+			return;
+		}
 
 		//创建模板数据
 		factory.AddData(curCreateTemplateData);
 
-		if (templateListView != null)
+		if (CurEditorListView != null)
 		{
-			templateListView.Rebuild();
+			CurEditorListView.Rebuild();
 		}
 
 		////创建模板文件

@@ -5,40 +5,35 @@ using UnityEngine;
 /// <summary>
 /// 代码模板工厂
 /// </summary>
-public class CodeTemplateFactory
+public class CodeTemplateFactory : BaseCodeFactory<CodeTemplateData>
 {
-	private KooCodeDatas codeDatas;
 
-	public KooCodeDatas Datas => codeDatas;
-
-
-	public Action OnCreateData;
+	public Action OnCreateOrAddData;
 	public Action OnDeleteData;
 
-
-	public CodeTemplateFactory()
+	public override void AddData(CodeTemplateData data)
 	{
-		codeDatas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeDatas.asset");
+		Datas.CodeTemplates.Add(data);
+		OnCreateOrAddData?.Invoke();
+		UpdateAndSave();
 	}
 
 
-	public void AddData(CodeTemplateData data)
+	public override CodeTemplateData CreateData()
 	{
-		codeDatas.CodeTemplates.Add(data);
-
-		UpdateAndSave();
+		return CreateData("DefaultTemplate");
 	}
 
 	/// <summary>
 	/// 创建脚本模板
 	/// </summary>
 	/// <returns>模板数据</returns>
-	public CodeTemplateData CreateData(string name = "DefaultTemplate")
+	public CodeTemplateData CreateData(string name)
 	{
 		CodeTemplateData createDate = new CodeTemplateData(name);
-		codeDatas.CodeTemplates.Add(createDate);
+		Datas.CodeTemplates.Add(createDate);
 
-		OnCreateData?.Invoke();
+		OnCreateOrAddData?.Invoke();
 
 		UpdateAndSave();
 		return createDate;
@@ -53,9 +48,9 @@ public class CodeTemplateFactory
 	public CodeTemplateData CreateData(string content, TextAsset sourcefile, string name = "DefaultTemplate")
 	{
 		CodeTemplateData createDate = new CodeTemplateData(name, content, sourcefile);
-		codeDatas.CodeTemplates.Add(createDate);
+		Datas.CodeTemplates.Add(createDate);
 
-		OnCreateData?.Invoke();
+		OnCreateOrAddData?.Invoke();
 
 		UpdateAndSave();
 		return createDate;
@@ -63,23 +58,21 @@ public class CodeTemplateFactory
 
 
 
-
-	public void DeleteData(CodeTemplateData data)
+	public override void DeleteData(CodeTemplateData data)
 	{
-		codeDatas.CodeTemplates.Remove(data);
+		Datas.CodeTemplates.Remove(data);
 
 		OnDeleteData?.Invoke();
 
 		UpdateAndSave();
 	}
 
-
 	private void UpdateAndSave()
 	{
 		//更新MenuItem
 		UpdateTemplateMenuItem();
 
-		EditorUtility.SetDirty(codeDatas);
+		EditorUtility.SetDirty(Datas);
 		AssetDatabase.SaveAssets();
 	}
 
