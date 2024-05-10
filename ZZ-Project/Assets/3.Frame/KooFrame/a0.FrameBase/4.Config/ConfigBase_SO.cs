@@ -5,18 +5,12 @@
 //* 功能：基于Odin的配置基类
 //*****************************************************
 
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace KooFrame
 {
-    /// <summary>
-    /// 用于玩家属性 道具属性的配置
-    /// </summary>
-    public class OdinConfigBase : SerializedScriptableObject { }
-
-    /// <summary>
-    /// 非Odin的属性配置
-    /// </summary>
-    public class ConfigBase_SO : ScriptableObject { }
+	/// <summary>
+	/// 非Odin的属性配置
+	/// </summary>
+	public class ConfigBase_SO : ScriptableObject { }
 }

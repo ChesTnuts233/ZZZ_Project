@@ -3,15 +3,15 @@ using UnityEditor;
 
 public static class CodeTemplateMenuItem
 {
-	private static CodeDatas datas;
+	private static KooCodeDatas datas;
 
-	public static CodeDatas Datas
+	public static KooCodeDatas Datas
 	{
 		get
 		{
 			if (datas == null)
 			{
-				datas = AssetDatabase.LoadAssetAtPath<CodeDatas>(CodeManagerWindow.CodeDatasPath);
+				datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeManagerWindow.CodeDatasPath);
 			}
 			return datas;
 		}
@@ -19,11 +19,17 @@ public static class CodeTemplateMenuItem
 
 
 	#region 代码生成开始标识
-	[MenuItem("Assets/KooFrame-脚本/MonoBahaviour", false, 0)]
-	public static void CreateMonoBahaviourScripts()
+	[MenuItem("Assets/KooFrame-脚本/Test1", false, 0)]
+	public static void CreateTest1Scripts()
 	{
-		ScriptsTemplatesCreater.CreateScriptByContent("MonoBahaviour",
-			Datas.GetCodeContentByDataName("MonoBahaviour"));
+		ScriptsTemplatesCreater.CreateScriptByContent("Test1",
+			Datas.GetCodeContentByDataName("Test1"));
+	}
+	[MenuItem("Assets/KooFrame-脚本/Test2", false, 0)]
+	public static void CreateTest2Scripts()
+	{
+		ScriptsTemplatesCreater.CreateScriptByContent("Test2",
+			Datas.GetCodeContentByDataName("Test2"));
 	}
 
 #endregion 代码生成结束标识

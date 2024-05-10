@@ -25,7 +25,7 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	private CodeTemplateFactory factory;
 
-	private CodeDatas datas;
+	private KooCodeDatas datas;
 
 	#region 页面元素
 
@@ -84,7 +84,7 @@ public class CodeTemplateCreateWindow : EditorWindow
 				nameField.SetValueWithoutNotify(value.newValue.name);
 			}
 
-			curCreateTemplateData.UpdateCodeContent();
+			curCreateTemplateData.UpdateData();
 		});
 	}
 

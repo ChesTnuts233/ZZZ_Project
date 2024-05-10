@@ -1,13 +1,12 @@
-using CodeTemplate;
 using KooFrame;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CodeDatas", menuName = "SO/CodeDatas")]
-public class CodeDatas : ConfigBase_SO
+public class KooCodeDatas : ConfigBase_SO
 {
 	/// <summary>
-	/// 脚本模板数据集合
+	/// 脚本笔记数据集合
 	/// </summary>
 	public List<CodeData> Codes = new();
 

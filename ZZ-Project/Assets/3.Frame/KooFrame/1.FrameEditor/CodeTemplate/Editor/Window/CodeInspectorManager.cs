@@ -4,20 +4,21 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CodeTemplateInspector : VisualElement
+/// <summary>
+/// 主要是管理所有的代码监视器
+/// </summary>
+public class CodeInspectorManager : VisualElement
 {
-	public new class UxmlFactory : UxmlFactory<CodeTemplateInspector, VisualElement.UxmlTraits>
+	public new class UxmlFactory : UxmlFactory<CodeInspectorManager, VisualElement.UxmlTraits>
 	{
 
 	}
 
 	private CodeManagerWindow managerWindow;
 
-	public CodeDatas datas;
+	public KooCodeDatas datas;
 
 	public CodeTemplateData CurShowCodeTemplate;
-
-
 
 
 	#region 页面元素
@@ -41,6 +42,16 @@ public class CodeTemplateInspector : VisualElement
 
 	private ScrollView codeEditorScroll;
 
+	/// <summary>
+	/// 代码笔记检视
+	/// </summary>
+	private CodeMarkInspector codeMarkInspector;
+
+	/// <summary>
+	/// 代码模板检视
+	/// </summary>
+	private VisualElement codetemplateInspector;
+
 
 	#endregion
 
@@ -53,7 +64,10 @@ public class CodeTemplateInspector : VisualElement
 
 		container_assets.CloneTree(this);
 
-		this.style.flexGrow = 1;
+		//this.style.flexGrow = 1;
+
+
+		BindInspectors();  //绑定所有监视器
 
 		BindTemplateName(); //绑定名称相关
 
@@ -73,6 +87,31 @@ public class CodeTemplateInspector : VisualElement
 	public void OnClose()
 	{
 	}
+
+
+
+	/// <summary>
+	/// 显示对应的监视器
+	/// </summary>
+	public void ShowInspector()
+	{
+
+	}
+
+
+
+
+
+	/// <summary>
+	/// 绑定所有监视器
+	/// </summary>
+	private void BindInspectors()
+	{
+		codeMarkInspector = this.Q<CodeMarkInspector>("CodeMarkInspector");
+		codetemplateInspector = this.Q<VisualElement>("CodeTemplateInspector");
+	}
+
+
 
 	private void BindAboutViewOrEditorChange()
 	{
@@ -169,7 +208,7 @@ public class CodeTemplateInspector : VisualElement
 		textAssetField.RegisterValueChangedCallback((value) =>
 		{
 			CurShowCodeTemplate.CodeTemplateFile = value.newValue as TextAsset;
-			CurShowCodeTemplate.UpdateCodeContent();
+			CurShowCodeTemplate.UpdateData();
 
 			UpdateInspector(CurShowCodeTemplate);
 		});
@@ -179,14 +218,21 @@ public class CodeTemplateInspector : VisualElement
 	/// <summary>
 	/// 更新检视面板
 	/// </summary>
-	public void UpdateInspector(CodeTemplateData templateData)
+	public void UpdateInspector(CodeTemplateData data)
 	{
-		CurShowCodeTemplate = templateData;
+		//如果是模板数据
+		if (data is CodeTemplateData)
+		{
+			codetemplateInspector.style.display = DisplayStyle.Flex;
 
-		nameInputField.SetValueWithoutNotify(templateData.Name.Value);
-		textAssetField.SetValueWithoutNotify(templateData.CodeTemplateFile);
-		codeContent.SetValueWithoutNotify(templateData.CodeContent);
-		UpdateCodeView(CurShowCodeTemplate.CodeContent);
+			CurShowCodeTemplate = data;
+			nameInputField.SetValueWithoutNotify(data.Name.Value);
+			textAssetField.SetValueWithoutNotify(data.CodeTemplateFile);
+			codeContent.SetValueWithoutNotify(data.CodeContent);
+			UpdateCodeView(CurShowCodeTemplate.CodeContent);
+		}
+
+
 	}
 
 

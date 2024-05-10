@@ -7,9 +7,9 @@ using UnityEngine;
 /// </summary>
 public class CodeTemplateFactory
 {
-	private CodeDatas codeDatas;
+	private KooCodeDatas codeDatas;
 
-	public CodeDatas Datas => codeDatas;
+	public KooCodeDatas Datas => codeDatas;
 
 
 	public Action OnCreateData;
@@ -18,7 +18,7 @@ public class CodeTemplateFactory
 
 	public CodeTemplateFactory()
 	{
-		codeDatas = AssetDatabase.LoadAssetAtPath<CodeDatas>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeDatas.asset");
+		codeDatas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeDatas.asset");
 	}
 
 

@@ -33,7 +33,7 @@ public class CodeManagerWindow : EditorWindow
 	#region 数据
 
 	[SerializeField]
-	public CodeDatas Datas;
+	public KooCodeDatas Datas;
 
 	private CodeTemplateFactory factory;
 
@@ -47,9 +47,7 @@ public class CodeManagerWindow : EditorWindow
 
 	private ListView methodDataListView;
 
-	private CodeTemplateInspector templateInspector;
-
-	private CodeDataInspector codeDataInspector;
+	private CodeInspectorManager inspectorManager;
 
 	private VisualElement upDiv;
 
@@ -126,7 +124,7 @@ public class CodeManagerWindow : EditorWindow
 
 	private void OnDestroy()
 	{
-		templateInspector?.OnClose();
+		inspectorManager?.OnClose();
 	}
 
 	#endregion
@@ -205,12 +203,8 @@ public class CodeManagerWindow : EditorWindow
 
 	private void BindInspector(VisualElement root)
 	{
-		templateInspector = root.Q<CodeTemplateInspector>("CodeTemplateInspector");
-		templateInspector.BindToManagerWindow(this);
-
-		codeDataInspector = root.Q<CodeDataInspector>("CodeDataInspector");
-		codeDataInspector.curCodeData = Datas.Codes[0];
-		codeDataInspector.BindToManagerWindow(this);
+		inspectorManager = root.Q<CodeInspectorManager>("CodeInspectorManager");
+		inspectorManager.BindToManagerWindow(this);
 	}
 
 	/// <summary>
@@ -247,8 +241,9 @@ public class CodeManagerWindow : EditorWindow
 
 		if (Datas == null)
 		{
-			Datas = AssetDatabase.LoadAssetAtPath<CodeDatas>(CodeDatasPath);
+			Datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeDatasPath);
 		}
+
 		CreateListView(codeTemplateListView, TemplateListItemVistalTreeAsset, Datas.CodeTemplates);
 
 		codeTemplateListView.bindItem += BindTemplateItem;
@@ -291,7 +286,7 @@ public class CodeManagerWindow : EditorWindow
 	{
 		if (Datas == null)
 		{
-			Datas = AssetDatabase.LoadAssetAtPath<CodeDatas>(CodeDatasPath);
+			Datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeDatasPath);
 		}
 
 		CreateListView(codeDataListView, DataListItemVistalTreeAsset, Datas.Codes);
@@ -351,7 +346,12 @@ public class CodeManagerWindow : EditorWindow
 		// 如果有LevelData类型的元素
 		if (selectedListItems.Any())
 		{
-			templateInspector.UpdateInspector(selectedListItems[0]);
+			//
+
+
+
+
+			inspectorManager.UpdateInspector(selectedListItems[0]);
 		}
 	}
 

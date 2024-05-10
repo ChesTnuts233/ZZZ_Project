@@ -3,19 +3,8 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class CodeTemplateData
+public class CodeTemplateData : CodeData
 {
-	/// <summary>
-	/// 模板名称
-	/// </summary>
-	public ModelValue<string> Name = new() { ValueWithoutAction = "DefaultTemplate" };
-
-
-	/// <summary>
-	/// 模板ID
-	/// </summary>
-	public string ID;
-
 
 	/// <summary>
 	/// 模板内容
@@ -26,12 +15,10 @@ public class CodeTemplateData
 	public TextAsset CodeTemplateFile;
 
 
-
-
 	/// <summary>
 	/// 根据TextAsset编辑
 	/// </summary>
-	public void UpdateCodeContent()
+	public override void UpdateData()
 	{
 		if (CodeTemplateFile != null)
 		{
@@ -42,6 +29,7 @@ public class CodeTemplateData
 		{
 			Name.Value = CodeTemplateFile.name;
 		}
+
 	}
 
 	public CodeTemplateData()

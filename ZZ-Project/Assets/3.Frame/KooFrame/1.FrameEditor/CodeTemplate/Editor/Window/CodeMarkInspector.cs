@@ -1,12 +1,13 @@
-using CodeTemplate;
-using KooFrame;
 using UnityEngine.UIElements;
 
-public class CodeDataInspector : VisualElement
+/// <summary>
+/// 代码笔记监视器
+/// </summary>
+public class CodeMarkInspector : CodeInspector
 {
 	private CodeManagerWindow managerWindow;
 
-	public CodeData curCodeData;
+	public CodeMarkData curCodeMarkData;
 
 
 	#region 元素
@@ -20,9 +21,7 @@ public class CodeDataInspector : VisualElement
 
 	#endregion
 
-
-
-	public new class UxmlFactory : UxmlFactory<CodeDataInspector, VisualElement.UxmlTraits>
+	public new class UxmlFactory : UxmlFactory<CodeMarkInspector, VisualElement.UxmlTraits>
 	{
 
 	}
@@ -35,7 +34,7 @@ public class CodeDataInspector : VisualElement
 
 		container_assets.CloneTree(this);
 
-		Viewer = new MG.MDV.MarkdownViewer(managerWindow.DarkSkin, curCodeData.MarkDownPath, curCodeData.codeMD.text);
+		Viewer = new MG.MDV.MarkdownViewer(managerWindow.DarkSkin, curCodeMarkData.MarkDownPath, curCodeMarkData.codeMD.text);
 
 		imGUIcontainer = this.Q<IMGUIContainer>("MarkDownView");
 
@@ -64,9 +63,9 @@ public class CodeDataInspector : VisualElement
 	//	}
 	//}
 
-	public void UpdateInspector(CodeData data)
+	public void UpdateInspector(CodeMarkData data)
 	{
-		curCodeData = data;
+		curCodeMarkData = data;
 	}
 
 
