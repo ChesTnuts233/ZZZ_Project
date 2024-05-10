@@ -27,6 +27,8 @@ public class CodeTemplateCreateWindow : EditorWindow
 
 	private KooCodeDatas datas;
 
+	private ListView templateListView;
+
 	#region 页面元素
 
 	private TextField nameField;
@@ -42,6 +44,11 @@ public class CodeTemplateCreateWindow : EditorWindow
 		CodeTemplateCreateWindow wnd = GetWindow<CodeTemplateCreateWindow>();
 		wnd.titleContent = new GUIContent("创建脚本模板");
 		return wnd;
+	}
+
+	public void BindListView(ListView listView)
+	{
+		templateListView = listView;
 	}
 
 	private void OnEnable()
@@ -141,6 +148,10 @@ public class CodeTemplateCreateWindow : EditorWindow
 		//创建模板数据
 		factory.AddData(curCreateTemplateData);
 
+		if (templateListView != null)
+		{
+			templateListView.Rebuild();
+		}
 
 		////创建模板文件
 		//CreateTXTTemplateFile();

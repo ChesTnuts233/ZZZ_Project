@@ -24,7 +24,6 @@ namespace GameBuild
 
 
 
-
 		#region 依赖内容
 
 		protected Transform playerTransform;
@@ -70,7 +69,6 @@ namespace GameBuild
 
 		public void SetInput(PlayerInputBase input)
 		{
-			"输入赋值".Log();
 			this.input = input;
 		}
 

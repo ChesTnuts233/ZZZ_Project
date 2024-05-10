@@ -31,6 +31,12 @@ public static class CodeTemplateMenuItem
 		ScriptsTemplatesCreater.CreateScriptByContent("Test2",
 			Datas.GetCodeContentByDataName("Test2"));
 	}
+	[MenuItem("Assets/KooFrame-脚本/Test3", false, 0)]
+	public static void CreateTest3Scripts()
+	{
+		ScriptsTemplatesCreater.CreateScriptByContent("Test3",
+			Datas.GetCodeContentByDataName("Test3"));
+	}
 
 #endregion 代码生成结束标识
 }

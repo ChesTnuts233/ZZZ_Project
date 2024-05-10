@@ -1,9 +1,11 @@
+using KooFrame;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 
@@ -41,7 +43,7 @@ public class CodeManagerWindow : EditorWindow
 
 	#region 面板元素
 
-	private ListView codeDataListView;
+	private ListView codeMarkListView;
 
 	private ListView codeTemplateListView;
 
@@ -86,6 +88,11 @@ public class CodeManagerWindow : EditorWindow
 	private void OnEnable()
 	{
 		factory = new CodeTemplateFactory();
+
+		if (Datas == null)
+		{
+			Datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeDatasPath);
+		}
 	}
 
 	public void CreateGUI()
@@ -101,6 +108,8 @@ public class CodeManagerWindow : EditorWindow
 
 		BindInspector(root);
 
+		CreateCodeDataListView();
+
 		CreateCodeTemplateListView();
 
 		RegisterDivDragAndDrop(codeTemplateListView);
@@ -109,14 +118,14 @@ public class CodeManagerWindow : EditorWindow
 	private void OnGUI()
 	{
 
-		if (Event.current.button == 1 && leftDiv.contentRect.Contains(Event.current.mousePosition))
-		{
-			GenericMenu menu = new GenericMenu();
-			// 添加菜单项
-			CreateTemplateListMenu(menu);
-			// 显示菜单
-			menu.ShowAsContext();
-		}
+		//if (Event.current.button == 1 && leftDiv.contentRect.Contains(Event.current.mousePosition))
+		//{
+		//	GenericMenu menu = new GenericMenu();
+		//	// 添加菜单项
+		//	CreateTemplateListMenu(menu);
+		//	// 显示菜单
+		//	menu.ShowAsContext();
+		//}
 
 
 		onGUICallBack?.Invoke();
@@ -140,9 +149,27 @@ public class CodeManagerWindow : EditorWindow
 
 	private void BindListView(VisualElement root)
 	{
-		codeDataListView = root.Q<ListView>("CodeDataList");
+		codeMarkListView = root.Q<ListView>("CodeDataList");
+		BindListViewRightClick(codeMarkListView, CreateMarkListMenu);
 		codeTemplateListView = root.Q<ListView>("CodeTemplateList");
+		BindListViewRightClick(codeTemplateListView, CreateTemplateListMenu);
 		methodDataListView = root.Q<ListView>("MethodTemplateList");
+	}
+
+
+	private void BindListViewRightClick(VisualElement element, Action clickAction)
+	{
+		element.RegisterCallback<PointerDownEvent>(evt =>
+		{
+			// 检查是否是右键点击
+			if (evt.button == PointerEventData.InputButton.Right.ToInt())
+			{
+				// 获取点击的UI元素
+				VisualElement clickedElement = evt.target as VisualElement;
+				// 添加菜单项
+				clickAction?.Invoke();
+			}
+		});
 	}
 
 	private void BindListShowBtn(VisualElement root)
@@ -151,13 +178,13 @@ public class CodeManagerWindow : EditorWindow
 		codeTemplateShowBtn = root.Q<Button>("CodeTemplateShowBtn");
 		methodShowBtn = root.Q<Button>("MethodShowBtn");
 
-		codeDataShowBtn.clicked += () => ShowListView(codeDataListView);
+		codeDataShowBtn.clicked += () => ShowListView(codeMarkListView);
 		codeTemplateShowBtn.clicked += () => ShowListView(codeTemplateListView);
 		methodShowBtn.clicked += () => ShowListView(methodDataListView);
 
 		void ShowListView(ListView showListView)
 		{
-			codeDataListView.style.display = DisplayStyle.None;
+			codeMarkListView.style.display = DisplayStyle.None;
 			codeTemplateListView.style.display = DisplayStyle.None;
 			methodDataListView.style.display = DisplayStyle.None;
 			showListView.style.display = DisplayStyle.Flex;
@@ -211,14 +238,15 @@ public class CodeManagerWindow : EditorWindow
 	/// 创建右键面板
 	/// </summary>
 	/// <param name="menu"></param>
-	private void CreateTemplateListMenu(GenericMenu menu)
+	private void CreateTemplateListMenu()
 	{
+		GenericMenu menu = new GenericMenu();
 		menu.AddItem(new GUIContent("添加脚本模板"), false, () =>
 		{
 			//打开创建模板窗口
 			CodeTemplateCreateWindow.ShowWindow();
 
-			codeTemplateListView.Rebuild();
+			//codeTemplateListView.Rebuild();
 		});
 
 		menu.AddItem(new GUIContent("删除"), false, () =>
@@ -230,20 +258,42 @@ public class CodeManagerWindow : EditorWindow
 			selectedListItems.Clear(); // 删除后清空选中项列表
 			codeTemplateListView.Rebuild();
 		});
-
+		// 显示菜单
+		menu.ShowAsContext();
 	}
+
+
+	private void CreateMarkListMenu()
+	{
+		GenericMenu menu = new GenericMenu();
+		menu.AddItem(new GUIContent("添加代码笔记"), false, () =>
+		{
+			////打开创建模板窗口
+			//CodeTemplateCreateWindow.ShowWindow();
+			//codeTemplateListView.Rebuild();
+		});
+
+		menu.AddItem(new GUIContent("删除"), false, () =>
+		{
+			foreach (var selectedItem in selectedListItems)
+			{
+				factory.DeleteData(selectedItem);
+			}
+			selectedListItems.Clear(); // 删除后清空选中项列表
+			codeTemplateListView.Rebuild();
+		});
+		// 显示菜单
+		menu.ShowAsContext();
+	}
+
+
+
 
 	/// <summary>
 	/// 获取所有的模板数据
 	/// </summary>
 	private void CreateCodeTemplateListView()
 	{
-
-		if (Datas == null)
-		{
-			Datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeDatasPath);
-		}
-
 		CreateListView(codeTemplateListView, TemplateListItemVistalTreeAsset, Datas.CodeTemplates);
 
 		codeTemplateListView.bindItem += BindTemplateItem;
@@ -282,16 +332,9 @@ public class CodeManagerWindow : EditorWindow
 	}
 
 
-	private void CreateCodeDataListView(VisualElement root)
+	private void CreateCodeDataListView()
 	{
-		if (Datas == null)
-		{
-			Datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeDatasPath);
-		}
-
-		CreateListView(codeDataListView, DataListItemVistalTreeAsset, Datas.Codes);
-
-
+		CreateListView(codeMarkListView, DataListItemVistalTreeAsset, Datas.Codes);
 	}
 
 
@@ -306,7 +349,6 @@ public class CodeManagerWindow : EditorWindow
 				createdListView.Remove(visualElement);
 				return;
 			}
-
 		};
 
 		createdListView.makeItem = makeItem;
@@ -346,11 +388,6 @@ public class CodeManagerWindow : EditorWindow
 		// 如果有LevelData类型的元素
 		if (selectedListItems.Any())
 		{
-			//
-
-
-
-
 			inspectorManager.UpdateInspector(selectedListItems[0]);
 		}
 	}

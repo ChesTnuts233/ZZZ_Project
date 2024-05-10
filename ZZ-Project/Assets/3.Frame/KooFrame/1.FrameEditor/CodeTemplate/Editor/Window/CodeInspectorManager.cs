@@ -99,9 +99,6 @@ public class CodeInspectorManager : VisualElement
 	}
 
 
-
-
-
 	/// <summary>
 	/// 绑定所有监视器
 	/// </summary>
@@ -195,8 +192,6 @@ public class CodeInspectorManager : VisualElement
 			CurShowCodeTemplate.CodeContent = value.newValue;
 			UpdateCodeView(value.newValue);
 		});
-
-
 
 		datas = managerWindow.Datas;
 	}

@@ -24,3 +24,8 @@ MonoBehaviour:
     ID: 
     CodeContent: 
     CodeTemplateFile: {fileID: 0}
+  - Name:
+      _value: Test3
+    ID: 
+    CodeContent: 
+    CodeTemplateFile: {fileID: 0}

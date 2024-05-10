@@ -12,6 +12,9 @@ namespace KooFrame
 	/// <summary>
 	/// 用于玩家属性 道具属性的配置
 	/// </summary>
-	public class OdinConfigBase_SO : SerializedScriptableObject { }
+	public class OdinConfigBase_SO : SerializedScriptableObject
+	{
+
+	}
 
 }
