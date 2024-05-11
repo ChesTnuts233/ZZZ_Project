@@ -5,8 +5,7 @@ using UnityEngine.UIElements;
 
 public class CodeTemplateCreateWindow : CodeCreateWindowBase
 {
-	[SerializeField]
-	private VisualTreeAsset m_VisualTreeAsset = default;
+
 
 	private CodeTemplateData curCreateTemplateData;
 
@@ -92,7 +91,7 @@ public class CodeTemplateCreateWindow : CodeCreateWindowBase
 	private void BindNameField(VisualElement root)
 	{
 		nameField = root.Q<TextField>("NameInput");
-
+		nameField.SetValueWithoutNotify("DefaultTemplate");
 		nameField.RegisterValueChangedCallback((value) =>
 		{
 			curCreateTemplateData.Name.ValueWithoutAction = value.newValue;

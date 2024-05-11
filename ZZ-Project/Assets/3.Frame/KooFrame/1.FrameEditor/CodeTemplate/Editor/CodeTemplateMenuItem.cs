@@ -19,23 +19,23 @@ public static class CodeTemplateMenuItem
 
 
 	#region 代码生成开始标识
-	[MenuItem("Assets/KooFrame-脚本/Test1", false, 0)]
-	public static void CreateTest1Scripts()
+	[MenuItem("Assets/KooFrame-脚本/MonoBehaviour", false, 0)]
+	public static void CreateMonoBehaviourScripts()
 	{
-		ScriptsTemplatesCreater.CreateScriptByContent("Test1",
-			Datas.GetCodeContentByDataName("Test1"));
+		ScriptsTemplatesCreater.CreateScriptByContent("MonoBehaviour",
+			Datas.GetCodeContentByDataName("MonoBehaviour"));
 	}
-	[MenuItem("Assets/KooFrame-脚本/Test2", false, 0)]
-	public static void CreateTest2Scripts()
+	[MenuItem("Assets/KooFrame-脚本/UIPanel", false, 0)]
+	public static void CreateUIPanelScripts()
 	{
-		ScriptsTemplatesCreater.CreateScriptByContent("Test2",
-			Datas.GetCodeContentByDataName("Test2"));
+		ScriptsTemplatesCreater.CreateScriptByContent("UIPanel",
+			Datas.GetCodeContentByDataName("UIPanel"));
 	}
-	[MenuItem("Assets/KooFrame-脚本/Test3", false, 0)]
-	public static void CreateTest3Scripts()
+	[MenuItem("Assets/KooFrame-脚本/TestScripts", false, 0)]
+	public static void CreateTestScriptsScripts()
 	{
-		ScriptsTemplatesCreater.CreateScriptByContent("Test3",
-			Datas.GetCodeContentByDataName("Test3"));
+		ScriptsTemplatesCreater.CreateScriptByContent("TestScripts",
+			Datas.GetCodeContentByDataName("TestScripts"));
 	}
 
 #endregion 代码生成结束标识

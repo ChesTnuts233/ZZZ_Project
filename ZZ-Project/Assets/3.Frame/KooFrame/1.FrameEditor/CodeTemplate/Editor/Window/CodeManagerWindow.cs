@@ -11,31 +11,28 @@ using UnityEngine.UIElements;
 
 public class CodeManagerWindow : EditorWindow
 {
-	#region 排布资源
-	[SerializeField]
-	private VisualTreeAsset selfVisualTreeAsset = default;
-
-	[SerializeField]
-	public VisualTreeAsset TemplateInspectorVisualTreeAsset = default;
-
-	[SerializeField]
-	public VisualTreeAsset DataInspectorVisualTreeAsset = default;
-
-	[SerializeField]
-	public VisualTreeAsset TemplateListItemVistalTreeAsset = default;
-
-	[SerializeField]
-	public VisualTreeAsset MarkDataListItemVistalTreeAsset = default;
-
-	[SerializeField]
-	public GUISkin DarkSkin;
-
-	#endregion
-
 	#region 数据
 
 	[SerializeField]
 	public KooCodeDatas Datas;
+
+	[SerializeField]
+	private CodeSettingsData settingsData;
+
+
+	public CodeSettingsData SettingsData
+	{
+		get
+		{
+			if (settingsData == null)
+			{
+				settingsData = AssetDatabase.LoadAssetAtPath<CodeSettingsData>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/SettingsData.asset");
+			}
+			return settingsData;
+		}
+	}
+
+
 
 	private CodeTemplateFactory templateFactory;
 	private CodeMarkFactory markFactory;
@@ -102,7 +99,7 @@ public class CodeManagerWindow : EditorWindow
 	public void CreateGUI()
 	{
 		VisualElement root = rootVisualElement;
-		selfVisualTreeAsset.CloneTree(root);
+		SettingsData.ManagerVisualTreeAsset.CloneTree(root);
 
 		BindDiv(root);
 
@@ -286,7 +283,7 @@ public class CodeManagerWindow : EditorWindow
 	/// </summary>
 	private void CreateCodeTemplateListView()
 	{
-		CreateListView(codeTemplateListView, TemplateListItemVistalTreeAsset, Datas.CodeTemplates);
+		CreateListView(codeTemplateListView, SettingsData.TemplateListItemVistalTreeAsset, Datas.CodeTemplates);
 
 		codeTemplateListView.bindItem += BindTemplateItem;
 
@@ -326,7 +323,7 @@ public class CodeManagerWindow : EditorWindow
 
 	private void CreateCodeDataListView()
 	{
-		CreateListView(codeMarkListView, MarkDataListItemVistalTreeAsset, Datas.CodeMarks);
+		CreateListView(codeMarkListView, SettingsData.MarkDataListItemVistalTreeAsset, Datas.CodeMarks);
 
 		codeMarkListView.bindItem += BindTemplateItem;
 
@@ -413,10 +410,9 @@ public class CodeManagerWindow : EditorWindow
 		// 如果有LevelData类型的元素
 		if (selectedTemplateListItems.Any())
 		{
-			inspectorManager.UpdateInspector(selectedTemplateListItems[0]);
+			inspectorManager.UpdateInspectors(selectedTemplateListItems[0]);
 		}
 	}
-
 
 	private void OnCodeMarkDataSelectChange(IEnumerable<object> enumerable)
 	{
@@ -425,7 +421,7 @@ public class CodeManagerWindow : EditorWindow
 		// 如果有LevelData类型的元素
 		if (selectedMarkListItems.Any())
 		{
-			inspectorManager.UpdateInspector(selectedMarkListItems[0]);
+			inspectorManager.UpdateInspectors(selectedMarkListItems[0]);
 		}
 	}
 

@@ -1,10 +1,24 @@
 
 using UnityEngine.UIElements;
 
-public class CodeInspector : VisualElement
+public abstract class CodeInspector : VisualElement
 {
-	//public CodeData 
+	protected CodeManagerWindow ManagerWindow;
 
+	private VisualTreeAsset container_assets;
 
+	public KooCodeDatas Datas;
+
+	public virtual void BindToManagerWindow(CodeManagerWindow managerWindow)
+	{
+		ManagerWindow = managerWindow;
+		
+	}
+
+	/// <summary>
+	/// 更新检视器
+	/// </summary>
+	/// <param name="data"></param>
+	public abstract void UpdateInspector();
 
 }
