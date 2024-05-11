@@ -75,9 +75,18 @@ public class CodeInspectorManager : VisualElement
 		codeMarkInspector = this.Q<CodeMarkInspector>("CodeMarkInspector");
 		codeMarkInspector.BindToManagerWindow(managerWindow);  //绑定到管理窗口
 		codeTemplateInspector = this.Q<CodeTemplateInspector>("CodeTemplateInspector");
-		codeTemplateInspector.BindToManagerWindow(managerWindow); 
+		codeTemplateInspector.BindToManagerWindow(managerWindow);
 	}
 
+
+	private void Close()
+	{
+		codeMarkInspector.Close();
+		//codeTemplateInspector.Close();
+
+		codeMarkInspector = null;
+		codeTemplateInspector = null;
+	}
 
 
 	/// <summary>
@@ -101,8 +110,8 @@ public class CodeInspectorManager : VisualElement
 
 	private void ShowInspector(VisualElement showElement)
 	{
-		codeTemplateInspector.style.display = DisplayStyle.None;
-		codeMarkInspector.style.display = DisplayStyle.None;
+		codeTemplateInspector.Close();
+		codeMarkInspector.Close();
 		showElement.style.display = DisplayStyle.Flex;
 	}
 

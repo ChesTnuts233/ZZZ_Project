@@ -52,6 +52,13 @@ public class CodeTemplateInspector : CodeInspector
 	}
 
 
+	public override void Close()
+	{
+		base.Close();
+		this.style.display = DisplayStyle.None;
+	}
+
+
 	private void BindAboutViewOrEditorChange()
 	{
 		codeView = this.Q<Label>("CodeView");
@@ -72,7 +79,6 @@ public class CodeTemplateInspector : CodeInspector
 		{
 			CurCheckTemplateData.Name.SetValueWithoutAction(value.newValue);
 		});
-
 	}
 
 

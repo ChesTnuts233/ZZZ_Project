@@ -1,3 +1,5 @@
+using MG.MDV;
+using UnityEditor;
 using UnityEngine.UIElements;
 
 /// <summary>
@@ -14,6 +16,8 @@ public class CodeMarkInspector : CodeInspector
 	private IMGUIContainer imGUIcontainer;
 
 	private MG.MDV.MarkdownViewer viewer;
+
+	private Editor editor;
 
 	#endregion
 
@@ -34,13 +38,21 @@ public class CodeMarkInspector : CodeInspector
 
 		imGUIcontainer = this.Q<IMGUIContainer>("MarkDownView");
 
+		UnityEngine.Object.DestroyImmediate(editor);
+		editor = UnityEditor.Editor.CreateEditor(container_assets);
+
 		//添加绘制监听
 		imGUIcontainer.onGUIHandler += OnMarkDownViewGUI;
+		EditorApplication.update += UpdateRequests;
 	}
 
-	public void Close()
+	public override void Close()
 	{
+		base.Close();
+		this.style.display = DisplayStyle.None;
 		imGUIcontainer.onGUIHandler -= OnMarkDownViewGUI;
+		EditorApplication.update -= UpdateRequests;
+		viewer = null;
 	}
 
 	private void OnMarkDownViewGUI()
@@ -56,7 +68,17 @@ public class CodeMarkInspector : CodeInspector
 	public void UpdateInspector(CodeMarkData data)
 	{
 		curCheckMarkData = data;
-		viewer = new MG.MDV.MarkdownViewer(ManagerWindow.SettingsData.DarkSkin, curCheckMarkData.MarkDownPath, curCheckMarkData.codeMD.text);
+		string content = (data.codeMD).text;
+		viewer = new MG.MDV.MarkdownViewer(ManagerWindow.SettingsData.DarkSkin, curCheckMarkData.MarkDownPath, content);
+	}
+
+
+	void UpdateRequests()
+	{
+		if (viewer.Update())
+		{
+			editor.Repaint();
+		}
 	}
 
 

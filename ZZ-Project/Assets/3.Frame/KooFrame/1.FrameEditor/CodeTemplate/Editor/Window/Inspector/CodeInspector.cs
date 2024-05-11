@@ -12,7 +12,11 @@ public abstract class CodeInspector : VisualElement
 	public virtual void BindToManagerWindow(CodeManagerWindow managerWindow)
 	{
 		ManagerWindow = managerWindow;
-		
+	}
+
+	public virtual void Close()
+	{
+
 	}
 
 	/// <summary>
@@ -20,5 +24,7 @@ public abstract class CodeInspector : VisualElement
 	/// </summary>
 	/// <param name="data"></param>
 	public abstract void UpdateInspector();
+
+
 
 }
