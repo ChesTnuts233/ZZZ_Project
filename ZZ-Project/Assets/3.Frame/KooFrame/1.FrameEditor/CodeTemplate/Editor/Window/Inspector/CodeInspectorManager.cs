@@ -52,10 +52,6 @@ public class CodeInspectorManager : VisualElement
 		}
 	}
 
-	public void OnClose()
-	{
-	}
-
 
 
 	/// <summary>
@@ -79,10 +75,10 @@ public class CodeInspectorManager : VisualElement
 	}
 
 
-	private void Close()
+	public void Close()
 	{
 		codeMarkInspector.Close();
-		//codeTemplateInspector.Close();
+		codeTemplateInspector.Close();
 
 		codeMarkInspector = null;
 		codeTemplateInspector = null;
@@ -97,22 +93,23 @@ public class CodeInspectorManager : VisualElement
 		//更新对应的数据
 		if (data is CodeTemplateData templateData)
 		{
-			ShowInspector(codeTemplateInspector);
+			//应该先更新数据 再显示出面板
 			codeTemplateInspector.UpdateInspector(templateData);
+			ShowInspector(codeTemplateInspector);
 		}
 		else if (data is CodeMarkData markData)
 		{
-			ShowInspector(codeMarkInspector);
 			codeMarkInspector.UpdateInspector(markData);
+			ShowInspector(codeMarkInspector);
 		}
 	}
 
 
-	private void ShowInspector(VisualElement showElement)
+	private void ShowInspector(CodeInspector showInspector)
 	{
 		codeTemplateInspector.Close();
 		codeMarkInspector.Close();
-		showElement.style.display = DisplayStyle.Flex;
+		showInspector.Show();
 	}
 
 }

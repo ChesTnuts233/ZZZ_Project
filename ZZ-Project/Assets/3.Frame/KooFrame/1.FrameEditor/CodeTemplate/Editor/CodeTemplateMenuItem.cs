@@ -37,6 +37,12 @@ public static class CodeTemplateMenuItem
 		ScriptsTemplatesCreater.CreateScriptByContent("TestScripts",
 			Datas.GetCodeContentByDataName("TestScripts"));
 	}
+	[MenuItem("Assets/KooFrame-脚本/CSharp_Class", false, 0)]
+	public static void CreateCSharp_ClassScripts()
+	{
+		ScriptsTemplatesCreater.CreateScriptByContent("CSharp_Class",
+			Datas.GetCodeContentByDataName("CSharp_Class"));
+	}
 
 #endregion 代码生成结束标识
 }

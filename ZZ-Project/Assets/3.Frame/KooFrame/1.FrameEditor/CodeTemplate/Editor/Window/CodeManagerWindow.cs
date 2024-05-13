@@ -121,9 +121,11 @@ public class CodeManagerWindow : EditorWindow
 		onGUICallBack?.Invoke();
 	}
 
+
+
 	private void OnDestroy()
 	{
-		inspectorManager?.OnClose();
+		inspectorManager?.Close();
 	}
 
 	#endregion

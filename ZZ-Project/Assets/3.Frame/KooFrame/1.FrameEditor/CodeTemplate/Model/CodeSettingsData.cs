@@ -26,5 +26,9 @@ public class CodeSettingsData : ScriptableObject
 	[SerializeField, Header("MarkDownGUISkin资源")]
 	public GUISkin DarkSkin;
 
+
+	[SerializeField, Header("文件夹InspectorUXML资源")]
+	public VisualTreeAsset DefaultFoldTipVistalTreeAsset = default;
+
 	#endregion
 }

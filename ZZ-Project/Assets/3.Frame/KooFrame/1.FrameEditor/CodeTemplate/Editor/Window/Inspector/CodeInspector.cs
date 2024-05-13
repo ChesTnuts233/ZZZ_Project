@@ -14,6 +14,11 @@ public abstract class CodeInspector : VisualElement
 		ManagerWindow = managerWindow;
 	}
 
+	public virtual void Show()
+	{
+
+	}
+
 	public virtual void Close()
 	{
 

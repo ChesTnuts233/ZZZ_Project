@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="BackGround" style="flex-grow: 1;">
+        <ui:ListView selection-type="Multiple" style="flex-grow: 0.3;" />
+        <ui:VisualElement style="flex-grow: 0.3; align-items: center; justify-content: center; border-left-color: rgba(176, 176, 176, 0.69); border-right-color: rgba(176, 176, 176, 0.69); border-top-color: rgba(176, 176, 176, 0.69); border-bottom-color: rgba(176, 176, 176, 0.69); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; min-height: 150px;">
+            <ui:Label tabindex="-1" text="需要生成的内容拖到此处" display-tooltip-when-elided="true" style="font-size: 18px;" />
+        </ui:VisualElement>
+        <ui:Button text="生成代码" display-tooltip-when-elided="true" />
+    </ui:VisualElement>
+</ui:UXML>

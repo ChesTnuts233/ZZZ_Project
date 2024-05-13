@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 12001, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: MarkdownSkinDark
   m_EditorClassIdentifier: 
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 6146528f12be62d48bf9172cea57d164, type: 3}
   m_box:
     m_Name: box
     m_Normal:

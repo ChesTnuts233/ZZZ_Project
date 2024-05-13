@@ -15,7 +15,7 @@ public class CodeMarkInspector : CodeInspector
 
 	private IMGUIContainer imGUIcontainer;
 
-	private MG.MDV.MarkdownViewer viewer;
+	private MarkdownViewer viewer;
 
 	private Editor editor;
 
@@ -41,8 +41,14 @@ public class CodeMarkInspector : CodeInspector
 		UnityEngine.Object.DestroyImmediate(editor);
 		editor = UnityEditor.Editor.CreateEditor(container_assets);
 
-		//添加绘制监听
+
+	}
+
+	public override void Show()
+	{
+		this.style.display = DisplayStyle.Flex;
 		imGUIcontainer.onGUIHandler += OnMarkDownViewGUI;
+		//添加绘制监听
 		EditorApplication.update += UpdateRequests;
 	}
 
@@ -52,12 +58,11 @@ public class CodeMarkInspector : CodeInspector
 		this.style.display = DisplayStyle.None;
 		imGUIcontainer.onGUIHandler -= OnMarkDownViewGUI;
 		EditorApplication.update -= UpdateRequests;
-		viewer = null;
 	}
 
 	private void OnMarkDownViewGUI()
 	{
-		viewer?.Draw();
+		viewer.Draw();
 	}
 
 	public override void UpdateInspector()

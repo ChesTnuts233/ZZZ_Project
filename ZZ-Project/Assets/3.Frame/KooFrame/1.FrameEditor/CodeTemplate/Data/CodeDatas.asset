@@ -61,3 +61,12 @@ MonoBehaviour:
       {\r\n            \r\n        }\r\n    \r\n        protected override void BeforeOnDestroy()\r\n       
       {\r\n               //Nothing to Do\r\n        }\r\n    }\r\n}\r\n\r\n"
     CodeTemplateFile: {fileID: 4900000, guid: 83d7de97a2b537b48be82d15dc585f71, type: 3}
+  - Name:
+      _value: CSharp_Class
+    ID: 
+    CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nnamespace
+      GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    CodeTemplateFile: {fileID: 4900000, guid: cb3864d209945b5468bc0950ce7e4b3f, type: 3}

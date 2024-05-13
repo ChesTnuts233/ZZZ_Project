@@ -16,6 +16,8 @@ public class KooCodeDatas : ConfigBase_SO
 	public List<CodeTemplateData> CodeTemplates = new();
 
 
+
+
 	public string GetCodeContentByDataName(string name)
 	{
 		string content = "";

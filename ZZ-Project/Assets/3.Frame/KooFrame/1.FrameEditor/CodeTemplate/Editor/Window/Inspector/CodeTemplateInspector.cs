@@ -51,6 +51,11 @@ public class CodeTemplateInspector : CodeInspector
 
 	}
 
+	public override void Show()
+	{
+		this.style.display = DisplayStyle.Flex;
+	}
+
 
 	public override void Close()
 	{
