@@ -1,21 +1,10 @@
+using KooFrame;
 using KooFrame.BaseSystem;
 using UnityEditor;
 
 public static class CodeTemplateMenuItem
 {
-	private static KooCodeDatas datas;
-
-	public static KooCodeDatas Datas
-	{
-		get
-		{
-			if (datas == null)
-			{
-				datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeManagerWindow.CodeDatasPath);
-			}
-			return datas;
-		}
-	}
+	private static KooCodeDatas Datas => KooCode.Datas;
 
 
 	#region 代码生成开始标识
@@ -44,5 +33,12 @@ public static class CodeTemplateMenuItem
 			Datas.GetCodeContentByDataName("CSharp_Class"));
 	}
 
-#endregion 代码生成结束标识
+	[MenuItem("Assets/KooFrame-脚本/CustomVisualElement", false, 0)]
+	public static void CreateCustomVisualElementScripts()
+	{
+		ScriptsTemplatesCreater.CreateScriptByContent("CustomVisualElement",
+			Datas.GetCodeContentByDataName("CustomVisualElement"));
+	}
+
+	#endregion 代码生成结束标识
 }

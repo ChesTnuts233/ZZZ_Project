@@ -20,3 +20,5 @@ MonoBehaviour:
   MarkDataListItemVistalTreeAsset: {fileID: 9197481963319205126, guid: c97df2d4f132f3947b5a7c452b59ad3c, type: 3}
   DarkSkin: {fileID: 11400000, guid: fa80d576872375044b62759d57352991, type: 2}
   DefaultFoldTipVistalTreeAsset: {fileID: 9197481963319205126, guid: 8e74f3e805f288e4e9172db430fb1b5e, type: 3}
+  DefaultFoldChooseItemVisualAsset: {fileID: 9197481963319205126, guid: 41e07b3a2fd658041a5a1fc3886a6d15, type: 3}
+  DefaultFoldNeedCreatedItemVisualAsset: {fileID: 9197481963319205126, guid: b8a52c048349a7c4596e60faa3e22d13, type: 3}

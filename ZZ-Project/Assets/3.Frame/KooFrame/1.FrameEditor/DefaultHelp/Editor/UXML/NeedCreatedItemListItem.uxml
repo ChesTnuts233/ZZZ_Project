@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/3.Frame/KooFrame/1.FrameEditor/DefaultHelp/Editor/USS/NeedCreatedItem.uss?fileID=7433441132597879392&amp;guid=91c644742181ec948a7bf1e2f46e2deb&amp;type=3#NeedCreatedItem" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1; flex-direction: row; flex-wrap: nowrap; align-items: center; background-color: rgba(161, 161, 161, 0.45); justify-content: space-between; padding-right: 11px; padding-left: 11px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="TemplateName" style="font-size: 15px;" />
+        <ui:TextField picking-mode="Ignore" keyboard-type="Default" placeholder-text="待创建文件名称" name="CreatedName" style="flex-shrink: 0.5; max-width: 120px;" />
+    </ui:VisualElement>
+</ui:UXML>

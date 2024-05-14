@@ -4,180 +4,182 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CodeTemplateInspector : CodeInspector
+namespace KooFrame
 {
-	public new class UxmlFactory : UxmlFactory<CodeTemplateInspector, VisualElement.UxmlTraits>
+	public class CodeTemplateInspector : CodeInspector
 	{
-
-	}
-
-
-	public CodeTemplateData CurCheckTemplateData;
-
-	#region 元素
-
-	private VisualTreeAsset container_assets;
-
-	private TextField codeContent;
-
-	private TextField nameInputField;
-
-	private Label codeView;
-
-	private ObjectField textAssetField;
-
-	private Button editorBtn;
-
-	private Button viewBtn;
-
-	private ScrollView codeViewScroll;
-
-	private ScrollView codeEditorScroll;
-
-	#endregion
-
-
-	public override void BindToManagerWindow(CodeManagerWindow managerWindow)
-	{
-		base.BindToManagerWindow(managerWindow);
-		container_assets = managerWindow.SettingsData.TemplateInspectorVisualTreeAsset;
-		container_assets.CloneTree(this);
-		Datas = ManagerWindow.Datas;
-
-		BindAboutViewOrEditorChange(); //绑定代码检视器 1
-		BindTemplateName(); //绑定名称相关 2
-		BindTextAssetField(); //绑定TextAssetFiled 3
-		BindCodeContent(); //绑定CodeContent 4
-
-	}
-
-	public override void Show()
-	{
-		this.style.display = DisplayStyle.Flex;
-	}
-
-
-	public override void Close()
-	{
-		base.Close();
-		this.style.display = DisplayStyle.None;
-	}
-
-
-	private void BindAboutViewOrEditorChange()
-	{
-		codeView = this.Q<Label>("CodeView");
-		codeViewScroll = this.Q<ScrollView>("CodeView");
-		codeEditorScroll = this.Q<ScrollView>("CodeEditor");
-		codeEditorScroll.style.display = DisplayStyle.None;
-		codeViewScroll.style.display = DisplayStyle.Flex;
-
-		BindEditorBtn(); //绑定编辑显示按钮
-		BindViewBtn();  //绑定预览显示按钮
-	}
-
-	private void BindTemplateName()
-	{
-		nameInputField = this.Q<TextField>("TemplateName");
-
-		nameInputField.RegisterValueChangedCallback((value) =>
+		public new class UxmlFactory : UxmlFactory<CodeTemplateInspector, VisualElement.UxmlTraits>
 		{
-			CurCheckTemplateData.Name.SetValueWithoutAction(value.newValue);
-		});
-	}
 
-
-	private void BindEditorBtn()
-	{
-		editorBtn = this.Q<Button>("EditorBtn");
-
-		editorBtn.clicked += () =>
-		{
-			codeViewScroll.style.display = DisplayStyle.None;
-			codeViewScroll.RemoveFromClassList("show-ani");
-			codeEditorScroll.style.display = DisplayStyle.Flex;
-			codeEditorScroll.AddToClassList("show-ani");
-		};
-	}
-
-	private void BindViewBtn()
-	{
-		viewBtn = this.Q<Button>("ViewBtn");
-
-		viewBtn.clicked += () =>
-		{
-			codeEditorScroll.style.display = DisplayStyle.None;
-			codeEditorScroll.RemoveFromClassList("show-ani");
-			codeViewScroll.style.display = DisplayStyle.Flex;
-			codeViewScroll.AddToClassList("show-ani");
-		};
-
-
-	}
-
-
-	private void UpdateCodeView(string codeContent)
-	{
-
-		string coloredCode = codeContent;
-
-		// 遍历字典，为每个关键词着色
-		foreach (var kvp in keywordColors)
-		{
-			string keyword = kvp.Key;
-			string color = kvp.Value;
-
-			// 使用正则表达式替换关键词并添加颜色标识
-			coloredCode = Regex.Replace(coloredCode, "(^|\\s)(" + keyword + ")(?=$|\\s)", "$1<color=" + color + ">$2</color>");
 		}
 
-		codeView.text = coloredCode;
-	}
+
+		public CodeTemplateData CurCheckTemplateData;
+
+		#region 元素
+
+		private VisualTreeAsset container_assets;
+
+		private TextField codeContent;
+
+		private TextField nameInputField;
+
+		private Label codeView;
+
+		private ObjectField textAssetField;
+
+		private Button editorBtn;
+
+		private Button viewBtn;
+
+		private ScrollView codeViewScroll;
+
+		private ScrollView codeEditorScroll;
+
+		#endregion
 
 
-	private void BindCodeContent()
-	{
-
-		codeContent = this.Q<TextField>("CodeContent");
-
-		codeContent.RegisterValueChangedCallback((value) =>
+		public override void BindToManagerWindow(KooCodeWindow managerWindow)
 		{
-			CurCheckTemplateData.CodeContent = value.newValue;
-			UpdateCodeView(value.newValue);
-		});
+			base.BindToManagerWindow(managerWindow);
+			container_assets = KooCode.SettingsData.TemplateInspectorVisualTreeAsset;
+			container_assets.CloneTree(this);
+			Datas = KooCode.Datas;
 
-	}
+			BindAboutViewOrEditorChange(); //绑定代码检视器 1
+			BindTemplateName(); //绑定名称相关 2
+			BindTextAssetField(); //绑定TextAssetFiled 3
+			BindCodeContent(); //绑定CodeContent 4
 
+		}
 
-	private void BindTextAssetField()
-	{
-		textAssetField = this.Q<ObjectField>("TextAssetField");
-		textAssetField.RegisterValueChangedCallback((value) =>
+		public override void Show()
 		{
-			CurCheckTemplateData.CodeTemplateFile = value.newValue as TextAsset;
-			CurCheckTemplateData.UpdateData();
+			this.style.display = DisplayStyle.Flex;
+		}
 
+
+		public override void Close()
+		{
+			base.Close();
+			this.style.display = DisplayStyle.None;
+		}
+
+
+		private void BindAboutViewOrEditorChange()
+		{
+			codeView = this.Q<Label>("CodeView");
+			codeViewScroll = this.Q<ScrollView>("CodeView");
+			codeEditorScroll = this.Q<ScrollView>("CodeEditor");
+			codeEditorScroll.style.display = DisplayStyle.None;
+			codeViewScroll.style.display = DisplayStyle.Flex;
+
+			BindEditorBtn(); //绑定编辑显示按钮
+			BindViewBtn();  //绑定预览显示按钮
+		}
+
+		private void BindTemplateName()
+		{
+			nameInputField = this.Q<TextField>("TemplateName");
+
+			nameInputField.RegisterValueChangedCallback((value) =>
+			{
+				CurCheckTemplateData.Name.SetValueWithoutAction(value.newValue);
+			});
+		}
+
+
+		private void BindEditorBtn()
+		{
+			editorBtn = this.Q<Button>("EditorBtn");
+
+			editorBtn.clicked += () =>
+			{
+				codeViewScroll.style.display = DisplayStyle.None;
+				codeViewScroll.RemoveFromClassList("show-ani");
+				codeEditorScroll.style.display = DisplayStyle.Flex;
+				codeEditorScroll.AddToClassList("show-ani");
+			};
+		}
+
+		private void BindViewBtn()
+		{
+			viewBtn = this.Q<Button>("ViewBtn");
+
+			viewBtn.clicked += () =>
+			{
+				codeEditorScroll.style.display = DisplayStyle.None;
+				codeEditorScroll.RemoveFromClassList("show-ani");
+				codeViewScroll.style.display = DisplayStyle.Flex;
+				codeViewScroll.AddToClassList("show-ani");
+			};
+
+
+		}
+
+
+		private void UpdateCodeView(string codeContent)
+		{
+
+			string coloredCode = codeContent;
+
+			// 遍历字典，为每个关键词着色
+			foreach (var kvp in keywordColors)
+			{
+				string keyword = kvp.Key;
+				string color = kvp.Value;
+
+				// 使用正则表达式替换关键词并添加颜色标识
+				coloredCode = Regex.Replace(coloredCode, "(^|\\s)(" + keyword + ")(?=$|\\s)", "$1<color=" + color + ">$2</color>");
+			}
+
+			codeView.text = coloredCode;
+		}
+
+
+		private void BindCodeContent()
+		{
+
+			codeContent = this.Q<TextField>("CodeContent");
+
+			codeContent.RegisterValueChangedCallback((value) =>
+			{
+				CurCheckTemplateData.CodeContent = value.newValue;
+				UpdateCodeView(value.newValue);
+			});
+
+		}
+
+
+		private void BindTextAssetField()
+		{
+			textAssetField = this.Q<ObjectField>("TextAssetField");
+			textAssetField.RegisterValueChangedCallback((value) =>
+			{
+				CurCheckTemplateData.CodeTemplateFile = value.newValue as TextAsset;
+				CurCheckTemplateData.UpdateData();
+
+				UpdateInspector(CurCheckTemplateData);
+			});
+		}
+
+		public override void UpdateInspector()
+		{
 			UpdateInspector(CurCheckTemplateData);
-		});
-	}
+		}
 
-	public override void UpdateInspector()
-	{
-		UpdateInspector(CurCheckTemplateData);
-	}
-
-	public void UpdateInspector(CodeTemplateData data)
-	{
-		CurCheckTemplateData = data;
-		nameInputField.SetValueWithoutNotify(CurCheckTemplateData.Name.Value);
-		textAssetField.SetValueWithoutNotify(CurCheckTemplateData.CodeTemplateFile);
-		codeContent.SetValueWithoutNotify(CurCheckTemplateData.CodeContent);
-		UpdateCodeView(CurCheckTemplateData.CodeContent);
-	}
+		public void UpdateInspector(CodeTemplateData data)
+		{
+			CurCheckTemplateData = data;
+			nameInputField.SetValueWithoutNotify(CurCheckTemplateData.Name.Value);
+			textAssetField.SetValueWithoutNotify(CurCheckTemplateData.CodeTemplateFile);
+			codeContent.SetValueWithoutNotify(CurCheckTemplateData.CodeContent);
+			UpdateCodeView(CurCheckTemplateData.CodeContent);
+		}
 
 
 
-	Dictionary<string, string> keywordColors = new Dictionary<string, string>()
+		Dictionary<string, string> keywordColors = new Dictionary<string, string>()
 	{
 		{"class", "yellow"}, // yellow
 		{"public", "yellow"}, // yellow
@@ -267,5 +269,5 @@ public class CodeTemplateInspector : CodeInspector
 		{"#CREATETIME#", "#8258FA"}, // medium purple
 
 	};
-
+	}
 }

@@ -1,4 +1,5 @@
 using KooFrame;
+using KooFrame.BaseSystem;
 using System;
 using UnityEngine;
 
@@ -46,8 +47,14 @@ public class CodeTemplateData : CodeData
 		this.Name.ValueWithoutAction = name;
 		this.CodeContent = content;
 		this.CodeTemplateFile = sourceFile;
+	}
 
-
+	/// <summary>
+	/// 创建模版到对应的文件
+	/// </summary>
+	public void CreateFileToPath(string name, string path)
+	{
+		ScriptsTemplatesCreater.CreateScriptByContentAndPath(name, path, CodeContent);
 	}
 
 }

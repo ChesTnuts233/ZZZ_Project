@@ -1,15 +1,10 @@
+using KooFrame;
 using UnityEditor;
 
 public abstract class BaseCodeFactory<T> where T : class
 {
-	private KooCodeDatas codeDatas;
 
-	public KooCodeDatas Datas => codeDatas;
-
-	public BaseCodeFactory()
-	{
-		codeDatas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeDatas.asset");
-	}
+	public KooCodeDatas Datas => KooCode.Datas;
 
 
 	public abstract T CreateData();

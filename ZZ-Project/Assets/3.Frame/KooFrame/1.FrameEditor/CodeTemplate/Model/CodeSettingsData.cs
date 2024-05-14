@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[CreateAssetMenu(fileName = "SettingsData", menuName = "CodeManager/SettingsData")]
+[CreateAssetMenu(fileName = "SettingsData", menuName = "KooCode/SettingsData")]
 public class CodeSettingsData : ScriptableObject
 {
 	#region 排布资源
@@ -29,6 +29,16 @@ public class CodeSettingsData : ScriptableObject
 
 	[SerializeField, Header("文件夹InspectorUXML资源")]
 	public VisualTreeAsset DefaultFoldTipVistalTreeAsset = default;
+
+
+	[SerializeField, Header("文件夹内选择ItemUXML资源")]
+	public VisualTreeAsset DefaultFoldChooseItemVisualAsset = default;
+
+	[SerializeField, Header("文件夹内待被创建的列表")]
+	public VisualTreeAsset DefaultFoldNeedCreatedItemVisualAsset = default;
+
+	[SerializeField, Header("目录管理元素资源")]
+	public VisualTreeAsset DirectoryHelpElement = default;
 
 	#endregion
 }

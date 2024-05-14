@@ -16,7 +16,7 @@
                 <ui:ListView name="MethodTemplateList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none;" />
             </ui:VisualElement>
             <ui:VisualElement name="RightDiv" style="display: flex; flex-grow: 0.7;">
-                <CodeInspectorManager name="CodeInspectorManager" style="flex-grow: 1;" />
+                <KooFrame.CodeInspectorManager name="CodeInspectorManager" style="flex-grow: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

@@ -5,8 +5,9 @@
 //* 描述：Nothing
 //*****************************************************
 
-using Sirenix.OdinInspector;
-using Sirenix.Utilities.Editor;
+using KooFrame;
+using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -17,29 +18,31 @@ namespace GameBuild
 		[InitializeOnLoadMethod]
 		static void InitializeOnLoad()
 		{
+			EditorApplication.projectWindowItemOnGUI = delegate (string guid, Rect selectionRect)
+			{
+				if (Selection.activeObject && Selection.assetGUIDs.Contains(guid) && Directory.Exists(AssetDatabase.GUIDToAssetPath(guid)))
+				{
 
+					//按钮的宽度和高度
+					float buttonWidth = 20f;
+					float buttonHeight = 20f;
 
-			//EditorApplication.projectWindowItemOnGUI = delegate (string guid, Rect selectionRect)
-			//{
-			//	if (Selection.activeObject)
-			//	{
-			//		//设置拓展区域
-			//		float width = 20f;
-			//		float height = 13f;
-			//		selectionRect.x += selectionRect.width - width;
-			//		selectionRect.y += selectionRect.height - height - 2f;
-			//		selectionRect.width = width;
-			//		selectionRect.height = height;
+					//设置按钮区域，使其位于选中图标的右上角
+					Rect buttonRect = new Rect(
+						selectionRect.x + selectionRect.width - buttonWidth - 10f,
+						selectionRect.y,
+						buttonWidth,
+						buttonHeight
+					);
 
-			//		GUIStyle centeredStyle = new GUIStyle(GUI.skin.button);
-			//		centeredStyle.alignment = TextAnchor.MiddleCenter;
+					// 绘制按钮
+					if (GUI.Button(buttonRect, "!"))
+					{
+						//打开默认资源编辑窗口
 
-			//		if (GUILayout.Button("X"))
-			//		{
-			//			Debug.Log("Test");
-			//		}
-			//	}
-			//};
+					}
+				}
+			};
 		}
 	}
 }

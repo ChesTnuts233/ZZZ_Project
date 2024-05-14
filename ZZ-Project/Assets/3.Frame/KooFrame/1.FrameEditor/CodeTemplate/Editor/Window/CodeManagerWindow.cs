@@ -9,30 +9,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 
-public class CodeManagerWindow : EditorWindow
+public class KooCodeWindow : EditorWindow
 {
 	#region 数据
 
-	[SerializeField]
-	public KooCodeDatas Datas;
-
-	[SerializeField]
-	private CodeSettingsData settingsData;
-
-
-	public CodeSettingsData SettingsData
-	{
-		get
-		{
-			if (settingsData == null)
-			{
-				settingsData = AssetDatabase.LoadAssetAtPath<CodeSettingsData>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/SettingsData.asset");
-			}
-			return settingsData;
-		}
-	}
-
-
+	private KooCodeDatas Datas => KooCode.Datas;
+	private CodeSettingsData settingsData => KooCode.SettingsData;
 
 	private CodeTemplateFactory templateFactory;
 	private CodeMarkFactory markFactory;
@@ -71,7 +53,6 @@ public class CodeManagerWindow : EditorWindow
 
 	private List<CodeMarkData> selectedMarkListItems = new();
 
-	public static string CodeDatasPath = "Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/CodeDatas.asset";
 
 	private Action onGUICallBack;
 
@@ -81,7 +62,7 @@ public class CodeManagerWindow : EditorWindow
 	[MenuItem("KooFrame/代码模板管理")]
 	public static void ShowWindow()
 	{
-		CodeManagerWindow wnd = GetWindow<CodeManagerWindow>();
+		KooCodeWindow wnd = GetWindow<KooCodeWindow>();
 		wnd.titleContent = new GUIContent("代码模板管理");
 	}
 
@@ -89,17 +70,12 @@ public class CodeManagerWindow : EditorWindow
 	{
 		templateFactory = new CodeTemplateFactory();
 		markFactory = new CodeMarkFactory();
-
-		if (Datas == null)
-		{
-			Datas = AssetDatabase.LoadAssetAtPath<KooCodeDatas>(CodeDatasPath);
-		}
 	}
 
 	public void CreateGUI()
 	{
 		VisualElement root = rootVisualElement;
-		SettingsData.ManagerVisualTreeAsset.CloneTree(root);
+		settingsData.ManagerVisualTreeAsset.CloneTree(root);
 
 		BindDiv(root);
 
@@ -285,7 +261,7 @@ public class CodeManagerWindow : EditorWindow
 	/// </summary>
 	private void CreateCodeTemplateListView()
 	{
-		CreateListView(codeTemplateListView, SettingsData.TemplateListItemVistalTreeAsset, Datas.CodeTemplates);
+		CreateListView(codeTemplateListView, settingsData.TemplateListItemVistalTreeAsset, Datas.CodeTemplates);
 
 		codeTemplateListView.bindItem += BindTemplateItem;
 
@@ -294,11 +270,11 @@ public class CodeManagerWindow : EditorWindow
 			Label nameLabel = element.Q<Label>("Name");
 			if (nameLabel != null)
 			{
-				nameLabel.text = Datas.CodeTemplates[index].Name.Value;
+				nameLabel.text = KooCode.Datas.CodeTemplates[index].Name.Value;
 			}
 
 			//当名称变化时 列表名称也变化
-			Datas.CodeTemplates[index].Name.OnValueChange += (value) =>
+			KooCode.Datas.CodeTemplates[index].Name.OnValueChange += (value) =>
 			{
 				element.Q<Label>("Name").text = value;
 			};
@@ -325,7 +301,7 @@ public class CodeManagerWindow : EditorWindow
 
 	private void CreateCodeDataListView()
 	{
-		CreateListView(codeMarkListView, SettingsData.MarkDataListItemVistalTreeAsset, Datas.CodeMarks);
+		CreateListView(codeMarkListView, settingsData.MarkDataListItemVistalTreeAsset, Datas.CodeMarks);
 
 		codeMarkListView.bindItem += BindTemplateItem;
 
@@ -392,7 +368,7 @@ public class CodeManagerWindow : EditorWindow
 		if (view != null)
 		{
 			view.Rebuild();
-			////列表空了
+			// TODO 列表空了 
 			//if (codeTemplateListView.itemsSource.Count == 0)
 			//{
 			//	rightDiv.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);

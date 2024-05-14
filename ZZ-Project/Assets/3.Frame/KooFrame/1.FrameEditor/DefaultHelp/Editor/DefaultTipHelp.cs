@@ -5,6 +5,9 @@
 //* 描述：默认文件提示
 //*****************************************************
 
+using GameBuild;
+using System;
+using System.IO;
 using UnityEditor;
 using UnityEngine.UIElements;
 
@@ -13,35 +16,41 @@ namespace KooFrame
 	[CustomEditor(typeof(UnityEditor.DefaultAsset))]
 	public class DefaultTipHelp : Editor
 	{
-		private CodeSettingsData settingsData;
-		public CodeSettingsData SettingData
+		private CodeSettingsData settingsData => KooCode.SettingsData;
+
+		private DirectoryCreateTemplateElement rootInstance;
+
+		private DirectoryCreateTemplateElement root
 		{
 			get
 			{
-				if (settingsData == null)
+				if (rootInstance == null)
 				{
-					settingsData = AssetDatabase.LoadAssetAtPath<CodeSettingsData>("Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Data/SettingsData.asset");
+					rootInstance = new DirectoryCreateTemplateElement();
+					rootInstance.Init();
 				}
-				return settingsData;
+				return rootInstance;
 			}
 		}
-
-		private VisualElement root;
 
 
 		/// <summary>
 		/// 当前选中的路径
 		/// </summary>
-		public string CurSelectPath;
+		public static string CurSelectPath;
 
 		public override VisualElement CreateInspectorGUI()
 		{
-
-			root = new VisualElement();
-
-			SettingData.DefaultFoldTipVistalTreeAsset.CloneTree(root);
-
-			return root;
+			CurSelectPath = AssetDatabase.GetAssetPath(target);
+			if (Directory.Exists(CurSelectPath)) //如果是文件夹
+			{
+				return root;
+			}
+			else
+			{
+				return base.CreateInspectorGUI();
+			}
 		}
+
 	}
 }

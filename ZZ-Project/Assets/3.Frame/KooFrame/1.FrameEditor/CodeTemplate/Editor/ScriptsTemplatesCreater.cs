@@ -42,6 +42,14 @@ namespace KooFrame.BaseSystem
 		}
 
 
+		public static void CreateScriptByContentAndPath(string scriptName, string path, string content)
+		{
+			string targetFilePath = path + "/" + scriptName + ".cs";
+
+			MyDoCreateScriptAssetInString_Mono.CreateScriptAssetInContent(targetFilePath, content);
+		}
+
+
 		public static string GetSelectedPathOrFallback()
 		{
 			string path = "Assets";
@@ -99,7 +107,7 @@ namespace KooFrame.BaseSystem
 				ProjectWindowUtil.ShowCreatedAsset(o);
 			}
 
-			internal static UnityEngine.Object CreateScriptAssetInContent(string pathName, string content)
+			public static UnityEngine.Object CreateScriptAssetInContent(string pathName, string content)
 			{
 				string fullPath = Path.GetFullPath(pathName);
 				//StreamReader streamReader = new StreamReader(resourceFile);

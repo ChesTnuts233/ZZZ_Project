@@ -3,13 +3,13 @@ using UnityEngine.UIElements;
 
 public abstract class CodeInspector : VisualElement
 {
-	protected CodeManagerWindow ManagerWindow;
+	protected KooCodeWindow ManagerWindow;
 
 	private VisualTreeAsset container_assets;
 
 	public KooCodeDatas Datas;
 
-	public virtual void BindToManagerWindow(CodeManagerWindow managerWindow)
+	public virtual void BindToManagerWindow(KooCodeWindow managerWindow)
 	{
 		ManagerWindow = managerWindow;
 	}
