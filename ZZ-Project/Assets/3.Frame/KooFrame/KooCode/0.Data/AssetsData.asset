@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9300f6a7184a3d44a8086f1c5d9b209, type: 3}
+  m_Name: AssetsData
+  m_EditorClassIdentifier: 
+  ManagerVisualTreeAsset: {fileID: 9197481963319205126, guid: 7570d6e196d812f43a63a531bd250776, type: 3}
+  InspectorManagerTreeAsset: {fileID: 9197481963319205126, guid: 61639283467e8544e80483ba6ced010f, type: 3}
+  TemplateInspectorVisualTreeAsset: {fileID: 9197481963319205126, guid: caf7440bb4044844ebbccfb0672b857d, type: 3}
+  MarkInspectorVisualTreeAsset: {fileID: 9197481963319205126, guid: bc7af4467e45d9744b0d52117cff17fc, type: 3}
+  TemplateListItemVistalTreeAsset: {fileID: 9197481963319205126, guid: 270bc82db3f19734e8247b2fa181b568, type: 3}
+  MarkDataListItemVistalTreeAsset: {fileID: 9197481963319205126, guid: c97df2d4f132f3947b5a7c452b59ad3c, type: 3}
+  DarkSkin: {fileID: 11400000, guid: fa80d576872375044b62759d57352991, type: 2}
+  DefaultFoldTipVistalTreeAsset: {fileID: 9197481963319205126, guid: 8e74f3e805f288e4e9172db430fb1b5e, type: 3}
+  DefaultFoldChooseItemVisualAsset: {fileID: 9197481963319205126, guid: 41e07b3a2fd658041a5a1fc3886a6d15, type: 3}
+  DefaultFoldNeedCreatedItemVisualAsset: {fileID: 9197481963319205126, guid: b8a52c048349a7c4596e60faa3e22d13, type: 3}
+  DirectoryHelpElement: {fileID: 9197481963319205126, guid: 4f90afdacfbc4c24c9ce6907af82f16d, type: 3}
+  DirectoryExWindow: {fileID: 9197481963319205126, guid: f18dea597cc86784c8bb290fc2640017, type: 3}
+  DirectoryTipInspectorElement: {fileID: 9197481963319205126, guid: 700caa84e8f84d540b2314b26cc700d4, type: 3}

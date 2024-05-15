@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="BackGround" style="flex-grow: 1;">
+        <ui:VisualElement style="flex-grow: 0.1; flex-direction: row-reverse; justify-content: space-between; max-height: 40px; min-height: 20px;">
+            <ui:Label tabindex="-1" text="Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/UXML" display-tooltip-when-elided="true" selectable="true" name="CurSelectPath" select-word-by-double-click="false" select-line-by-triple-click="true" style="font-size: 15px; flex-wrap: wrap; white-space: normal; flex-shrink: 0.7;" />
+            <ui:Button text="复制路径" display-tooltip-when-elided="true" style="flex-shrink: 0.3;" />
+        </ui:VisualElement>
+        <ui:ScrollView name="ChooesScrollView" style="flex-grow: 0.2; max-height: 150px;" />
+        <ui:ListView name="NeedCreateds" style="flex-grow: 0.3;" />
+        <ui:Button text="生成代码" display-tooltip-when-elided="true" name="CreateFileBtn" />
+    </ui:VisualElement>
+</ui:UXML>

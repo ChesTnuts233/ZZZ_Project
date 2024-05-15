@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="BackGround" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="默认文件夹" display-tooltip-when-elided="true" name="DirectoryName" style="font-size: 15px; -unity-font-style: bold;" />
+        <ui:TextField picking-mode="Ignore" name="DirectoryDescription" value="默认文件夹的描述信息" />
+        <ui:ScrollView name="AllTipsScroll" style="flex-grow: 0.3;" />
+        <ui:Button text="添加目录便签" display-tooltip-when-elided="true" name="AddTipBtn" />
+    </ui:VisualElement>
+</ui:UXML>
