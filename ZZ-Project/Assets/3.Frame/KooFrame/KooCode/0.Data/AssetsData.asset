@@ -25,3 +25,4 @@ MonoBehaviour:
   DirectoryHelpElement: {fileID: 9197481963319205126, guid: 4f90afdacfbc4c24c9ce6907af82f16d, type: 3}
   DirectoryExWindow: {fileID: 9197481963319205126, guid: f18dea597cc86784c8bb290fc2640017, type: 3}
   DirectoryTipInspectorElement: {fileID: 9197481963319205126, guid: 700caa84e8f84d540b2314b26cc700d4, type: 3}
+  TipContentElementVisualAsset: {fileID: 9197481963319205126, guid: ac5e733dd97b42f4e96dd25f43051797, type: 3}

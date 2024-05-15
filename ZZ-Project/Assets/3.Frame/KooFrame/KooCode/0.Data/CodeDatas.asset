@@ -16,17 +16,20 @@ MonoBehaviour:
   - Name:
       _value: DefaultMark
     ID: 
+    Tags: []
     codeMD: {fileID: 4900000, guid: f742160e657d9de4fab1e7eb28fd47dd, type: 3}
     MarkDownPath: 
   - Name:
       _value: 123
     ID: 
+    Tags: []
     codeMD: {fileID: 4900000, guid: 688fea7f8fee072488654bf3250e4da6, type: 3}
     MarkDownPath: 
   CodeTemplates:
   - Name:
       _value: MonoBehaviour
     ID: 
+    Tags: []
     CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
@@ -37,6 +40,7 @@ MonoBehaviour:
   - Name:
       _value: UIPanel
     ID: 
+    Tags: []
     CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
@@ -49,6 +53,7 @@ MonoBehaviour:
   - Name:
       _value: TestScripts
     ID: 
+    Tags: []
     CodeContent: "//****************** \u6D4B\u8BD5\u4EE3\u7801\u6587\u4EF6\u7533\u660E
       ********************\r\n//* \u6587\u4EF6\uFF1A#SCRIPTNAME#                                      
       \r\n//* \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
@@ -64,6 +69,7 @@ MonoBehaviour:
   - Name:
       _value: CSharp_Class
     ID: 
+    Tags: []
     CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
@@ -73,6 +79,7 @@ MonoBehaviour:
   - Name:
       _value: CustomVisualElement
     ID: 
+    Tags: []
     CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
@@ -81,3 +88,77 @@ MonoBehaviour:
       : VisualElement\r\n\t{\r\n\t\tpublic new class UxmlFactory : UxmlFactory<#SCRIPTNAME#,
       VisualElement.UxmlTraits>\r\n\t\t{\r\n\r\n\t\t}\r\n\t}\r\n}\r\n"
     CodeTemplateFile: {fileID: 4900000, guid: ec13002912d2ed743b817c9645674648, type: 3}
+  DirectoryDataDic:
+    keyList:
+    - Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/UXML
+    - Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/USS
+    - Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor
+    valueList:
+    - DirectoryPath: Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/UXML
+      Title: UXML
+      Description: "\u6D4B\u8BD5\u4E00\u4E0B\u63CF\u8FF0"
+      tipsDatas:
+      - Name:
+          _value: DefaultData
+        ID: 
+        Tags: []
+        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
+        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+        DirectoryPath: 
+        uRLDatas: []
+      - Name:
+          _value: DefaultData
+        ID: 
+        Tags: []
+        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
+        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+        DirectoryPath: 
+        uRLDatas: []
+      - Name:
+          _value: DefaultData
+        ID: 
+        Tags: []
+        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
+        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+        DirectoryPath: 
+        uRLDatas: []
+      - Name:
+          _value: DefaultData
+        ID: 
+        Tags: []
+        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
+        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+        DirectoryPath: 
+        uRLDatas: []
+      - Name:
+          _value: DefaultData
+        ID: 
+        Tags: []
+        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
+        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+        DirectoryPath: 
+        uRLDatas: []
+      - Name:
+          _value: DefaultData
+        ID: 
+        Tags: []
+        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
+        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+        DirectoryPath: 
+        uRLDatas: []
+    - DirectoryPath: Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/USS
+      Title: USS
+      Description: "\u8FD8\u6CA1\u4EC0\u4E48\u63CF\u8FF0\u5462~"
+      tipsDatas: []
+    - DirectoryPath: Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor
+      Title: Editor
+      Description: "\u8FD8\u6CA1\u4EC0\u4E48\u63CF\u8FF0\u5462~"
+      tipsDatas:
+      - Name:
+          _value: DefaultData
+        ID: 
+        Tags: []
+        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
+        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+        DirectoryPath: 
+        uRLDatas: []

@@ -17,9 +17,12 @@ namespace KooFrame
 		public List<CodeTemplateData> CodeTemplates = new();
 
 		/// <summary>
-		/// 目录提示集合
+		/// 目录对应的数据字典
 		/// </summary>
-		public List<DirectoryTipData> DirectoryTips = new();
+		public Serialized_Dic<string, DirectoryData> DirectoryDataDic = new();
+
+
+
 
 
 		public string GetCodeContentByDataName(string name)

@@ -19,21 +19,22 @@ namespace KooFrame
 		[SerializeField] private List<K> keyList;
 		[SerializeField] private List<V> valueList;
 
-		[NonSerialized] // 不序列化 避免报错
-		private Dictionary<K, V> dictionary;
 
-		public Dictionary<K, V> Dictionary
+		[NonSerialized] // 不序列化 避免报错
+		private Dictionary<K, V> reallyDictionary;
+
+		public Dictionary<K, V> Dic
 		{
-			get => dictionary;
+			get => reallyDictionary;
 		}
 		public Serialized_Dic()
 		{
-			dictionary = new Dictionary<K, V>();
+			reallyDictionary = new Dictionary<K, V>();
 		}
 
 		public Serialized_Dic(Dictionary<K, V> dictionary)
 		{
-			this.dictionary = dictionary;
+			this.reallyDictionary = dictionary;
 		}
 
 		// 序列化的时候把字典里面的内容放进list
@@ -55,8 +56,8 @@ namespace KooFrame
 		/// </summary>
 		public void OnBeforeSerialize()
 		{
-			keyList = new List<K>(dictionary.Keys);
-			valueList = new List<V>(dictionary.Values);
+			keyList = new List<K>(reallyDictionary.Keys);
+			valueList = new List<V>(reallyDictionary.Values);
 		}
 
 		/// <summary>
@@ -64,9 +65,10 @@ namespace KooFrame
 		/// </summary>
 		public void OnAfterDeserialize()
 		{
-			dictionary = new Dictionary<K, V>();
+			reallyDictionary = new Dictionary<K, V>();
+
 			for (int i = 0; i < keyList.Count; i++)
-				dictionary.Add(keyList[i], valueList[i]);
+				reallyDictionary.Add(keyList[i], valueList[i]);
 
 			keyList.Clear();
 			valueList.Clear();

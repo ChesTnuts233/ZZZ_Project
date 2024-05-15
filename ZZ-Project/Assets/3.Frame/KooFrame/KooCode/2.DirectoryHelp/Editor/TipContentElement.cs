@@ -27,29 +27,36 @@ namespace KooFrame
 
 		#region 元素
 
-		private TextField Title;
+		private TextField titleField;
 
-		private TextField Content;
+		private TextField contentField;
 
 		#endregion
-
 
 		public new class UxmlFactory : UxmlFactory<TipContentElement, VisualElement.UxmlTraits>
 		{
 
 		}
-
-
-		public override void Init()
-		{
-			KooCode.AssetsData.TipContentElementVisualAsset.CloneTree(this);
-		}
-
-		public void BindTitleAndContent(string title, string content)
+		public void UpdateTitleAndContent(string title, string content)
 		{
 			this.title = title;
 			this.content = content;
 		}
+
+		public override void Init()
+		{
+			KooCode.AssetsData.TipContentElementVisualAsset.CloneTree(this);
+			BindTextField();
+		}
+
+		private void BindTextField()
+		{
+			titleField = this.Q<TextField>("TitleField");
+			contentField = this.Q<TextField>("ContentField");
+		}
+
+
+
 
 
 	}

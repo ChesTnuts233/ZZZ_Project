@@ -20,7 +20,7 @@ namespace KooFrame
 		#region Inpsectors
 
 		/// <summary>
-		/// 模版生成
+		/// 目录便签检视
 		/// </summary>
 		private DirectoryTipInspector directoryTipInspector;
 
@@ -47,6 +47,8 @@ namespace KooFrame
 			this.curInspectorPath = inspectorPath;
 			BindAllButton();
 			BindAllInspector();
+
+			ShowInspector(directoryTipInspector);
 		}
 
 		private void BindAllButton()

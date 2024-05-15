@@ -10,6 +10,7 @@ namespace KooFrame
 		public string URL; //超链接信息
 	}
 
+	[Serializable]
 	public class DirectoryTipData : CodeData
 	{
 		public string TipTitle;
@@ -25,6 +26,12 @@ namespace KooFrame
 		public string DirectoryPath;
 
 		public List<URLData> uRLDatas = new List<URLData>();
+
+		public DirectoryTipData(string title, string content)
+		{
+			TipTitle = title;
+			TipContent = content;
+		}
 
 	}
 }
