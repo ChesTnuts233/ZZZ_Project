@@ -17,7 +17,7 @@ namespace KooFrame
 		private KooCodeDatas Datas => KooCode.Datas;
 		private CodeAssetsData settingsData => KooCode.AssetsData;
 
-		private CodeTemplateFactory templateFactory;
+		private CodeDataFactory templateFactory;
 		private CodeMarkFactory markFactory;
 
 		#endregion
@@ -50,7 +50,7 @@ namespace KooFrame
 
 		#region 其他
 
-		private List<CodeTemplateData> selectedTemplateListItems = new();
+		private List<CodeData> selectedTemplateListItems = new();
 
 		private List<CodeMarkData> selectedMarkListItems = new();
 
@@ -69,7 +69,7 @@ namespace KooFrame
 
 		private void OnEnable()
 		{
-			templateFactory = new CodeTemplateFactory();
+			templateFactory = new CodeDataFactory();
 			markFactory = new CodeMarkFactory();
 		}
 
@@ -187,7 +187,7 @@ namespace KooFrame
 				{
 					if (draggedObject is TextAsset textAsset)
 					{
-						var window = CodeTemplateCreateWindow.ShowWindow();
+						var window = CodeDataCreateWindow.ShowWindow();
 						window.CurCreateTemplateData = new CodeTemplateData("DefaultTemplate", textAsset.text, textAsset);
 
 					}
@@ -213,7 +213,7 @@ namespace KooFrame
 			menu.AddItem(new GUIContent("添加脚本模板"), false, () =>
 			{
 				//打开创建模板窗口
-				CodeTemplateCreateWindow window = CodeTemplateCreateWindow.ShowWindow();
+				CodeDataCreateWindow window = CodeDataCreateWindow.ShowWindow();
 				window.BindListView(codeTemplateListView);
 			});
 
@@ -262,7 +262,7 @@ namespace KooFrame
 		/// </summary>
 		private void CreateCodeTemplateListView()
 		{
-			CreateListView(codeTemplateListView, settingsData.TemplateListItemVistalTreeAsset, Datas.CodeTemplates);
+			CreateListView(codeTemplateListView, settingsData.TemplateListItemVistalTreeAsset, Datas.CodeDatas);
 
 			codeTemplateListView.bindItem += BindTemplateItem;
 
@@ -271,11 +271,11 @@ namespace KooFrame
 				Label nameLabel = element.Q<Label>("Name");
 				if (nameLabel != null)
 				{
-					nameLabel.text = KooCode.Datas.CodeTemplates[index].Name.Value;
+					nameLabel.text = KooCode.Datas.CodeDatas[index].Name.Value;
 				}
 
 				//当名称变化时 列表名称也变化
-				KooCode.Datas.CodeTemplates[index].Name.OnValueChange += (value) =>
+				KooCode.Datas.CodeDatas[index].Name.OnValueChange += (value) =>
 				{
 					element.Q<Label>("Name").text = value;
 				};
@@ -383,7 +383,7 @@ namespace KooFrame
 
 		private void OnCodeTemplateDataSelectChange(IEnumerable<object> enumerable)
 		{
-			selectedTemplateListItems = enumerable.OfType<CodeTemplateData>().ToList();
+			selectedTemplateListItems = enumerable.OfType<CodeData>().ToList();
 
 
 			// 如果有LevelData类型的元素
@@ -403,8 +403,6 @@ namespace KooFrame
 				inspectorManager.UpdateInspectors(selectedMarkListItems[0]);
 			}
 		}
-
-
 
 
 	}

@@ -1,4 +1,5 @@
 using KooFrame.BaseSystem;
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -11,10 +12,25 @@ namespace KooFrame
 		/// <summary>
 		/// 模板内容
 		/// </summary>
-		public string CodeContent;
+		public string CodeContent
+		{
+			get => Content;
+			set => Content = value;
+		}
+
 
 		[SerializeField]
 		public TextAsset CodeTemplateFile;
+
+		[Button("转移到CodeData")]
+		public void ChangeToCodeData()
+		{
+			CodeData newData = new CodeData();
+			newData.CodeFile = CodeTemplateFile;
+			newData.Name.SetValueWithoutAction(Name.Value);
+			newData.Content = CodeContent;
+			KooCode.Datas.CodeDatas.Add(newData);
+		}
 
 
 		/// <summary>
@@ -57,6 +73,8 @@ namespace KooFrame
 		{
 			ScriptsTemplatesCreater.CreateScriptByContentAndPath(name, path, CodeContent);
 		}
+
+
 
 	}
 }

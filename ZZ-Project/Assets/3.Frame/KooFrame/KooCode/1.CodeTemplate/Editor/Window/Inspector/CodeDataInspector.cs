@@ -6,15 +6,14 @@ using UnityEngine.UIElements;
 
 namespace KooFrame
 {
-	public class CodeTemplateInspector : CodeInspector
+	public class CodeDataInspector : CodeInspector
 	{
-		public new class UxmlFactory : UxmlFactory<CodeTemplateInspector, VisualElement.UxmlTraits>
+		public new class UxmlFactory : UxmlFactory<CodeDataInspector, VisualElement.UxmlTraits>
 		{
 
 		}
 
-
-		public CodeTemplateData CurCheckTemplateData;
+		public CodeData CurCheckData;
 
 		#region 元素
 
@@ -32,6 +31,10 @@ namespace KooFrame
 
 		private Button viewBtn;
 
+		private Button createTemplateBtn;
+
+		private Button updateContentInFileBtn;
+
 		private ScrollView codeViewScroll;
 
 		private ScrollView codeEditorScroll;
@@ -42,7 +45,7 @@ namespace KooFrame
 		public override void BindToManagerWindow(KooCodeWindow managerWindow)
 		{
 			base.BindToManagerWindow(managerWindow);
-			container_assets = KooCode.AssetsData.TemplateInspectorVisualTreeAsset;
+			container_assets = KooCode.AssetsData.DataInspectorVisualTreeAsset;
 			container_assets.CloneTree(this);
 			Datas = KooCode.Datas;
 
@@ -50,7 +53,8 @@ namespace KooFrame
 			BindTemplateName(); //绑定名称相关 2
 			BindTextAssetField(); //绑定TextAssetFiled 3
 			BindCodeContent(); //绑定CodeContent 4
-
+			BindCreateTemplateBtn(); //绑定创建模板的按钮 5
+			BindUpdateContentBtn();
 		}
 
 		public override void Show()
@@ -84,7 +88,7 @@ namespace KooFrame
 
 			nameInputField.RegisterValueChangedCallback((value) =>
 			{
-				CurCheckTemplateData.Name.SetValueWithoutAction(value.newValue);
+				CurCheckData.Name.SetValueWithoutAction(value.newValue);
 			});
 		}
 
@@ -117,11 +121,66 @@ namespace KooFrame
 
 		}
 
+		private void BindCreateTemplateBtn()
+		{
+			createTemplateBtn = this.Q<Button>("CreateTemplateBtn");
 
+			createTemplateBtn.clicked += CreateTemplate;
+		}
+
+		private void CreateTemplate()
+		{
+			//把CodeData尝试添加到Templates中
+			//检查是否有重名的模板
+			if (KooCode.Datas.CodeTemplates.Find((data) => (data.Name.Value == CurCheckData.Name.Value)) != null)
+			{
+				"已经有重名模板，无法继续添加".Log();
+				return;
+			}
+			CodeTemplateData newTemplateData = new(CurCheckData.Name.Value, CurCheckData.Content, CurCheckData.CodeFile);
+
+			KooCode.Datas.CodeTemplates.Add(newTemplateData);
+
+			//代码添加后 
+			//遍历所有的codeTemplateDatas，根据名称生成对应的MenuItem
+			string updateContent = "";
+			foreach (CodeTemplateData data in Datas.CodeTemplates)
+			{
+				updateContent += "\t[MenuItem(\"Assets/KooFrame-脚本/" + data.Name + "\", false, 0)]\r\n\tpublic static void Create" + data.Name + "Scripts()\r\n\t{\r\n\t\tScriptsTemplatesCreater.CreateScriptByContent(\"" + data.Name + "\",\r\n\t\t\tDatas.GetTemplateContentByDataName(\"" + data.Name + "\"));\r\n\t}\n";
+			}
+
+			//生成右键菜单选项
+			KooTool.CodeGenerator_ByTag(updateContent, KooCode.CodeTemplateMenuItemPath);
+
+		}
+
+
+		private void BindUpdateContentBtn()
+		{
+			updateContentInFileBtn = this.Q<Button>("UpdateContentInFileBtn");
+			updateContentInFileBtn.clicked += UpdateContentByFile;
+		}
+
+
+		private void UpdateContentByFile()
+		{
+			CurCheckData.UpdateData();
+			UpdateInspector(CurCheckData);
+			//("更新内容" + CurCheckData.Content).Log();
+		}
+
+		/// <summary>
+		/// 更新代码检视
+		/// </summary>
+		/// <param name="codeContent"></param>
 		private void UpdateCodeView(string codeContent)
 		{
 
 			string coloredCode = codeContent;
+			if (coloredCode.IsNullOrEmpty())
+			{
+				return;
+			}
 
 			// 遍历字典，为每个关键词着色
 			foreach (var kvp in keywordColors)
@@ -144,7 +203,7 @@ namespace KooFrame
 
 			codeContent.RegisterValueChangedCallback((value) =>
 			{
-				CurCheckTemplateData.CodeContent = value.newValue;
+				CurCheckData.Content = value.newValue;
 				UpdateCodeView(value.newValue);
 			});
 
@@ -156,25 +215,28 @@ namespace KooFrame
 			textAssetField = this.Q<ObjectField>("TextAssetField");
 			textAssetField.RegisterValueChangedCallback((value) =>
 			{
-				CurCheckTemplateData.CodeTemplateFile = value.newValue as TextAsset;
-				CurCheckTemplateData.UpdateData();
+				CurCheckData.CodeFile = value.newValue as TextAsset;
+				CurCheckData.UpdateData();
 
-				UpdateInspector(CurCheckTemplateData);
+				UpdateInspector(CurCheckData);
 			});
 		}
 
 		public override void UpdateInspector()
 		{
-			UpdateInspector(CurCheckTemplateData);
+			UpdateInspector(CurCheckData);
 		}
 
-		public void UpdateInspector(CodeTemplateData data)
+		public void UpdateInspector(CodeData data)
 		{
-			CurCheckTemplateData = data;
-			nameInputField.SetValueWithoutNotify(CurCheckTemplateData.Name.Value);
-			textAssetField.SetValueWithoutNotify(CurCheckTemplateData.CodeTemplateFile);
-			codeContent.SetValueWithoutNotify(CurCheckTemplateData.CodeContent);
-			UpdateCodeView(CurCheckTemplateData.CodeContent);
+			CurCheckData = data;
+			nameInputField.SetValueWithoutNotify(CurCheckData.Name.Value);
+			textAssetField.SetValueWithoutNotify(CurCheckData.CodeFile);
+
+			//更新代码修改
+			codeContent.SetValueWithoutNotify(CurCheckData.Content);
+			//更新代码检视
+			UpdateCodeView(CurCheckData.Content);
 		}
 
 

@@ -15,7 +15,7 @@ namespace KooFrame
 		public VisualTreeAsset InspectorManagerTreeAsset = default;
 
 		[SerializeField, Header("模板检视器UXML资源")]
-		public VisualTreeAsset TemplateInspectorVisualTreeAsset = default;
+		public VisualTreeAsset DataInspectorVisualTreeAsset = default;
 
 		[SerializeField, Header("笔记检视器UXML资源")]
 		public VisualTreeAsset MarkInspectorVisualTreeAsset = default;

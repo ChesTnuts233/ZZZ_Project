@@ -30,7 +30,7 @@ namespace KooFrame
 		/// <summary>
 		/// 代码模板检视
 		/// </summary>
-		private CodeTemplateInspector codeTemplateInspector;
+		private CodeDataInspector codeDataInspector;
 
 
 		#endregion
@@ -49,9 +49,9 @@ namespace KooFrame
 			curCheckInspector = codeMarkInspector;
 
 			//首次刷新检视窗口
-			if (KooCode.Datas != null && KooCode.Datas.CodeTemplates.Count > 0)
+			if (KooCode.Datas != null && KooCode.Datas.CodeDatas.Count > 0)
 			{
-				UpdateInspectors(KooCode.Datas.CodeTemplates[0]);
+				UpdateInspectors(KooCode.Datas.CodeDatas[0]);
 			}
 		}
 
@@ -73,18 +73,18 @@ namespace KooFrame
 		{
 			codeMarkInspector = this.Q<CodeMarkInspector>("CodeMarkInspector");
 			codeMarkInspector.BindToManagerWindow(managerWindow);  //绑定到管理窗口
-			codeTemplateInspector = this.Q<CodeTemplateInspector>("CodeTemplateInspector");
-			codeTemplateInspector.BindToManagerWindow(managerWindow);
+			codeDataInspector = this.Q<CodeDataInspector>("CodeDataInspector");
+			codeDataInspector.BindToManagerWindow(managerWindow);
 		}
 
 
 		public void Close()
 		{
 			codeMarkInspector.Close();
-			codeTemplateInspector.Close();
+			codeDataInspector.Close();
 
 			codeMarkInspector = null;
-			codeTemplateInspector = null;
+			codeDataInspector = null;
 		}
 
 
@@ -94,14 +94,15 @@ namespace KooFrame
 		public void UpdateInspectors(CodeData data)
 		{
 			//更新对应的数据
-			if (data is CodeTemplateData templateData)
+			if (data.GetType() == typeof(CodeData))
 			{
 				//应该先更新数据 再显示出面板
-				codeTemplateInspector.UpdateInspector(templateData);
-				ShowInspector(codeTemplateInspector);
+				codeDataInspector.UpdateInspector(data);
+				ShowInspector(codeDataInspector);
 			}
-			else if (data is CodeMarkData markData)
+			else if (data.GetType() == typeof(CodeMarkData))
 			{
+				CodeMarkData markData = (CodeMarkData)data;
 				codeMarkInspector.UpdateInspector(markData);
 				ShowInspector(codeMarkInspector);
 			}
@@ -110,7 +111,7 @@ namespace KooFrame
 
 		private void ShowInspector(CodeInspector showInspector)
 		{
-			codeTemplateInspector.Close();
+			codeDataInspector.Close();
 			codeMarkInspector.Close();
 			showInspector.Show();
 		}

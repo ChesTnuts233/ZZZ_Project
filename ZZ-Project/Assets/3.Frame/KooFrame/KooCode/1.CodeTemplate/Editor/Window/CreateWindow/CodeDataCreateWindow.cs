@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 namespace KooFrame
 {
 
-	public class CodeTemplateCreateWindow : CodeCreateWindowBase
+	public class CodeDataCreateWindow : CodeCreateWindowBase
 	{
 
 
@@ -23,7 +23,7 @@ namespace KooFrame
 			}
 		}
 
-		private CodeTemplateFactory factory;
+		private CodeDataFactory factory;
 
 
 
@@ -38,9 +38,9 @@ namespace KooFrame
 
 		#endregion
 
-		public static CodeTemplateCreateWindow ShowWindow()
+		public static CodeDataCreateWindow ShowWindow()
 		{
-			CodeTemplateCreateWindow wnd = GetWindow<CodeTemplateCreateWindow>();
+			CodeDataCreateWindow wnd = GetWindow<CodeDataCreateWindow>();
 			wnd.titleContent = new GUIContent("创建脚本模板");
 			return wnd;
 		}

@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Editor/Window/USS/InspectorManager.uss?fileID=7433441132597879392&amp;guid=470063ea4aea68c43b3354a6ee3e3a4f&amp;type=3#InspectorManager" />
+    <Style src="project://database/Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/Editor/Window/USS/InspectorManager.uss?fileID=7433441132597879392&amp;guid=470063ea4aea68c43b3354a6ee3e3a4f&amp;type=3#InspectorManager" />
     <ui:VisualElement name="BackGround" style="flex-grow: 1; background-color: rgba(43, 43, 43, 0);">
         <KooFrame.CodeMarkInspector name="CodeMarkInspector" style="flex-grow: 1;" />
-        <KooFrame.CodeTemplateInspector name="CodeTemplateInspector" style="flex-grow: 1; display: none;" />
+        <KooFrame.CodeDataInspector name="CodeDataInspector" style="display: none; flex-grow: 1;" />
     </ui:VisualElement>
 </ui:UXML>

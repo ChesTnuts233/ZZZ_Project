@@ -13,24 +13,25 @@ namespace KooFrame
 	[Serializable]
 	public class DirectoryTipData : CodeData
 	{
-		public string TipTitle;
+		public string Title;
 
-		/// <summary>
-		/// 标签内容
-		/// </summary>
-		public string TipContent;
 
 		/// <summary>
 		/// 所属的目录路径
 		/// </summary>
 		public string DirectoryPath;
 
+		/// <summary>
+		/// 所属的目录数据
+		/// </summary>
+		public DirectoryData DirectoryData;
+
 		public List<URLData> uRLDatas = new List<URLData>();
 
 		public DirectoryTipData(string title, string content)
 		{
-			TipTitle = title;
-			TipContent = content;
+			Title = title;
+			Content = content;
 		}
 
 	}

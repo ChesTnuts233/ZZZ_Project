@@ -12,33 +12,38 @@ public static class CodeTemplateMenuItem
 	public static void CreateMonoBehaviourScripts()
 	{
 		ScriptsTemplatesCreater.CreateScriptByContent("MonoBehaviour",
-			Datas.GetCodeContentByDataName("MonoBehaviour"));
+			Datas.GetTemplateContentByDataName("MonoBehaviour"));
 	}
 	[MenuItem("Assets/KooFrame-脚本/UIPanel", false, 0)]
 	public static void CreateUIPanelScripts()
 	{
 		ScriptsTemplatesCreater.CreateScriptByContent("UIPanel",
-			Datas.GetCodeContentByDataName("UIPanel"));
+			Datas.GetTemplateContentByDataName("UIPanel"));
 	}
-	[MenuItem("Assets/KooFrame-脚本/TestScripts", false, 0)]
-	public static void CreateTestScriptsScripts()
+	[MenuItem("Assets/KooFrame-脚本/ScriptableObject", false, 0)]
+	public static void CreateScriptableObjectScripts()
 	{
-		ScriptsTemplatesCreater.CreateScriptByContent("TestScripts",
-			Datas.GetCodeContentByDataName("TestScripts"));
+		ScriptsTemplatesCreater.CreateScriptByContent("ScriptableObject",
+			Datas.GetTemplateContentByDataName("ScriptableObject"));
 	}
 	[MenuItem("Assets/KooFrame-脚本/CSharp_Class", false, 0)]
 	public static void CreateCSharp_ClassScripts()
 	{
 		ScriptsTemplatesCreater.CreateScriptByContent("CSharp_Class",
-			Datas.GetCodeContentByDataName("CSharp_Class"));
+			Datas.GetTemplateContentByDataName("CSharp_Class"));
 	}
-
 	[MenuItem("Assets/KooFrame-脚本/CustomVisualElement", false, 0)]
 	public static void CreateCustomVisualElementScripts()
 	{
 		ScriptsTemplatesCreater.CreateScriptByContent("CustomVisualElement",
-			Datas.GetCodeContentByDataName("CustomVisualElement"));
+			Datas.GetTemplateContentByDataName("CustomVisualElement"));
+	}
+	[MenuItem("Assets/KooFrame-脚本/TestScripts", false, 0)]
+	public static void CreateTestScriptsScripts()
+	{
+		ScriptsTemplatesCreater.CreateScriptByContent("TestScripts",
+			Datas.GetTemplateContentByDataName("TestScripts"));
 	}
 
-	#endregion 代码生成结束标识
+#endregion 代码生成结束标识
 }

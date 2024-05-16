@@ -15,33 +15,38 @@ MonoBehaviour:
   CodeMarks:
   - Name:
       _value: DefaultMark
+    CodeFile: {fileID: 0}
+    Content: 
     ID: 
     Tags: []
     codeMD: {fileID: 4900000, guid: f742160e657d9de4fab1e7eb28fd47dd, type: 3}
     MarkDownPath: 
   - Name:
       _value: 123
+    CodeFile: {fileID: 0}
+    Content: 
     ID: 
     Tags: []
     codeMD: {fileID: 4900000, guid: 688fea7f8fee072488654bf3250e4da6, type: 3}
     MarkDownPath: 
-  CodeTemplates:
+  CodeDatas:
   - Name:
       _value: MonoBehaviour
-    ID: 
-    Tags: []
-    CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+    CodeFile: {fileID: 4900000, guid: a25fd492138af8e45a3116c008bd4345, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
       \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
-      UnityEngine;\r\r\n\r\nnamespace GameBuild\r\n{\r\n    public class #SCRIPTNAME#
-      : MonoBehaviour\r\n    {\r\n       \r\n    }\r\n}\r\n\r\n"
-    CodeTemplateFile: {fileID: 4900000, guid: a25fd492138af8e45a3116c008bd4345, type: 3}
-  - Name:
-      _value: UIPanel
+      UnityEngine;\r\nusing KooFrame.BaseSystem;\r\n\r\nnamespace GameBuild\r\n{\r\n   
+      public class #SCRIPTNAME# : KooMonoBehaviour\r\n    {\r\n       protected override
+      void BeforeOnDestroy()\r\n       {\r\n            //Nothing to Do\r\n      
+      }\r\n    }\r\n}\r\n\r\n"
     ID: 
     Tags: []
-    CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+  - Name:
+      _value: UIPanel
+    CodeFile: {fileID: 4900000, guid: 9a81183d9c1b3e54ca8827f4bdb031e4, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
       \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
@@ -49,12 +54,12 @@ MonoBehaviour:
       System.Collections.Generic;\r\n\r\nnamespace GameBuild\r\n{\r\n    [UIWindowData(typeof(#SCRIPTNAME#),
       true, \"#SCRIPTNAME#\", 0)]\r\n    public class #SCRIPTNAME# : UI_WindowBase\r\n   
       {\r\n       \r\n    }\r\n}\r\n\r\n"
-    CodeTemplateFile: {fileID: 4900000, guid: 9a81183d9c1b3e54ca8827f4bdb031e4, type: 3}
-  - Name:
-      _value: TestScripts
     ID: 
     Tags: []
-    CodeContent: "//****************** \u6D4B\u8BD5\u4EE3\u7801\u6587\u4EF6\u7533\u660E
+  - Name:
+      _value: TestScripts
+    CodeFile: {fileID: 4900000, guid: 83d7de97a2b537b48be82d15dc585f71, type: 3}
+    Content: "//****************** \u6D4B\u8BD5\u4EE3\u7801\u6587\u4EF6\u7533\u660E
       ********************\r\n//* \u6587\u4EF6\uFF1A#SCRIPTNAME#                                      
       \r\n//* \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
       \u6D4B\u8BD5\u529F\u80FD\uFF1A(\u6D4B\u8BD5\u7528)Nothing \r\n//*****************************************************\r\n\r\nusing
@@ -65,100 +70,39 @@ MonoBehaviour:
       {\r\n            \r\n        }\r\n    \r\n        private void Update()\r\n       
       {\r\n            \r\n        }\r\n    \r\n        protected override void BeforeOnDestroy()\r\n       
       {\r\n               //Nothing to Do\r\n        }\r\n    }\r\n}\r\n\r\n"
-    CodeTemplateFile: {fileID: 4900000, guid: 83d7de97a2b537b48be82d15dc585f71, type: 3}
-  - Name:
-      _value: CSharp_Class
     ID: 
     Tags: []
-    CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+  - Name:
+      _value: CSharp_Class
+    CodeFile: {fileID: 4900000, guid: cb3864d209945b5468bc0950ce7e4b3f, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
       \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nnamespace
       GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#\r\n\t{\r\n\r\n\t}\r\n}\r\n"
-    CodeTemplateFile: {fileID: 4900000, guid: cb3864d209945b5468bc0950ce7e4b3f, type: 3}
-  - Name:
-      _value: CustomVisualElement
     ID: 
     Tags: []
-    CodeContent: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+  - Name:
+      _value: CustomVisualElement
+    CodeFile: {fileID: 4900000, guid: ec13002912d2ed743b817c9645674648, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
       \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
       \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
       \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
       UnityEngine.UIElements;\r\n\r\nnamespace GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#
       : VisualElement\r\n\t{\r\n\t\tpublic new class UxmlFactory : UxmlFactory<#SCRIPTNAME#,
       VisualElement.UxmlTraits>\r\n\t\t{\r\n\r\n\t\t}\r\n\t}\r\n}\r\n"
-    CodeTemplateFile: {fileID: 4900000, guid: ec13002912d2ed743b817c9645674648, type: 3}
-  DirectoryDataDic:
-    keyList:
-    - Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/UXML
-    - Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/USS
-    - Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor
-    valueList:
-    - DirectoryPath: Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/UXML
-      Title: UXML
-      Description: "\u6D4B\u8BD5\u4E00\u4E0B\u63CF\u8FF0"
-      tipsDatas:
-      - Name:
-          _value: DefaultData
-        ID: 
-        Tags: []
-        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
-        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
-        DirectoryPath: 
-        uRLDatas: []
-      - Name:
-          _value: DefaultData
-        ID: 
-        Tags: []
-        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
-        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
-        DirectoryPath: 
-        uRLDatas: []
-      - Name:
-          _value: DefaultData
-        ID: 
-        Tags: []
-        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
-        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
-        DirectoryPath: 
-        uRLDatas: []
-      - Name:
-          _value: DefaultData
-        ID: 
-        Tags: []
-        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
-        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
-        DirectoryPath: 
-        uRLDatas: []
-      - Name:
-          _value: DefaultData
-        ID: 
-        Tags: []
-        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
-        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
-        DirectoryPath: 
-        uRLDatas: []
-      - Name:
-          _value: DefaultData
-        ID: 
-        Tags: []
-        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
-        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
-        DirectoryPath: 
-        uRLDatas: []
-    - DirectoryPath: Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor/USS
-      Title: USS
-      Description: "\u8FD8\u6CA1\u4EC0\u4E48\u63CF\u8FF0\u5462~"
-      tipsDatas: []
-    - DirectoryPath: Assets/3.Frame/KooFrame/KooCode/2.DirectoryHelp/Editor
-      Title: Editor
-      Description: "\u8FD8\u6CA1\u4EC0\u4E48\u63CF\u8FF0\u5462~"
-      tipsDatas:
-      - Name:
-          _value: DefaultData
-        ID: 
-        Tags: []
-        TipTitle: "\u9ED8\u8BA4\u63D0\u793A"
-        TipContent: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
-        DirectoryPath: 
-        uRLDatas: []
+    ID: 
+    Tags: []
+  - Name:
+      _value: ScriptableObject
+    CodeFile: {fileID: 4900000, guid: fff6e3953820897428bd5472f90a799c, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
+      UnityEngine;\r\n\r\nnamespace KooFrame\r\n{\r\n\tpublic class #SCRIPTNAME#
+      : ScriptableObject\r\n\t{\r\n\t\t\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+  CodeTemplates: []

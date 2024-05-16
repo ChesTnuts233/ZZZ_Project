@@ -5,6 +5,7 @@
 //* 描述：Nothing
 //*****************************************************
 
+using System;
 using UnityEngine.UIElements;
 
 namespace KooFrame
@@ -25,11 +26,15 @@ namespace KooFrame
 		/// </summary>
 		private string directoryPath;
 
+		public Action OnDeleteSelf;
+
 		#region 元素
 
 		private TextField titleField;
 
 		private TextField contentField;
+
+		private Button deleteBtn;
 
 		#endregion
 
@@ -37,22 +42,55 @@ namespace KooFrame
 		{
 
 		}
-		public void UpdateTitleAndContent(string title, string content)
+		public void UpdateTitleAndContent(DirectoryTipData data)
 		{
-			this.title = title;
-			this.content = content;
+			tipData = data;
+			this.title = tipData.Title;
+			this.content = tipData.Content;
+		}
+
+		public void BindDirectoryPath(string path)
+		{
+			directoryPath = path;
 		}
 
 		public override void Init()
 		{
 			KooCode.AssetsData.TipContentElementVisualAsset.CloneTree(this);
 			BindTextField();
+			BindDeleteBtn();
 		}
 
 		private void BindTextField()
 		{
 			titleField = this.Q<TextField>("TitleField");
+			titleField.value = title;
+			titleField.RegisterValueChangedCallback((value) =>
+			{
+				tipData.Title = value.newValue;
+			});
+
+
 			contentField = this.Q<TextField>("ContentField");
+			contentField.value = content;
+			contentField.RegisterValueChangedCallback((value) =>
+			{
+				tipData.Content = value.newValue;
+			});
+
+		}
+
+		private void BindDeleteBtn()
+		{
+			deleteBtn = this.Q<Button>("DeleteBtn");
+			deleteBtn.clicked += DeleteSelf;
+		}
+
+		private void DeleteSelf()
+		{
+			//数据删除
+			tipData.DirectoryData.TipsDatas.Remove(tipData);
+			OnDeleteSelf?.Invoke();
 		}
 
 

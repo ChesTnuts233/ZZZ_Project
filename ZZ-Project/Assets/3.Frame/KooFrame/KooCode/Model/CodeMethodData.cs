@@ -19,9 +19,5 @@ namespace KooFrame
 		public List<string> UsedPath = new();
 
 
-		/// <summary>
-		/// 方法内容
-		/// </summary>
-		public string Content;
 	}
 }

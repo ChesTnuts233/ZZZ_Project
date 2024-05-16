@@ -17,5 +17,12 @@ namespace KooFrame
 		public string MarkDownPath;
 
 
+		public string MarkDownContent
+		{
+			get => Content;
+			set => Content = value;
+		}
+
+
 	}
 }

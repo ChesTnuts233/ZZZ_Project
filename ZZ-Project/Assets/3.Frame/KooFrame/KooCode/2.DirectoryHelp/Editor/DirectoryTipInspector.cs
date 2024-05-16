@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.UIElements;
 using UnityEngine;
+using UnityEditor;
 
 namespace KooFrame
 {
@@ -18,6 +19,8 @@ namespace KooFrame
 		private bool isHasDirectoryData;
 
 		private string curDirectoryPath;
+
+		private string curDirectoryAssetPath;
 
 		private DirectoryData directoryData;
 		#region 元素
@@ -30,7 +33,7 @@ namespace KooFrame
 		/// <summary>
 		/// 文件夹描述
 		/// </summary>
-		private TextField contentField;
+		private TextField descriptionField;
 
 		/// <summary>
 		/// 所有的提示内容
@@ -59,11 +62,14 @@ namespace KooFrame
 		public void BindDirectoryPath(string directoryPath)
 		{
 			curDirectoryPath = directoryPath;
-			isHasDirectoryData = KooCode.Datas.DirectoryDataDic.Dic.ContainsKey(curDirectoryPath);
+			//当前目录下是否有目录SO数据
+			curDirectoryAssetPath = curDirectoryPath + "/" + Path.GetFileName(curDirectoryPath) + ".asset";
+			isHasDirectoryData = File.Exists(curDirectoryAssetPath);
+			//KooCode.Datas.DirectoryDataDic.Dic.ContainsKey(curDirectoryPath);
 
 			if (isHasDirectoryData)
 			{
-				directoryData = KooCode.Datas.DirectoryDataDic.Dic[curDirectoryPath];
+				directoryData = AssetDatabase.LoadAssetAtPath<DirectoryData>(curDirectoryAssetPath);
 			}
 			else
 			{
@@ -77,7 +83,7 @@ namespace KooFrame
 
 			#region 绑定所有元素
 			titleField = this.Q<TextField>("TitleField");
-			contentField = this.Q<TextField>("ContentField");
+			descriptionField = this.Q<TextField>("ContentField");
 			allTipsScroll = this.Q<ScrollView>("AllTipsScroll");
 			addTipBtn = this.Q<Button>("AddTipBtn");
 
@@ -104,28 +110,26 @@ namespace KooFrame
 		private void CreateDirectoryData()
 		{
 			//创建对应数据到字典中
-			DirectoryData newData = new DirectoryData();
-			newData.Title = titleField.text;
-			newData.DirectoryPath = curDirectoryPath;
-			if (contentField.text != "请创建目录便签数据来保存此描述")
+			//DirectoryData newData = new DirectoryData();
+			ScriptableObject so = ScriptableObject.CreateInstance(typeof(DirectoryData));
+			AssetDatabase.CreateAsset(so, curDirectoryAssetPath);
+			directoryData = so as DirectoryData;
+			directoryData.Title = titleField.text;
+			directoryData.DirectoryPath = curDirectoryPath;
+			if (descriptionField.text != "请创建目录便签数据来保存此描述")
 			{
-				newData.Description = contentField.text;
+				directoryData.Description = descriptionField.text;
 			}
 			else
 			{
-				newData.Description = "还没什么描述呢~";
-			}
-			if (!KooCode.Datas.DirectoryDataDic.Dic.TryAdd(curDirectoryPath, newData))
-			{
-				Debug.LogWarning("已经存在此目录的便签数据了!");
-			}
-			else
-			{
-				isHasDirectoryData = true;
-				directoryData = KooCode.Datas.DirectoryDataDic.Dic[curDirectoryPath];
-				ShowDataDiv();
+				directoryData.Description = "还没什么描述呢~";
 			}
 
+			//在当前目录下创建对应的SO文件
+
+
+			isHasDirectoryData = true;
+			ShowDataDiv();
 		}
 
 
@@ -135,7 +139,7 @@ namespace KooFrame
 			noDataDiv.style.display = DisplayStyle.None;
 			BindTitleAndDescriptionWhenHasData();
 			BindButton();
-			CreateAllTipsElement();
+			UpdateAllTipsElement();
 		}
 
 
@@ -144,7 +148,7 @@ namespace KooFrame
 			//当没数据的时候
 			titleField.SetValueWithoutNotify(Path.GetFileName(curDirectoryPath));
 
-			contentField.SetValueWithoutNotify("请创建目录便签数据来保存此描述");
+			descriptionField.SetValueWithoutNotify("请创建目录便签数据来保存此描述");
 
 
 		}
@@ -160,33 +164,28 @@ namespace KooFrame
 			});
 
 
-			contentField.SetValueWithoutNotify(directoryData.Description.IsNullOrEmpty() ? "还什么描述都没有呢" : directoryData.Description);
+			descriptionField.SetValueWithoutNotify(directoryData.Description.IsNullOrEmpty() ? "还什么描述都没有呢" : directoryData.Description);
 			//注册赋值监听
-			contentField.RegisterValueChangedCallback((value) =>
+			descriptionField.RegisterValueChangedCallback((value) =>
 			{
 				directoryData.Description = value.newValue;
 			});
 		}
 
 
-
-
-
-		private void CreateAllTipsElement()
+		private void UpdateAllTipsElement()
 		{
 			//初始化提示列表信息
-
-			List<DirectoryTipData> allDatas = directoryData.tipsDatas;
+			List<DirectoryTipData> allDatas = directoryData.TipsDatas;
+			allTipsScroll.Clear();
 			foreach (DirectoryTipData item in allDatas)
 			{
 				AddTipContent(item);
 			}
-
 		}
 
 		private void BindButton()
 		{
-
 			addTipBtn.clicked += AddTips;
 		}
 
@@ -194,16 +193,18 @@ namespace KooFrame
 		{
 			//添加提示元素到
 			DirectoryTipData newitem = new("默认提示", "这里还什么内容都没有呢");
-			directoryData.tipsDatas.Add(newitem);
+			newitem.DirectoryData = AssetDatabase.LoadAssetAtPath<DirectoryData>(curDirectoryAssetPath);
+			directoryData.TipsDatas.Add(newitem);
 			AddTipContent(newitem);
-
 		}
 
 		private void AddTipContent(DirectoryTipData item)
 		{
 			TipContentElement tipContentElement = new TipContentElement();
+			tipContentElement.BindDirectoryPath(curDirectoryPath);
+			tipContentElement.UpdateTitleAndContent(item);
 			tipContentElement.Init();
-			tipContentElement.UpdateTitleAndContent(item.TipTitle, item.TipContent);
+			tipContentElement.OnDeleteSelf += UpdateAllTipsElement;
 			allTipsScroll.Add(tipContentElement);
 		}
 

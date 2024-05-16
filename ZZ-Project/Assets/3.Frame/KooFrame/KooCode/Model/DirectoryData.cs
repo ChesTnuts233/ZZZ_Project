@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace KooFrame
 {
 	[Serializable]
-	public class DirectoryData
+	public class DirectoryData : NodeTree
 	{
 		/// <summary>
 		/// 数据对应的目录路径
@@ -24,7 +24,7 @@ namespace KooFrame
 		/// <summary>
 		/// 提示数据
 		/// </summary>
-		public List<DirectoryTipData> tipsDatas = new();
+		public List<DirectoryTipData> TipsDatas = new();
 
 
 	}

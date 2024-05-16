@@ -1,8 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:VisualElement name="BackGround" style="flex-grow: 1; justify-content: center; align-items: stretch; align-self: auto; min-height: 70px; background-color: rgba(149, 149, 149, 0.8); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; border-left-color: rgb(31, 31, 31); border-right-color: rgb(31, 31, 31); border-top-color: rgb(31, 31, 31); border-bottom-color: rgb(31, 31, 31);">
-        <ui:Label tabindex="-1" text="标题" display-tooltip-when-elided="true" style="color: rgb(24, 24, 24);" />
-        <ui:TextField picking-mode="Ignore" name="TitleField" style="flex-grow: 1; min-height: 30px;" />
-        <ui:Label tabindex="-1" text="内容" display-tooltip-when-elided="true" style="color: rgb(24, 24, 24);" />
-        <ui:TextField picking-mode="Ignore" name="ContentField" multiline="true" style="flex-grow: 1; min-height: 30px;" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1; justify-content: center; align-items: stretch; align-self: auto; min-height: 120px; background-color: rgba(149, 149, 149, 0.8); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; border-left-color: rgb(31, 31, 31); border-right-color: rgb(31, 31, 31); border-top-color: rgb(31, 31, 31); border-bottom-color: rgb(31, 31, 31); flex-direction: row;">
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="标题" display-tooltip-when-elided="true" style="color: rgb(24, 24, 24);" />
+            <ui:TextField picking-mode="Ignore" name="TitleField" style="flex-grow: 1; min-height: 30px;" />
+            <ui:Label tabindex="-1" text="内容" display-tooltip-when-elided="true" style="color: rgb(24, 24, 24);" />
+            <ui:TextField picking-mode="Ignore" name="ContentField" multiline="true" style="flex-grow: 1; min-height: 60px;" />
+        </ui:VisualElement>
+        <ui:Button text="删除" display-tooltip-when-elided="true" enable-rich-text="true" name="DeleteBtn" />
     </ui:VisualElement>
 </ui:UXML>

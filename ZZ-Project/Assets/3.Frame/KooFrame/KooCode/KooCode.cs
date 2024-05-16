@@ -18,6 +18,8 @@ namespace KooFrame
 
 		public static string CodeSettingsPath = "Assets/3.Frame/KooFrame/KooCode/0.Data/AssetsData.asset";
 
+		public static string CodeTemplateMenuItemPath = "Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/Editor/CodeTemplateMenuItem.cs";
+
 
 		private static KooCodeDatas datasInstance;
 
