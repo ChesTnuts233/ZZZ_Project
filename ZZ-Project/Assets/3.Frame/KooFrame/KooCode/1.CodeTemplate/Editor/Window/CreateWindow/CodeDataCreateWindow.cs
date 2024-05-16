@@ -9,17 +9,17 @@ namespace KooFrame
 	{
 
 
-		private CodeTemplateData curCreateTemplateData;
+		private CodeData curCreateData;
 
-		public CodeTemplateData CurCreateTemplateData
+		public CodeData CurCreateTemplateData
 		{
-			get => curCreateTemplateData;
+			get => curCreateData;
 
 			set
 			{
-				curCreateTemplateData = value;
+				curCreateData = value;
 				nameField?.SetValueWithoutNotify(value.Name);
-				codeTemplateFile?.SetValueWithoutNotify(value.CodeTemplateFile);
+				codeTemplateFile?.SetValueWithoutNotify(value.CodeFile);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace KooFrame
 
 			nameField.Focus();
 
-			curCreateTemplateData = new();
+			curCreateData = new();
 		}
 
 
@@ -76,7 +76,7 @@ namespace KooFrame
 
 			codeTemplateFile.RegisterValueChangedCallback((value) =>
 			{
-				curCreateTemplateData.CodeTemplateFile = value.newValue as TextAsset;
+				curCreateData.CodeFile = value.newValue as TextAsset;
 
 				nameField.text.IsNullOrWhitespace().Log();
 
@@ -85,7 +85,7 @@ namespace KooFrame
 					nameField.SetValueWithoutNotify(value.newValue.name);
 				}
 
-				curCreateTemplateData.UpdateData();
+				curCreateData.UpdateData();
 			});
 		}
 
@@ -96,7 +96,7 @@ namespace KooFrame
 			nameField.SetValueWithoutNotify("DefaultTemplate");
 			nameField.RegisterValueChangedCallback((value) =>
 			{
-				curCreateTemplateData.Name.ValueWithoutAction = value.newValue;
+				curCreateData.Name.ValueWithoutAction = value.newValue;
 			});
 		}
 
@@ -104,19 +104,19 @@ namespace KooFrame
 		{
 			createBtn = root.Q<Button>("CreateBtn");
 
-			createBtn.clicked += CreateCodeTempData;
+			createBtn.clicked += CreateCodeData;
 		}
 
-		private void CreateCodeTempData()
+		private void CreateCodeData()
 		{
 			//检查名称中是否有非法符号
-			if (!CheckDataNameLedge(curCreateTemplateData))
+			if (!CheckDataNameLedge(curCreateData))
 			{
 				return;
 			}
 
 			//创建模板数据
-			factory.AddData(curCreateTemplateData);
+			factory.AddData(curCreateData);
 
 			if (CurEditorListView != null)
 			{

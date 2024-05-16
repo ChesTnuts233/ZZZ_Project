@@ -39,7 +39,11 @@ namespace KooFrame.BaseSystem
 				ScriptableObject.CreateInstance<MyDoCreateScriptAssetInString_Mono>(),
 				targetFilePath, null,
 				content);
+
 		}
+
+
+
 
 
 		public static void CreateScriptByContentAndPath(string scriptName, string path, string content)
@@ -47,6 +51,26 @@ namespace KooFrame.BaseSystem
 			string targetFilePath = path + "/" + scriptName + ".cs";
 
 			MyDoCreateScriptAssetInString_Mono.CreateScriptAssetInContent(targetFilePath, content);
+		}
+
+		/// <summary>
+		/// 创建节点到目录树中
+		/// </summary>
+		private static void CreateNodeInTree(string path, string scriptName)
+		{
+			string targetPath = path + "/" + Path.GetFileName(path) + ".asset";
+
+			if (!File.Exists(targetPath)) //如果存在
+			{
+				return;
+			}
+			DirectoryData treeData = AssetDatabase.LoadAssetAtPath<DirectoryData>(targetPath);
+
+			var createNode = treeData.CreateNode(typeof(UMLNode));
+
+			createNode.NodeNickName = scriptName;
+			createNode.NodeNickName.Log();
+			EditorUtility.SetDirty(createNode);
 		}
 
 
@@ -115,7 +139,6 @@ namespace KooFrame.BaseSystem
 				string text = content;
 
 				string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(pathName);
-				Debug.Log(fileNameWithoutExtension);
 				//替换文件名
 				text = Regex.Replace(text, "#SCRIPTNAME#", fileNameWithoutExtension);
 
@@ -133,7 +156,10 @@ namespace KooFrame.BaseSystem
 				StreamWriter streamWriter = new StreamWriter(fullPath, append, encoding);
 				streamWriter.Write(text);
 				streamWriter.Close();
+
+				CreateNodeInTree(Path.GetDirectoryName(pathName), fileNameWithoutExtension);
 				AssetDatabase.ImportAsset(pathName);
+
 				return AssetDatabase.LoadAssetAtPath(pathName, typeof(UnityEngine.Object));
 			}
 		}

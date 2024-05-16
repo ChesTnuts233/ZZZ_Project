@@ -26,3 +26,7 @@ MonoBehaviour:
   DirectoryExWindow: {fileID: 9197481963319205126, guid: f18dea597cc86784c8bb290fc2640017, type: 3}
   DirectoryTipInspectorElement: {fileID: 9197481963319205126, guid: 700caa84e8f84d540b2314b26cc700d4, type: 3}
   TipContentElementVisualAsset: {fileID: 9197481963319205126, guid: ac5e733dd97b42f4e96dd25f43051797, type: 3}
+  UMLNodeTreeVisualAsset: {fileID: 9197481963319205126, guid: 6418b6d0560511645a42c4b6e54100bf, type: 3}
+  UMLNodeTreeStyleSheet: {fileID: 7433441132597879392, guid: add3fe33226b4b44a9759a8b314708d9, type: 3}
+  SettingsWindowVisualAsset: {fileID: 9197481963319205126, guid: 7c7e7d5baafda5549979eecc79be30cc, type: 3}
+  CodeDataCreateWindowVisualAsset: {fileID: 9197481963319205126, guid: 29d74af8189e4254093a9d090cefcb13, type: 3}

@@ -33,7 +33,6 @@ namespace KooFrame
 		#endregion
 
 
-
 		public new class UxmlFactory : UxmlFactory<DirectoryCreateTemplateElement, VisualElement.UxmlTraits>
 		{
 

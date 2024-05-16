@@ -6,11 +6,14 @@
 //*****************************************************
 
 using KooFrame;
+using UnityEngine;
 
 namespace GameBuild
 {
 	public interface IPlayerBase : IArchitecture
 	{
+		public GameObject GO { get; }
+
 		public MovementBase Movement { get; }
 
 		//public AttackActionBase attackAction { get; }
@@ -21,5 +24,8 @@ namespace GameBuild
 		public RequestReceiverBase Receiver { get; }
 		public InvokerBase Invoker { get; }
 		public PlayerInputBase Input { get; }
+
+
+
 	}
 }

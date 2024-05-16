@@ -97,11 +97,11 @@ namespace GameBuild
 			cinemachineTargetPitch += inputData.Look.y;
 
 
-			cinemachineTargetYaw = ClampAngle(cinemachineTargetYaw, float.MinValue, float.MaxValue);
-			cinemachineTargetPitch = ClampAngle(cinemachineTargetPitch, BottomClamp, TopClamp);
+			//cinemachineTargetYaw = ClampAngle(cinemachineTargetYaw, float.MinValue, float.MaxValue);
+			//cinemachineTargetPitch = ClampAngle(cinemachineTargetPitch, BottomClamp, TopClamp);
 
-			FollowTarget.rotation = Quaternion.Euler(cinemachineTargetPitch + CameraAngleOverride,
-				cinemachineTargetYaw, 0.0f);
+			//FollowTarget.rotation = Quaternion.Euler(cinemachineTargetPitch + CameraAngleOverride,
+			//	cinemachineTargetYaw, 0.0f);
 		}
 
 		private float ClampAngle(float lfAngle, float lfMin, float lfMax)

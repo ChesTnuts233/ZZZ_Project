@@ -20,6 +20,25 @@ namespace KooFrame
 		private CodeDataFactory templateFactory;
 		private CodeMarkFactory markFactory;
 
+
+		private int selectListViewInstance = -1;
+
+		private int selectListView
+		{
+			get
+			{
+				selectListViewInstance = EditorPrefs.GetInt("selectList");
+				return selectListViewInstance;
+			}
+
+			set
+			{
+				//保存选中的列表实例
+				EditorPrefs.SetInt("selectList", value);
+				selectListViewInstance = value;
+			}
+		}
+
 		#endregion
 
 		#region 面板元素
@@ -91,6 +110,25 @@ namespace KooFrame
 			CreateCodeTemplateListView();
 
 			RegisterDivDragAndDrop(codeTemplateListView);
+
+			//根据保存打开页面
+			switch (selectListView)
+			{
+				case 0:
+					ShowListView(codeMarkListView);
+					inspectorManager.UpdateInspectors(KooCode.Datas.CodeMarks.First());
+					break;
+				case 1:
+					ShowListView(codeTemplateListView);
+					inspectorManager.UpdateInspectors(KooCode.Datas.CodeTemplates.First());
+					break;
+				case 2:
+					ShowListView(methodDataListView);
+					//inspectorManager.UpdateInspectors(KooCode.Datas..First());
+					break;
+				default:
+					break;
+			}
 		}
 
 		private void OnGUI()
@@ -148,18 +186,22 @@ namespace KooFrame
 			methodShowBtn = root.Q<Button>("MethodShowBtn");
 
 			codeDataShowBtn.clicked += () => ShowListView(codeMarkListView);
-			codeTemplateShowBtn.clicked += () => ShowListView(codeTemplateListView);
-			methodShowBtn.clicked += () => ShowListView(methodDataListView);
+			codeDataShowBtn.clicked += () => selectListView = 0;
 
-			void ShowListView(ListView showListView)
-			{
-				codeMarkListView.style.display = DisplayStyle.None;
-				codeTemplateListView.style.display = DisplayStyle.None;
-				methodDataListView.style.display = DisplayStyle.None;
-				showListView.style.display = DisplayStyle.Flex;
-			}
+			codeTemplateShowBtn.clicked += () => ShowListView(codeTemplateListView);
+			codeTemplateShowBtn.clicked += () => selectListView = 1;
+
+			methodShowBtn.clicked += () => ShowListView(methodDataListView);
+			methodShowBtn.clicked += () => selectListView = 2;
 		}
 
+		private void ShowListView(ListView showListView)
+		{
+			codeMarkListView.style.display = DisplayStyle.None;
+			codeTemplateListView.style.display = DisplayStyle.None;
+			methodDataListView.style.display = DisplayStyle.None;
+			showListView.style.display = DisplayStyle.Flex;
+		}
 
 		private void RegisterDivDragAndDrop(VisualElement element)
 		{

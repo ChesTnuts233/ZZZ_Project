@@ -52,6 +52,19 @@ namespace KooFrame
 		[SerializeField, Header("便签元素UXML资源")]
 		public VisualTreeAsset TipContentElementVisualAsset = default;
 
+		[SerializeField, Header("UML节点树编辑器")]
+		public VisualTreeAsset UMLNodeTreeVisualAsset = default;
+
+		[SerializeField, Header("UML节点样式表")]
+		public StyleSheet UMLNodeTreeStyleSheet = default;
+
+		[SerializeField, Header("设置窗口UXML资源")]
+		public VisualTreeAsset SettingsWindowVisualAsset = default;
+
+
+		[SerializeField, Header("创建代码数据窗口UXML资源")]
+		public VisualTreeAsset CodeDataCreateWindowVisualAsset = default;
+
 
 		#endregion
 	}

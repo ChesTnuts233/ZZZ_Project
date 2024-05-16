@@ -1,5 +1,4 @@
 using UnityEditor;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace KooFrame
@@ -7,8 +6,6 @@ namespace KooFrame
 
 	public class CodeCreateWindowBase : EditorWindow
 	{
-		[SerializeField]
-		private VisualTreeAsset visualTreeAsset = default;
 
 
 		protected KooCodeDatas Datas;
@@ -27,7 +24,7 @@ namespace KooFrame
 		protected virtual void CreateGUI()
 		{
 			Root = rootVisualElement;
-			visualTreeAsset.CloneTree(Root);
+			KooCode.AssetsData.CodeDataCreateWindowVisualAsset.CloneTree(Root);
 		}
 
 

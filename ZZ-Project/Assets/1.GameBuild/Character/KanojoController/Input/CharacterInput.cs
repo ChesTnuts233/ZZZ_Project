@@ -7,7 +7,6 @@
 
 using KooFrame;
 using Sirenix.OdinInspector;
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,11 +27,31 @@ namespace GameBuild
 			InputAction.Enable();
 		}
 
+		public override void DeInit()
+		{
+			base.DeInit();
+			UnRegisterInputAction();
+		}
+
 
 		public void RegisterInputAction()
 		{
 			InputAction.GamePlay.Move.RegisterInputEvent(MoveHandle, true, true, true);
 			InputAction.GamePlay.Look.RegisterInputEvent(LookHandle, true, true, true);
+			InputAction.GamePlay.MousePos.RegisterInputEvent(MousePosHandle, true, true, true);
+		}
+
+
+		public void UnRegisterInputAction()
+		{
+			InputAction.GamePlay.Move.UnRegisterInputEvent(MoveHandle);
+			InputAction.GamePlay.Look.UnRegisterInputEvent(LookHandle);
+			InputAction.GamePlay.MousePos.UnRegisterInputEvent(MousePosHandle);
+		}
+
+		private void MousePosHandle(InputAction.CallbackContext context)
+		{
+			InputData.MousePos = context.ReadValue<Vector2>();
 		}
 
 		private void LookHandle(InputAction.CallbackContext context)
@@ -44,6 +63,8 @@ namespace GameBuild
 		{
 			InputData.Move = context.ReadValue<Vector2>();
 		}
+
+
 
 
 

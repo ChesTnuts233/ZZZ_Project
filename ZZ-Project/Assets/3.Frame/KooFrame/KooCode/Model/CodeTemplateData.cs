@@ -72,6 +72,7 @@ namespace KooFrame
 		public void CreateFileToPath(string name, string path)
 		{
 			ScriptsTemplatesCreater.CreateScriptByContentAndPath(name, path, CodeContent);
+			//检测
 		}
 
 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -40,7 +41,6 @@ namespace KooFrame
 		private ScrollView codeEditorScroll;
 
 		#endregion
-
 
 		public override void BindToManagerWindow(KooCodeWindow managerWindow)
 		{
@@ -117,8 +117,6 @@ namespace KooFrame
 				codeViewScroll.style.display = DisplayStyle.Flex;
 				codeViewScroll.AddToClassList("show-ani");
 			};
-
-
 		}
 
 		private void BindCreateTemplateBtn()
@@ -132,14 +130,16 @@ namespace KooFrame
 		{
 			//把CodeData尝试添加到Templates中
 			//检查是否有重名的模板
-			if (KooCode.Datas.CodeTemplates.Find((data) => (data.Name.Value == CurCheckData.Name.Value)) != null)
+			var sameData = KooCode.Datas.CodeTemplates.Find((data) => (data.Name.Value == CurCheckData.Name.Value));
+			if (sameData != null)
 			{
-				"已经有重名模板，无法继续添加".Log();
-				return;
+				KooCode.Datas.CodeTemplates.Remove(sameData);
 			}
 			CodeTemplateData newTemplateData = new(CurCheckData.Name.Value, CurCheckData.Content, CurCheckData.CodeFile);
 
 			KooCode.Datas.CodeTemplates.Add(newTemplateData);
+
+
 
 			//代码添加后 
 			//遍历所有的codeTemplateDatas，根据名称生成对应的MenuItem
@@ -152,6 +152,8 @@ namespace KooFrame
 			//生成右键菜单选项
 			KooTool.CodeGenerator_ByTag(updateContent, KooCode.CodeTemplateMenuItemPath);
 
+			EditorUtility.SetDirty(KooCode.Datas);
+			AssetDatabase.SaveAssets();
 		}
 
 
@@ -177,8 +179,10 @@ namespace KooFrame
 		{
 
 			string coloredCode = codeContent;
+			
 			if (coloredCode.IsNullOrEmpty())
 			{
+				codeView.text = coloredCode;
 				return;
 			}
 

@@ -36,6 +36,7 @@ namespace KooFrame
 			//取第一个
 			content = sameNameData.Content;
 
+			content.Log();
 			return content;
 		}
 

@@ -12,7 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8816fbb4e69f2409da865093ab9acf, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
+  rootNode: {fileID: 1984813398276401892}
+  runningNode: {fileID: 0}
+  treeState: 1
+  nodes:
+  - {fileID: 1984813398276401892}
+  isInited: 0
   DirectoryPath: 
   Title: 
   Description: 
   TipsDatas: []
+--- !u!114 &1984813398276401892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
+  m_Name: UMLNode
+  m_EditorClassIdentifier: 
+  nodeTree: {fileID: 11400000}
+  NodeNickName: Test11
+  state: 1
+  started: 0
+  guid: cb1cf2337fe5aa249b8157a1cf4a839f
+  position: {x: 127, y: 164}
+  Childs: []

@@ -93,6 +93,10 @@ namespace KooFrame
 		/// </summary>
 		public void UpdateInspectors(CodeData data)
 		{
+			if (data == null)
+			{
+				return;
+			}
 			//更新对应的数据
 			if (data.GetType() == typeof(CodeData))
 			{
