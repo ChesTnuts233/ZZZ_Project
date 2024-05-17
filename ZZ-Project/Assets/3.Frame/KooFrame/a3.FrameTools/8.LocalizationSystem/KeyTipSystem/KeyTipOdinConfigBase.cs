@@ -11,7 +11,7 @@ using Sirenix.OdinInspector;
 
 namespace KooFrame
 {
-    public abstract class KeyTipOdinConfigSuperBase : OdinConfigBase { }
+    public abstract class KeyTipOdinConfigSuperBase : OdinConfigBase_SO { }
 
     public abstract class KeyTipOdinConfigBase<DeviceKeyType> : KeyTipOdinConfigSuperBase where DeviceKeyType : Enum
     {

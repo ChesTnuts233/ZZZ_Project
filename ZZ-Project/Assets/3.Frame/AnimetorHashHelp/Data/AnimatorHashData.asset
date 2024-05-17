@@ -1,0 +1,400 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b6b6405a7dd2df40a5129135d871e76, type: 3}
+  m_Name: AnimatorHashData
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: codeGeneratorType
+      Entry: 7
+      Data: 0|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: GameBuild.AnimHash, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: AnimatorHashDic
+      Entry: 7
+      Data: 1|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[GameBuild.AnimatorParameterData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 2|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: MoveSpeed
+    - Name: $v
+      Entry: 7
+      Data: 3|GameBuild.AnimatorParameterData, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: MoveSpeed
+    - Name: AnimatorControllerNames
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: Avatar_Kiana_C2_Model
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Types
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[UnityEngine.AnimatorControllerParameterType,
+        UnityEngine.AnimationModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: IdleBlend
+    - Name: $v
+      Entry: 7
+      Data: 6|GameBuild.AnimatorParameterData, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: IdleBlend
+    - Name: AnimatorControllerNames
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: Avatar_Kiana_C2_Model
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Types
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[UnityEngine.AnimatorControllerParameterType,
+        UnityEngine.AnimationModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Speed
+    - Name: $v
+      Entry: 7
+      Data: 9|GameBuild.AnimatorParameterData, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: Speed
+    - Name: AnimatorControllerNames
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: StarterAssetsThirdPerson
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Types
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[UnityEngine.AnimatorControllerParameterType,
+        UnityEngine.AnimationModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Jump
+    - Name: $v
+      Entry: 7
+      Data: 12|GameBuild.AnimatorParameterData, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: Jump
+    - Name: AnimatorControllerNames
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: StarterAssetsThirdPerson
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Types
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[UnityEngine.AnimatorControllerParameterType,
+        UnityEngine.AnimationModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Grounded
+    - Name: $v
+      Entry: 7
+      Data: 15|GameBuild.AnimatorParameterData, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: Grounded
+    - Name: AnimatorControllerNames
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: StarterAssetsThirdPerson
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Types
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[UnityEngine.AnimatorControllerParameterType,
+        UnityEngine.AnimationModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: FreeFall
+    - Name: $v
+      Entry: 7
+      Data: 18|GameBuild.AnimatorParameterData, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: FreeFall
+    - Name: AnimatorControllerNames
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: StarterAssetsThirdPerson
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Types
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[UnityEngine.AnimatorControllerParameterType,
+        UnityEngine.AnimationModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: MotionSpeed
+    - Name: $v
+      Entry: 7
+      Data: 21|GameBuild.AnimatorParameterData, Assembly-CSharp
+    - Name: Name
+      Entry: 1
+      Data: MotionSpeed
+    - Name: AnimatorControllerNames
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 1
+      Data: StarterAssetsThirdPerson
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Types
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[UnityEngine.AnimatorControllerParameterType,
+        UnityEngine.AnimationModule]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  CodeGeneratorClassFilePath: Assets/1.GameBuild/AnimHash.cs
+  controllerPathList:
+  - Assets/1.GameBuild/Character/Avatar_Kiana_C2_Model.controller
+  - Assets/2.SubSystem/SkillEditor/TempAndTest/Assets/New Animator Controller.controller
+  - Assets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller

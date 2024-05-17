@@ -9,26 +9,26 @@ using UnityEngine;
 
 namespace GameBuild
 {
-    public class KanojoInputData : InputData
-    {
-        /// <summary>
-        /// 移动输入
-        /// </summary>
-        public Vector2 Move;
+	public class KanojoInputData : InputData
+	{
+		/// <summary>
+		/// 移动输入
+		/// </summary>
+		public Vector2 Move;
 
-        /// <summary>
-        /// 转向输入
-        /// </summary>
-        public Vector2 Rotate;
+		/// <summary>
+		/// 转向输入
+		/// </summary>
+		public Vector2 Look;
 
-        /// <summary>
-        /// 鼠标指针坐标
-        /// </summary>
-        public Vector2 MousePos;
+		/// <summary>
+		/// 鼠标指针坐标
+		/// </summary>
+		public Vector2 MousePos;
 
-        /// <summary>
-        /// 主相机
-        /// </summary>
-        public Camera MainCamera;
-    }
+		/// <summary>
+		/// 主相机
+		/// </summary>
+		public Camera MainCamera;
+	}
 }

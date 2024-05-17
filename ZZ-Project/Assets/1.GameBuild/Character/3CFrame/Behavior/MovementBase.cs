@@ -24,7 +24,6 @@ namespace GameBuild
 
 
 
-
 		#region 依赖内容
 
 		protected Transform playerTransform;
@@ -42,8 +41,6 @@ namespace GameBuild
 		/// 是否已经初始化
 		/// </summary>
 		private bool isHasInited;
-		private Transform inputSpace;
-		private Transform player;
 
 		public MovementBase(MonoBehaviour mono, Rigidbody rb, Transform inputSpace, Transform player, Animator anim, IPlayerBase self)
 		{
@@ -59,18 +56,9 @@ namespace GameBuild
 			Init();
 		}
 
-		public MovementBase(MonoBehaviour mono, Rigidbody rb, Transform inputSpace, Transform player, Animator anim)
-		{
-			this.mono = mono;
-			this.rb = rb;
-			this.inputSpace = inputSpace;
-			this.player = player;
-			this.anim = anim;
-		}
 
 		public void SetInput(PlayerInputBase input)
 		{
-			"输入赋值".Log();
 			this.input = input;
 		}
 

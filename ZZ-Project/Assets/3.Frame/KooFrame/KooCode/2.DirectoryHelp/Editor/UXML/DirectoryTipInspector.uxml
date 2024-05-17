@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="BackGround" style="flex-grow: 1;">
+        <ui:TextField picking-mode="Ignore" name="TitleField" style="-unity-font-style: bold; font-size: 15px;" />
+        <ui:TextField picking-mode="Ignore" name="ContentField" value="默认文件夹的描述信息" style="max-height: 80px; min-height: 80px; font-size: 14px;" />
+        <ui:VisualElement name="HasDataDiv" style="flex-grow: 1; display: flex;">
+            <ui:ScrollView name="AllTipsScroll" style="flex-grow: 1;" />
+            <ui:Button text="添加目录便签" display-tooltip-when-elided="true" name="AddTipBtn" />
+        </ui:VisualElement>
+        <ui:VisualElement name="NoDataDiv" style="flex-grow: 1; display: none;">
+            <ui:Button text="创建目录便签数据" display-tooltip-when-elided="true" name="CreateDirectoryDataBtn" style="flex-grow: 0.1; max-height: 45px; min-height: 45px; font-size: 15px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

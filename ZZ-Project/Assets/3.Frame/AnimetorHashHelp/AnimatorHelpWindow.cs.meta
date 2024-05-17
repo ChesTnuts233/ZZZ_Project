@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e7932885173ec4d409d4585f1d453618
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - setting: {fileID: 11400000, guid: e39550bac81002c4597ada6870ac46a2, type: 2}
+  - editorUIAsset: {fileID: 9197481963319205126, guid: fc5ead53d65a1b74ab34552a0d95bb5b,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

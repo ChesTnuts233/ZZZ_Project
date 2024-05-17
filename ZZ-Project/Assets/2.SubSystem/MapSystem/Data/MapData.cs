@@ -11,22 +11,23 @@ using UnityEngine;
 
 namespace SubSystem.Map
 {
-    public class MapData : ConfigBase_SO
-    {
-        /// <summary>
-        /// 所在的Level
-        /// </summary>
-        public string LevelID;
+	[CreateAssetMenu(fileName = "MapData", menuName = "SO/MapData")]
+	public class MapData : ConfigBase_SO
+	{
+		/// <summary>
+		/// 所在的Level
+		/// </summary>
+		public string LevelID;
 
 
-        [LabelText("网格宽度")] public int gridWidth;
-        [LabelText("网格高度")] public int gridHeight;
-        [LabelText("网格原点")] public Vector2Int gridOrigin;
+		[LabelText("网格宽度")] public int gridWidth;
+		[LabelText("网格高度")] public int gridHeight;
+		[LabelText("网格原点")] public Vector2Int gridOrigin;
 
-        [SerializeField] public Map Map;
+		[SerializeField] public Map Map;
 
 
-        //[Header("网格属性，请用TilemapGridProperties来设置"), Tooltip("网格属性，请用TilemapGridProperties来设置")]
-        //public List<GridPropertyDetails> GridPropertyDetails = new List<GridPropertyDetails>();
-    }
+		//[Header("网格属性，请用TilemapGridProperties来设置"), Tooltip("网格属性，请用TilemapGridProperties来设置")]
+		//public List<GridPropertyDetails> GridPropertyDetails = new List<GridPropertyDetails>();
+	}
 }

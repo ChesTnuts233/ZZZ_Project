@@ -1,0 +1,16 @@
+//****************** 代码文件申明 ************************
+//* 文件：#SCRIPTNAME#                                       
+//* 作者：#AUTHORNAME#
+//* 创建时间：#CREATETIME#
+//* 描述：Nothing
+//*****************************************************
+
+using UnityEngine;
+
+namespace KooFrame
+{
+	public class #SCRIPTNAME# : ScriptableObject
+	{
+		
+	}
+}

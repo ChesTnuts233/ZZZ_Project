@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/3.Frame/KooFrame/1.FrameEditor/CodeTemplate/Editor/Window/USS/CodeMarkCreateWindow.uss?fileID=7433441132597879392&amp;guid=e49f8bbabc4fe3d459873de2d4096035&amp;type=3#CodeMarkCreateWindow" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1;">
+        <ui:TextField picking-mode="Ignore" label="笔记名称" name="CreateDataName" value="DefaultMark" />
+        <uie:ObjectField label="笔记文档" name="CreateMarkDown" type="UnityEngine.TextAsset, UnityEngine.CoreModule" />
+        <ui:Button text="创建笔记" display-tooltip-when-elided="true" name="CreateNameBtn" />
+    </ui:VisualElement>
+</ui:UXML>

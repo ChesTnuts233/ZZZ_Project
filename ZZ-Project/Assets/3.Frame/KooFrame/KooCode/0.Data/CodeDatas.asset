@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53b177e99007824e917fb4e5ed089bd, type: 3}
+  m_Name: CodeDatas
+  m_EditorClassIdentifier: 
+  CodeMarks:
+  - Name:
+      _value: DefaultMark
+    CodeFile: {fileID: 0}
+    Content: 
+    ID: 
+    Tags: []
+    codeMD: {fileID: 4900000, guid: f742160e657d9de4fab1e7eb28fd47dd, type: 3}
+    MarkDownPath: 
+  - Name:
+      _value: 123
+    CodeFile: {fileID: 0}
+    Content: 
+    ID: 
+    Tags: []
+    codeMD: {fileID: 4900000, guid: 688fea7f8fee072488654bf3250e4da6, type: 3}
+    MarkDownPath: 
+  CodeDatas:
+  - Name:
+      _value: MonoBehaviour
+    CodeFile: {fileID: 4900000, guid: a25fd492138af8e45a3116c008bd4345, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+      UnityEngine;\r\nusing KooFrame.BaseSystem;\r\n\r\nnamespace GameBuild\r\n{\r\n   
+      public class #SCRIPTNAME# : MonoBehaviour\r\n    {\r\n       \r\n    }\r\n}\r\n\r\n"
+    ID: 
+    Tags: []
+  - Name:
+      _value: UIPanel
+    CodeFile: {fileID: 4900000, guid: 9a81183d9c1b3e54ca8827f4bdb031e4, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+      KooFrame;\r\nusing UnityEngine;\r\nusing UnityEngine.UI;\r\nusing System;\r\nusing
+      System.Collections.Generic;\r\n\r\nnamespace GameBuild\r\n{\r\n    [UIWindowData(typeof(#SCRIPTNAME#),
+      true, \"#SCRIPTNAME#\", 0)]\r\n    public class #SCRIPTNAME# : UI_WindowBase\r\n   
+      {\r\n       \r\n    }\r\n}\r\n\r\n"
+    ID: 
+    Tags: []
+  - Name:
+      _value: TestScripts
+    CodeFile: {fileID: 4900000, guid: 83d7de97a2b537b48be82d15dc585f71, type: 3}
+    Content: "//****************** \u6D4B\u8BD5\u4EE3\u7801\u6587\u4EF6\u7533\u660E
+      ********************\r\n//* \u6587\u4EF6\uFF1A#SCRIPTNAME#                                      
+      \r\n//* \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u6D4B\u8BD5\u529F\u80FD\uFF1A(\u6D4B\u8BD5\u7528)Nothing \r\n//*****************************************************\r\n\r\r\nusing
+      UnityEngine;\r\nusing KooFrame.BaseSystem;\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace
+      GameTest\r\n{\r\n    public class #SCRIPTNAME# : MonoBehaviour\r\n    {\r\n       
+      private void Awake()\r\n        {\r\n            \r\n        }\r\n    \r\n       
+      private void Start()\r\n        {\r\n            \r\n        }\r\n    \r\n       
+      private void Update()\r\n        {\r\n            \r\n        }\r\r\n    }\r\n}\r\n\r\n"
+    ID: 
+    Tags: []
+  - Name:
+      _value: CSharp_Class
+    CodeFile: {fileID: 4900000, guid: cb3864d209945b5468bc0950ce7e4b3f, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nnamespace
+      GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+  - Name:
+      _value: CustomVisualElement
+    CodeFile: {fileID: 4900000, guid: ec13002912d2ed743b817c9645674648, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
+      UnityEngine.UIElements;\r\n\r\nnamespace GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#
+      : VisualElement\r\n\t{\r\n\t\tpublic new class UxmlFactory : UxmlFactory<#SCRIPTNAME#,
+      VisualElement.UxmlTraits>\r\n\t\t{\r\n\r\n\t\t}\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+  - Name:
+      _value: ScriptableObject
+    CodeFile: {fileID: 4900000, guid: fff6e3953820897428bd5472f90a799c, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
+      UnityEngine;\r\n\r\nnamespace KooFrame\r\n{\r\n\tpublic class #SCRIPTNAME#
+      : ScriptableObject\r\n\t{\r\n\t\t\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+  - Name:
+      _value: AnieState
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
+      KooFrame;\r\nusing UnityEngine;\r\n\r\nnamespace GameBuild\r\n{\r\n\tpublic
+      class #SCRIPTNAME# : StateMachineBehaviour\r\n\t{\r\n\t\tpublic override void
+      OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)\r\n\t\t{\r\n\t\t\tbase.OnStateEnter(animator,
+      stateInfo, layerIndex);\r\n\r\n\t\t}\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+  CodeTemplates:
+  - Name:
+      _value: MonoBehaviour
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+      UnityEngine;\r\nusing KooFrame.BaseSystem;\r\n\r\nnamespace GameBuild\r\n{\r\n   
+      public class #SCRIPTNAME# : KooMonoBehaviour\r\n    {\r\n       protected override
+      void BeforeOnDestroy()\r\n       {\r\n            //Nothing to Do\r\n      
+      }\r\n    }\r\n}\r\n\r\n"
+    ID: 
+    Tags: []
+    CodeTemplateFile: {fileID: 4900000, guid: a25fd492138af8e45a3116c008bd4345, type: 3}
+  - Name:
+      _value: UIPanel
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+      KooFrame;\r\nusing UnityEngine;\r\nusing UnityEngine.UI;\r\nusing System;\r\nusing
+      System.Collections.Generic;\r\n\r\nnamespace GameBuild\r\n{\r\n    [UIWindowData(typeof(#SCRIPTNAME#),
+      true, \"#SCRIPTNAME#\", 0)]\r\n    public class #SCRIPTNAME# : UI_WindowBase\r\n   
+      {\r\n       \r\n    }\r\n}\r\n\r\n"
+    ID: 
+    Tags: []
+    CodeTemplateFile: {fileID: 4900000, guid: 9a81183d9c1b3e54ca8827f4bdb031e4, type: 3}
+  - Name:
+      _value: CSharp_Class
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nnamespace
+      GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+    CodeTemplateFile: {fileID: 4900000, guid: cb3864d209945b5468bc0950ce7e4b3f, type: 3}
+  - Name:
+      _value: CustomVisualElement
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
+      UnityEngine.UIElements;\r\n\r\nnamespace GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#
+      : VisualElement\r\n\t{\r\n\t\tpublic new class UxmlFactory : UxmlFactory<#SCRIPTNAME#,
+      VisualElement.UxmlTraits>\r\n\t\t{\r\n\r\n\t\t}\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+    CodeTemplateFile: {fileID: 4900000, guid: ec13002912d2ed743b817c9645674648, type: 3}
+  - Name:
+      _value: ScriptableObject
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
+      UnityEngine;\r\n\r\nnamespace KooFrame\r\n{\r\n\tpublic class #SCRIPTNAME#
+      : ScriptableObject\r\n\t{\r\n\t\t\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+    CodeTemplateFile: {fileID: 4900000, guid: fff6e3953820897428bd5472f90a799c, type: 3}
+  - Name:
+      _value: TestScripts
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u6D4B\u8BD5\u4EE3\u7801\u6587\u4EF6\u7533\u660E
+      ********************\r\n//* \u6587\u4EF6\uFF1A#SCRIPTNAME#                                      
+      \r\n//* \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u6D4B\u8BD5\u529F\u80FD\uFF1A(\u6D4B\u8BD5\u7528)Nothing \r\n//*****************************************************\r\n\r\r\nusing
+      UnityEngine;\r\nusing KooFrame.BaseSystem;\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace
+      GameTest\r\n{\r\n    public class #SCRIPTNAME# : MonoBehaviour\r\n    {\r\n       
+      private void Awake()\r\n        {\r\n            \r\n        }\r\n    \r\n       
+      private void Start()\r\n        {\r\n            \r\n        }\r\n    \r\n       
+      private void Update()\r\n        {\r\n            \r\n        }\r\r\n    }\r\n}\r\n\r\n"
+    ID: 
+    Tags: []
+    CodeTemplateFile: {fileID: 4900000, guid: 83d7de97a2b537b48be82d15dc585f71, type: 3}
+  - Name:
+      _value: AnieState
+    CodeFile: {fileID: 0}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+      \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nusing
+      KooFrame;\r\nusing UnityEngine;\r\n\r\nnamespace GameBuild\r\n{\r\n\tpublic
+      class #SCRIPTNAME# : StateMachineBehaviour\r\n\t{\r\n\t\tpublic override void
+      OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)\r\n\t\t{\r\n\t\t\tbase.OnStateEnter(animator,
+      stateInfo, layerIndex);\r\n\r\n\t\t}\r\n\t}\r\n}\r\n"
+    ID: 
+    Tags: []
+    CodeTemplateFile: {fileID: 0}

@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "com.ourpalm.ilruntime": "2.1.0",
     "com.unity.addressables": "1.21.20",
     "com.unity.ai.navigation": "1.1.5",
+    "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.1.0",
     "com.unity.ext.nunit": "2.0.5",
     "com.unity.feature.2d": "2.0.0",
@@ -47,5 +49,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "ILRuntime",
+      "url": "http://registry.npmjs.org",
+      "scopes": [
+        "com.ourpalm"
+      ]
+    }
+  ]
 }

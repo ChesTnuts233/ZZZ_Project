@@ -32,6 +32,13 @@ namespace GameBuild
 
 		protected virtual void OnEnable() { }
 
+		protected virtual void OnDisable() { }
+
+		protected virtual void Update()
+		{
+			movement.Update();
+		}
+
 		protected virtual void FixedUpdate()
 		{
 			movement.FixedUpdate();
@@ -84,16 +91,25 @@ namespace GameBuild
 		private void DeInit()
 		{
 			OnDeInit();
+			#region 架构
 			foreach (var system in _container.GetInstancesByType<ISystem>().Where(s => s.Initialized)) system.DeInit();
 			foreach (var model in _container.GetInstancesByType<IModel>().Where(m => m.Initialized)) model.DeInit();
 			_container.Clear();
 			ArchitectureInstance = null;
+			#endregion
+
+			#region 3C
+
+			Input.DeInit();
+
+			#endregion
 		}
 
 
 		private void Frame3CInit()
 		{
 			movement = KooTool.CreateInstance<MovementBase>(movementClass, movementArgs);
+
 			Input = KooTool.CreateInstance<PlayerInputBase>(inputClass, inputArgs);
 		}
 
@@ -298,6 +314,7 @@ namespace GameBuild
 			get => _container;
 			set => _container = value;
 		}
+		public GameObject GO => this.gameObject;
 
 		/// <summary>
 		/// IOC容器

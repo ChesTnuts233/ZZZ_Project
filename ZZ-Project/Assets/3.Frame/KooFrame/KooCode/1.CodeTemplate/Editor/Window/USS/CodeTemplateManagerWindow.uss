@@ -1,0 +1,26 @@
+.custom-label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+.showBtn {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-left-color: rgba(173, 173, 173, 0.47);
+    border-right-color: rgba(173, 173, 173, 0.47);
+    border-top-color: rgba(173, 173, 173, 0.47);
+    border-bottom-color: rgba(173, 173, 173, 0.47);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    align-items: auto;
+    flex-grow: 1;
+}

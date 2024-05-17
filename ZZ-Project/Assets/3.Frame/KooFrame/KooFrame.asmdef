@@ -4,7 +4,8 @@
     "references": [
         "Unity.TextMeshPro",
         "Unity.InputSystem",
-        "Unity.2D.Tilemap.Editor"
+        "Unity.2D.Tilemap.Editor",
+        "Mischief.MDV.Editor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

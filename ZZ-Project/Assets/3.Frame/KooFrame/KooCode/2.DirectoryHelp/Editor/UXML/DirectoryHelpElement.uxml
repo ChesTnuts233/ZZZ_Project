@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="UpDiv" style="flex-grow: 0.05; flex-direction: row; justify-content: space-between; align-items: stretch; align-self: auto; max-height: 35px; min-height: 35px;">
+        <ui:Button text="便签系统" display-tooltip-when-elided="true" name="ShowTipsBtn" style="flex-grow: 1; flex-shrink: 1;" />
+        <ui:Button text="代码生成" display-tooltip-when-elided="true" name="ShowTemplatesBtn" style="flex-shrink: 1; flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="BackGround" style="flex-grow: 1;">
+        <KooFrame.DirectoryCreateTemplateElement name="CreateTemplateElement" style="flex-grow: 1;" />
+        <KooFrame.DirectoryTipInspector name="DirectoryTipInspector" style="flex-grow: 1; display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

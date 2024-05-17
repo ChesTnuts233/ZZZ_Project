@@ -20,3 +20,10 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196526
+  packageName: Starter Assets - Third Person Character Controller | URP
+  packageVersion: 1.1.5
+  assetPath: Assets/2.SubSystem/SkillEditor/TempAndTest/Assets/Sfx/Player_Footstep_05.wav
+  uploadId: 592926
