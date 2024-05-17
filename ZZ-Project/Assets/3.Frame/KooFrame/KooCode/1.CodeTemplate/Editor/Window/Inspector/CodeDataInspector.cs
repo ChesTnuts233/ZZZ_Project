@@ -186,13 +186,13 @@ namespace KooFrame
 				return;
 			}
 
-			// 遍历字典，为每个关键词着色
+			//遍历字典，为每个关键词着色
 			foreach (var kvp in keywordColors)
 			{
 				string keyword = kvp.Key;
 				string color = kvp.Value;
 
-				// 使用正则表达式替换关键词并添加颜色标识
+				//使用正则表达式替换关键词并添加颜色标识
 				coloredCode = Regex.Replace(coloredCode, "(^|\\s)(" + keyword + ")(?=$|\\s)", "$1<color=" + color + ">$2</color>");
 			}
 

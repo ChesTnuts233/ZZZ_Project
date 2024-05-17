@@ -110,7 +110,7 @@ namespace GameBuild
 
 			Vector2 mouseToWorld = new Vector2(s2wPoint.x, s2wPoint.z);
 
-			
+
 
 			//方向
 			Vector2 dir = (mouseToWorld - new Vector2(playerTransform.position.x, playerTransform.position.z));

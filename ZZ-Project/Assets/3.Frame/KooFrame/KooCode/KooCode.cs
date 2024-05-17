@@ -16,7 +16,9 @@ namespace KooFrame
 
 		public static string CodeDatasPath = "Assets/3.Frame/KooFrame/KooCode/0.Data/CodeDatas.asset";
 
-		public static string CodeSettingsPath = "Assets/3.Frame/KooFrame/KooCode/0.Data/AssetsData.asset";
+		public static string CodeAssetsPath = "Assets/3.Frame/KooFrame/KooCode/0.Data/AssetsData.asset";
+
+		public static string CodeSettingsPath = "Assets/3.Frame/KooFrame/KooCode/0.Data/SettingsDatas.asset";
 
 		public static string CodeTemplateMenuItemPath = "Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/Editor/CodeTemplateMenuItem.cs";
 
@@ -46,9 +48,24 @@ namespace KooFrame
 			{
 				if (assetsData == null)
 				{
-					assetsData = AssetDatabase.LoadAssetAtPath<CodeAssetsData>(CodeSettingsPath);
+					assetsData = AssetDatabase.LoadAssetAtPath<CodeAssetsData>(CodeAssetsPath);
 				}
 				return assetsData;
+			}
+		}
+
+
+		private static SettingsData settingsData;
+
+		public static SettingsData SettingsData
+		{
+			get
+			{
+				if (settingsData == null)
+				{
+					settingsData = AssetDatabase.LoadAssetAtPath<SettingsData>(CodeSettingsPath);
+				}
+				return settingsData;
 			}
 		}
 

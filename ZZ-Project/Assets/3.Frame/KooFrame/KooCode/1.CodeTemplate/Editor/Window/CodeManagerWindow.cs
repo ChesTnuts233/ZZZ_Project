@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -65,6 +66,10 @@ namespace KooFrame
 
 		private Button methodShowBtn;
 
+		private Button settingsBtn;
+
+		private VisualElement border;
+
 		#endregion
 
 		#region 其他
@@ -97,6 +102,10 @@ namespace KooFrame
 			VisualElement root = rootVisualElement;
 			settingsData.ManagerVisualTreeAsset.CloneTree(root);
 
+			ReadHexoBlog(); //尝试读取Hexo
+
+			//BindBorder(root);
+
 			BindDiv(root);
 
 			BindListView(root);
@@ -105,22 +114,30 @@ namespace KooFrame
 
 			BindInspector(root);
 
+			CreateCodeMarkListView();
+
 			CreateCodeDataListView();
 
-			CreateCodeTemplateListView();
-
 			RegisterDivDragAndDrop(codeTemplateListView);
+
+			BindSettingsBtn(root);
 
 			//根据保存打开页面
 			switch (selectListView)
 			{
 				case 0:
 					ShowListView(codeMarkListView);
-					inspectorManager.UpdateInspectors(KooCode.Datas.CodeMarks.First());
+					if (KooCode.Datas.CodeMarks.Count > 0)
+					{
+						inspectorManager.UpdateInspectors(KooCode.Datas.CodeMarks.First());
+					}
 					break;
 				case 1:
 					ShowListView(codeTemplateListView);
-					inspectorManager.UpdateInspectors(KooCode.Datas.CodeTemplates.First());
+					if (KooCode.Datas.CodeTemplates.Count > 0)
+					{
+						inspectorManager.UpdateInspectors(KooCode.Datas.CodeTemplates.First());
+					}
 					break;
 				case 2:
 					ShowListView(methodDataListView);
@@ -129,6 +146,71 @@ namespace KooFrame
 				default:
 					break;
 			}
+		}
+
+
+		private void ReadHexoBlog()
+		{
+			string path = KooCode.SettingsData.HexoPath;
+			if (!path.IsNullOrEmpty())
+			{
+				//检查路径中的文件
+				if (!Directory.Exists(path))
+				{
+					return;
+				}
+
+				//读取目录下所有的md文件
+				string[] files = Directory.GetFiles(path, "*.md");
+
+				foreach (string filePath in files)
+				{
+					//读取文件内容
+					string fileContent = File.ReadAllText(filePath);
+
+					string name = Path.GetFileNameWithoutExtension(filePath);
+
+					//如果包含相同名称的数据
+					if (KooCode.Datas.CodeMarks.Find(data => data.Name.Value == name) != null)
+					{
+						continue;
+					}
+
+					CodeMarkData newData = new CodeMarkData();
+
+					//创建 TextAsset 对象
+					TextAsset textAsset = new TextAsset(fileContent);
+
+					newData.Name.SetValueWithoutAction(name);
+					newData.codeMD = textAsset;
+					newData.MarkDownPath = filePath;
+
+					KooCode.Datas.CodeMarks.Add(newData);
+				}
+			}
+		}
+
+
+		private void BindBorder(VisualElement root)
+		{
+			border = root.Q<VisualElement>("Border");
+
+			border.RegisterCallback<PointerEnterEvent>((evt) =>
+			{
+				//Todo 
+			});
+
+		}
+
+		private void BindSettingsBtn(VisualElement root)
+		{
+			settingsBtn = root.Q<Button>("SettingsBtn");
+			settingsBtn.clicked += OpenSettingsWindow;
+		}
+
+		private void OpenSettingsWindow()
+		{
+			SettingsWindow.ShowWindow();
 		}
 
 		private void OnGUI()
@@ -302,7 +384,7 @@ namespace KooFrame
 		/// <summary>
 		/// 获取所有的模板数据
 		/// </summary>
-		private void CreateCodeTemplateListView()
+		private void CreateCodeDataListView()
 		{
 			CreateListView(codeTemplateListView, settingsData.TemplateListItemVistalTreeAsset, Datas.CodeDatas);
 
@@ -342,7 +424,7 @@ namespace KooFrame
 		}
 
 
-		private void CreateCodeDataListView()
+		private void CreateCodeMarkListView()
 		{
 			CreateListView(codeMarkListView, settingsData.MarkDataListItemVistalTreeAsset, Datas.CodeMarks);
 

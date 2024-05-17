@@ -96,14 +96,16 @@ namespace KooFrame
             return pos;
         }
 
-        /// <summary>
-        /// 随机一点于三角形
-        /// </summary>
-        /// <param name="v1">顶点1</param>
-        /// <param name="v2">顶点2</param>
-        /// <param name="v3">顶点3</param>
-        /// <returns></returns>
-        public static Vector2 RandomInTriangle(Vector2 v1, Vector2 v2, Vector2 v3)
+		#region 模板API[00001]
+
+		/// <summary>
+		/// 随机一点于三角形
+		/// </summary>
+		/// <param name="v1">顶点1</param>
+		/// <param name="v2">顶点2</param>
+		/// <param name="v3">顶点3</param>
+		/// <returns></returns>
+		public static Vector2 RandomInTriangle(Vector2 v1, Vector2 v2, Vector2 v3)
         {
             Vector2 pos = new Vector2();
             float r1 = Random.Range(0f, 1f);
@@ -114,10 +116,12 @@ namespace KooFrame
             return pos;
         }
 
-        /// <summary>
-        /// 在圆形区域内随机一个点
-        /// </summary>
-        public static Vector2 GetRandomPosInCircle(Circle circle)
+		#endregion
+
+		/// <summary>
+		/// 在圆形区域内随机一个点
+		/// </summary>
+		public static Vector2 GetRandomPosInCircle(Circle circle)
         {
             //通过极坐标来随机
             float r = Mathf.Sqrt(Random.Range(0, circle.Radius));
