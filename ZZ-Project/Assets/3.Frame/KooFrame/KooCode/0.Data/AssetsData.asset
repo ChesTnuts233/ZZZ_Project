@@ -30,3 +30,5 @@ MonoBehaviour:
   UMLNodeTreeStyleSheet: {fileID: 7433441132597879392, guid: add3fe33226b4b44a9759a8b314708d9, type: 3}
   SettingsWindowVisualAsset: {fileID: 9197481963319205126, guid: 7c7e7d5baafda5549979eecc79be30cc, type: 3}
   CodeDataCreateWindowVisualAsset: {fileID: 9197481963319205126, guid: 29d74af8189e4254093a9d090cefcb13, type: 3}
+  MarkDownStyleSheet: {fileID: 7433441132597879392, guid: e564345c7a8995e47afb9d84a1dbbac9, type: 3}
+  KooLabelVisualTreeAsset: {fileID: 9197481963319205126, guid: 7200013d7ea854b40b87bbf452b123b5, type: 3}

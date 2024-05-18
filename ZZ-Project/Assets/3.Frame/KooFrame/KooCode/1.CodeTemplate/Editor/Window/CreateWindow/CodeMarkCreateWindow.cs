@@ -71,8 +71,8 @@ namespace KooFrame
 			createMarkDown = Root.Q<ObjectField>("CreateMarkDown");
 			createMarkDown.RegisterValueChangedCallback(value =>
 			{
-				curCreatedData.codeMD = value.newValue as TextAsset;
-				curCreatedData.MarkDownPath = AssetDatabase.GetAssetPath(curCreatedData.codeMD);
+				curCreatedData.CodeMarkDown = value.newValue as TextAsset;
+				curCreatedData.MarkDownPath = AssetDatabase.GetAssetPath(curCreatedData.CodeMarkDown);
 			});
 		}
 

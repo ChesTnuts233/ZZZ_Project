@@ -13,7 +13,9 @@ namespace KooFrame
 	{
 		public CodeMarkData curCheckMarkData;
 
+
 		#region 元素
+		private MarkDownViewElement markDownViewElement;
 
 		private VisualTreeAsset container_assets;
 
@@ -45,7 +47,7 @@ namespace KooFrame
 			UnityEngine.Object.DestroyImmediate(editor);
 			editor = UnityEditor.Editor.CreateEditor(container_assets);
 
-
+			markDownViewElement = this.Q<MarkDownViewElement>("MarkDownViewElement");
 		}
 
 		public override void Show()
@@ -77,8 +79,9 @@ namespace KooFrame
 		public void UpdateInspector(CodeMarkData data)
 		{
 			curCheckMarkData = data;
-			string content = (data.codeMD).text;
+			string content = (data.CodeMarkDown).text;
 			viewer = new MG.MDV.MarkdownViewer(KooCode.AssetsData.DarkSkin, curCheckMarkData.MarkDownPath, content);
+			markDownViewElement.Init(data);
 		}
 
 

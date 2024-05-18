@@ -1,0 +1,52 @@
+.HeadingBlock {
+    -unity-font-style: bold;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    -unity-user-select: text;
+}
+
+.ParagraphBlock {
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    font-size: 14px;
+    -unity-user-select: text;
+}
+
+.ListBlock {
+    padding-top: 1px;
+    padding-right: 15px;
+    padding-bottom: 1px;
+    padding-left: 15px;
+    flex-grow: 0;
+}
+
+.ListItemBlock {
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    font-size: 14px;
+}
+
+.QuoteBlock {
+    padding-top: 3px;
+    padding-right: 7px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    border-left-color: rgb(162, 219, 255);
+    border-right-color: rgb(162, 219, 255);
+    border-top-color: rgb(162, 219, 255);
+    border-bottom-color: rgb(162, 219, 255);
+    border-right-width: 0;
+    border-left-width: 3px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    margin-left: 8px;
+    font-size: 14px;
+}

@@ -182,7 +182,7 @@ namespace KooFrame
 					TextAsset textAsset = new TextAsset(fileContent);
 
 					newData.Name.SetValueWithoutAction(name);
-					newData.codeMD = textAsset;
+					newData.CodeMarkDown = textAsset;
 					newData.MarkDownPath = filePath;
 
 					KooCode.Datas.CodeMarks.Add(newData);

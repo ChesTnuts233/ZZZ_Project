@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UIElements;
 
 namespace KooFrame
@@ -64,6 +65,13 @@ namespace KooFrame
 
 		[SerializeField, Header("创建代码数据窗口UXML资源")]
 		public VisualTreeAsset CodeDataCreateWindowVisualAsset = default;
+
+		[SerializeField, Header("MarkDownStyleSheet资源")]
+		public StyleSheet MarkDownStyleSheet = default;
+
+
+		[SerializeField, Header("KooLabel的UXML资源")]
+		public VisualTreeAsset KooLabelVisualTreeAsset = default;
 
 
 		#endregion
