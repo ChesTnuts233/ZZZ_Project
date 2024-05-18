@@ -19,7 +19,7 @@ namespace KooFrame
 		{
 			EditorApplication.projectWindowItemOnGUI = delegate (string guid, Rect selectionRect)
 			{
-				if (Selection.activeObject && Selection.assetGUIDs.Contains(guid) && Directory.Exists(AssetDatabase.GUIDToAssetPath(guid)))
+				if (Selection.assetGUIDs.Contains(guid) && Directory.Exists(AssetDatabase.GUIDToAssetPath(guid)))
 				{
 
 					//按钮的宽度和高度

@@ -56,7 +56,7 @@ namespace GameBuild
 		{
 			base.OnFixedUpdateHandle();
 			Move();
-			ApplyFriction();
+			//ApplyFriction();
 		}
 
 		public void Move()
@@ -69,13 +69,11 @@ namespace GameBuild
 		{
 			if (inputData.Move != Vector2.zero)
 			{
-				Vector3 CurMoveSpeed = rb.velocity;
-
 				//计算目标速度 = 输入方向归一化 * 当前身体的移动速度 + 参考系速度
 				Vector3 targetVelocity = new Vector3(inputData.Move.x, 0, inputData.Move.y).normalized * model.MaxSpeed;
 
 				//计算每帧要加的力
-				Vector3 force = rb.mass * model.Acceleration * targetVelocity;
+				Vector3 force = rb.mass * targetVelocity;
 
 				return force;
 			}
@@ -84,23 +82,23 @@ namespace GameBuild
 		}
 
 
-		// 应用摩擦力
-		public void ApplyFriction()
-		{
-			if (rb.velocity == Vector3.zero)
-			{
-				return;
-			}
-			//根据当前速度计算摩擦力
-			Vector3 velocity = rb.velocity;
+		//// 应用摩擦力
+		//public void ApplyFriction()
+		//{
+		//	if (rb.velocity == Vector3.zero)
+		//	{
+		//		return;
+		//	}
+		//	//根据当前速度计算摩擦力
+		//	Vector3 velocity = rb.velocity;
 
 
 
-			//计算摩擦力 = -速度 * 摩擦系数
-			Vector3 frictionForce = -velocity * model.FrictionCoefficient;
-			//应用摩擦力
-			rb.AddForce(frictionForce);
-		}
+		//	//计算摩擦力 = -速度 * 摩擦系数
+		//	Vector3 frictionForce = -velocity * model.FrictionCoefficient;
+		//	//应用摩擦力
+		//	rb.AddForce(frictionForce);
+		//}
 
 
 		private void UpdateRotate()

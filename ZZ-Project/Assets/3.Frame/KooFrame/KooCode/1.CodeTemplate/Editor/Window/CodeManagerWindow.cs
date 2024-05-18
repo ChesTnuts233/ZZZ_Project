@@ -46,7 +46,7 @@ namespace KooFrame
 
 		private ListView codeMarkListView;
 
-		private ListView codeTemplateListView;
+		private ListView codeDataListView;
 
 		private ListView methodDataListView;
 
@@ -118,7 +118,7 @@ namespace KooFrame
 
 			CreateCodeDataListView();
 
-			RegisterDivDragAndDrop(codeTemplateListView);
+			RegisterDivDragAndDrop(codeDataListView);
 
 			BindSettingsBtn(root);
 
@@ -133,7 +133,7 @@ namespace KooFrame
 					}
 					break;
 				case 1:
-					ShowListView(codeTemplateListView);
+					ShowListView(codeDataListView);
 					if (KooCode.Datas.CodeTemplates.Count > 0)
 					{
 						inspectorManager.UpdateInspectors(KooCode.Datas.CodeTemplates.First());
@@ -240,8 +240,8 @@ namespace KooFrame
 		{
 			codeMarkListView = root.Q<ListView>("CodeDataList");
 			BindListViewRightClick(codeMarkListView, CreateMarkListMenu);
-			codeTemplateListView = root.Q<ListView>("CodeTemplateList");
-			BindListViewRightClick(codeTemplateListView, CreateTemplateListMenu);
+			codeDataListView = root.Q<ListView>("CodeTemplateList");
+			BindListViewRightClick(codeDataListView, CreateTemplateListMenu);
 			methodDataListView = root.Q<ListView>("MethodTemplateList");
 		}
 
@@ -270,7 +270,7 @@ namespace KooFrame
 			codeDataShowBtn.clicked += () => ShowListView(codeMarkListView);
 			codeDataShowBtn.clicked += () => selectListView = 0;
 
-			codeTemplateShowBtn.clicked += () => ShowListView(codeTemplateListView);
+			codeTemplateShowBtn.clicked += () => ShowListView(codeDataListView);
 			codeTemplateShowBtn.clicked += () => selectListView = 1;
 
 			methodShowBtn.clicked += () => ShowListView(methodDataListView);
@@ -280,7 +280,7 @@ namespace KooFrame
 		private void ShowListView(ListView showListView)
 		{
 			codeMarkListView.style.display = DisplayStyle.None;
-			codeTemplateListView.style.display = DisplayStyle.None;
+			codeDataListView.style.display = DisplayStyle.None;
 			methodDataListView.style.display = DisplayStyle.None;
 			showListView.style.display = DisplayStyle.Flex;
 		}
@@ -338,7 +338,7 @@ namespace KooFrame
 			{
 				//打开创建模板窗口
 				CodeDataCreateWindow window = CodeDataCreateWindow.ShowWindow();
-				window.BindListView(codeTemplateListView);
+				window.BindListView(codeDataListView);
 			});
 
 			menu.AddItem(new GUIContent("删除"), false, () =>
@@ -348,7 +348,7 @@ namespace KooFrame
 					templateFactory.DeleteData(selectedItem);
 				}
 				selectedTemplateListItems.Clear(); // 删除后清空选中项列表
-				codeTemplateListView.Rebuild();
+				codeDataListView.Rebuild();
 			});
 			// 显示菜单
 			menu.ShowAsContext();
@@ -372,7 +372,7 @@ namespace KooFrame
 					markFactory.DeleteData(selectedItem);
 				}
 				selectedTemplateListItems.Clear(); // 删除后清空选中项列表
-				codeTemplateListView.Rebuild();
+				codeDataListView.Rebuild();
 			});
 			// 显示菜单
 			menu.ShowAsContext();
@@ -386,9 +386,9 @@ namespace KooFrame
 		/// </summary>
 		private void CreateCodeDataListView()
 		{
-			CreateListView(codeTemplateListView, settingsData.TemplateListItemVistalTreeAsset, Datas.CodeDatas);
+			CreateListView(codeDataListView, settingsData.CodeDataListItemVistalTreeAsset, Datas.CodeDatas);
 
-			codeTemplateListView.bindItem += BindTemplateItem;
+			codeDataListView.bindItem += BindTemplateItem;
 
 			void BindTemplateItem(VisualElement element, int index)
 			{
@@ -396,31 +396,32 @@ namespace KooFrame
 				if (nameLabel != null)
 				{
 					nameLabel.text = KooCode.Datas.CodeDatas[index].Name.Value;
+					//当名称变化时 列表名称也变化
+					KooCode.Datas.CodeDatas[index].Name.OnValueChange += (value) =>
+					{
+						nameLabel.text = value;
+					};
 				}
 
-				//当名称变化时 列表名称也变化
-				KooCode.Datas.CodeDatas[index].Name.OnValueChange += (value) =>
-				{
-					element.Q<Label>("Name").text = value;
-				};
+
 			}
 
 
-			codeTemplateListView.selectionChanged += OnCodeTemplateDataSelectChange;
+			codeDataListView.selectionChanged += OnCodeTemplateDataSelectChange;
 
 
 			//当创建数据的时候 刷新ListView
 			templateFactory.OnCreateOrAddData += () =>
 			{
-				UpdateListView(codeTemplateListView);
+				UpdateListView(codeDataListView);
 			};
 
 			templateFactory.OnDeleteData += () =>
 			{
-				UpdateListView(codeTemplateListView);
+				UpdateListView(codeDataListView);
 			};
 
-			UpdateListView(codeTemplateListView);
+			UpdateListView(codeDataListView);
 		}
 
 

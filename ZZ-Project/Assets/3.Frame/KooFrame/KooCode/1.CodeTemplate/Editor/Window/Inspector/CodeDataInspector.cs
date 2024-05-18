@@ -88,7 +88,7 @@ namespace KooFrame
 
 			nameInputField.RegisterValueChangedCallback((value) =>
 			{
-				CurCheckData.Name.SetValueWithoutAction(value.newValue);
+				CurCheckData.Name.Value = value.newValue;
 			});
 		}
 
@@ -179,7 +179,7 @@ namespace KooFrame
 		{
 
 			string coloredCode = codeContent;
-			
+
 			if (coloredCode.IsNullOrEmpty())
 			{
 				codeView.text = coloredCode;
