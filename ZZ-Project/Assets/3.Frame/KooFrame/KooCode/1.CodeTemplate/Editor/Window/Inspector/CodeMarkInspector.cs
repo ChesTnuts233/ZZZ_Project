@@ -1,4 +1,4 @@
-using MG.MDV;
+// using MG.MDV;
 using UnityEditor;
 using UnityEngine.UIElements;
 
@@ -21,7 +21,7 @@ namespace KooFrame
 
 		private IMGUIContainer imGUIcontainer;
 
-		private MarkdownViewer viewer;
+		//private MarkdownViewer viewer;
 
 		private Editor editor;
 
@@ -68,7 +68,7 @@ namespace KooFrame
 
 		private void OnMarkDownViewGUI()
 		{
-			viewer.Draw();
+			//viewer.Draw();
 		}
 
 		public override void UpdateInspector()
@@ -80,17 +80,17 @@ namespace KooFrame
 		{
 			curCheckMarkData = data;
 			string content = (data.CodeMarkDown).text;
-			viewer = new MG.MDV.MarkdownViewer(KooCode.AssetsData.DarkSkin, curCheckMarkData.MarkDownPath, content);
+			//viewer = new MG.MDV.MarkdownViewer(KooCode.AssetsData.DarkSkin, curCheckMarkData.MarkDownPath, content);
 			markDownViewElement.Init(data);
 		}
 
 
 		void UpdateRequests()
 		{
-			if (viewer.Update())
-			{
-				editor.Repaint();
-			}
+			// if (viewer.Update())
+			// {
+			// 	editor.Repaint();
+			// }
 		}
 	}
 }

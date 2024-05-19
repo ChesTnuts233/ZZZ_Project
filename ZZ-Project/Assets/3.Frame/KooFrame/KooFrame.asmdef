@@ -5,7 +5,7 @@
         "Unity.TextMeshPro",
         "Unity.InputSystem",
         "Unity.2D.Tilemap.Editor",
-        "Mischief.MDV.Editor"
+        "Unity.EditorCoroutines.Editor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

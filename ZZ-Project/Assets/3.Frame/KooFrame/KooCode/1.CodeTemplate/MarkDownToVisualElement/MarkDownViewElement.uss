@@ -50,3 +50,29 @@
     margin-left: 8px;
     font-size: 14px;
 }
+
+.FencedCodeBlock {
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    white-space: normal;
+    -unity-font-style: normal;
+    -unity-font-definition: url('project://database/Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/Editor/Window/Editor%20Default%20Resources/HarmonyOS_Sans_SC_Black%20SDF.asset?fileID=11400000&guid=3dc36923685a290469e33da0d2895bc3&type=2#HarmonyOS_Sans_SC_Black SDF');
+    -unity-text-align: upper-left;
+    text-overflow: clip;
+    -unity-paragraph-spacing: 0;
+    background-color: rgba(0, 0, 0, 0.37);
+    border-left-color: rgba(72, 72, 72, 0.87);
+    border-right-color: rgba(63, 63, 63, 0.88);
+    border-top-color: rgba(63, 63, 63, 0.88);
+    border-bottom-color: rgba(63, 63, 63, 0.88);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}

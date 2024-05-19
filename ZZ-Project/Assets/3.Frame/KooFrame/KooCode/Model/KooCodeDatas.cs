@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace KooFrame
@@ -9,6 +10,7 @@ namespace KooFrame
 		/// <summary>
 		/// 脚本笔记数据集合
 		/// </summary>
+		[Searchable]
 		public List<CodeMarkData> CodeMarks = new();
 
 		/// <summary>

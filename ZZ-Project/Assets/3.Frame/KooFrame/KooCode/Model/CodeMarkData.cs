@@ -67,7 +67,7 @@ namespace KooFrame
 						}
 						break;
 					case LinkInline link:
-						Debug.Log($"Link: {link.Url} - {link.FirstChild?.ToString()}");
+						Debug.Log($"Link: {link.Url} - {link.FirstChild?.ToString()}+ {link.IsImage}");
 						break;
 					case QuoteBlock quote:
 						Debug.Log($"Quote: {GetBlockContent(quote)}");
