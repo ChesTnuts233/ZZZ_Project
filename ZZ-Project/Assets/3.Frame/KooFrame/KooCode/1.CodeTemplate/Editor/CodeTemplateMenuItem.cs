@@ -8,12 +8,6 @@ public static class CodeTemplateMenuItem
 
 
 	#region 代码生成开始标识
-	[MenuItem("Assets/KooFrame-脚本/MonoBehaviour", false, 0)]
-	public static void CreateMonoBehaviourScripts()
-	{
-		ScriptsTemplatesCreater.CreateScriptByContent("MonoBehaviour",
-			Datas.GetTemplateContentByDataName("MonoBehaviour"));
-	}
 	[MenuItem("Assets/KooFrame-脚本/UIPanel", false, 0)]
 	public static void CreateUIPanelScripts()
 	{
@@ -49,6 +43,12 @@ public static class CodeTemplateMenuItem
 	{
 		ScriptsTemplatesCreater.CreateScriptByContent("AnieState",
 			Datas.GetTemplateContentByDataName("AnieState"));
+	}
+	[MenuItem("Assets/KooFrame-脚本/MonoBehaviour", false, 0)]
+	public static void CreateMonoBehaviourScripts()
+	{
+		ScriptsTemplatesCreater.CreateScriptByContent("MonoBehaviour",
+			Datas.GetTemplateContentByDataName("MonoBehaviour"));
 	}
 
 #endregion 代码生成结束标识

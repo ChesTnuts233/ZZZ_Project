@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UIElements;
 
 namespace KooFrame
@@ -21,7 +22,7 @@ namespace KooFrame
 		public VisualTreeAsset MarkInspectorVisualTreeAsset = default;
 
 		[SerializeField, Header("模版列表选项UXML资源")]
-		public VisualTreeAsset TemplateListItemVistalTreeAsset = default;
+		public VisualTreeAsset CodeDataListItemVistalTreeAsset = default;
 
 		[SerializeField, Header("笔记列表选项UXML资源")]
 		public VisualTreeAsset MarkDataListItemVistalTreeAsset = default;
@@ -64,6 +65,13 @@ namespace KooFrame
 
 		[SerializeField, Header("创建代码数据窗口UXML资源")]
 		public VisualTreeAsset CodeDataCreateWindowVisualAsset = default;
+
+		[SerializeField, Header("MarkDownStyleSheet资源")]
+		public StyleSheet MarkDownStyleSheet = default;
+
+
+		[SerializeField, Header("KooLabel的UXML资源")]
+		public VisualTreeAsset KooLabelVisualTreeAsset = default;
 
 
 		#endregion

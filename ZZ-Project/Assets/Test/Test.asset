@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6753166543371641326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
+  m_Name: UMLNode
+  m_EditorClassIdentifier: 
+  nodeTree: {fileID: 11400000}
+  NodeNickName: BMono
+  state: 1
+  started: 0
+  guid: 4807a5318cda7064faedfd2a4fc850ab
+  position: {x: -361, y: 179}
+  Childs: []
+--- !u!114 &-407732273349127767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
+  m_Name: UMLNode
+  m_EditorClassIdentifier: 
+  nodeTree: {fileID: 11400000}
+  NodeNickName: TestB
+  state: 1
+  started: 0
+  guid: 69cc4785361e50e4d91ea940d2996754
+  position: {x: -5, y: 1}
+  Childs:
+  - {fileID: 1984813398276401892}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,6 +56,9 @@ MonoBehaviour:
   treeState: 1
   nodes:
   - {fileID: 1984813398276401892}
+  - {fileID: -6753166543371641326}
+  - {fileID: -407732273349127767}
+  - {fileID: 6177834318311637883}
   isInited: 0
   DirectoryPath: 
   Title: 
@@ -39,5 +81,25 @@ MonoBehaviour:
   state: 1
   started: 0
   guid: cb1cf2337fe5aa249b8157a1cf4a839f
-  position: {x: 127, y: 164}
+  position: {x: -82, y: 187}
   Childs: []
+--- !u!114 &6177834318311637883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
+  m_Name: UMLNode
+  m_EditorClassIdentifier: 
+  nodeTree: {fileID: 11400000}
+  NodeNickName: AMono
+  state: 1
+  started: 0
+  guid: 79b0c62ca1c73c943887340150183c8f
+  position: {x: -295.7917, y: -16.802505}
+  Childs:
+  - {fileID: -6753166543371641326}

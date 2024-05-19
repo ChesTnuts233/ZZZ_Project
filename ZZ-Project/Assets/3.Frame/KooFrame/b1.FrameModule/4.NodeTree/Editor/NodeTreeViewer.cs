@@ -59,7 +59,7 @@ namespace KooFrame
 			styleSheets.Add(styleSheet);
 			Undo.undoRedoPerformed += OnUndoRedo;
 
-			
+
 
 			// 添加鼠标事件监听器
 			this.RegisterCallback<MouseDownEvent>(OnMouseDown);
