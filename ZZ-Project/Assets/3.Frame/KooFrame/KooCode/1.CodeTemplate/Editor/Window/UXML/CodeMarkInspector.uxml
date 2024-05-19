@@ -3,7 +3,7 @@
     <ui:ScrollView style="display: none;">
         <ui:IMGUIContainer name="MarkDownView" style="flex-grow: 1;" />
     </ui:ScrollView>
-    <ui:ScrollView style="flex-grow: 1;">
+    <ui:ScrollView style="flex-grow: 1; display: flex;">
         <KooFrame.MarkDownViewElement name="MarkDownViewElement" style="flex-grow: 1;" />
     </ui:ScrollView>
 </ui:UXML>
