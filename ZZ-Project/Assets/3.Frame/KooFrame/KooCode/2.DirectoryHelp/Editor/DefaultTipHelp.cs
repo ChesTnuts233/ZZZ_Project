@@ -17,7 +17,6 @@ namespace KooFrame
 		private CodeAssetsData settingsData => KooCode.AssetsData;
 
 		private DirectoryHelpElement rootInstance;
-
 		private DirectoryHelpElement root
 		{
 			get

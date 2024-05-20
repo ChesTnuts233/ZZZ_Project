@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6753166543371641326
+--- !u!114 &-4075728920578663516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: UMLNode
   m_EditorClassIdentifier: 
   nodeTree: {fileID: 11400000}
-  NodeNickName: BMono
+  NodeNickName: TestMonoB
   state: 1
   started: 0
-  guid: 4807a5318cda7064faedfd2a4fc850ab
-  position: {x: -361, y: 179}
+  guid: 514e8b7c41df5934ba43c617ab4f6293
+  position: {x: -167.99998, y: 245.49998}
   Childs: []
---- !u!114 &-407732273349127767
+--- !u!114 &-3798883686749647409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35,10 +35,31 @@ MonoBehaviour:
   NodeNickName: TestB
   state: 1
   started: 0
-  guid: 69cc4785361e50e4d91ea940d2996754
-  position: {x: -5, y: 1}
+  guid: 5145062aaa9ba3347b4b9e4143404db2
+  position: {x: 497.00006, y: 57.25}
   Childs:
-  - {fileID: 1984813398276401892}
+  - {fileID: 4436380998777480224}
+--- !u!114 &-377802079736034351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
+  m_Name: UMLNode
+  m_EditorClassIdentifier: 
+  nodeTree: {fileID: 11400000}
+  NodeNickName: TestMono
+  state: 1
+  started: 0
+  guid: 8ef726bfa978f5c459e7a0f1f0422499
+  position: {x: -72.99992, y: 16.499996}
+  Childs:
+  - {fileID: -4075728920578663516}
+  - {fileID: 634544273100138923}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,20 +72,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8816fbb4e69f2409da865093ab9acf, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  rootNode: {fileID: 1984813398276401892}
+  rootNode: {fileID: 634544273100138923}
   runningNode: {fileID: 0}
   treeState: 1
   nodes:
-  - {fileID: 1984813398276401892}
-  - {fileID: -6753166543371641326}
-  - {fileID: -407732273349127767}
-  - {fileID: 6177834318311637883}
+  - {fileID: 634544273100138923}
+  - {fileID: -4075728920578663516}
+  - {fileID: 4436380998777480224}
+  - {fileID: -3798883686749647409}
+  - {fileID: -377802079736034351}
   isInited: 0
-  DirectoryPath: 
-  Title: 
-  Description: 
+  DirectoryPath: Assets/Test
+  Title: Test
+  Description: "\u8FD8\u6CA1\u4EC0\u4E48\u63CF\u8FF0\u5462~"
   TipsDatas: []
---- !u!114 &1984813398276401892
+--- !u!114 &634544273100138923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,13 +99,13 @@ MonoBehaviour:
   m_Name: UMLNode
   m_EditorClassIdentifier: 
   nodeTree: {fileID: 11400000}
-  NodeNickName: Test11
+  NodeNickName: TestPanel
   state: 1
   started: 0
-  guid: cb1cf2337fe5aa249b8157a1cf4a839f
-  position: {x: -82, y: 187}
+  guid: 476cf897a7f89234d8a351aff1c4dd29
+  position: {x: 101.60004, y: 254.00002}
   Childs: []
---- !u!114 &6177834318311637883
+--- !u!114 &4436380998777480224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,10 +118,9 @@ MonoBehaviour:
   m_Name: UMLNode
   m_EditorClassIdentifier: 
   nodeTree: {fileID: 11400000}
-  NodeNickName: AMono
+  NodeNickName: APanel
   state: 1
   started: 0
-  guid: 79b0c62ca1c73c943887340150183c8f
-  position: {x: -295.7917, y: -16.802505}
-  Childs:
-  - {fileID: -6753166543371641326}
+  guid: 21b5da1868bc81642a587ffd993f2279
+  position: {x: 472.8501, y: 264}
+  Childs: []
