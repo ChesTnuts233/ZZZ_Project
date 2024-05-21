@@ -1,9 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/Editor/Window/USS/CodeMarkInspector.uss?fileID=7433441132597879392&amp;guid=60705614f6e1a764f97603599145f911&amp;type=3#CodeMarkInspector" />
-    <ui:ScrollView style="display: none;">
-        <ui:IMGUIContainer name="MarkDownView" style="flex-grow: 1;" />
-    </ui:ScrollView>
-    <ui:ScrollView style="flex-grow: 1; display: flex;">
-        <KooFrame.MarkDownViewElement name="MarkDownViewElement" style="flex-grow: 1;" />
-    </ui:ScrollView>
-</ui:UXML>

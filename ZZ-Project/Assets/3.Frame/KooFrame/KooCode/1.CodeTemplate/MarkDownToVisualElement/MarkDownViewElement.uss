@@ -4,17 +4,21 @@
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
     -unity-user-select: text;
 }
 
 .ParagraphBlock {
-    padding-top: 5px;
-    padding-right: 15px;
+    padding-top: 3px;
+    padding-right: 10px;
     padding-bottom: 5px;
-    padding-left: 15px;
+    padding-left: 10px;
     font-size: 14px;
     -unity-user-select: text;
+    flex-direction: row;
+    flex-wrap: wrap;
+    white-space: normal;
+    text-overflow: clip;
 }
 
 .ListBlock {
@@ -29,7 +33,7 @@
     padding-top: 1px;
     padding-right: 1px;
     padding-bottom: 1px;
-    padding-left: 1px;
+    padding-left: 15px;
     font-size: 14px;
 }
 
@@ -43,12 +47,15 @@
     border-top-color: rgb(162, 219, 255);
     border-bottom-color: rgb(162, 219, 255);
     border-right-width: 0;
-    border-left-width: 3px;
+    border-left-width: 6px;
     margin-top: 4px;
-    margin-right: 8px;
+    margin-right: 4px;
     margin-bottom: 4px;
-    margin-left: 8px;
+    margin-left: 30px;
     font-size: 14px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgba(38, 38, 38, 0.62);
 }
 
 .FencedCodeBlock {
@@ -75,4 +82,33 @@
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
+    flex-direction: column;
+}
+
+.LiteralInline {
+    padding-top: 1px;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    flex-wrap: wrap;
+    white-space: normal;
+    -unity-text-align: middle-left;
+}
+
+.CodeInLine {
+    -unity-text-align: middle-left;
+    background-color: rgba(103, 103, 103, 0.67);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    color: rgb(229, 213, 154);
+}
+
+.EmphasisInline {
+    -unity-font-style: italic;
 }

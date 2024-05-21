@@ -14,19 +14,19 @@ namespace KooFrame
 
 		public Toggle Toggle;
 
-		public CodeTemplateData TemplateData;
+		public CodeData ChooseCodeData;
 
 		public new class UxmlFactory : UxmlFactory<ChooseItem, VisualElement.UxmlTraits>
 		{
 
 		}
 
-		public void Init(VisualTreeAsset uxmlAsset, CodeTemplateData templateData)
+		public void Init(VisualTreeAsset uxmlAsset, CodeData codeData)
 		{
 			uxmlAsset.CloneTree(this);
 			Toggle = this.Q<Toggle>("ChooseToggle");
-			TemplateData = templateData;
-			Toggle.label = templateData.Name;
+			ChooseCodeData = codeData;
+			Toggle.label = codeData.Name;
 		}
 
 	}

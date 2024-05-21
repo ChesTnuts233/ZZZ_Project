@@ -1,12 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/MarkDownToVisualElement/MarkDownViewElement.uss?fileID=7433441132597879392&amp;guid=e564345c7a8995e47afb9d84a1dbbac9&amp;type=3#MarkDownViewElement" />
     <ui:ScrollView>
-        <ui:Label tabindex="-1" text="标题1" display-tooltip-when-elided="true" name="HeadingBlock_1" selectable="false" class="HeadingBlock selectable" style="font-size: 22px;" />
-        <ui:Label tabindex="-1" text="标题2" display-tooltip-when-elided="true" name="HeadingBlock_2" class="HeadingBlock" style="font-size: 20px;" />
-        <ui:Label tabindex="-1" text="测试测试" display-tooltip-when-elided="true" name="Paragraph" class="ParagraphBlock" />
+        <ui:VisualElement name="HeadingBlock" class="HeadingBlock" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="标题1" display-tooltip-when-elided="true" name="HeadingBlock_1" selectable="false" class="selectable" style="font-size: 22px;" />
+            <ui:Label tabindex="-1" text="标题2" display-tooltip-when-elided="true" name="HeadingBlock_2" style="font-size: 20px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Paragraph" class="ParagraphBlock" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试" display-tooltip-when-elided="true" name="LiteralInline" class="LiteralInline" style="padding-right: 0;" />
+            <ui:Label tabindex="-1" text="测试斜体" display-tooltip-when-elided="true" name="EmphasisInline" class="LiteralInline EmphasisInline" />
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" style="-unity-text-align: middle-left;" />
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" class="CodeInLine" />
+        </ui:VisualElement>
         <ui:VisualElement name="ListBlock" class="ListBlock">
             <ui:Label tabindex="-1" text="- List1" display-tooltip-when-elided="true" name="List1" class="ListItemBlock" />
-            <ui:Label tabindex="-1" text="- List1" display-tooltip-when-elided="true" name="List1" class="ListItemBlock" />
+            <ui:Label tabindex="-1" text="- List1" display-tooltip-when-elided="true" name="List1" class="ListItemBlock" style="-unity-text-align: middle-left;" />
         </ui:VisualElement>
         <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="QuoteBlock" class="QuoteBlock" />
         <ui:Label tabindex="-1" text="public class MarkDownViewElement : VisualElement&#10;&#x9;{&#10;&#x9;&#x9;public string MarkDownContent;&#10;&#10;&#x9;&#x9;public CodeMarkData MarkData;&#10;&#10;&#x9;&#x9;MarkdownDocument document;&#10;&#10;&#10;&#x9;&#x9;#region 动态生成的元素&#10;&#10;&#x9;&#x9;List&lt;Label&gt; headingBlockLabels = new List&lt;Label&gt;();&#10;&#10;&#x9;&#x9;List&lt;Label&gt; paragraphBlockLabels = new();&#10;&#10;&#x9;&#x9;List&lt;Label&gt; listBlockLabels = new();&#10;&#10;&#x9;&#x9;#endregion&#10;&#10;&#x9;&#x9;public new class UxmlFactory : UxmlFactory&lt;MarkDownViewElement, VisualElement.UxmlTraits&gt;&#10;&#x9;&#x9;{&#10;&#10;&#x9;&#x9;}&#10;}" display-tooltip-when-elided="true" name="FencedCodeBlock" parse-escape-sequences="false" selectable="true" select-word-by-double-click="true" select-line-by-triple-click="true" usage-hints="None" class="FencedCodeBlock" />

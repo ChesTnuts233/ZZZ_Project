@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace KooFrame
 {
-	/// <summary>
-	/// 通用工具集
-	/// <para>这里希望放一些通用的，常用的方法</para>
-	/// </summary>
-	public static class KooUtils
+    /// <summary>
+    /// 通用工具集
+    /// <para>这里希望放一些通用的，常用的方法</para>
+    /// </summary>
+    public static class KooUtils
     {
         public static void OpenLocalPath()
         {
@@ -28,9 +28,9 @@ namespace KooFrame
 
         private static Dictionary<string, Action<object>> myMessages = new Dictionary<string, Action<object>>();
 
-        public static void RegisterMgs(string mgsName,Action<object> mgs)
+        public static void RegisterMgs(string mgsName, Action<object> mgs)
         {
-            myMessages.Add(mgsName,mgs);
+            myMessages.Add(mgsName, mgs);
         }
 
         public static void UnRegisterMgs(string mgsName)
@@ -38,11 +38,11 @@ namespace KooFrame
             myMessages.Remove(mgsName);
         }
 
-        public static void SendMgs(string mgsName,object data)
+        public static void SendMgs(string mgsName, object data)
         {
             myMessages[mgsName](data);
         }
-        
+
         /// <summary>
         /// 调用MenuItem命令(有1个默认参数，默认为false)
         /// </summary>
@@ -61,6 +61,5 @@ namespace KooFrame
         #endregion
 
 #endif
-
     }
-}  
+}

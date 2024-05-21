@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/3.Frame/KooFrame/b1.FrameModule/4.NodeTree/Editor/NodeView.uss?fileID=7433441132597879392&amp;guid=6d6bcd6718e1bb24cae440f47d2b7b6a&amp;type=3#NodeView" />
+    <ui:VisualElement name="BackGround">
+        <ui:VisualElement name="UpPortDiv" style="height: 40px; flex-direction: row; align-items: center; justify-content: center; align-self: auto;" />
+        <ui:VisualElement name="Content" style="flex-direction: row;">
+            <ui:VisualElement name="LeftPortDiv" style="flex-grow: 1; max-width: 40px; align-items: center; justify-content: center; align-self: auto;" />
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Label display-tooltip-when-elided="false" name="title-label" text="NormalClass" style="max-height: 40px;" />
+                <ui:TextField picking-mode="Ignore" value="NodeName" text="filler text" name="NodeName" is-delayed="false" multiline="false" style="flex-grow: 0.8; max-height: 40px;" />
+                <ui:TextField picking-mode="Ignore" name="FieldName" multiline="true" style="color: rgb(111, 111, 111); font-size: 16px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="RightPortDiv" style="flex-grow: 1; max-width: 40px; align-items: center; justify-content: center; align-self: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="DownPortDiv" style="height: 40px; flex-direction: row; align-items: center; justify-content: center; align-self: auto;" />
+        <ui:VisualElement name="NodeState" />
+    </ui:VisualElement>
+</ui:UXML>

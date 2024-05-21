@@ -13,6 +13,8 @@ public class Area : MonoBehaviour
 
     [SerializeField, LabelText("区域左下角")] private Vector3Int mapOrigin;
     [SerializeField, LabelText("区域右上角")] private Vector3Int mapTopPos;
+    
+    
 
     /// <summary>
     /// 区域宽度

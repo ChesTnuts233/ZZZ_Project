@@ -13,9 +13,9 @@ namespace KooFrame
 	public class DirectoryCreateTemplateElement : CustomVisualElement
 	{
 
-		private List<CodeTemplateData> needToCreateList = new();
+		private List<CodeData> needToCreateList = new();
 
-		private Dictionary<CodeTemplateData, string> needToCreateFileNameDic = new();
+		private Dictionary<CodeData, string> needToCreateFileNameDic = new();
 		private KooCodeDatas datas => KooCode.Datas;
 
 		private CodeAssetsData settingsData => KooCode.AssetsData;
@@ -127,7 +127,7 @@ namespace KooFrame
 		private void CreateChooses()
 		{
 			//根据Datas中所有的模版创建需要的元素
-			foreach (CodeTemplateData item in datas.CodeTemplates)
+			foreach (CodeData item in datas.CodeDatas)
 			{
 				ChooseItem chooseElement = new ChooseItem();
 				chooseElement.Init(settingsData.DefaultFoldChooseItemVisualAsset, item);
@@ -161,7 +161,7 @@ namespace KooFrame
 		private void CreateFileToLocalFile()
 		{
 			//创建文件到对应目录
-			foreach (CodeTemplateData item in needToCreateList)
+			foreach (CodeData item in needToCreateList)
 			{
 				item.CreateFileToPath(needToCreateFileNameDic[item], curSelectPath.text);
 			}
