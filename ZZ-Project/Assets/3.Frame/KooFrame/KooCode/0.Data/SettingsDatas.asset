@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcb06be39fdda34a93a8b6d7bd6366d, type: 3}
   m_Name: SettingsDatas
   m_EditorClassIdentifier: 
-  HexoPath: F:\KooBlog_Clean\source\_posts
+  HexoPath: C:\Users\Koo\Desktop\KooBlog_Clean\source\_posts

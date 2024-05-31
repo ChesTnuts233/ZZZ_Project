@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7441717925550291630
+--- !u!114 &-5751467065667844237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: UMLNode
   m_EditorClassIdentifier: 
   nodeTree: {fileID: 11400000}
-  NodeNickName: TestAni4
+  NodeNickName: Panel
   state: 1
   started: 0
-  guid: d79310d744c94ed4d9d9a12199e44d2a
-  position: {x: -3.6480217, y: -711.9998}
+  guid: 4678a70c94964c946a05393903946281
+  position: {x: -156, y: 128}
   Childs: []
---- !u!114 &-5516938061722382183
+--- !u!114 &-20774597476407513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,13 +32,14 @@ MonoBehaviour:
   m_Name: UMLNode
   m_EditorClassIdentifier: 
   nodeTree: {fileID: 11400000}
-  NodeNickName: NodeData
+  NodeNickName: ClassC
   state: 1
   started: 0
-  guid: 51cbaf11e06b3b744b6d290d875c8883
-  position: {x: -472.00006, y: -711.9999}
-  Childs: []
---- !u!114 &-4075728920578663516
+  guid: da692fd976c139a41ae424bf2598ab0a
+  position: {x: -152, y: -167.44002}
+  Childs:
+  - {fileID: -5751467065667844237}
+--- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,17 +48,110 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
+  m_Script: {fileID: 11500000, guid: cf8816fbb4e69f2409da865093ab9acf, type: 3}
+  m_Name: Test
   m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: TestMonoB
-  state: 1
-  started: 0
-  guid: 514e8b7c41df5934ba43c617ab4f6293
-  position: {x: -982.9752, y: 289}
-  Childs: []
---- !u!114 &-3798883686749647409
+  rootNode: {fileID: 2311780300596606870}
+  runningNode: {fileID: 0}
+  treeState: 1
+  nodes:
+  - {fileID: 2311780300596606870}
+  - {fileID: -5751467065667844237}
+  - {fileID: 1647534734365043059}
+  - {fileID: -20774597476407513}
+  - {fileID: 7910649763057176366}
+  isInited: 0
+  DirectoryPath: Assets/Test
+  Title: Test
+  Description: "\u8FD9\u662F\u6D4B\u8BD5\u6587\u4EF6\u5939"
+  TipsDatas:
+  - Name:
+      _value: DefaultData
+    CodeFile: {fileID: 0}
+    Content: "\u8FD9\u91CC\u8FD8\u4EC0\u4E48\u5185\u5BB9\u90FD\u6CA1\u6709\u5462"
+    ID: 
+    Tags: []
+    usePath: []
+    Title: "\u9ED8\u8BA4\u63D0\u793A"
+    DirectoryPath: 
+    DirectoryData: {fileID: 11400000}
+    uRLDatas: []
+  PathDic:
+    keyList:
+    - Name:
+        _value: "\u666E\u901AMono"
+      CodeFile: {fileID: 4900000, guid: a25fd492138af8e45a3116c008bd4345, type: 3}
+      Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+        \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+        \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+        \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+        UnityEngine;\r\nusing KooFrame.BaseSystem;\r\n\r\nnamespace GameBuild\r\n{\r\n   
+        public class #SCRIPTNAME# : MonoBehaviour\r\n    {\r\n       \r\n    }\r\n}\r\n\r\n"
+      ID: 
+      Tags: []
+      usePath: []
+    - Name:
+        _value: "\u57FA\u672CBasePanel"
+      CodeFile: {fileID: 4900000, guid: 9a81183d9c1b3e54ca8827f4bdb031e4, type: 3}
+      Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+        \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+        \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+        \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+        KooFrame;\r\nusing UnityEngine;\r\nusing UnityEngine.UI;\r\nusing System;\r\nusing
+        System.Collections.Generic;\r\n\r\nnamespace GameBuild\r\n{\r\n    [UIWindowData(typeof(#SCRIPTNAME#),
+        true, \"#SCRIPTNAME#\", 0)]\r\n    public class #SCRIPTNAME# : UI_WindowBase\r\n   
+        {\r\n       \r\n    }\r\n}\r\n\r\n"
+      ID: 
+      Tags: []
+      usePath: []
+    - Name:
+        _value: "\u6D4B\u8BD5\u811A\u672C"
+      CodeFile: {fileID: 4900000, guid: 83d7de97a2b537b48be82d15dc585f71, type: 3}
+      Content: "//****************** \u6D4B\u8BD5\u4EE3\u7801\u6587\u4EF6\u7533\u660E
+        ********************\r\n//* \u6587\u4EF6\uFF1A#SCRIPTNAME#                                      
+        \r\n//* \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+        \u6D4B\u8BD5\u529F\u80FD\uFF1A(\u6D4B\u8BD5\u7528)Nothing \r\n//*****************************************************\r\n\r\r\nusing
+        UnityEngine;\r\nusing KooFrame.BaseSystem;\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace
+        GameTest\r\n{\r\n    public class #SCRIPTNAME# : MonoBehaviour\r\n    {\r\n       
+        private void Awake()\r\n        {\r\n            \r\n        }\r\n    \r\n       
+        private void Start()\r\n        {\r\n            \r\n        }\r\n    \r\n       
+        private void Update()\r\n        {\r\n            \r\n        }\r\r\n   
+        }\r\n}\r\n\r\n"
+      ID: 
+      Tags: []
+      usePath: []
+    - Name:
+        _value: CSharp_Class
+      CodeFile: {fileID: 4900000, guid: cb3864d209945b5468bc0950ce7e4b3f, type: 3}
+      Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+        \u6587\u4EF6\uFF1A#SCRIPTNAME#                                       \r\n//*
+        \u4F5C\u8005\uFF1A#AUTHORNAME#\r\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A#CREATETIME#\r\n//*
+        \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\n\r\nnamespace
+        GameBuild\r\n{\r\n\tpublic class #SCRIPTNAME#\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+      ID: 
+      Tags: []
+      usePath: []
+    - Name:
+        _value: MoveA
+      CodeFile: {fileID: 11500000, guid: acd5a41742bbcde4d93068a55eb3ba57, type: 3}
+      Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+        \u6587\u4EF6\uFF1AMonoA                                       \r\n//* \u4F5C\u8005\uFF1AKoo\r\n//*
+        \u521B\u5EFA\u65F6\u95F4\uFF1A2024/05/22 15:24:59 \u661F\u671F\u4E09\r\n//*
+        \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+        UnityEngine;\r\nusing KooFrame.BaseSystem;\r\n\r\nnamespace GameBuild\r\n{\r\n\tpublic
+        class MonoA : MonoBehaviour\r\n\t{\r\n\t\tpublic int speed = 1;\r\n\r\n\r\n\t\tprivate
+        void Update()\r\n\t\t{\r\n\t\t\tthis.transform.Translate(Vector3.forward
+        * speed * Time.deltaTime);\r\n\t\t}\r\n\t}\r\n}\r\n\r\n"
+      ID: 
+      Tags: []
+      usePath: []
+    valueList:
+    - Assets/Test/MonoA.cs
+    - Assets/Test/Panel.cs
+    - Assets/Test/TestB.cs
+    - Assets/Test/ClassC.cs
+    - Assets/Test/MoveB.cs
+--- !u!114 &1647534734365043059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,11 +167,11 @@ MonoBehaviour:
   NodeNickName: TestB
   state: 1
   started: 0
-  guid: 5145062aaa9ba3347b4b9e4143404db2
-  position: {x: 363.2087, y: 99.999985}
+  guid: 960e0f2ac5122644dacb317afac492f6
+  position: {x: 135, y: -131}
   Childs:
-  - {fileID: 4436380998777480224}
---- !u!114 &-2317006877218519435
+  - {fileID: 2311780300596606870}
+--- !u!114 &2311780300596606870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,13 +184,13 @@ MonoBehaviour:
   m_Name: UMLNode
   m_EditorClassIdentifier: 
   nodeTree: {fileID: 11400000}
-  NodeNickName: TestAni
+  NodeNickName: MonoA
   state: 1
   started: 0
-  guid: f7f9613c7470baa4b85ebec9997e9c39
-  position: {x: 4.9999084, y: -455.00003}
+  guid: af1c1a8cc37ff844d8ddda3712b2aa8a
+  position: {x: 143, y: 113}
   Childs: []
---- !u!114 &-903614998026017678
+--- !u!114 &7910649763057176366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,274 +203,9 @@ MonoBehaviour:
   m_Name: UMLNode
   m_EditorClassIdentifier: 
   nodeTree: {fileID: 11400000}
-  NodeNickName: Test7
+  NodeNickName: MoveB
   state: 1
   started: 0
-  guid: 5ccd3754fb388c7478217356687491ec
-  position: {x: -1154, y: -463.49985}
-  Childs: []
---- !u!114 &-526559164559398616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: TestNode3
-  state: 1
-  started: 0
-  guid: bdf4db438436f334081ab945d6fe0cd0
-  position: {x: 714.47626, y: 91.702515}
-  Childs: []
---- !u!114 &-377802079736034351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: TestMono
-  state: 1
-  started: 0
-  guid: 8ef726bfa978f5c459e7a0f1f0422499
-  position: {x: -1145.9998, y: -144.99991}
-  Childs: []
---- !u!114 &-313311910556488826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: Test5
-  state: 1
-  started: 0
-  guid: 4ff5d2e8b042aaa4aa16c25c8ff8b5ad
-  position: {x: -504.00015, y: -455.00003}
-  Childs: []
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8816fbb4e69f2409da865093ab9acf, type: 3}
-  m_Name: Test
-  m_EditorClassIdentifier: 
-  rootNode: {fileID: 634544273100138923}
-  runningNode: {fileID: 0}
-  treeState: 1
-  nodes:
-  - {fileID: 634544273100138923}
-  - {fileID: -4075728920578663516}
-  - {fileID: 4436380998777480224}
-  - {fileID: -3798883686749647409}
-  - {fileID: -377802079736034351}
-  - {fileID: -2317006877218519435}
-  - {fileID: -5516938061722382183}
-  - {fileID: 7831790316001507309}
-  - {fileID: 3857052337673497835}
-  - {fileID: -7441717925550291630}
-  - {fileID: -313311910556488826}
-  - {fileID: 3228961178627083023}
-  - {fileID: -903614998026017678}
-  - {fileID: 3727846364989191280}
-  - {fileID: 1491338698996874296}
-  - {fileID: -526559164559398616}
-  isInited: 0
-  DirectoryPath: Assets/Test
-  Title: Test
-  Description: "\u8FD8\u6CA1\u4EC0\u4E48\u63CF\u8FF0\u5462~"
-  TipsDatas: []
-  PathDic:
-    keyList:
-    - Name:
-        _value: NodeDataInOwner
-      CodeFile: {fileID: 0}
-      Content: "\n//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\n//*
-        \u6587\u4EF6\uFF1ANodeDataInOwner                                       \n//*
-        \u4F5C\u8005\uFF1AKoo\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A2024/04/04 00:08:02
-        \u661F\u671F\u56DB\n//* \u529F\u80FD\uFF1Anothing\n//*****************************************************\n\nusing
-        System;\nusing System.Collections.Generic;\nusing System.Reflection;\nusing
-        KooFrame;\nusing UnityEngine;\nusing UnityEngine.Events;\n\nnamespace SubSystem\n{\n   
-        [Serializable]\n    public class NodeDataInOwner\n    {\n        //public
-        Dictionary<string, MethodInfo> methodsDic = new();\n\n        [SerializeField,
-        HideInInspector] public List<string> methodsTypeNames = new();\n\n       
-        [SerializeField] public UnityEvent Event = new UnityEvent();\n\n        ///
-        <summary>\n        /// \u8FD0\u884C\u65F6 \u4F1A\u6839\u636E\u8FD9\u4E2A\u540D\u5B57
-        \u5BF9Event\u52A0\u59D4\u6258\u76D1\u542C\n        /// </summary>\n       
-        [SerializeField] public string CurRegisterMethodName;\n\n\n        [SerializeField]
-        public int OwnerDataID;\n\n        [SerializeField] public TreeOwner Owner;\n\n\n       
-        [SerializeField] public GameObject EventTrigger;\n\n        /// <summary>\n       
-        /// \u7ED1\u5B9A\u7684Node\n        /// </summary>\n        [SerializeField]
-        public Node BindNode;\n\n        public NodeDataInOwner(Node node, TreeOwner
-        owner)\n        {\n            BindNode = node;\n            Owner = owner;\n           
-        OwnerDataID = Animator.StringToHash(owner.name +\n                                               
-        (owner.NodeDatas.Count)\n                                               
-        .ToString());\n        }\n\n\n        public void EventAddListener(MethodInfo
-        methodInfo, Type invokeObj)\n        {\n            UnityAction methodDelegate
-        = () =>\n                methodInfo.Invoke(\n                    EventTrigger.GetComponent(invokeObj),
-        null);\n            CurRegisterMethodName = invokeObj.FullName + \"/\" +
-        methodInfo.Name;\n            Event.AddListener(methodDelegate);\n       
-        }\n    }\n}"
-      ID: 
-      Tags: []
-      usePath: []
-    valueList:
-    - Assets/Test/TestNode3.cs
---- !u!114 &634544273100138923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: TestPanel
-  state: 1
-  started: 0
-  guid: 476cf897a7f89234d8a351aff1c4dd29
-  position: {x: -213, y: 423}
-  Childs: []
---- !u!114 &1491338698996874296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: Test10
-  state: 1
-  started: 0
-  guid: be0e8c9ee8e420548ae38179b2de8256
-  position: {x: -725.9999, y: 20.00003}
-  Childs: []
---- !u!114 &3228961178627083023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: Test6
-  state: 1
-  started: 0
-  guid: 1394c1716dbd92d42bd6237c9b113387
-  position: {x: -575, y: 237.50008}
-  Childs: []
---- !u!114 &3727846364989191280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: Test8
-  state: 1
-  started: 0
-  guid: db744ab4d90ec4c4b96d9af7e3775edf
-  position: {x: -186.00018, y: 138.50005}
-  Childs: []
---- !u!114 &3857052337673497835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: TestAni3
-  state: 1
-  started: 0
-  guid: 2fae830e907e800449b80b0430968105
-  position: {x: 72.99747, y: -189.99997}
-  Childs:
-  - {fileID: -3798883686749647409}
-  - {fileID: 3727846364989191280}
---- !u!114 &4436380998777480224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: APanel
-  state: 1
-  started: 0
-  guid: 21b5da1868bc81642a587ffd993f2279
-  position: {x: 429.99997, y: 410}
-  Childs: []
---- !u!114 &7831790316001507309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913c538f4f218b74abea7f2647d494e1, type: 3}
-  m_Name: UMLNode
-  m_EditorClassIdentifier: 
-  nodeTree: {fileID: 11400000}
-  NodeNickName: TestAni2
-  state: 1
-  started: 0
-  guid: e5c07704254b139469a3611ca25d84ad
-  position: {x: -813, y: -720.4998}
+  guid: dd041f6a3593e00459a8a53e18d1d287
+  position: {x: 143.00006, y: 325.00003}
   Childs: []

@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/Editor/Window/USS/CodeTemplateManagerWindow.uss?fileID=7433441132597879392&amp;guid=5b2bc6c6e90e4b64b9090d06404ab89b&amp;type=3#CodeTemplateManagerWindow" />
+    <Style src="project://database/Assets/3.Frame/KooFrame/KooCode/1.CodeTemplate/Window/USS/CodeTemplateManagerWindow.uss?fileID=7433441132597879392&amp;guid=5b2bc6c6e90e4b64b9090d06404ab89b&amp;type=3#CodeTemplateManagerWindow" />
     <ui:VisualElement name="BackGround" style="flex-grow: 1; flex-direction: column; justify-content: flex-start; align-items: stretch; align-self: auto; flex-wrap: nowrap;">
         <ui:VisualElement name="UpDiv" style="border-left-color: rgb(118, 118, 118); border-right-color: rgb(118, 118, 118); border-top-color: rgb(118, 118, 118); border-bottom-color: rgb(118, 118, 118); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; flex-direction: row;">
             <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsBtn" />
@@ -11,6 +11,7 @@
                     <ui:Button text="代码" display-tooltip-when-elided="true" name="CodeTemplateShowBtn" class="showBtn" />
                     <ui:Button text="API" display-tooltip-when-elided="true" name="MethodShowBtn" class="showBtn" style="display: none;" />
                 </ui:VisualElement>
+                <ui:TextField picking-mode="Ignore" name="Sreach" placeholder-text="搜索内容" style="max-height: 30px; min-height: 30px; font-size: 15px;" />
                 <ui:ListView name="CodeDataList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: flex;" />
                 <ui:ListView name="CodeTemplateList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none; transition-property: opacity; transition-duration: 1s; transition-timing-function: linear;" />
                 <ui:ListView name="MethodTemplateList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none;" />

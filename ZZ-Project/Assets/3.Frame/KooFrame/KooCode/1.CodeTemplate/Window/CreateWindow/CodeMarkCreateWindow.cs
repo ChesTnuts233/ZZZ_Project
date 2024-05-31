@@ -43,7 +43,9 @@ namespace KooFrame
 
 		protected override void CreateGUI()
 		{
-			base.CreateGUI();
+			//base.CreateGUI();
+			Root = rootVisualElement;
+			KooCode.AssetsData.MarkAssetCreateWindowVistalTreeAsset.CloneTree(Root);
 
 			BindNameInput();
 			BindMarkDownField();

@@ -15,6 +15,9 @@ namespace KooFrame
 
 		private List<CodeData> needToCreateList = new();
 
+
+
+
 		private Dictionary<CodeData, string> needToCreateFileNameDic = new();
 		private KooCodeDatas datas => KooCode.Datas;
 
@@ -132,22 +135,20 @@ namespace KooFrame
 				ChooseItem chooseElement = new ChooseItem();
 				chooseElement.Init(settingsData.DefaultFoldChooseItemVisualAsset, item);
 				chooesScrollView.Add(chooseElement);
-				chooseElement.Toggle.RegisterValueChangedCallback((value) =>
+				chooseElement.addBtn.clicked += (() =>
 				{
-					if (value.newValue == true)
-					{
-						//添加到待被创建的列表
-						needToCreateList.Add(item);
-						needToCreateFileNameDic.Add(item, item.Name.Value);
-						needCreatedsListView.Rebuild();
-					}
-					else
-					{
-						needToCreateList.Remove(item);
-						needToCreateFileNameDic.Remove(item);
-						needCreatedsListView.Rebuild();
-					}
+					//添加到待被创建的列表
+					needToCreateList.Add(item);
+					needToCreateFileNameDic.Add(item, item.Name.Value);
+					needCreatedsListView.Rebuild();
 				});
+
+				chooseElement.removeBtn.clicked += () =>
+				{
+					needToCreateList.Remove(item);
+					needToCreateFileNameDic.Remove(item);
+					needCreatedsListView.Rebuild();
+				};
 			}
 		}
 

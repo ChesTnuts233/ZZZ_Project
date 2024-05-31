@@ -12,7 +12,11 @@ namespace KooFrame
 	public class ChooseItem : VisualElement
 	{
 
-		public Toggle Toggle;
+		public Label templateName;
+
+		public Button addBtn;
+
+		public Button removeBtn;
 
 		public CodeData ChooseCodeData;
 
@@ -24,9 +28,11 @@ namespace KooFrame
 		public void Init(VisualTreeAsset uxmlAsset, CodeData codeData)
 		{
 			uxmlAsset.CloneTree(this);
-			Toggle = this.Q<Toggle>("ChooseToggle");
+			templateName = this.Q<Label>("TemplateName");
+			addBtn = this.Q<Button>("AddBtn");
+			removeBtn = this.Q<Button>("RemoveBtn");
 			ChooseCodeData = codeData;
-			Toggle.label = codeData.Name;
+			templateName.text = codeData.Name;
 		}
 
 	}

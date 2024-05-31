@@ -172,7 +172,6 @@ namespace KooFrame
                         literalInlineLabel.AddToClassList("LiteralInline");
                         subParent.Add(literalInlineLabel);
                         break;
-
                     case EmphasisInline emphasis:
                         VisualElement emphasisInlineVE = new VisualElement();
                         emphasisInlineVE.AddToClassList("EmphasisInline");
