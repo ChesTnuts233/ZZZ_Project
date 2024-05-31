@@ -530,8 +530,7 @@ namespace KooFrame
         {
             //根据方法名称确定位置
             string csText = File.ReadAllText(csPath);
-
-
+            
             string _CodeGenerator_StartText = CodeGenerator_StartText + customTag;
             string _CodeGenerator_EndText = CodeGenerator_EndText + customTag;
 
