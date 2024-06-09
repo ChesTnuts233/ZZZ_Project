@@ -12,6 +12,7 @@
                     <ui:Button text="代码" display-tooltip-when-elided="true" name="CodeTemplateShowBtn" class="showBtn" />
                     <ui:Button text="API" display-tooltip-when-elided="true" name="MethodShowBtn" class="showBtn" style="display: flex;" />
                 </ui:VisualElement>
+                <ui:TextField picking-mode="Ignore" name="Sreach" placeholder-text="搜索内容" style="max-height: 30px; min-height: 30px; font-size: 15px;" />
                 <ui:ListView name="CodeDataList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: flex;" />
                 <ui:ListView name="CodeTemplateList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none; transition-property: opacity; transition-duration: 1s; transition-timing-function: linear;" />
                 <ui:ListView name="MethodTemplateList" fixed-item-height="33" show-border="false" reorder-mode="Simple" show-bound-collection-size="false" style="flex-grow: 1; display: none;" />

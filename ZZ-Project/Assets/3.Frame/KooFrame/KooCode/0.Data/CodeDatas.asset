@@ -14,10 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CodeMarks:
   - Name:
+      _value: cheatsheet
+    CodeFile: {fileID: 0}
+    Content: "# Markdown Cheat Sheet\r\n\r\n\r\n## Formatting\r\nParagraphs are separated
+      by a blank line.\r\n\r\nEmphasis is given with *italic*, **bold**, and `monospace`.\r\n\r\n```\r\nEmphasis
+      is given with *italic*, **bold**, and `monospace`.\r\n```\r\n\r\n## Lists\r\nItemized
+      lists\r\n\r\n  * item 1\r\n  * item 2\r\n  * and so one ...\r\n\r\n```\r\nItemized
+      lists\r\n\r\n  * item 1\r\n  * item 2\r\n  * and so one ...\r\n\r\n```\r\n\r\n##
+      Headers\r\n\r\nSection headers either start with a # ...\r\n```\r\n# h1\r\n##
+      h2\r\n### h3\r\n```\r\n\r\nor are underlined\r\n\r\n```\r\nh1\r\n================\r\n\r\nh2\r\n----------------\r\n```\r\n##
+      Block Quotes\r\n\r\n> Block quotes are\r\n> written like so.\r\n>\r\n> They
+      can span multiple paragraphs,\r\n> if you like.\r\n\r\n```\r\n> Block quotes
+      are\r\n> written like so.\r\n>\r\n> They can span multiple paragraphs,\r\n>
+      if you like.\r\n```\r\n\r\n\r\n## Code\r\n\r\nCode can be inserted with ` ```
+      `\r\n\r\n~~~\r\n\r\n```\r\nvoid DoSomethingCool()\r\n{\r\n    // put some cool
+      code here ...\r\n}\r\n```\r\n~~~\r\n\r\nSyntax highlighting will be supported
+      in future versions :)\r\n\r\n\r\n## Nesting\r\n\r\nYou can nest items in a
+      list ...\r\n\r\n 1. First, get these ingredients:\r\n\r\n      * carrots\r\n     
+      * celery\r\n      * lentils\r\n\r\n 2. Boil some water.\r\n\r\n 3. Dump everything
+      in the pot and follow\r\n    this algorithm:\r\n\r\n        find wooden spoon\r\n       
+      uncover pot\r\n        stir\r\n        cover pot\r\n        balance wooden
+      spoon precariously on pot handle\r\n        wait 10 minutes\r\n        goto
+      first step (or shut off burner when done)\r\n\r\n    Do not bump wooden spoon
+      or it will fall.\r\n\r\n\r\n## Horizontal Line\r\n\r\nYou can insert a line
+      with ` ---`\r\n\r\n```\r\n---\r\n```\r\n---\r\n\r\n## Links\r\n\r\nHere is
+      a link to the [readme](readme.md) file\r\n\r\nAn an external link to the [unity
+      documentation](https://unity3d.com/)\r\n\r\nAn link to [the top](#markdown-cheat-sheet)
+      of this document (section header)\r\n\r\n\r\n```\r\nHere is a link to the [readme](readme.md)
+      file\r\nAn an external link to the [unity documentation](https://unity3d.com/)\r\nAn
+      link to [the top](#markdown-cheat-sheet) of this document (section header)\r\n```\r\n\r\n##
+      Images\r\n\r\nYou can also include images!\r\n\r\n![Failed to load text](https://loremflickr.com/320/240
+      \"Image Tooltip!\")\r\n\r\n```\r\n![Failed to load text](https://loremflickr.com/320/240
+      \"Image Tooltip!\")\r\n\r\n```\r\n"
+    ID: 
+    Tags: []
+    usePath: []
+    CodeMarkDown: {fileID: 0}
+    MarkDownPath: C:\Users\Koo\Desktop\KooBlog_Clean\source\_posts\cheatsheet.md
+  - Name:
       _value: "KooCode\u4ECB\u7ECD"
     CodeFile: {fileID: 0}
-    Content: "---\r\ntitle: KooCode-\u4ECB\u7ECD\r\ndate: 2024-04-19 22:49:25\r\ntags:\r\n---\r\n\r\n\r\n#
-      KooCode\r\n\r\n\r\n\r\n##  \u4E3A\u4EC0\u4E48\u8981\u5236\u4F5C\u8FD9\u6837\u4E00\u6B3E\u5DE5\u5177\r\n\r\n\u200B\t\u5728\u5B66\u4E60\u7F16\u7A0B\u7684\u8FC7\u7A0B\u4E2D\uFF0C\u7ECF\u5E38\u4F1A\u6709\u8FD9\u6837\u7684\u60C5\u51B5\u3002\u5728\u5B9E\u73B0`\u9700\u6C42A`\u7684\u65F6\u5019\uFF0C\u6211\u4EEC\u5199\u51FA\u4E86\u4EE3\u7801A\u6765\u5B9E\u73B0\u9700\u6C42\u3002\u8FC7\u4E86\u4E00\u6BB5\u65F6\u95F4\u540E\uFF0C\u4E5F\u8BB8\u662F\u4E00\u4E2A\u6708\uFF0C\u4E5F\u8BB8\u662F\u5927\u534A\u5E74\u3002\u4E4B\u540E\uFF0C\u6211\u4EEC\u9047\u5230\u4E86\u9700\u6C42B\uFF0C\u7136\u540E\u53D1\u73B0\u8FD9\u4E2A\u9700\u6C42B\u548C\u9700\u6C42A\u975E\u5E38\u76F8\u4F3C\u3002\u4F46\u8FD9\u4E2A\u65F6\u5019\u5DF2\u7ECF\u627E\u4E0D\u5230\u5F53\u65F6\u7684\u4EE3\u7801\u4E86\uFF0C\u6216\u8005\u90A3\u4E2A\u65F6\u5019\u7684\u9879\u76EE\u56E0\u4E3A\u67D0\u79CD\u60C5\u51B5\uFF0C\u8981\u4E48\u62A5\u9519\u96BE\u4EE5\u89E3\u8BFB\uFF0C\u8981\u4E48\u5F53\u65F6\u7684\u4EE3\u7801A\u5DF2\u7ECF\u6539\u7684\u4E71\u4E03\u516B\u7CDF\uFF0C\u96BE\u4EE5\u5229\u7528\u4E86\u3002\r\n\r\n![image-20240521041703464](KooCode\u4ECB\u7ECD/image-20240521041703464.png)\r\n\r\n\u200B\t\u4F1A\u51FA\u73B0\u8FD9\u6837\u7684\u60C5\u51B5\uFF0C\u5C31\u662F\u56E0\u4E3A\u5F53\u65F6\u6CA1\u80FD\u597D\u597D\u7684\u8BB0\u5F55\u4EE3\u7801\u3002\u4E5F\u8BB8\u662F\u61D2\uFF0C\u4E5F\u8BB8\u662F\u5F53\u65F6\u8FD8\u6CA1\u6709\u8BB0\u5F55\u7684\u610F\u8BC6\uFF0C\u53C8\u6216\u8005\u5F53\u65F6\u6839\u672C\u6CA1\u65F6\u95F4\u8BB0\u5F55\u3002\r\n\r\n\u200B\t\u5982\u679C\u662F\u6B63\u5E38\u8BB0\u5F55\uFF0C\u90A3\u4E48\u6211\u4EEC\u53EF\u80FD\u9700\u8981\r\n\r\n*
+    Content: "# KooCode\r\n\r\n\r\n\r\n##  \u4E3A\u4EC0\u4E48\u8981\u5236\u4F5C\u8FD9\u6837\u4E00\u6B3E\u5DE5\u5177\r\n\r\n\u200B\t\u5728\u5B66\u4E60\u7F16\u7A0B\u7684\u8FC7\u7A0B\u4E2D\uFF0C\u7ECF\u5E38\u4F1A\u6709\u8FD9\u6837\u7684\u60C5\u51B5\u3002\u5728\u5B9E\u73B0`\u9700\u6C42A`\u7684\u65F6\u5019\uFF0C\u6211\u4EEC\u5199\u51FA\u4E86`\u4EE3\u7801A`\u6765\u5B9E\u73B0\u9700\u6C42\u3002\u8FC7\u4E86\u4E00\u6BB5\u65F6\u95F4\u540E\uFF0C\u4E5F\u8BB8\u662F\u4E00\u4E2A\u6708\uFF0C\u4E5F\u8BB8\u662F\u5927\u534A\u5E74\u3002\u4E4B\u540E\uFF0C\u6211\u4EEC\u9047\u5230\u4E86`\u9700\u6C42B`\uFF0C\u7136\u540E\u53D1\u73B0\u8FD9\u4E2A`\u9700\u6C42B`\u548C`\u9700\u6C42A`\u975E\u5E38\u76F8\u4F3C\u3002\u4F46\u8FD9\u4E2A\u65F6\u5019\u5DF2\u7ECF\u627E\u4E0D\u5230\u5F53\u65F6\u7684\u4EE3\u7801\u4E86\uFF0C\u6216\u8005\u90A3\u4E2A\u65F6\u5019\u7684\u9879\u76EE\u56E0\u4E3A\u67D0\u79CD\u60C5\u51B5\uFF0C\u8981\u4E48\u62A5\u9519\u96BE\u4EE5\u89E3\u8BFB\uFF0C\u8981\u4E48\u5F53\u65F6\u7684`\u4EE3\u7801A`\u5DF2\u7ECF\u6539\u7684\u4E71\u4E03\u516B\u7CDF\uFF0C\u96BE\u4EE5\u5229\u7528\u4E86\u3002\r\n\r\n![image-20240521041703464](KooCode\u4ECB\u7ECD/image-20240521041703464.png)\r\n\r\n\u200B\t\u4F1A\u51FA\u73B0\u8FD9\u6837\u7684\u60C5\u51B5\uFF0C\u5C31\u662F\u56E0\u4E3A\u5F53\u65F6\u6CA1\u80FD\u597D\u597D\u7684\u8BB0\u5F55\u4EE3\u7801\u3002\u4E5F\u8BB8\u662F\u61D2\uFF0C\u4E5F\u8BB8\u662F\u5F53\u65F6\u8FD8\u6CA1\u6709\u8BB0\u5F55\u7684\u610F\u8BC6\uFF0C\u53C8\u6216\u8005\u5F53\u65F6\u6839\u672C\u6CA1\u65F6\u95F4\u8BB0\u5F55\u3002\r\n\r\n\u200B\t\u5982\u679C\u662F\u6B63\u5E38\u8BB0\u5F55\uFF0C\u90A3\u4E48\u6211\u4EEC\u53EF\u80FD\u9700\u8981\r\n\r\n*
       \u6253\u5F00\u672C\u5730\u8BB0\u5F55\u5DE5\u5177\u6216\u8005\u662F\u535A\u5BA2\r\n*
       \u5199\u597D\u535A\u5BA2\r\n* \u590D\u5236\u9ECF\u8D34\u4EE3\u7801\r\n* \u4FDD\u5B58\u6216\u8005\u662F\u4E0A\u4F20\u535A\u5BA2\r\n\r\n\u90A3\u4E48\uFF0C\u6211\u5C31\u5728\u60F3\uFF0C\u80FD\u4E0D\u80FD\u5236\u4F5C\u4E00\u6B3E\u5DE5\u5177\uFF0C\u7B80\u5316\u8FD9\u4E2A\u6D41\u7A0B\uFF0C\u6216\u8005\u662F\u81EA\u52A8\u5316\u8FD9\u4E2A\u6D41\u7A0B\u3002\r\n\r\n##
       \u65B9\u5411\u7684\u8F6C\u53D8\uFF0C\r\n\r\nKooCode\u6700\u521D\u662F\u6211\u8BBE\u60F3\u505A\u7684\u4E00\u5957\u6846\u67B6\u5DE5\u5177\u7CFB\u7EDF\uFF0C\u4ECE\u7B80\u5355\u7684\u57FA\u7840\u6846\u67B6\u5165\u624B\uFF0C\u5BF9\u8C61\u6C60\uFF0C\u4E8B\u4EF6\u4E2D\u5FC3\uFF0CUI\u7CFB\u7EDF\uFF0C\u7B49\u7B49\uFF0C\u5E2E\u52A9\u7528\u6237\u7B80\u5316\u5F00\u53D1\u6D41\u7A0B\u3002
@@ -32,25 +69,83 @@ MonoBehaviour:
       \u7136\u540E\u4F60\u516C\u53F8\u8FD8\u5728\u7528NGUI\u3002\u3002 \u5230\u5E95\u662F\u8C01\u5728\u8DDF\u4E0D\u4E0A\u8C01\u3002\u3002\u3002
       \u6211\u60F3\u4E00\u5B9A\u662FUnity\u6CA1\u8DDF\u4E0A\u6211\u4EEC\u56FD\u5185\u7684\u8282\u594F\r\n\r\n![image-20240521043338512](KooCode\u4ECB\u7ECD/image-20240521043338512.png)\r\n\r\n\u53CD\u6B63\u4E0D\u662F\u6211\u4EEC\u7684\u9519\r\n\r\n###
       \u4F60\u7684\u4EE3\u7801\u5927\u90E8\u5206\u90FD\u96BE\u4EE5\u7528\u4E0A\r\n\r\n\u5C31\u7B97\u514B\u670D\u4E86\u524D\u9762\u4E24\u70B9\uFF0C\u90A3\u4E48\u968F\u7740\u4F60\u67B6\u6784\u7684\u7EF4\u62A4\uFF0C\u4F60\u4F1A\u53D1\u73B0\uFF0C\u9762\u5BF9\u4E00\u4E2A\u9879\u76EE\u7684\u65F6\u5019\uFF0C\u4F60\u7684\u8FD9\u4E9B\u6846\u67B6\u4EE3\u7801\uFF0C\u5F88\u5927\u4E00\u90E8\u5206\u5176\u5B9E\u90FD\u662F\u6CA1\u7528\u7684\uFF0C\u54EA\u6015\u4F60\u62C6\u89E3\u51FA\u5F88\u591A\u4E2A\u5DE5\u5177\u5411\u7684dll\uFF0C\u5F88\u591A\u65F6\u5019\uFF0C\u6211\u53EA\u9700\u8981\u4E00\u628A\u87BA\u4E1D\u5200\uFF0C\u4F46\u6211\u5374\u9700\u8981\u628A\u6574\u4E2A\u5DE5\u5177\u7BB1\u5168\u90E8\u642C\u8FC7\u6765\u3002\r\n\r\n![image-20240521043840908](KooCode\u4ECB\u7ECD/image-20240521043840908.png)\r\n\r\n###
-      \u4EBA\u5BB6\u7684\u6846\u67B6\u6BD4\u4F60\u597D\u592A\u591A\r\n\r\n\u200B\t\u6211\u53EA\u662F\u4E00\u4E2A\u521A\u6BD5\u4E1A\u7684\u5B66\u751F\uFF0C\u518D\u600E\u4E48\u6574\u82B1\u6D3B\uFF0C\u4E5F\u6574\u4E0D\u51FA\u522B\u4EBA\u90A3\u4E48\u725B\u903C\u7684\u67B6\u6784\u554A\u3002\u3002\u4F60\u5199\u7684\u4E1C\u897F\u4EBA\u5BB6\u51ED\u4EC0\u4E48\u8981\u7528\u3002\r\n\r\n\u6211\u89C9\u5F97\uFF0C\u5BF9\u4E8E\u5B66\u751F\u6765\u8BF4\uFF0C\u4E0D\u65AD\u5730\u5B66\u4E60\u548C\u79EF\u7D2F\uFF0C\u80FD\u628A\u81EA\u5DF1\u4EE5\u524D\u5B66\u7684\u4E1C\u897F\u641E\u61C2\u5C31\u4E0D\u9519\u4E86\u3002\r\n\r\n\r\n\r\n#
-      \u6240\u4EE5 KooCode\u662F\u505A\u4EC0\u4E48\u7528\u7684\r\n\r\n \r\n\r\n\u76EE\u524D\u8FD9\u6B3E\u5DE5\u5177\uFF0C\u81F4\u529B\u4E8E\u505AUnity\u91CC\u6700\u597D\u7684\u4EE3\u7801\u7B14\u8BB0\u7BA1\u7406\u5DE5\u5177\uFF0C\u5B83\u5E76\u4E0D\u5E0C\u671B\u662F\u505A\u4E2AIDE
-      \u5B83\u4E0D\u662F\u7528\u6765\u7F16\u5199\u4EE3\u7801\u7684\u5DE5\u5177\u4E5F\u4E0D\u662F\u7528\u6765\u7F16\u5199MarkDown\u7684\u5DE5\u5177\uFF0CKooCode\u63D0\u4F9B\u7684\u662F\u5BF9MarkDown\u7684\u6570\u636E\u89E3\u8BFB\u548C\u4EE3\u7801\u6570\u636E
-      \u6BD4\u5982 \u6A21\u677F API\u7684\u4FDD\u5B58\uFF0CKooCode\u5F3A\u8C03\u5386\u53F2\u4EE3\u7801\u7684\u91CD\u8981\u6027\uFF0C\u8FC7\u53BB\u7684\u81EA\u5DF1\u7684\u8BB0\u5F55\u662F\u76EE\u524D\u4EBA\u5DE5\u667A\u80FD\u548C\u7F51\u7EDC\u4E0A\u4EFB\u4F55\u8D44\u6599\u90FD\u65E0\u6CD5\u53D6\u4EE3\u7684\u3002\r\n"
+      \u4EBA\u5BB6\u7684\u6846\u67B6\u6BD4\u4F60\u597D\u592A\u591A\r\n\r\n\u200B\t\u6211\u53EA\u662F\u4E00\u4E2A\u521A\u6BD5\u4E1A\u7684\u5B66\u751F\uFF0C\u518D\u600E\u4E48\u6574\u82B1\u6D3B\uFF0C\u4E5F\u6574\u4E0D\u51FA\u522B\u4EBA\u90A3\u4E48\u725B\u903C\u7684\u67B6\u6784\u554A\u3002\u3002\u4F60\u5199\u7684\u4E1C\u897F\u4EBA\u5BB6\u51ED\u4EC0\u4E48\u8981\u7528\u3002\r\n\r\n\u6211\u89C9\u5F97\uFF0C\u5BF9\u4E8E\u5B66\u751F\u6765\u8BF4\uFF0C\u4E0D\u65AD\u5730\u5B66\u4E60\u548C\u79EF\u7D2F\uFF0C\u80FD\u628A\u81EA\u5DF1\u4EE5\u524D\u5B66\u7684\u4E1C\u897F\u641E\u61C2\u5C31\u4E0D\u9519\u4E86\u3002\r\n\r\n\r\n\r\n\r\n\r\n"
     ID: 
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\KooCode\u4ECB\u7ECD.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\KooCode\u4ECB\u7ECD.md"
+  - Name:
+      _value: "KooCode\u539F\u7406"
+    CodeFile: {fileID: 0}
+    Content: "---\r\ntitle: \u4EC0\u4E48\u662F\u9762\u5411\u5BF9\u8C61\r\ndate: 2024-05-01
+      21:22:55\r\ntags: [C#,\u7F16\u7A0B\u601D\u8003]\r\n---\r\n\r\n# KooCode\r\n\r\n##
+      UITookit\r\n\r\n\u200B\tUITookit\u662FUnity\u6700\u65B0\u7684\u7528\u6765\u7EDF\u4E00RunTime\u548CEditor\u7684UI\u7ED3\u6784\u7684\u6700\u65B0\u7684UI\u7CFB\u7EDF\uFF0C\u6211\u8BA4\u4E3A\u8FD9\u4E2A\u7CFB\u7EDF\u662F\u76EE\u524D\u6211\u4EEC\u540C\u5B66\u6700\u6709\u5B66\u4E60\u4EF7\u503C\u7684\u7CFB\u7EDF\u3002
+      \u6211\u4EEC\u4E13\u4E1A\u4F1A\u5B66\u4E60\u7F51\u7AD9\u5F00\u53D1\uFF0C\u4E5F\u8981\u5B66\u4E60Unity\u7B49\u4E09\u7EF4\u8F6F\u4EF6\u6280\u672F\uFF0C\u4ECE\u4EE3\u7801\u5E95\u5C42\u4E0A\u6765\u770B\u80AF\u5B9A\u90FD\u662F\u4E92\u901A\u7684\u3002\u4F46\u662F
+      \u6700\u4E3A\u663E\u5F0F\u7684\u4E92\u901A \u6211\u60F3\u5C31\u662F \u4ED6\u4EEC\u90FD\u662FUI\u754C\u9762\u7EC4\u6210\u7684\u4EA4\u4E92\u7CFB\u7EDF\uFF0C
+      \u800C\u8FD9\u91CC UITookit\u7684\u8BBE\u8BA1\u7075\u611F\u6765\u81EA\u4E8EHTML\u4E0ECSS\uFF0C
+      \u5B83\u884D\u751F\u51FA\u6765\u4E86\u6781\u4E3A\u76F8\u4F3C\u7684UXML\u4E0EUSS\u3002\u66F4\u52A0\u7B80\u5355\u6613\u5B66\uFF0C\u8C01\u4E0D\u60F3\u5B66Unity\u7684\u540C\u65F6\u8FD8\u80FD\u5B66\u4E60\u7F51\u7AD9\u5F00\u53D1\u7684\u5185\u5BB9\u5462\uFF0C\u53C8\u6216\u8005\u5B66\u7F51\u7AD9\u5F00\u53D1\u540E\uFF0C\u53D1\u73B0Unity\u91CC\u9762\u8FD8\u80FD\u6361\u70B9\u8001\u672C\u5462\u3002\r\n\r\n\u200B\t![img](https://img1.baidu.com/it/u=3008289955,841550479&fm=253&fmt=auto&app=120&f=JPEG?w=858&h=500)\r\n\r\n\r\n\r\n\u6240\u4EE5KooCode\u7684\u6240\u6709\u5DE5\u5177\u754C\u9762\uFF0C\u90FD\u662F\u57FA\u4E8EUITookit
+      \uFF0C\u5E76\u4E14\u6700\u5927\u5316\u89C4\u8303\u5316\u6837\u5F0F\u89C4\u5219
+      \u5982\u540C\u7F51\u7AD9\u5F00\u53D1\u4E00\u6837\u3002\r\n\r\n\r\n\r\n\r\n\r\n##
+      \u6570\u636E\u5B58\u50A8MarkDown\r\n\r\n\u200B\t\u5BF9\u4E8E\u5B66\u751F\u7528\u6237\uFF0C\u4ED6\u6CA1\u6709\u80FD\u4F7F\u7528\u670D\u52A1\u5668\u7684\u80FD\u529B\uFF0C\u4E5F\u4E0D\u61C2\u4EC0\u4E48`Json`\uFF0C`SQL`
+      \u4EC0\u4E48\u6570\u636E\u8F7D\u4F53\u662F\u4ED6\u80FD\u73A9\u7684\u660E\u767D\uFF0C\u53C8\u9002\u5408\u6211\u8FD9\u4E2A\u5DE5\u5177\u7684\u670D\u52A1\u76EE\u7684\u5462\u3002\r\n\r\n\u200B\t\u7A0B\u5E8F\u5458\u6700\u559C\u6B22MarkDown\u4E86\uFF0CMarkDown\u662F\u57FA\u4E8EHTML\u8FD9\u79CD\u8D85\u6587\u672C\u6807\u8BB0\u8BED\u8A00\u5236\u4F5C\u7684\u4E00\u79CD\u8BB0\u5F55\u8BED\u8A00\uFF0C\u672C\u8EAB\u5C31\u662F\u6570\u636E\u96C6\u5408\uFF0C\u800C\u4E14\u5B58\u50A8\u4E0D\u5BB9\u6613\u62A5\u9519\u3002\u7A33\u5B9A\u6027\u597D\u3002\u6240\u4EE5\u6211\u51B3\u5B9A\u91C7\u7528MarkDown
+      \u76F4\u63A5\u4F5C\u4E3A\u6570\u636E\u7684\u8F7D\u4F53\u3002\r\n\r\n![img](https://img0.baidu.com/it/u=1209203347,2040397375&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=800)\r\n\r\n##
+      \u5BF9MarkDown\u8FDB\u884C\u6570\u636E\u5206\u6790\r\n\r\n> \u200B\t \u4E09\u79CD\u65B9\u6848\uFF0C\u7B2C\u4E00\u79CD\u662F\u4F7F\u7528\u7B2C\u4E09\u65B9\u5E93\uFF0C
+      UnityMarkDownViewer\uFF0C  \u76F8\u5F53\u4E8E\u662F\u628AMarkDown\u89E3\u6790\u6210\u4E00\u5F20\u56FE\u7247\uFF0C\u6E32\u67D3\u5230Editor\u7A97\u53E3\u4E0A\u3002\u4F46\u5F88\u660E\u663E\uFF0C\u8FD9\u79CD\u65B9\u5F0F\u5C40\u9650\u6027\u592A\u5927\u4E86\u3002\u7B2C\u4E8C\u79CD\u662F\u76F4\u63A5\u628AMarkDown\u8F6C\u6362\u6210HTML\u518D\u8F6C\u6362\u4E3AXML\u518D\u5230UXML\r\n\r\n\u200B\t\u56E0\u4E3A\u6211\u771F\u7684\u5F88\u5E0C\u671B\u8FD9\u4E2A\u6846\u67B6\u540E\u7EED\u80FD\u591F\u5207\u5B9E\u7684\u8F85\u52A9\u5230\u540C\u5B66\u4EEC\u7684\u5B66\u4E60\u5F53\u4E2D\u3002\u6240\u4EE5
+      \u81EA\u5DF1\u89E3\u6790MarkDown\u5C31\u975E\u5E38\u6709\u5FC5\u8981\u4E86\t\r\n\r\n\u200B\t\u5F97\u76CA\u4E8EUITookit\u662F\u57FA\u4E8E\u7F51\u7AD9\u6280\u672F\u4E3A\u7075\u611F\u7F16\u5199\u7684\u6280\u672F\u6808\uFF0C\u6211\u6709\u60F3\u8FC7\u662F\u5426\u80FD\u628A
+      MarkDown \u89E3\u6790\u6210 HTML  \u518D\u628AHTML\u89E3\u6790\u6210XML  \u6700\u540E\u505A\u4E00\u4E9B\u7279\u5316
+      \u8F6C\u6362\u4E3A \u6211\u4EEC\u9700\u8981\u7684UXML \u3002 \u8FD9\u5E94\u8BE5\u662F\u6700\u597D\u7684\u529E\u6CD5\uFF0C\u56E0\u4E3A\u8FD9\u6837\u514D\u53BB\u6211\u624B\u52A8\u5206\u6790MarkDown\u7684\u6811\u6570\u636E\u7ED3\u6784\u3002\r\n\r\n\u200B\t\u4F46Unity\u7684UXML\u89C4\u5219\u4E0E\u7ECF\u5178XML\u7565\u6709\u4E0D\u540C\uFF0C
+      \u5982\u679C\u9700\u8981\u7A33\u5B9A\u7684\u8F6C\u6362\u8FD9\u4E9B\u6570\u636E\uFF0C\u9700\u8981\u82B1\u5927\u91CF\u7684\u65F6\u95F4\u4F18\u5316\u4EE3\u7801\u751F\u6210\u7684\u5185\u5BB9\u3002\u800C\u4E14\u56E0\u4E3AHTML\u662F\u57FA\u4E8EXML
+      \u7684  \u5C31\u5982\u540C \u7C7B\u4E2D\u7684\u7236\u5B50\u7C7B\u5173\u7CFB\u4E00\u6837
+      HTML\u5BF9XML\u505A\u4E86\u62D3\u5C55  \u6309\u7406\u662F\u53EF\u4EE5\u8F6C\u6362\u6210XML\u7684\r\n\r\n>
+      HTML\u57FA\u4E8EXML  UXML\u4E5F\u662F\u57FA\u4E8EXML\u7684  \u5B50\u7C7B\u4E0E\u5B50\u7C7B\u4E4B\u95F4\u96BE\u4EE5\u4E92\u8F6C\u3002\r\n\r\n![image-20240521161606574](KooCode\u539F\u7406/image-20240521161606574.png)\r\n\r\n\r\n\r\n\u200B\t\u76EE\u524D\u65F6\u95F4\u6709\u9650\u3002\u6211\u60F3\u5FEB\u901F\u5B8C\u6210\u8FD9\u9879\u5DE5\u4F5C\uFF0C\u6211\u9009\u62E9\u4F7F\u7528MarkDig\u8FD9\u4E2Adll
+      \u90E8\u5206\u89E3\u6790MarkDown\u7684\u6570\u636E\uFF0CMarkDig\u662F\u4E13\u95E8\u5BF9MarkDown\u505A\u89E3\u6790\u7684dll\u5DE5\u5177\u3002\r\n\r\n```C#\r\n\u7ECF\u8FC7\u7B80\u5355\u7684\u89E3\u6790\u548C\u53CD\u5411\u751F\u6210
+      \u76EE\u524D\u5B9E\u73B0\u4E86 \u5BF9\u533A\u5757\u5F15\u7528\uFF0C \u4EE3\u7801\u5757
+      \uFF0C\u6B63\u6587 \u6807\u9898\u548C\u9759\u6001\u56FE\u7247\u7684\u89E3\u6790\u548C\u53CD\u5411\u751F\u6210\u3002\r\n```\r\n\r\n\r\n\r\n#
+      \u76EE\u5F55\u62D3\u5C55\u4E0E\u8282\u70B9\u89C6\u56FE\r\n\r\n\u200B\t \u5982\u4F55\u66F4\u52A0\u597D\u7684\u8D34\u8FD1\u7528\u6237\u751F\u6210\u7684\u4EE3\u7801\u811A\u672C\u6587\u4EF6\u5462\u3002\u4EE3\u7801\u4E00\u5B9A\u662F\u5B58\u5728\u76EE\u5F55\u91CC\u9762\u7684\u3002\u96BE\u9053\u2026\u2026
+      \u54E6\u5BF9 \u8FD8\u80FD\u5B58\u5728\u4E8Edll\u4E2D\u3002\u90A3\u4E0D\u7BA1\u3002\u53CD\u6B63dll\u4E5F\u5728\u76EE\u5F55\u91CC\u3002\u6240\u4EE5KooCode\u5C31\u4ECE\u76EE\u5F55\u62D3\u5C55\u5F00\u59CB\u4E0B\u624B\u3002\r\n\r\n\u200B\t\u76EE\u5F55\u7684\u62D3\u5C55\u662F\u57FA\u4E8E\u5BF9
+      Unity\u6CA1\u6709\u5BF9DefaultAsset\u505A\u68C0\u89C6\u5668\u7684\u529F\u80FD\u4E0A
+      \u56E0\u4E3A\u76EE\u5F55\u6587\u4EF6\u4E5F\u662FDefaultAsset\uFF0C\u6240\u4EE5\u5C31\u4ECE\u8FD9\u91CC\u4E0B\u624B\u3002\u5BF9Default\u76EE\u5F55\u505A\u62D3\u5C55\u3002\r\n\r\n\r\n\r\n\u200B\t
+      \u4ECE\u76EE\u5F55\u62D3\u5C55\u5173\u952E\u7684\u4E00\u70B9\u5C31\u662F \u5728\u4E0D\u540C\u7684\u7528\u6237\u89C6\u56FE\u4E0B
+      \u6BD4\u5982\u6709\u4E9B\u4EBA\u7231\u7528\u8001\u5F0F\u76843by 2 \u6709\u4E9B\u4EBA\u53C8\u66F4\u559C\u6B22Unity\u76EE\u524D\u7684Default\u3002\u8FD9\u4E24\u79CD\u7684\u76EE\u5F55\u89C6\u56FE\u6837\u5F0F\u662F\u4E0D\u4E00\u6837\u7684\r\n\r\n![image-20240521164635895](KooCode\u539F\u7406/image-20240521164635895.png)\r\n\r\n\r\n\r\n\u200B\t\r\n\r\n![image-20240521164645015](KooCode\u539F\u7406/image-20240521164645015.png)\r\n\r\n\u8FD9\u4E9B\u4E0D\u540C\u7684\u6837\u5F0F
+      \u5728Inspector\u7684\u68C0\u89C6\u89C4\u5219\u662F\u4E0D\u4E00\u6837\u7684\u3002\r\n\r\n###
+      \u7ED9Project\u52A0\u62D3\u5C55\u6309\u94AE\r\n\r\n\u200B\t\u6240\u4EE5\uFF0C\u8FD9\u91CC\u53EA\u80FD\u91CD\u65B0\u5BFB\u627E\u89E3\u51B3\u8FD9\u4E2A\u95EE\u9898\u7684\u65B9\u5411\u4E86\uFF0C\u5728\u5BA3\u96E8\u677E\u7684\u4E66\u4E2D\uFF0C\u6709\u5E78\u4E86\u89E3\u8FC7\u5BF9Hierarchy\u9875\u9762\u8FDB\u884C\u6DFB\u52A0\u62D3\u5C55\u6309\u94AE\u7684\u65B9\u5F0F\uFF0C\u90A3\u4E48\u6211\u5C31\u5728\u60F3\uFF0C\u662F\u4E0D\u662F\u540C\u6837\u7684\u65B9\u5F0F\uFF0C\u5BF9\u76EE\u5F55\u4E5F\u505A\u4E00\u4E2A\u4E00\u6837\u7684\u62D3\u5C55\u6309\u94AE\uFF0C\u8FD9\u6837\u4E0D\u5C31\u89E3\u51B3\u4E86\u68C0\u89C6\u5668\u5728\u4E0D\u540C\u754C\u9762\u89C6\u56FE\u4E0B\u89C4\u5219\u4E0D\u4E00\u6837\u7684\u95EE\u9898\u4E86\u5417\u3002\r\n\r\n"
+    ID: 
+    Tags: []
+    usePath: []
+    CodeMarkDown: {fileID: 0}
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\KooCode\u539F\u7406.md"
+  - Name:
+      _value: "KooCode\u5DE5\u5177"
+    CodeFile: {fileID: 0}
+    Content: "---\r\ntitle: KooCode-\u5DE5\u5177\r\ndate: 2024-05-01 21:22:55\r\ntags:
+      [C#,\u7F16\u7A0B\u601D\u8003]\r\n---\r\n\r\n# KooCode \u57FA\u4E8E\u8282\u70B9\u7684\u7B80\u6613UML\u5DE5\u5177\r\n\r\n\u5728\u57FA\u4E8E\u76EE\u5F55\u6807\u7B7E\u7CFB\u7EDF\u548C\u4E4B\u524D\u505A\u8FC7\u7684\u5BF9\u8BDD\u8282\u70B9\u7CFB\u7EDF\u7684\u57FA\u7840\u4E4B\u4E0A\u3002\u56E0\u4E3A\u4EE3\u7801\u90FD\u901A\u8FC7\u76EE\u5F55\u6A21\u677F\u6765\u521B\u5EFA\u540E\uFF0C\u90A3\u521B\u5EFA\u7684\u811A\u672C\u8DEF\u5F84\u5C31\u53EF\u4EE5\u8FFD\u6EAF\u3002\r\n\u6211\u4EEC\u901A\u8FC7\u53CD\u5C04\u6765\u8BA9\u83B7\u5F97\u8FD9\u4E9B\u811A\u672C\u7684\u5B57\u6BB5\u6216\u8005\u65B9\u6CD5\u4FE1\u606F\uFF0C\u8FD9\u6837\u5176\u5B9E\u5C31\u6709\u4E86\u6784\u5EFAUML\u7C7B\u56FE\u7684\u57FA\u7840\u529F\u80FD\r\n\r\n\r\n```CSharp\r\n\r\nType
+      nodeClassType = Type.GetType(\"GameBuild.\" + node.NodeNickName);\r\n\r\n           
+      if (nodeClassType != null)\r\n            {\r\n                // \u83B7\u53D6\u6240\u6709\u5B57\u6BB5\r\n               
+      FieldInfo[] fieldsInfo = nodeClassType.GetFields(BindingFlags.Public | BindingFlags.NonPublic
+      |\r\n                                                                 BindingFlags.Instance
+      | BindingFlags.Static);\r\n\r\n                StringBuilder fields = new StringBuilder();\r\n\r\n               
+      foreach (var field in fieldsInfo)\r\n                {\r\n                   
+      if (field.IsPublic)\r\n                    {\r\n                        fields.AppendLine($\"+
+      {field.Name}\");\r\n                    }\r\n                    else\r\n                   
+      {\r\n                        fields.AppendLine($\"- {field.Name}\");\r\n                   
+      }\r\n                }\r\n\r\n                nodeView.fieldName.SetValueWithoutNotify(fields.ToString());\r\n           
+      }\r\n\r\n```\r\n"
+    ID: 
+    Tags: []
+    usePath: []
+    CodeMarkDown: {fileID: 0}
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\KooCode\u5DE5\u5177.md"
   - Name:
       _value: "KooFrame-\u5173\u5361\u4E0E\u573A\u666F\u8D44\u6E90\u7684\u7BA1\u7406"
     CodeFile: {fileID: 0}
     Content: "---\ntitle: KooFrame-\u5173\u5361\u4E0E\u573A\u666F\u8D44\u6E90\u7684\u7BA1\u7406\ndate:
-      2024-04-19 22:49:25\ntags:\n---\n"
+      2024-04-19 22:49:25\ntags:\n---\n\n\n"
     ID: 
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\KooFrame-\u5173\u5361\u4E0E\u573A\u666F\u8D44\u6E90\u7684\u7BA1\u7406.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\KooFrame-\u5173\u5361\u4E0E\u573A\u666F\u8D44\u6E90\u7684\u7BA1\u7406.md"
   - Name:
       _value: "Unity\u8282\u70B9\u7F16\u8F91\u5668\u5236\u4F5C\u7684\u6D41\u7A0B\u8BB0\u5F55"
     CodeFile: {fileID: 0}
@@ -127,7 +222,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\Unity\u8282\u70B9\u7F16\u8F91\u5668\u5236\u4F5C\u7684\u6D41\u7A0B\u8BB0\u5F55.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\Unity\u8282\u70B9\u7F16\u8F91\u5668\u5236\u4F5C\u7684\u6D41\u7A0B\u8BB0\u5F55.md"
   - Name:
       _value: "\u4EC0\u4E48\u662F\u9762\u5411\u5BF9\u8C61"
     CodeFile: {fileID: 0}
@@ -163,7 +258,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u4EC0\u4E48\u662F\u9762\u5411\u5BF9\u8C61.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u4EC0\u4E48\u662F\u9762\u5411\u5BF9\u8C61.md"
   - Name:
       _value: "\u503C\u7C7B\u578B\u4E0E\u5F15\u7528\u7C7B\u578B"
     CodeFile: {fileID: 0}
@@ -217,7 +312,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u503C\u7C7B\u578B\u4E0E\u5F15\u7528\u7C7B\u578B.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u503C\u7C7B\u578B\u4E0E\u5F15\u7528\u7C7B\u578B.md"
   - Name:
       _value: "\u5173\u4E8EKooFrame\u7684\u57FA\u7840-\u4EE3\u7801\u751F\u6210\u5668\u7684\u60F3\u6CD5\u6784\u5EFA"
     CodeFile: {fileID: 0}
@@ -232,7 +327,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u5173\u4E8EKooFrame\u7684\u57FA\u7840-\u4EE3\u7801\u751F\u6210\u5668\u7684\u60F3\u6CD5\u6784\u5EFA.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u5173\u4E8EKooFrame\u7684\u57FA\u7840-\u4EE3\u7801\u751F\u6210\u5668\u7684\u60F3\u6CD5\u6784\u5EFA.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u4E09\u6570\u4E4B\u548C"
     CodeFile: {fileID: 0}
@@ -293,7 +388,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E09\u6570\u4E4B\u548C.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E09\u6570\u4E4B\u548C.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u4E24\u4EA4\u6362\u94FE\u8868\u76F8\u90BB\u8282\u70B9"
     CodeFile: {fileID: 0}
@@ -352,7 +447,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u4E24\u4EA4\u6362\u94FE\u8868\u76F8\u90BB\u8282\u70B9.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u4E24\u4EA4\u6362\u94FE\u8868\u76F8\u90BB\u8282\u70B9.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u6570\u4E4B\u548C"
     CodeFile: {fileID: 0}
@@ -414,7 +509,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u6570\u4E4B\u548C.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u6570\u4E4B\u548C.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u6570\u7EC4\u4EA4\u96C6"
     CodeFile: {fileID: 0}
@@ -470,7 +565,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u6570\u7EC4\u4EA4\u96C6.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E24\u6570\u7EC4\u4EA4\u96C6.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u4E8C\u5206\u67E5\u627E"
     CodeFile: {fileID: 0}
@@ -537,7 +632,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E8C\u5206\u67E5\u627E.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u4E8C\u5206\u67E5\u627E.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u5220\u9664\u5B57\u7B26\u4E32\u4E2D\u7684\u6240\u6709\u76F8\u90BB\u91CD\u590D\u9879"
     CodeFile: {fileID: 0}
@@ -584,7 +679,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u5220\u9664\u5B57\u7B26\u4E32\u4E2D\u7684\u6240\u6709\u76F8\u90BB\u91CD\u590D\u9879.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u5220\u9664\u5B57\u7B26\u4E32\u4E2D\u7684\u6240\u6709\u76F8\u90BB\u91CD\u590D\u9879.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u524Dk\u4E2A\u9AD8\u9891\u5143\u7D20"
     CodeFile: {fileID: 0}
@@ -618,7 +713,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u524Dk\u4E2A\u9AD8\u9891\u5143\u7D20.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u524Dk\u4E2A\u9AD8\u9891\u5143\u7D20.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u53CD\u8F6C\u5B57\u7B26\u4E32"
     CodeFile: {fileID: 0}
@@ -677,7 +772,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u53CD\u8F6C\u5B57\u7B26\u4E32.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u53CD\u8F6C\u5B57\u7B26\u4E32.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u56DB\u6570\u4E4B\u548C"
     CodeFile: {fileID: 0}
@@ -733,7 +828,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u56DB\u6570\u4E4B\u548C.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u56DB\u6570\u4E4B\u548C.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u56DB\u6570\u76F8\u52A0II"
     CodeFile: {fileID: 0}
@@ -793,7 +888,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u56DB\u6570\u76F8\u52A0II.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u56DB\u6570\u76F8\u52A0II.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u5B58\u5728\u91CD\u590D\u5143\u7D20"
     CodeFile: {fileID: 0}
@@ -803,7 +898,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u5B58\u5728\u91CD\u590D\u5143\u7D20.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u5B58\u5728\u91CD\u590D\u5143\u7D20.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u5FEB\u4E50\u6570"
     CodeFile: {fileID: 0}
@@ -843,7 +938,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u5FEB\u4E50\u6570.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u5FEB\u4E50\u6570.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u6709\u5E8F\u6570\u7EC4\u5E73\u65B9"
     CodeFile: {fileID: 0}
@@ -900,7 +995,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6709\u5E8F\u6570\u7EC4\u5E73\u65B9.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6709\u5E8F\u6570\u7EC4\u5E73\u65B9.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u6709\u6548\u5B57\u6BCD\u5F02\u4F4D\u8BCD"
     CodeFile: {fileID: 0}
@@ -960,7 +1055,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6709\u6548\u5B57\u6BCD\u5F02\u4F4D\u8BCD.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6709\u6548\u5B57\u6BCD\u5F02\u4F4D\u8BCD.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u6709\u6548\u7684\u62EC\u53F7"
     CodeFile: {fileID: 0}
@@ -1003,7 +1098,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6709\u6548\u7684\u62EC\u53F7.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6709\u6548\u7684\u62EC\u53F7.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u6808\u5B9E\u73B0\u961F\u5217"
     CodeFile: {fileID: 0}
@@ -1069,7 +1164,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6808\u5B9E\u73B0\u961F\u5217.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u6808\u5B9E\u73B0\u961F\u5217.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u79FB\u9664\u5143\u7D20"
     CodeFile: {fileID: 0}
@@ -1126,7 +1221,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u79FB\u9664\u5143\u7D20.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u79FB\u9664\u5143\u7D20.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u79FB\u9664\u94FE\u8868\u5143\u7D20"
     CodeFile: {fileID: 0}
@@ -1184,7 +1279,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u79FB\u9664\u94FE\u8868\u5143\u7D20.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u79FB\u9664\u94FE\u8868\u5143\u7D20.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u7FFB\u8F6C\u94FE\u8868"
     CodeFile: {fileID: 0}
@@ -1226,7 +1321,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u7FFB\u8F6C\u94FE\u8868.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u7FFB\u8F6C\u94FE\u8868.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u80A1\u7968\u95EE\u9898"
     CodeFile: {fileID: 0}
@@ -1236,7 +1331,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u80A1\u7968\u95EE\u9898.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u80A1\u7968\u95EE\u9898.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u87BA\u65CB\u77E9\u9635"
     CodeFile: {fileID: 0}
@@ -1282,7 +1377,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u87BA\u65CB\u77E9\u9635.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u87BA\u65CB\u77E9\u9635.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u8BBE\u8BA1\u94FE\u8868"
     CodeFile: {fileID: 0}
@@ -1452,7 +1547,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u8BBE\u8BA1\u94FE\u8868.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u8BBE\u8BA1\u94FE\u8868.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u8D4E\u91D1\u4FE1"
     CodeFile: {fileID: 0}
@@ -1488,7 +1583,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u8D4E\u91D1\u4FE1.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u8D4E\u91D1\u4FE1.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u9006\u6CE2\u5170\u8868\u8FBE\u5F0F\u6C42\u503C"
     CodeFile: {fileID: 0}
@@ -1546,7 +1641,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u9006\u6CE2\u5170\u8868\u8FBE\u5F0F\u6C42\u503C.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u9006\u6CE2\u5170\u8868\u8FBE\u5F0F\u6C42\u503C.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u957F\u5EA6\u6700\u5C0F\u7684\u5B50\u6570\u7EC4"
     CodeFile: {fileID: 0}
@@ -1618,7 +1713,7 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u957F\u5EA6\u6700\u5C0F\u7684\u5B50\u6570\u7EC4.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u957F\u5EA6\u6700\u5C0F\u7684\u5B50\u6570\u7EC4.md"
   - Name:
       _value: "\u7B97\u6CD5\u7B14\u8BB0-\u961F\u5217\u6A21\u62DF\u6808"
     CodeFile: {fileID: 0}
@@ -1679,64 +1774,16 @@ MonoBehaviour:
     Tags: []
     usePath: []
     CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u961F\u5217\u6A21\u62DF\u6808.md"
+    MarkDownPath: "C:\\Users\\Koo\\Desktop\\KooBlog_Clean\\source\\_posts\\\u7B97\u6CD5\u7B14\u8BB0-\u961F\u5217\u6A21\u62DF\u6808.md"
   - Name:
-      _value: "KooCode\u539F\u7406"
-    CodeFile: {fileID: 0}
-    Content: "# KooCode\r\n\r\n## UITookit\r\n\r\n\u200B\tUITookit\u662FUnity\u6700\u65B0\u7684\u7528\u6765\u7EDF\u4E00RunTime\u548CEditor\u7684UI\u7ED3\u6784\u7684\u6700\u65B0\u7684UI\u7CFB\u7EDF\uFF0C\u6211\u8BA4\u4E3A\u8FD9\u4E2A\u7CFB\u7EDF\u662F\u76EE\u524D\u6211\u4EEC\u540C\u5B66\u6700\u6709\u5B66\u4E60\u4EF7\u503C\u7684\u7CFB\u7EDF\u3002
-      \u6211\u4EEC\u4E13\u4E1A\u4F1A\u5B66\u4E60\u7F51\u7AD9\u5F00\u53D1\uFF0C\u4E5F\u8981\u5B66\u4E60Unity\u7B49\u4E09\u7EF4\u8F6F\u4EF6\u6280\u672F\uFF0C\u4ECE\u4EE3\u7801\u5E95\u5C42\u4E0A\u6765\u770B\u80AF\u5B9A\u90FD\u662F\u4E92\u901A\u7684\u3002\u4F46\u662F
-      \u6700\u4E3A\u663E\u5F0F\u7684\u4E92\u901A \u6211\u60F3\u5C31\u662F \u4ED6\u4EEC\u90FD\u662FUI\u754C\u9762\u7EC4\u6210\u7684\u4EA4\u4E92\u7CFB\u7EDF\uFF0C
-      \u800C\u8FD9\u91CC UITookit\u7684\u8BBE\u8BA1\u7075\u611F\u6765\u81EA\u4E8EHTML\u4E0ECSS\uFF0C
-      \u5B83\u884D\u751F\u51FA\u6765\u4E86\u6781\u4E3A\u76F8\u4F3C\u7684UXML\u4E0EUSS\u3002\u66F4\u52A0\u7B80\u5355\u6613\u5B66\uFF0C\u8C01\u4E0D\u60F3\u5B66Unity\u7684\u540C\u65F6\u8FD8\u80FD\u5B66\u4E60\u7F51\u7AD9\u5F00\u53D1\u7684\u5185\u5BB9\u5462\uFF0C\u53C8\u6216\u8005\u5B66\u7F51\u7AD9\u5F00\u53D1\u540E\uFF0C\u53D1\u73B0Unity\u91CC\u9762\u8FD8\u80FD\u6361\u70B9\u8001\u672C\u5462\u3002\r\n\r\n\u200B\t![img](https://img1.baidu.com/it/u=3008289955,841550479&fm=253&fmt=auto&app=120&f=JPEG?w=858&h=500)\r\n\r\n\r\n\r\n\u6240\u4EE5KooCode\u7684\u6240\u6709\u5DE5\u5177\u754C\u9762\uFF0C\u90FD\u662F\u57FA\u4E8EUITookit
-      \uFF0C\u5E76\u4E14\u6700\u5927\u5316\u89C4\u8303\u5316\u6837\u5F0F\u89C4\u5219
-      \u5982\u540C\u7F51\u7AD9\u5F00\u53D1\u4E00\u6837\u3002\r\n\r\n\r\n\r\n\r\n\r\n##
-      \u6570\u636E\u5B58\u50A8MarkDown\r\n\r\n\u200B\t\u5BF9\u4E8E\u5B66\u751F\u7528\u6237\uFF0C\u4ED6\u6CA1\u6709\u80FD\u4F7F\u7528\u670D\u52A1\u5668\u7684\u80FD\u529B\uFF0C\u4E5F\u4E0D\u61C2\u4EC0\u4E48`Json`\uFF0C`SQL`
-      \u4EC0\u4E48\u6570\u636E\u8F7D\u4F53\u662F\u4ED6\u80FD\u73A9\u7684\u660E\u767D\uFF0C\u53C8\u9002\u5408\u6211\u8FD9\u4E2A\u5DE5\u5177\u7684\u670D\u52A1\u76EE\u7684\u5462\u3002\r\n\r\n\u200B\t\u7A0B\u5E8F\u5458\u6700\u559C\u6B22MarkDown\u4E86\uFF0CMarkDown\u662F\u57FA\u4E8EHTML\u8FD9\u79CD\u8D85\u6587\u672C\u6807\u8BB0\u8BED\u8A00\u5236\u4F5C\u7684\u4E00\u79CD\u8BB0\u5F55\u8BED\u8A00\uFF0C\u672C\u8EAB\u5C31\u662F\u6570\u636E\u96C6\u5408\uFF0C\u800C\u4E14\u5B58\u50A8\u4E0D\u5BB9\u6613\u62A5\u9519\u3002\u7A33\u5B9A\u6027\u597D\u3002\u6240\u4EE5\u6211\u51B3\u5B9A\u91C7\u7528MarkDown
-      \u76F4\u63A5\u4F5C\u4E3A\u6570\u636E\u7684\u8F7D\u4F53\u3002\r\n\r\n![img](https://img0.baidu.com/it/u=1209203347,2040397375&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=800)\r\n\r\n##
-      \u5BF9MarkDown\u8FDB\u884C\u6570\u636E\u5206\u6790\r\n\r\n> \u200B\t \u4E09\u79CD\u65B9\u6848\uFF0C\u7B2C\u4E00\u79CD\u662F\u4F7F\u7528\u7B2C\u4E09\u65B9\u5E93\uFF0C
-      UnityMarkDownViewer\uFF0C  \u76F8\u5F53\u4E8E\u662F\u628AMarkDown\u89E3\u6790\u6210\u4E00\u5F20\u56FE\u7247\uFF0C\u6E32\u67D3\u5230Editor\u7A97\u53E3\u4E0A\u3002\u4F46\u5F88\u660E\u663E\uFF0C\u8FD9\u79CD\u65B9\u5F0F\u5C40\u9650\u6027\u592A\u5927\u4E86\u3002\u7B2C\u4E8C\u79CD\u662F\u76F4\u63A5\u628AMarkDown\u8F6C\u6362\u6210HTML\u518D\u8F6C\u6362\u4E3AXML\u518D\u5230UXML\r\n\r\n\u200B\t\u56E0\u4E3A\u6211\u771F\u7684\u5F88\u5E0C\u671B\u8FD9\u4E2A\u6846\u67B6\u540E\u7EED\u80FD\u591F\u5207\u5B9E\u7684\u8F85\u52A9\u5230\u540C\u5B66\u4EEC\u7684\u5B66\u4E60\u5F53\u4E2D\u3002\u6240\u4EE5
-      \u81EA\u5DF1\u89E3\u6790MarkDown\u5C31\u975E\u5E38\u6709\u5FC5\u8981\u4E86\t\r\n\r\n\u200B\t\u5F97\u76CA\u4E8EUITookit\u662F\u57FA\u4E8E\u7F51\u7AD9\u6280\u672F\u4E3A\u7075\u611F\u7F16\u5199\u7684\u6280\u672F\u6808\uFF0C\u6211\u6709\u60F3\u8FC7\u662F\u5426\u80FD\u628A
-      MarkDown \u89E3\u6790\u6210 HTML  \u518D\u628AHTML\u89E3\u6790\u6210XML  \u6700\u540E\u505A\u4E00\u4E9B\u7279\u5316
-      \u8F6C\u6362\u4E3A \u6211\u4EEC\u9700\u8981\u7684UXML \u3002 \u8FD9\u5E94\u8BE5\u662F\u6700\u597D\u7684\u529E\u6CD5\uFF0C\u56E0\u4E3A\u8FD9\u6837\u514D\u53BB\u6211\u624B\u52A8\u5206\u6790MarkDown\u7684\u6811\u6570\u636E\u7ED3\u6784\u3002\r\n\r\n\u200B\t\u4F46Unity\u7684UXML\u89C4\u5219\u4E0E\u7ECF\u5178XML\u7565\u6709\u4E0D\u540C\uFF0C
-      \u5982\u679C\u9700\u8981\u7A33\u5B9A\u7684\u8F6C\u6362\u8FD9\u4E9B\u6570\u636E\uFF0C\u9700\u8981\u82B1\u5927\u91CF\u7684\u65F6\u95F4\u4F18\u5316\u4EE3\u7801\u751F\u6210\u7684\u5185\u5BB9\u3002\u800C\u4E14\u56E0\u4E3AHTML\u662F\u57FA\u4E8EXML
-      \u7684  \u5C31\u5982\u540C \u7C7B\u4E2D\u7684\u7236\u5B50\u7C7B\u5173\u7CFB\u4E00\u6837
-      HTML\u5BF9XML\u505A\u4E86\u62D3\u5C55  \u6309\u7406\u662F\u53EF\u4EE5\u8F6C\u6362\u6210XML\u7684\r\n\r\n>
-      HTML\u57FA\u4E8EXML  UXML\u4E5F\u662F\u57FA\u4E8EXML\u7684  \u5B50\u7C7B\u4E0E\u5B50\u7C7B\u4E4B\u95F4\u96BE\u4EE5\u4E92\u8F6C\u3002\r\n\r\n![image-20240521161606574](KooCode\u539F\u7406/image-20240521161606574.png)\r\n\r\n\r\n\r\n\u200B\t\u76EE\u524D\u65F6\u95F4\u6709\u9650\u3002\u6211\u60F3\u5FEB\u901F\u5B8C\u6210\u8FD9\u9879\u5DE5\u4F5C\uFF0C\u6211\u9009\u62E9\u4F7F\u7528MarkDig\u8FD9\u4E2Adll
-      \u90E8\u5206\u89E3\u6790MarkDown\u7684\u6570\u636E\uFF0CMarkDig\u662F\u4E13\u95E8\u5BF9MarkDown\u505A\u89E3\u6790\u7684dll\u5DE5\u5177\u3002\r\n\r\n```C#\r\n\u7ECF\u8FC7\u7B80\u5355\u7684\u89E3\u6790\u548C\u53CD\u5411\u751F\u6210
-      \u76EE\u524D\u5B9E\u73B0\u4E86 \u5BF9\u533A\u5757\u5F15\u7528\uFF0C \u4EE3\u7801\u5757
-      \uFF0C\u6B63\u6587 \u6807\u9898\u548C\u9759\u6001\u56FE\u7247\u7684\u89E3\u6790\u548C\u53CD\u5411\u751F\u6210\u3002\r\n```\r\n\r\n\r\n\r\n#
-      \u76EE\u5F55\u62D3\u5C55\u4E0E\u8282\u70B9\u89C6\u56FE\r\n\r\n\u200B\t \u5982\u4F55\u66F4\u52A0\u597D\u7684\u8D34\u8FD1\u7528\u6237\u751F\u6210\u7684\u4EE3\u7801\u811A\u672C\u6587\u4EF6\u5462\u3002\u4EE3\u7801\u4E00\u5B9A\u662F\u5B58\u5728\u76EE\u5F55\u91CC\u9762\u7684\u3002\u96BE\u9053\u2026\u2026
-      \u54E6\u5BF9 \u8FD8\u80FD\u5B58\u5728\u4E8Edll\u4E2D\u3002\u90A3\u4E0D\u7BA1\u3002\u53CD\u6B63dll\u4E5F\u5728\u76EE\u5F55\u91CC\u3002\u6240\u4EE5KooCode\u5C31\u4ECE\u76EE\u5F55\u62D3\u5C55\u5F00\u59CB\u4E0B\u624B\u3002\r\n\r\n\u200B\t\u76EE\u5F55\u7684\u62D3\u5C55\u662F\u57FA\u4E8E\u5BF9
-      Unity\u6CA1\u6709\u5BF9DefaultAsset\u505A\u68C0\u89C6\u5668\u7684\u529F\u80FD\u4E0A
-      \u56E0\u4E3A\u76EE\u5F55\u6587\u4EF6\u4E5F\u662FDefaultAsset\uFF0C\u6240\u4EE5\u5C31\u4ECE\u8FD9\u91CC\u4E0B\u624B\u3002\u5BF9Default\u76EE\u5F55\u505A\u62D3\u5C55\u3002\r\n\r\n\r\n\r\n\u200B\t
-      \u4ECE\u76EE\u5F55\u62D3\u5C55\u5173\u952E\u7684\u4E00\u70B9\u5C31\u662F \u5728\u4E0D\u540C\u7684\u7528\u6237\u89C6\u56FE\u4E0B
-      \u6BD4\u5982\u6709\u4E9B\u4EBA\u7231\u7528\u8001\u5F0F\u76843by 2 \u6709\u4E9B\u4EBA\u53C8\u66F4\u559C\u6B22Unity\u76EE\u524D\u7684Default\u3002\u8FD9\u4E24\u79CD\u7684\u76EE\u5F55\u89C6\u56FE\u6837\u5F0F\u662F\u4E0D\u4E00\u6837\u7684\r\n\r\n![image-20240521164635895](KooCode\u539F\u7406/image-20240521164635895.png)\r\n\r\n\r\n\r\n\u200B\t\r\n\r\n![image-20240521164645015](KooCode\u539F\u7406/image-20240521164645015.png)\r\n\r\n\u8FD9\u4E9B\u4E0D\u540C\u7684\u6837\u5F0F
-      \u5728Inspector\u7684\u68C0\u89C6\u89C4\u5219\u662F\u4E0D\u4E00\u6837\u7684\u3002\r\n\r\n###
-      \u7ED9Project\u52A0\u62D3\u5C55\u6309\u94AE\r\n\r\n\u200B\t\u6240\u4EE5\uFF0C\u8FD9\u91CC\u53EA\u80FD\u91CD\u65B0\u5BFB\u627E\u89E3\u51B3\u8FD9\u4E2A\u95EE\u9898\u7684\u65B9\u5411\u4E86\uFF0C\u5728\u5BA3\u96E8\u677E\u7684\u4E66\u4E2D\uFF0C\u6709\u5E78\u4E86\u89E3\u8FC7\u5BF9Hierarchy\u9875\u9762\u8FDB\u884C\u6DFB\u52A0\u62D3\u5C55\u6309\u94AE\u7684\u65B9\u5F0F\uFF0C\u90A3\u4E48\u6211\u5C31\u5728\u60F3\uFF0C\u662F\u4E0D\u662F\u540C\u6837\u7684\u65B9\u5F0F\uFF0C\u5BF9\u76EE\u5F55\u4E5F\u505A\u4E00\u4E2A\u4E00\u6837\u7684\u62D3\u5C55\u6309\u94AE\uFF0C\u8FD9\u6837\u4E0D\u5C31\u89E3\u51B3\u4E86\u68C0\u89C6\u5668\u5728\u4E0D\u540C\u754C\u9762\u89C6\u56FE\u4E0B\u89C4\u5219\u4E0D\u4E00\u6837\u7684\u95EE\u9898\u4E86\u5417\u3002\r\n\r\n"
-    ID: 
-    Tags: []
-    usePath: []
-    CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\KooCode\u539F\u7406.md"
-  - Name:
-      _value: "KooCode\u5DE5\u5177"
+      _value: TestReadME
     CodeFile: {fileID: 0}
     Content: 
     ID: 
     Tags: []
     usePath: []
-    CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\KooCode\u5DE5\u5177.md"
-  - Name:
-      _value: "KooCode-\u57FA\u4E8E\u8282\u70B9\u7684\u7B80\u6613UML\u7C7B\u56FE\u5DE5\u5177"
-    CodeFile: {fileID: 0}
-    Content: "---\ntitle: KooCode-\u57FA\u4E8E\u8282\u70B9\u7684\u7B80\u6613UML\u7C7B\u56FE\u5DE5\u5177\ndate:
-      2024-05-22 11:29:49\ntags:\n---\n"
-    ID: 
-    Tags: []
-    usePath: []
-    CodeMarkDown: {fileID: 0}
-    MarkDownPath: "F:\\KooBlog_Clean\\source\\_posts\\KooCode-\u57FA\u4E8E\u8282\u70B9\u7684\u7B80\u6613UML\u7C7B\u56FE\u5DE5\u5177.md"
+    CodeMarkDown: {fileID: 4900000, guid: c8778ec0528283f4882b4a61f9885338, type: 3}
+    MarkDownPath: Assets/UnityMarkdownViewer/README.md
   CodeDatas:
   - Name:
       _value: "\u666E\u901AMono"
@@ -1886,6 +1933,93 @@ MonoBehaviour:
       = () =>\n                methodInfo.Invoke(\n                    EventTrigger.GetComponent(invokeObj),
       null);\n            CurRegisterMethodName = invokeObj.FullName + \"/\" + methodInfo.Name;\n           
       Event.AddListener(methodDelegate);\n        }\n    }\n}"
+    ID: 
+    Tags: []
+    usePath: []
+  - Name:
+      _value: CoroutineTool
+    CodeFile: {fileID: 11500000, guid: f063d0ce4ab58934dadaafeee6ed6608, type: 3}
+    Content: "using System.Collections;\r\nusing UnityEngine;\r\n\r\nnamespace KooFrame\r\n{\r\n   
+      /// <summary>\r\n    /// \u63D0\u4F9B\u5728\u534F\u7A0B\u4E2D\u4F7F\u7528\u7684\u5DE5\u5177\u65B9\u6CD5\u3002\r\n   
+      /// <para>\r\n    /// \u7279\u70B9\uFF1A\r\n    /// 1. \u901A\u8FC7\u4E00\u4E2A\u5355\u4F8B\u8FD4\u56DE\u5B9E\u4F8B\u6765\u907F\u514D\u9891\u7E41\u7684\u5783\u573E\u56DE\u6536\uFF08GC\uFF09\u3002\r\n   
+      /// 2. \u6027\u80FD\u6539\u8FDB\uFF1A\u4F7F\u7528 YieldInstruction \u4F5C\u4E3A
+      yield \u6307\u4EE4\uFF0C\u51CF\u5C11\u5185\u5B58\u548C\u6027\u80FD\u5F00\u9500\u3002\r\n   
+      /// 3. \u4EE3\u7801\u7B80\u6D01\uFF1A\u9884\u5148\u521B\u5EFA\u7684 yield \u6307\u4EE4\u5B9E\u4F8B\u53EF\u786E\u4FDD\u4EE3\u7801\u66F4\u52A0\u7B80\u6D01\u3002\r\n   
+      /// 4. \u6F5C\u5728\u95EE\u9898\uFF1A\u9884\u5148\u521B\u5EFA\u7684 YieldInstruction
+      \u5B9E\u4F8B\u53EF\u80FD\u5BFC\u81F4\u610F\u5916\u884C\u4E3A\uFF0C\u56E0\u4E3A\u5171\u4EAB\u540C\u4E00\u5B9E\u4F8B\u3002\u5176\u4ED6\u4EE3\u7801\u4FEE\u6539\u5B9E\u4F8B\u53EF\u80FD\u5F71\u54CD\u5176\u4ED6\u534F\u7A0B\u3002\r\n   
+      /// </para>\r\n    /// </summary>\r\n    public static class CoroutineTool\r\n   
+      {\r\n        private struct WaitForFrameStruct : IEnumerator\r\n        {\r\n           
+      public object Current => null;\r\n\r\n\t\t\tpublic bool MoveNext() => false;\r\n\r\n           
+      public void Reset() { }\r\n        }\r\n\r\n        private static WaitForEndOfFrame
+      waitForEndOfFrame = new WaitForEndOfFrame();\r\n        private static WaitForFixedUpdate
+      waitForFixedUpdate = new WaitForFixedUpdate();\r\n\r\n        public static
+      WaitForEndOfFrame WaitForEndOfFrame() => waitForEndOfFrame;\r\n        public
+      static WaitForFixedUpdate WaitForFixedUpdate() => waitForFixedUpdate;\r\n\r\n\r\n       
+      /// <summary>\r\n        /// \u521B\u5EFA\u4E00\u4E2A\u7B49\u5F85\u6307\u5B9A\u65F6\u95F4\u7684\u534F\u7A0B\u3002\r\n       
+      /// </summary>\r\n        /// <param name=\"time\">\u8981\u7B49\u5F85\u7684\u65F6\u95F4\uFF08\u4EE5\u79D2\u4E3A\u5355\u4F4D\uFF09\u3002</param>\r\n       
+      /// <returns>\u7B49\u5F85\u7684\u534F\u7A0B\u3002</returns>\r\n        public
+      static IEnumerator WaitForSeconds(float time)\r\n        {\r\n            float
+      currTime = 0;\r\n            while (currTime < time)\r\n            {\r\n               
+      currTime += Time.deltaTime;\r\n                yield return new WaitForFrameStruct();\r\n           
+      }\r\n        }\r\n\r\n        /// <summary>\r\n        /// \u521B\u5EFA\u4E00\u4E2A\u5728\u5B9E\u9645\u65F6\u95F4\u4E0A\u7B49\u5F85\u6307\u5B9A\u65F6\u95F4\u7684\u534F\u7A0B\u3002\r\n       
+      /// </summary>\r\n        /// <param name=\"time\">\u8981\u7B49\u5F85\u7684\u65F6\u95F4\uFF08\u4EE5\u79D2\u4E3A\u5355\u4F4D\uFF09\u3002</param>\r\n       
+      /// <returns>\u7B49\u5F85\u7684\u534F\u7A0B\u3002</returns>\r\n        public
+      static IEnumerator WaitForSecondsRealtime(float time)\r\n        {\r\n           
+      float currTime = 0;\r\n            while (currTime < time)\r\n            {\r\n               
+      currTime += Time.unscaledDeltaTime;\r\n                yield return new WaitForFrameStruct();\r\n           
+      }\r\n        }\r\n\r\n        /// <summary>\r\n        /// \u521B\u5EFA\u4E00\u4E2A\u7B49\u5F85\u4E00\u5E27\u7684\u534F\u7A0B\r\n       
+      /// </summary>\r\n        /// <returns></returns>\r\n        public static
+      IEnumerator WaitForFrame()\r\n        {\r\n            yield return new WaitForFrameStruct();\r\n       
+      }\r\n\r\n        /// <summary>\r\n        /// \u521B\u5EFA\u4E00\u4E2A\u5728\u6307\u5B9A\u5E27\u6570\u5185\u7B49\u5F85\u7684\u534F\u7A0B\u3002\r\n       
+      /// </summary>\r\n        /// <param name=\"count\">\u8981\u7B49\u5F85\u7684\u5E27\u6570\u3002</param>\r\n       
+      /// <returns>\u7B49\u5F85\u7684\u534F\u7A0B\u3002</returns>\r\n        public
+      static IEnumerator WaitForFrames(int count = 1)\r\n        {\r\n           
+      for (int i = 0; i < count; i++)\r\n            {\r\n                yield return
+      new WaitForFrameStruct();\r\n            }\r\n        }\r\n    }\r\n}"
+    ID: 
+    Tags: []
+    usePath: []
+  - Name:
+      _value: DefaultData
+    CodeFile: {fileID: 0}
+    Content: "\n//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\n//*
+      \u6587\u4EF6\uFF1ANodeDataInOwner                                       \n//*
+      \u4F5C\u8005\uFF1AKoo\n//* \u521B\u5EFA\u65F6\u95F4\uFF1A2024/04/04 00:08:02
+      \u661F\u671F\u56DB\n//* \u529F\u80FD\uFF1Anothing\n//*****************************************************\n\nusing
+      System;\nusing System.Collections.Generic;\nusing System.Reflection;\nusing
+      KooFrame;\nusing UnityEngine;\nusing UnityEngine.Events;\n\nnamespace SubSystem\n{\n   
+      [Serializable]\n    public class NodeDataInOwner\n    {\n        //public Dictionary<string,
+      MethodInfo> methodsDic = new();\n\n        [SerializeField, HideInInspector]
+      public List<string> methodsTypeNames = new();\n\n        [SerializeField] public
+      UnityEvent Event = new UnityEvent();\n\n        /// <summary>\n        ///
+      \u8FD0\u884C\u65F6 \u4F1A\u6839\u636E\u8FD9\u4E2A\u540D\u5B57 \u5BF9Event\u52A0\u59D4\u6258\u76D1\u542C\n       
+      /// </summary>\n        [SerializeField] public string CurRegisterMethodName;\n\n\n       
+      [SerializeField] public int OwnerDataID;\n\n        [SerializeField] public
+      TreeOwner Owner;\n\n\n        [SerializeField] public GameObject EventTrigger;\n\n       
+      /// <summary>\n        /// \u7ED1\u5B9A\u7684Node\n        /// </summary>\n       
+      [SerializeField] public Node BindNode;\n\n        public NodeDataInOwner(Node
+      node, TreeOwner owner)\n        {\n            BindNode = node;\n           
+      Owner = owner;\n            OwnerDataID = Animator.StringToHash(owner.name
+      +\n                                                (owner.NodeDatas.Count)\n                                               
+      .ToString());\n        }\n\n\n        public void EventAddListener(MethodInfo
+      methodInfo, Type invokeObj)\n        {\n            UnityAction methodDelegate
+      = () =>\n                methodInfo.Invoke(\n                    EventTrigger.GetComponent(invokeObj),
+      null);\n            CurRegisterMethodName = invokeObj.FullName + \"/\" + methodInfo.Name;\n           
+      Event.AddListener(methodDelegate);\n        }\n    }\n}"
+    ID: 
+    Tags: []
+    usePath: []
+  - Name:
+      _value: MoveA
+    CodeFile: {fileID: 11500000, guid: acd5a41742bbcde4d93068a55eb3ba57, type: 3}
+    Content: "//****************** \u4EE3\u7801\u6587\u4EF6\u7533\u660E ************************\r\n//*
+      \u6587\u4EF6\uFF1AMonoA                                       \r\n//* \u4F5C\u8005\uFF1AKoo\r\n//*
+      \u521B\u5EFA\u65F6\u95F4\uFF1A2024/05/22 15:24:59 \u661F\u671F\u4E09\r\n//*
+      \u63CF\u8FF0\uFF1ANothing\r\n//*****************************************************\r\nusing
+      UnityEngine;\r\nusing KooFrame.BaseSystem;\r\n\r\nnamespace GameBuild\r\n{\r\n\tpublic
+      class MonoA : MonoBehaviour\r\n\t{\r\n\t\tpublic int speed = 1;\r\n\r\n\r\n\t\tprivate
+      void Update()\r\n\t\t{\r\n\t\t\tthis.transform.Translate(Vector3.forward *
+      speed * Time.deltaTime);\r\n\t\t}\r\n\t}\r\n}\r\n\r\n"
     ID: 
     Tags: []
     usePath: []
