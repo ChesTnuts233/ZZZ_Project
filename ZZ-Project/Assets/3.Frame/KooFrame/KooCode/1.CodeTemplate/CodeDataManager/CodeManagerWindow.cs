@@ -10,6 +10,15 @@ using UnityEngine.UIElements;
 
 namespace KooFrame
 {
+    public enum CodeDataType
+    {
+        CodeMarkData,
+        CodeData,
+        CodeTemplateData,
+        CodeAPIData,
+    }
+
+
     public class KooCodeWindow : EditorWindow
     {
         private static KooCodeWindow instance;
@@ -49,13 +58,16 @@ namespace KooFrame
 
         #endregion
 
+
         #region 面板元素
 
         private ListView codeMarkListView;
 
-        private ListView codeDataListView;
+        private ListView codeDataListView; //代码元数据ListView
 
-        private ListView methodDataListView;
+        private ListView codeTemplateDataListView; //代码模板ListView
+
+        private ListView codeAPIDataListView; //代码APIListView
 
         private CodeInspectorManager inspectorManager;
 
@@ -67,17 +79,30 @@ namespace KooFrame
 
         private VisualElement leftDiv;
 
+
+        #region 归类显示那些数据的组件
+
+        /// <summary>
+        /// 显式哪一些数据的下拉框
+        /// </summary>
+        private DropdownField showDatasTypes;
+
+
         private Button codeDataShowBtn;
 
         private Button codeTemplateShowBtn;
 
         private Button methodShowBtn;
 
+        #endregion
+
+
         private Button settingsBtn;
 
         private VisualElement border;
 
         #endregion
+
 
         #region 其他
 
@@ -93,6 +118,7 @@ namespace KooFrame
         public Action OnWindowUpdate;
 
         #endregion
+
 
         #region 面板生命周期
 
@@ -123,7 +149,7 @@ namespace KooFrame
 
             BindListView(root);
 
-            BindListShowBtn(root);
+            BindListShowTypes(root); //绑定管理显示哪些CodeData的组件
 
             BindInspector(root);
 
@@ -135,6 +161,8 @@ namespace KooFrame
 
             BindSettingsBtn(root);
 
+            #region 根据保存的选项显示相应的页面
+
             //根据保存打开页面
             switch (selectListView)
             {
@@ -143,6 +171,7 @@ namespace KooFrame
                     if (KooCode.Datas.CodeMarks.Count > 0)
                     {
                         inspectorManager.UpdateInspectors(KooCode.Datas.CodeMarks.First());
+                        showDatasTypes.SetValueWithoutNotify(CodeDataType.CodeMarkData.ToString());
                     }
 
                     break;
@@ -151,16 +180,19 @@ namespace KooFrame
                     if (KooCode.Datas.CodeTemplates.Count > 0)
                     {
                         inspectorManager.UpdateInspectors(KooCode.Datas.CodeTemplates.First());
+                        showDatasTypes.SetValueWithoutNotify(CodeDataType.CodeData.ToString());
                     }
 
                     break;
                 case 2:
-                    ShowListView(methodDataListView);
+                    //ShowListView(codeAPIDataListView);
                     //inspectorManager.UpdateInspectors(KooCode.Datas..First());
                     break;
                 default:
                     break;
             }
+
+            #endregion
         }
 
 
@@ -256,6 +288,7 @@ namespace KooFrame
 
         #endregion
 
+
         #region 元素绑定
 
         private void BindDiv(VisualElement root)
@@ -272,7 +305,7 @@ namespace KooFrame
             BindListViewRightClick(codeMarkListView, CreateMarkListMenu);
             codeDataListView = root.Q<ListView>("CodeTemplateList");
             BindListViewRightClick(codeDataListView, CreateTemplateListMenu);
-            methodDataListView = root.Q<ListView>("MethodTemplateList");
+            codeAPIDataListView = root.Q<ListView>("MethodTemplateList");
         }
 
 
@@ -291,8 +324,33 @@ namespace KooFrame
             });
         }
 
-        private void BindListShowBtn(VisualElement root)
+        /// <summary>
+        /// 绑定用来归类显式那些数据类型的组件
+        /// </summary>
+        private void BindListShowTypes(VisualElement root)
         {
+            showDatasTypes = root.Q<DropdownField>("ShowDatasTypes");
+
+            //枚举转为List<string>
+            showDatasTypes.choices = KooTool.EnumToList<CodeDataType>();
+
+
+            showDatasTypes.RegisterValueChangedCallback((evt) =>
+            {
+                if (evt.newValue == CodeDataType.CodeMarkData.ToString())
+                {
+                    ShowListView(codeMarkListView);
+                    selectListView = 0; //当前显示的List为笔记列表 用于存储记录
+                }
+                else if (evt.newValue == CodeDataType.CodeData.ToString())
+                {
+                    ShowListView(codeDataListView);
+                    selectListView = 1;
+                }
+                else if (evt.newValue == CodeDataType.CodeTemplateData.ToString()) { }
+            });
+
+
             codeDataShowBtn = root.Q<Button>("CodeDataShowBtn");
             codeTemplateShowBtn = root.Q<Button>("CodeTemplateShowBtn");
             methodShowBtn = root.Q<Button>("MethodShowBtn");
@@ -303,7 +361,7 @@ namespace KooFrame
             codeTemplateShowBtn.clicked += () => ShowListView(codeDataListView);
             codeTemplateShowBtn.clicked += () => selectListView = 1;
 
-            methodShowBtn.clicked += () => ShowListView(methodDataListView);
+            methodShowBtn.clicked += () => ShowListView(codeAPIDataListView);
             methodShowBtn.clicked += () => selectListView = 2;
         }
 
@@ -311,7 +369,7 @@ namespace KooFrame
         {
             codeMarkListView.style.display = DisplayStyle.None;
             codeDataListView.style.display = DisplayStyle.None;
-            methodDataListView.style.display = DisplayStyle.None;
+            codeAPIDataListView.style.display = DisplayStyle.None;
             showListView.style.display = DisplayStyle.Flex;
         }
 
@@ -491,6 +549,7 @@ namespace KooFrame
         }
 
         #endregion
+
 
         private void UpdateListView(ListView view)
         {
